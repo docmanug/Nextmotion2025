@@ -12,20 +12,20 @@ import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
 
 export default function Home() {
-  return (
-    <main>
-      <Navbar />
-      <Hero />
-      <SolutionsSection />
-      <CaptureSection />
-      <ConsultSection />
-      <ThreeDSection />
-      <RevolutionSection />
-      <LogoSlider />
-      <ReviewsSection />
-      <CommunitySection />
-      <ApprovalSection />
-      <Footer />
-    </main>
-  );
+	return (
+		<main>
+			<Navbar />
+			<Hero />
+			<SolutionsSection />
+			<CaptureSection />
+			<ConsultSection />
+			<ThreeDSection />
+			<RevolutionSection />
+			<LogoSlider />
+			<ReviewsSection />
+			<CommunitySection />
+			<ApprovalSection />
+			<Footer />
+		</main>
+	);
 }
