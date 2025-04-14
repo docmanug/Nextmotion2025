@@ -5,20 +5,20 @@ import Image from "next/image";
 export default function SolutionsSection() {
   const solutions = [
     {
-      icon: "/second/solutions/light.png",
-      title: "Consistent Lighting",
+      icon: "third/icons/contract.png",
+      title: "Paperless solution",
     },
     {
-      icon: "/second/solutions/color.png",
-      title: "Consistent colors",
+      icon: "third/icons/signature.png",
+      title: "Electronic Signature",
     },
     {
-      icon: "/second/solutions/position.png",
-      title: "Consistent positioning",
+      icon: "third/icons/leaderboard.png",
+      title: "Business Development",
     },
     {
-      icon: "/second/solutions/picture.png",
-      title: "Pictures and videos",
+      icon: "third/icons/graph.png",
+      title: "Process Optimization",
     },
   ];
 
@@ -26,13 +26,14 @@ export default function SolutionsSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-          Intuitive and Professional Before/After Photos
+          <h2 className="text-4xl font-bold text-[#081F4D] mb-8">
+            An all-in-one software to simplify your administrative tasks
+            and boost your clinic's growth.
           </h2>
           <p className="text-2xl text-gray-600 max-w-5xl mx-auto">
-          Take the hassle out of capturing before/after photos with the NM Capture app. Designed
-for iPhone and iPad, our solution ensures speed, simplicity, and high-quality
-standardization, empowering clinics with professional results.
+            Nextmotion Consult is an all-in-one solution designed for aesthetic clinics. It centralizes
+            patient management, streamlines processes, and boosts productivity. Discover how
+            Nextmotion Consult can transform your clinic and attract more patients.
           </p>
         </div>
 

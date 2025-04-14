@@ -5,20 +5,20 @@ import Image from "next/image";
 export default function SolutionsSection() {
   const solutions = [
     {
-      icon: "clinical_notes.png",
-      title: "Individuals",
+      icon: "/second/solutions/light.png",
+      title: "Consistent Lighting",
     },
     {
-      icon: "medical.png",
-      title: "Clinics",
+      icon: "/second/solutions/color.png",
+      title: "Consistent colors",
     },
     {
-      icon: "medication.png",
-      title: "Clinic chains",
+      icon: "/second/solutions/position.png",
+      title: "Consistent positioning",
     },
     {
-      icon: "marketing.png",
-      title: "Marketing",
+      icon: "/second/solutions/picture.png",
+      title: "Pictures and videos",
     },
   ];
 
@@ -27,11 +27,12 @@ export default function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#081F4D] mb-8">
-            All in one solution designed by a doctor for aesthetic clinics
+          Intuitive and Professional Before/After Photos
           </h2>
           <p className="text-2xl text-gray-600 max-w-5xl mx-auto">
-            Nextmotion is a comprehensive ecosystem of solutions offering all the tools you need,
-            whether you are an individual physician, clinic manager, or chain clinic owner.
+          Take the hassle out of capturing before/after photos with the NM Capture app. Designed
+for iPhone and iPad, our solution ensures speed, simplicity, and high-quality
+standardization, empowering clinics with professional results.
           </p>
         </div>
 
