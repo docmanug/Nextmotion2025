@@ -8,9 +8,9 @@ import MarketSection from "./components/MarketSection";
 import Market2Section from "./components/Market2Section";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NextMotionJourney from "./components/NextMotionJourney";
+import JoinRevolution from "./components/JoinRevolution";
 import ApprovalSection from "./components/ApprovalSection";
-
+import LastSection from "./components/LastSection";
 export default function InjectorRobotAestheticMedicinePage() {
   return (
     <main>
@@ -20,6 +20,8 @@ export default function InjectorRobotAestheticMedicinePage() {
       <Standard2Section />
       <CapabilitiesSection />
       <ApprovalSection />
+      <JoinRevolution />
+      <LastSection />
       <Footer />
     </main>
   );
