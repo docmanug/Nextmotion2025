@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
 
 export default function Home() {
-  <main>
+  return <main>
       <Navbar />
       <Hero />
       <SolutionsSection />
@@ -27,3 +27,4 @@ export default function Home() {
       <Footer />
     </main>
 }
+
