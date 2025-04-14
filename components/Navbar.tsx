@@ -29,18 +29,28 @@ export default function Navbar() {
                 <span>Solution</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
-              <div className="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg mt-1 py-2">
-                <Link href="/capture" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  Nextmotion Capture
+              <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
+                <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
+                <Link href="/before-after" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  NextMotion - Capture
                 </Link>
-                <Link href="/consult" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  Nextmotion Consult
-                </Link>
-                <Link href="/3d" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  Nextmotion 3D
-                </Link>
-                <Link href="/revolution" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <Link href="/revolution" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Nextmotion Revolution
+                </Link>
+                <Link href="/3d-aesthetic-simulation" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  Nextmotion - 3D
+                </Link>
+                <Link href="/clinic-management-software" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  NextMotion - Consult
+                </Link>
+                <Link href="/agenda-online-booking-reminders" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  Nextmotion Agenda
+                </Link>
+                <Link href="/virtual-classes" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  Virtual Classes
+                </Link>
+                <Link href="/injector-robot-aesthetic-medicine" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                  Robotics
                 </Link>
               </div>
             </div>
@@ -50,14 +60,15 @@ export default function Navbar() {
                 <span>You are</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
-              <div className="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg mt-1 py-2">
-                <Link href="/plastic-surgeon" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+              <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
+                <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
+                <Link href="/plastic-surgeon" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Plastic Surgeon
                 </Link>
-                <Link href="/dermatologist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <Link href="/dermatologist" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Dermatologist
                 </Link>
-                <Link href="/aesthetic-doctor" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <Link href="/aesthetic-doctor" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Aesthetic Doctor
                 </Link>
               </div>
@@ -72,14 +83,15 @@ export default function Navbar() {
                 <span>Resources</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
-              <div className="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg mt-1 py-2">
-                <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+              <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
+                <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
+                <Link href="/blog" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Blog
                 </Link>
-                <Link href="/case-studies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <Link href="/case-studies" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Case Studies
                 </Link>
-                <Link href="/events" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <Link href="/events" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
                   Events
                 </Link>
               </div>
