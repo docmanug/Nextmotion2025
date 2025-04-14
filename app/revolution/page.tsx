@@ -1,11 +1,6 @@
 import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
-import SimpleSection from "./components/SimpleSection";
-import EngageSection from "./components/EngageSection";
-import ComparisonSection from "./components/ComparisonSection";
 import DiscoverSection from "./components/DiscoverSection";
-import CommunitySection from "./components/CommunitySection";
-import ApprovalSection from "./components/ApprovalSection";
 import FaqSection from "./components/FaqSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,7 +21,7 @@ export default function RevolutionLandingPage() {
       <ImageSection />
       <SolutionsSection />
       <NewOffer />
-      <Feature1  />
+      <Feature1 />
       <Feature2 />
       <Feature3 />
       <Feature4 />
@@ -39,4 +34,4 @@ export default function RevolutionLandingPage() {
       <Footer />
     </main>
   );
-} 
+}
