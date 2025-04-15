@@ -4,8 +4,6 @@ import Feature2 from "./components/Feature2";
 import Feature1 from "./components/Feature1";
 
 import TryNextmotion from "./components/TryNextmotion";
-import DiscoverSection from "./components/DiscoverSection";
-import ReviewsSection from "./components/ReviewsSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Feature3 from "./components/Feature3";
