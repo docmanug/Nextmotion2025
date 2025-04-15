@@ -22,7 +22,7 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center gap-10">
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
@@ -31,30 +31,51 @@ export default function Navbar() {
               </button>
               <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
-                <Link href="/before-after" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/before-after"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   NextMotion - Capture
                 </Link>
-                <Link href="/revolution" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/revolution"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Nextmotion Revolution
                 </Link>
-                <Link href="/3d-aesthetic-simulation" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/3d-aesthetic-simulation"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Nextmotion - 3D
                 </Link>
-                <Link href="/clinic-management-software" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/clinic-management-software"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   NextMotion - Consult
                 </Link>
-                <Link href="/agenda-online-booking-reminders" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/agenda-online-booking-reminders"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Nextmotion Agenda
                 </Link>
-                <Link href="/virtual-classes" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/virtual-classes"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Virtual Classes
                 </Link>
-                <Link href="/injector-robot-aesthetic-medicine" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/injector-robot-aesthetic-medicine"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Robotics
                 </Link>
               </div>
             </div>
-            
+
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
                 <span>You are</span>
@@ -62,22 +83,46 @@ export default function Navbar() {
               </button>
               <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
-                <Link href="/plastic-surgeon" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
-                  Plastic Surgeon
+                <Link
+                  href="/manager"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Clinic manager
                 </Link>
-                <Link href="/dermatologist" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
-                  Dermatologist
+                <Link
+                  href="/medecin-esthetique"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Aesthetic practitioner
                 </Link>
-                <Link href="/aesthetic-doctor" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
-                  Aesthetic Doctor
+                <Link
+                  href="/assistant"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Assistant / Secretary
+                </Link>
+                <Link
+                  href="/chaines"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Clinic chain manager
+                </Link>
+                <Link
+                  href="/marketing"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Responsable Marketing
                 </Link>
               </div>
             </div>
-            
-            <Link href="/pricing" className="text-[15px] text-gray-900 hover:text-[#0066FF]">
+
+            <Link
+              href="/pricing"
+              className="text-[15px] text-gray-900 hover:text-[#0066FF]"
+            >
               Pricing
             </Link>
-            
+
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
                 <span>Resources</span>
@@ -85,26 +130,38 @@ export default function Navbar() {
               </button>
               <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
-                <Link href="/blog" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/blog"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Blog
                 </Link>
-                <Link href="/case-studies" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/case-studies"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Case Studies
                 </Link>
-                <Link href="/events" className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]">
+                <Link
+                  href="/events"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
                   Events
                 </Link>
               </div>
             </div>
-            
-            <Link href="/login" className="text-[15px] text-gray-900 hover:text-[#0066FF]">
+
+            <Link
+              href="/login"
+              className="text-[15px] text-gray-900 hover:text-[#0066FF]"
+            >
               Login
             </Link>
-            
+
             <Button className="bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto">
               Contact us
             </Button>
-            
+
             <div className="flex items-center pl-2">
               <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
                 <Globe className="w-5 h-5 text-black" />
