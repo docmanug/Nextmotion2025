@@ -11,25 +11,26 @@ export default function Hero() {
         <div className="flex flex-col items-start gap-8 pt-0 pb-16">
           <div className="flex flex-col items-start gap-6 max-w-[700px]">
             <h1 className="text-[50px] font-extrabold leading-tight text-gray-900">
-              Boost Your Clinic with Nextmotion Agenda
+              Optimisez la Gestion de Votre Clinique Esthétique avec Nextmotion
             </h1>
             <p className="text-xl font-bold leading-relaxed text-black max-w-2xl">
-              A complete solution designed for appointment management, room
-              coordination, and patient communication.
+              Une solution tout-en-un pour attirer plus de patients, suivre
+              l'activité de votre clinique et améliorer les performances de
+              votre équipe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base px-8 py-3 h-auto rounded-full"
               >
-                Book a demo
+                Demandez une demo
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-gray-900 border-2 border-black hover:bg-gray-50 font-semibold text-base px-12 py-3 h-auto rounded-full"
               >
-                Play video
+                Voir la vidéo
               </Button>
             </div>
           </div>

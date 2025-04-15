@@ -11,11 +11,13 @@ export default function Hero() {
         <div className="flex flex-col items-start gap-8 pt-0 pb-16">
           <div className="flex flex-col items-start gap-6 max-w-[700px]">
             <h1 className="text-[50px] font-extrabold leading-tight text-gray-900">
-              Boost Your Clinic with Nextmotion Agenda
+              Centralize and Optimize the Management of Your Clinics
             </h1>
             <p className="text-xl font-bold leading-relaxed text-black max-w-2xl">
-              A complete solution designed for appointment management, room
-              coordination, and patient communication.
+              Nextmotion is designed to meet the needs of aesthetic clinic chain
+              managers. Discover how our all-in-one solution centralizes all
+              your operations, from staff management to online appointment
+              booking.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
