@@ -117,7 +117,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/pricing"
+              href="/pricing-aesthetic-solution"
               className="text-[15px] text-gray-900 hover:text-[#0066FF]"
             >
               Pricing
