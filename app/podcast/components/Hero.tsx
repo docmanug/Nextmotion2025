@@ -1,0 +1,47 @@
+"use client";
+
+export default function Hero() {
+  return (
+    <section className="bg-[#051238] min-h-[500px]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="lg:w-1/2 pt-8">
+            <h1 className="text-white text-[54px] font-bold leading-[1.1]">
+              Listen. Learn. Grow.
+            </h1>
+          </div>
+
+          <div className="lg:w-[45%]">
+            <div className="relative w-full rounded-2xl overflow-hidden max-w-[420px] mx-auto">
+              <img
+                src="/podcast/podcast_hero.png"
+                alt="Podcast Discussion"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button
+                  className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm hover:bg-white/30 transition-colors"
+                  aria-label="Play podcast"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-white ml-1"
+                  >
+                    <path
+                      d="M8 5.14v14.72a1 1 0 001.5.87l11-7.36a1 1 0 000-1.74l-11-7.36a1 1 0 00-1.5.87z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -131,22 +131,56 @@ export default function Navbar() {
               <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
+                  href="/about-us"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  About us
+                </Link>
+                <Link
                   href="/blog"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   Blog
                 </Link>
                 <Link
+                  href="https://honey-vulture-ed5.notion.site/Nextmotion-Academy-1b4dff6c85d9808e9c01fb45bf1b173b?pvs=4"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Academy
+                </Link>
+                <Link
+                  href="/podcast"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Podcast
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  Contact us
+                </Link>
+                <Link
                   href="/case-studies"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Case Studies
+                  Case studies
                 </Link>
                 <Link
-                  href="/events"
+                  href="/release-notes"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Events
+                  Release notes
+                </Link>
+                <Link
+                  href="https://api.nextmotion.net/open_api/docs/redoc/"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  API
                 </Link>
               </div>
             </div>
@@ -158,9 +192,15 @@ export default function Navbar() {
               Login
             </Link>
 
-            <Button className="bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto">
-              Contact us
-            </Button>
+            <Link
+              href="/contact_form"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto">
+                Contact us
+              </Button>
+            </Link>
 
             <div className="flex items-center pl-2">
               <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
