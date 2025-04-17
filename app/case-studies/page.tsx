@@ -4,7 +4,7 @@ import CaseStudies from "./components/CaseStudies";
 import Footer from "@/components/Footer";
 import TestimonialSlider from "./components/TestinomialSlider";
 import MoreCaseStudies from "./components/MoreCaseStudies";
-import TryNextmotion from "./components/TryNextmotion";
+import TryNextmotion from "./components/TryNextMotion";
 export default function CaseStudiesPage() {
   return (
     <main>
