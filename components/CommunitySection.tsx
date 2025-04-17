@@ -1,8 +1,9 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link as LucideLink } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -10,43 +11,43 @@ const testimonials = [
     title: "Dermatologist",
     location: "Pau",
     videoThumbnail: "/covers/iframe1.png",
-    videoUrl: "#"
+    videoUrl: "#",
   },
   {
     name: "Dr. Joseph Marciano",
     title: "Aesthetic doctor",
     location: "Paris",
     videoThumbnail: "/covers/iframe2.png",
-    videoUrl: "#"
+    videoUrl: "#",
   },
   {
     name: "Meline Puech",
     title: "Clinic owner",
     location: "Toulouse",
     videoThumbnail: "/covers/iframe3.png",
-    videoUrl: "#"
+    videoUrl: "#",
   },
   {
     name: "Dr. Nabila AZIB",
     title: "Plastic surgeon",
     location: "Morocco",
     videoThumbnail: "/covers/iframe4.png",
-    videoUrl: "#"
+    videoUrl: "#",
   },
   {
     name: "Dr. Miguel Stanley",
     title: "Founder of White Clinic",
     location: "Lisbon",
     videoThumbnail: "/covers/iframe5.png",
-    videoUrl: "#"
+    videoUrl: "#",
   },
   {
     name: "Dr. Per Heden",
     title: "Plastic surgeon",
     location: "Stockholm",
     videoThumbnail: "/covers/iframe5.png",
-    videoUrl: "#"
-  }
+    videoUrl: "#",
+  },
 ];
 
 export default function CommunitySection() {
@@ -54,24 +55,34 @@ export default function CommunitySection() {
     <section className="py-20 bg-[#051238] text-white">
       <div className="max-w-[1600px] mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-[40px] font-bold mb-3">Join the Nextmotion community</h2>
+          <h2 className="text-[40px] font-bold mb-3">
+            Join the Nextmotion community
+          </h2>
           <p className="text-white/80 max-w-[700px] mx-auto mb-12 text-base leading-relaxed">
-            Adopting our technology also means joining a community of doctors committed to the democratization of digital consultation and knowledge sharing.
+            Adopting our technology also means joining a community of doctors
+            committed to the democratization of digital consultation and
+            knowledge sharing.
           </p>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="bg-transparent text-white border-2 border-white hover:bg-white/5 px-8 py-3 h-auto text-base font-medium tracking-wide"
-          >
-            Request a Demo
-          </Button>
+
+          <Link href="/contact_form" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-black px-8 py-3 h-auto text-base font-medium tracking-wide"
+            >
+              Request a Demo
+            </Button>
+          </Link>
         </div>
 
         <div className="relative">
           {/* Video Cards */}
           <div className="flex gap-4 overflow-x-hidden mb-6 px-2">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="relative shrink-0 w-[250px] bg-white rounded-[10px] p-4">
+              <div
+                key={index}
+                className="relative shrink-0 w-[250px] bg-white rounded-[10px] p-4"
+              >
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
                   <Image
                     src={testimonial.videoThumbnail}
@@ -87,7 +98,9 @@ export default function CommunitySection() {
                     </div>
                   </div>
                 </div>
-                <h3 className="font-bold text-[#000B45] text-lg leading-tight mb-1">{testimonial.name}</h3>
+                <h3 className="font-bold text-[#000B45] text-lg leading-tight mb-1">
+                  {testimonial.name}
+                </h3>
                 <p className="text-[13px] text-[#8792A8]">
                   {testimonial.title}, {testimonial.location}
                 </p>

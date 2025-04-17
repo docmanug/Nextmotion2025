@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Feature2() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative flex items-center justify-center">
               <div className="relative">
@@ -24,8 +25,8 @@ export default function Feature2() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
+            <div className="flex items-center gap-4 mb-4 sm:mb-6">
+              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
                 <Image
                   src="/marketing/icons/marketing_2_icon.png"
                   alt="Good reviews Icon"
@@ -34,53 +35,60 @@ export default function Feature2() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Good reviews</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                Good reviews
+              </h2>
             </div>
 
-            <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
+            <p className="text-base sm:text-[18px] leading-relaxed text-gray-600 mb-6 sm:mb-10">
               Easily Request Positive Reviews : use NM Consult to send
               invitations for patients to leave reviews about your clinic and
               practitioners, enhancing your online reputation.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   Easy Requests
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Invite your patients to leave reviews with just one click.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   Reputation Boost
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Enhance your online reputation with positive reviews.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   Using NM Consult
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Generate review requests directly through NM Consult.
                 </p>
               </div>
             </div>
 
-            <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+            <div className="mt-8 sm:mt-10">
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Demandez une démo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Demandez une démo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

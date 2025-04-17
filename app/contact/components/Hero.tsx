@@ -9,8 +9,8 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div>
-            <div className="space-y-6">
+          <div className="text-center lg:text-left">
+            <div className="space-y-6 max-w-lg mx-auto lg:mx-0">
               <p className="text-[#1650EF] font-medium">CONTACT</p>
               <h1 className="text-[42px] leading-[1.2] font-semibold text-[#0B1C39]">
                 Get in touch with the NextMotion Team
@@ -18,11 +18,13 @@ export default function Hero() {
               <p className="text-gray-600 text-lg">
                 Looking for a plan that fits your specific business needs?
               </p>
-              <Link href="/contact">
-                <Button className="bg-[#1650EF] text-white hover:bg-[#1345D1] px-8 py-3 h-auto text-base font-semibold">
-                  Contact
-                </Button>
-              </Link>
+              <div className="flex justify-center lg:justify-start">
+                <Link href="/contact">
+                  <Button className="bg-[#1650EF] text-white hover:bg-[#1345D1] px-8 py-3 h-auto text-base font-semibold">
+                    Contact
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 

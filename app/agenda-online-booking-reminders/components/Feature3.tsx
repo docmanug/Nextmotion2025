@@ -20,40 +20,52 @@ export default function Feature3() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">SMS and Email Reminders</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                SMS and Email Reminders
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Reduce missed appointments with an automated system of SMS
-              and email reminders. Patients receive personalized notifications
+              Reduce missed appointments with an automated system of SMS and
+              email reminders. Patients receive personalized notifications
               before their consultation to ensure their attendance.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Customized Reminders</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Customized Reminders
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Create personalized messages for each patient.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Confirmation Tracking</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Confirmation Tracking
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   See patient responses and anticipate absences.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 

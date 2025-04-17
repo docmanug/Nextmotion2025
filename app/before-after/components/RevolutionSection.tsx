@@ -33,33 +33,56 @@ export default function RevolutionSection() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Dynamic Videos for Natural Results</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Dynamic Videos for Natural Results
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
               Showcase natural results with NM Capture's dynamic videos.
               Highlight the success of aesthetic treatments by extracting high-
-              resolution photos at any point in the video for precise before-and-
-              after comparisons.
+              resolution photos at any point in the video for precise
+              before-and- after comparisons.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Highlight Every Detail</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Highlight Every Detail
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Capture dynamic 180°, 360°, or 720° videos to provide a holistic view
-                  of treatments. Extract high-quality stills from any frame for detailed
-                  comparisons.
+                  Capture dynamic 180°, 360°, or 720° videos to provide a
+                  holistic view of treatments. Extract high-quality stills from
+                  any frame for detailed comparisons.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Natural Patient Outcomes</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Natural Patient Outcomes
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Reassure your patients by demonstrating natural results, whether it's
-                  Botox, dermal fillers, or other aesthetic procedures.
+                  Reassure your patients by demonstrating natural results,
+                  whether it's Botox, dermal fillers, or other aesthetic
+                  procedures.
                 </p>
               </div>
+            </div>
+
+            <div className="mt-10">
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

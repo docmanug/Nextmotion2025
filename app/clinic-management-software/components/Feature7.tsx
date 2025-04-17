@@ -19,18 +19,36 @@ export default function Feature7() {
                 className="text-blue-600"
               />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900">Treatment records</h2>
+            <h2 className="text-3xl font-bold text-gray-900">
+              Treatment records
+            </h2>
           </div>
-          
+
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
-            Nextmotion Consult can be used seamlessly with an iPhone, iPad, or any computer (Mac or
-            PC). We offer you the opportunity to test a part of the patient journey using an iPad to show
-            you how our solution can simplify your practice.
+            Nextmotion Consult can be used seamlessly with an iPhone, iPad, or
+            any computer (Mac or PC). We offer you the opportunity to test a
+            part of the patient journey using an iPad to show you how our
+            solution can simplify your practice.
           </p>
 
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
             Simply click on "Start the demo" below to get started !
           </p>
+
+          <div className="mb-8">
+            <Link
+              href="/contact_form"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[15px] sm:text-base px-6 sm:px-8 py-3 h-auto rounded-full"
+              >
+                Start the demo
+              </Button>
+            </Link>
+          </div>
 
           <div className="w-full max-w-[800px] mx-auto mt-4">
             <Image
@@ -46,4 +64,4 @@ export default function Feature7() {
       </div>
     </section>
   );
-} 
+}

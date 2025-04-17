@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Feature3() {
   return (
@@ -69,15 +70,20 @@ export default function Feature3() {
               </div>
             </div>
 
-            <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+            <div className="mt-8 sm:mt-10">
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 

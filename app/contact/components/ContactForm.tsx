@@ -172,69 +172,69 @@ const interests = [
 
 export default function ContactForm() {
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section className="py-12 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Content */}
-          <div className="flex items-center">
-            <div className="space-y-8">
+          <div className="flex items-center justify-center lg:justify-start text-center lg:text-left">
+            <div className="space-y-6 sm:space-y-8 max-w-lg mx-auto lg:mx-0">
               <div>
-                <h2 className="text-[32px] font-bold text-[#081F4D] mb-4">
+                <h2 className="text-3xl sm:text-[32px] font-bold text-[#081F4D] mb-3 sm:mb-4">
                   Happy to help you grow your practice!
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   Our sales team can answer your questions, provide product
                   demos and create custom plans that fit your needs. Please fill
                   out the form, we will answer you shortly 😊
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 flex-shrink-0">
+              <div className="space-y-4 sm:space-y-6 inline-flex flex-col items-start">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <img
                       src="/contact/contact_1.png"
                       alt="Before After Documentation"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="text-[#081F4D] font-semibold">
+                  <span className="text-[#081F4D] font-semibold text-sm sm:text-base">
                     Before After Documentation
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 flex-shrink-0">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <img
                       src="/contact/contact_2.png"
                       alt="Digital Clinic Management"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="text-[#081F4D] font-semibold">
+                  <span className="text-[#081F4D] font-semibold text-sm sm:text-base">
                     Digital Clinic Management
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 flex-shrink-0">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <img
                       src="/contact/contact_3.png"
                       alt="3D & AR Simulation tools"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="text-[#081F4D] font-semibold">
+                  <span className="text-[#081F4D] font-semibold text-sm sm:text-base">
                     3D & AR Simulation tools
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 flex-shrink-0">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <img
                       src="/contact/contact_4.png"
                       alt="Patients Services"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="text-[#081F4D] font-semibold">
+                  <span className="text-[#081F4D] font-semibold text-sm sm:text-base">
                     Patients Services
                   </span>
                 </div>
@@ -243,9 +243,9 @@ export default function ContactForm() {
           </div>
 
           {/* Right Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_#3E7AB6AB]">
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-[0_4px_20px_#3E7AB6AB]">
+            <form className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm mb-1.5">
                     First name<span className="text-red-500">*</span>
@@ -253,7 +253,7 @@ export default function ContactForm() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
                     placeholder="First name"
                   />
                 </div>
@@ -264,7 +264,7 @@ export default function ContactForm() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
                     placeholder="Last name"
                   />
                 </div>
@@ -277,7 +277,7 @@ export default function ContactForm() {
                 <input
                   type="email"
                   required
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
                   placeholder="E-mail"
                 />
               </div>
@@ -286,8 +286,8 @@ export default function ContactForm() {
                 <label className="block text-sm mb-1.5">
                   Mobile Phone<span className="text-red-500">*</span>
                 </label>
-                <div className="flex gap-2">
-                  <select className="w-[180px] px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <select className="w-full sm:w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                     {countryData.map((country) => (
                       <option key={country.code} value={country.code}>
                         {country.name} ({country.code})
@@ -297,7 +297,7 @@ export default function ContactForm() {
                   <input
                     type="tel"
                     required
-                    className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
                     placeholder="Phone number"
                   />
                 </div>
@@ -305,7 +305,7 @@ export default function ContactForm() {
 
               <div>
                 <label className="block text-sm mb-1.5">Type de client</label>
-                <select className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">Please Select</option>
                   {clientTypes.map((type) => (
                     <option key={type} value={type}>
@@ -319,11 +319,11 @@ export default function ContactForm() {
                 <label className="block text-sm mb-1.5">
                   Specialty<span className="text-red-500">*</span>
                 </label>
-                <div className="border border-gray-300 rounded-lg divide-y divide-gray-200">
+                <div className="max-h-48 sm:max-h-none overflow-y-auto border border-gray-300 rounded-lg divide-y divide-gray-200">
                   {specialties.map((specialty) => (
                     <label
                       key={specialty}
-                      className="flex items-center px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-3 sm:px-4 py-2 hover:bg-gray-50 cursor-pointer"
                     >
                       <input
                         type="checkbox"
@@ -339,7 +339,7 @@ export default function ContactForm() {
                 <label className="block text-sm mb-1.5">
                   Country<span className="text-red-500">*</span>
                 </label>
-                <select className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">Please Select</option>
                   {countryData.map((country) => (
                     <option key={country.name} value={country.name}>
@@ -353,7 +353,7 @@ export default function ContactForm() {
                 <label className="block text-sm mb-1.5">
                   I&apos;m interested in
                 </label>
-                <select className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">Please Select</option>
                   {interests.map((interest) => (
                     <option key={interest} value={interest}>
@@ -368,12 +368,12 @@ export default function ContactForm() {
                   Additional questions, best moment to contact you, etc...
                 </label>
                 <textarea
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none resize-none h-24"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none resize-none h-20 sm:h-24"
                   placeholder="Additional questions, best moment to contact you, etc..."
                 />
               </div>
 
-              <Button className="w-full bg-[#1650EF] text-white hover:bg-[#1345D1] py-6 h-auto text-base font-semibold">
+              <Button className="w-full bg-[#1650EF] text-white hover:bg-[#1345D1] py-4 sm:py-6 h-auto text-sm sm:text-base font-semibold">
                 Submit
               </Button>
             </form>

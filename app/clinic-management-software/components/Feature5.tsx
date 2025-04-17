@@ -20,67 +20,90 @@ export default function Feature5() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Integrated Photo Solution</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Integrated Photo Solution
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Create Dynamic Before/After Photos and Videos: achieve perfect standardization while saving time and ensuring professional, uniform
-              result that will automatically sync with your patient's files.
+              Create Dynamic Before/After Photos and Videos: achieve perfect
+              standardization while saving time and ensuring professional,
+              uniform result that will automatically sync with your patient's
+              files.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">High Standardization</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  High Standardization
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Ensure uniform photos with consistent colors and positioning.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Quick Editing</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Quick Editing
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Easily create overlays or collages with simple editing tools.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">AI Background Removal</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  AI Background Removal
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Automatically blur eyes, tattoos, and replace backgrounds.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Easy Retrieval</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Easy Retrieval
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Add keywords for easy retrieval of your photos.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Electronic Consent Forms</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Electronic Consent Forms
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Integrate electronically signable image rights consent forms.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Easy Sharing</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Easy Sharing
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Share images with your patients or on social media effortlessly.
+                  Share images with your patients or on social media
+                  effortlessly.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -102,4 +125,4 @@ export default function Feature5() {
       </div>
     </section>
   );
-} 
+}

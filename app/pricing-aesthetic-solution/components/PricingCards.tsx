@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const pricingData = [
   {
@@ -48,48 +49,51 @@ const pricingData = [
 ];
 
 export default function PricingCards() {
-  const handleDemoClick = () => {
-    window.open("/contact_form", "_blank");
-  };
-
   return (
-    <section className="py-24 bg-[#F8FAFF]">
+    <section className="py-16 sm:py-24 bg-[#F8FAFF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {pricingData.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.12)] transition-shadow duration-300"
+              className="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.12)] transition-shadow duration-300"
             >
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="flex-1 space-y-6">
-                  <h2 className="text-3xl font-bold text-[#0B1C39]">
+              <div className="flex flex-col items-center md:flex-row gap-6 sm:gap-8">
+                <div className="flex-1 space-y-4 sm:space-y-6 text-center md:text-left">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39]">
                     {card.title}
                   </h2>
-                  <p className="text-[#005FA6] text-lg font-semibold">
+                  <p className="text-[#005FA6] text-base sm:text-lg font-semibold">
                     {card.description}
                   </p>
 
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-bold text-[#0B1C39]">
+                  <div className="flex items-baseline justify-center md:justify-start">
+                    <span className="text-3xl sm:text-4xl font-bold text-[#0B1C39]">
                       {card.price} {card.period}
                     </span>
                   </div>
 
                   {card.note && (
-                    <p className="text-md text-gray-500">{card.note}</p>
+                    <p className="text-sm sm:text-md text-gray-500">
+                      {card.note}
+                    </p>
                   )}
 
-                  <Button
-                    className="bg-[#284fe6] hover:bg-blue-600 text-white font-semibold py-2 px-8 rounded-lg"
-                    onClick={handleDemoClick}
-                  >
-                    Request a Demo
-                  </Button>
+                  <div className="flex justify-center md:justify-start">
+                    <Link
+                      href="/contact_form"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-[#284fe6] hover:bg-blue-600 text-white font-semibold py-2 px-8 rounded-lg">
+                        Request a Demo
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
 
-                <div className="flex-1">
-                  <div className="relative h-[300px] w-full bg-[#284fe6] rounded-lg overflow-hidden">
+                <div className="flex-1 w-full md:w-auto">
+                  <div className="relative h-[200px] sm:h-[300px] w-full bg-[#284fe6] rounded-lg overflow-hidden">
                     <Image
                       src={card.image}
                       alt={`${card.title} Interface`}

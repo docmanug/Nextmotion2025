@@ -94,14 +94,15 @@ export default function Feature6() {
             </div>
 
             <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
-              >
-                En savoir plus sur les Intégrations
-              </Button>
+              <Link href="/clinic-management-software">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  En savoir plus sur les Intégrations
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

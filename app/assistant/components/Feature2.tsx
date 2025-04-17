@@ -70,8 +70,7 @@ export default function Feature2() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
               >
                 En savoir plus sur NM Capture
               </Button>

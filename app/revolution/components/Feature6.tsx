@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Feature6() {
   return (
@@ -34,26 +35,30 @@ export default function Feature6() {
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Use case</h2>
             </div>
-            
+
             <p className="text-[16px] leading-relaxed text-gray-600">
-            Discover How Clinics Use Nextmotion Revolution and see how they
-are enhancing the quality of their before/after photos and videos,
-attracting more patients in the process.
+              Discover How Clinics Use Nextmotion Revolution and see how they
+              are enhancing the quality of their before/after photos and videos,
+              attracting more patients in the process.
             </p>
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
-hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
   );
-} 
+}

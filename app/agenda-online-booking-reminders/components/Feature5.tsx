@@ -20,40 +20,53 @@ export default function Feature5() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Performance Tracking and Statistics</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Performance Tracking and Statistics
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Analyze your clinic's performance in detail with precise statistical
-              reports. Track appointment numbers, cancellation rates, and staff
-              productivity in just a few clicks.
+              Analyze your clinic's performance in detail with precise
+              statistical reports. Track appointment numbers, cancellation
+              rates, and staff productivity in just a few clicks.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Real-Time Reports</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Real-Time Reports
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Instantly view key performance indicators for your clinic.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Data Analysis</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Data Analysis
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Make informed decisions to improve efficiency and profitability.
+                  Make informed decisions to improve efficiency and
+                  profitability.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -75,4 +88,4 @@ export default function Feature5() {
       </div>
     </section>
   );
-} 
+}
