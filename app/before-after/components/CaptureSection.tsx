@@ -22,51 +22,62 @@ export default function CaptureSection() {
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Ease of use</h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-            Easily capture flawless before/after photos with NM Capture on
-your iPhone or iPad. Achieve professional-quality results with high-
-speed workflows and advanced standardization tools—perfect for
-aesthetic clinics.
+              Easily capture flawless before/after photos with NM Capture on
+              your iPhone or iPad. Achieve professional-quality results with
+              high- speed workflows and advanced standardization tools—perfect
+              for aesthetic clinics.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Photo Capture</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Photo Capture
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                Capture standardized images directly from your iPhone or iPad.
+                  Capture standardized images directly from your iPhone or iPad.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Speed and Simplicity</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Speed and Simplicity
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                Take photos quickly and efficiently, automatically synced to patient
-                records and available across all your devices.
+                  Take photos quickly and efficiently, automatically synced to
+                  patient records and available across all your devices.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Professional Results</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Professional Results
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                Get high-quality standardized photos with our exclusive "color
-                control" and "ghost image" technologies.
+                  Get high-quality standardized photos with our exclusive "color
+                  control" and "ghost image" technologies.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
-hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="relative">
               <Image
@@ -83,4 +94,4 @@ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
       </div>
     </section>
   );
-} 
+}

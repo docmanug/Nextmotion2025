@@ -21,7 +21,7 @@ export default function Feature2() {
               />
             </div>
           </div>
-          
+
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
@@ -33,52 +33,66 @@ export default function Feature2() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Patient Experience</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Patient Experience
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
               Offer a Unique Experience to Your Patients with Nextmotion
               Revolution; the modern and aesthetic device not only enhances the
-              patient experience but also sets your clinic apart from competitors.
+              patient experience but also sets your clinic apart from
+              competitors.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Unique Experience</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Unique Experience
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Provide your patients with an innovative and memorable experience
-                  using modern technology that reassures them about the quality of
-                  care you offer in your clinic.
+                  Provide your patients with an innovative and memorable
+                  experience using modern technology that reassures them about
+                  the quality of care you offer in your clinic.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Aesthetic Device</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Aesthetic Device
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  A visually appealing machine that will seamlessly integrate into your
-                  premises and enhance their appearance.
+                  A visually appealing machine that will seamlessly integrate
+                  into your premises and enhance their appearance.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Differentiation of Your Clinic</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Differentiation of Your Clinic
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Utilize technology that your patients won't find anywhere else,
-                  significantly improving the experience they have during their
-                  successive visits to your clinic.
+                  Utilize technology that your patients won't find anywhere
+                  else, significantly improving the experience they have during
+                  their successive visits to your clinic.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
-hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

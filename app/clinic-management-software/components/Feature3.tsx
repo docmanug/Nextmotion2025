@@ -35,55 +35,72 @@ export default function Feature3() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Performance Tracking</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Performance Tracking
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Track and Analyze Your Clinic's Performance: Monitor key indicators to make informed decisions that enhance your services and
-              optimize growth.
+              Track and Analyze Your Clinic's Performance: Monitor key
+              indicators to make informed decisions that enhance your services
+              and optimize growth.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Geographical Origin</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Geographical Origin
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Analyze the origin of your patients and segment your
                   communications accordingly.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Number of Patients</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Number of Patients
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Track the number of patients by day, week, month, or year.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Treatment Performance</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Treatment Performance
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Analyze the number of procedures, revenue, and conversion rate by
-                  treatment type.
+                  Analyze the number of procedures, revenue, and conversion rate
+                  by treatment type.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Consultation Monitoring</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Consultation Monitoring
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Monitor the number of consultations based on the visit type
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface Episode {
   id: number;
@@ -14,6 +15,7 @@ interface Episode {
 export default function Episodes() {
   const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isTopicOpen, setIsTopicOpen] = useState(false);
 
   const categories = [
     "All",
@@ -102,12 +104,12 @@ export default function Episodes() {
   const regularEpisodeRows = groupIntoRows(regularEpisodes);
 
   return (
-    <section className="bg-[#F8FAFF] py-16">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="bg-[#F8FAFF] py-8 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row lg:gap-12">
-          {/* Topic Section - Sticky on the left */}
-          <div className="w-full lg:w-64 flex-shrink-0 mb-8 lg:mb-0">
-            <div className="lg:sticky lg:top-24">
+          {/* Desktop Topic Section */}
+          <div className="hidden lg:block w-64 flex-shrink-0">
+            <div className="sticky top-24">
               <h3 className="text-sm font-medium text-gray-900 mb-1">Topic</h3>
               <div className="flex flex-col rounded-lg overflow-hidden bg-white shadow-sm">
                 {categories.map((category) => (
@@ -127,48 +129,62 @@ export default function Episodes() {
             </div>
           </div>
 
-          {/* Episodes Section - Right side */}
+          {/* Episodes Section */}
           <div className="flex-grow">
             {/* Featured Episode */}
             {featuredEpisode && (
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm mb-12">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm mb-8 sm:mb-12">
                 <div className="flex flex-col">
                   <div className="bg-[#1650EF] text-white text-xs font-medium px-3 py-1 w-fit rounded m-4 mb-0">
                     FEATURED EPISODE
                   </div>
-                  <div className="p-8 flex gap-8">
+                  <div className="p-4 sm:p-8 flex flex-col lg:flex-row gap-4 sm:gap-8">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-semibold text-[#0B1C39] mb-4">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-[#0B1C39] mb-4">
                         {featuredEpisode.title}
                       </h3>
-                      <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">
                         {featuredEpisode.description}
                       </p>
-                      <a
-                        href="https://creators.spotify.com/pod/profile/nextmotion/episodes/Transform-Your-Practice-into-a-Thriving-Business-Best-Practices-to-Attract-and-Retain-Patients-in-Medical-Aesthetics-e2q9l9n"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-6 inline-flex items-center bg-[#1650EF] text-white hover:bg-transparent hover:text-[#1650EF] hover:border hover:border-[#1650EF] font-semibold px-6 py-2.5 border-2 border-[#1650EF] rounded-md transition-all"
-                      >
-                        <svg
-                          className="mr-2 w-5 h-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                      <div className="flex gap-4 mt-6">
+                        <a
+                          href="https://creators.spotify.com/pod/profile/nextmotion/episodes/Transform-Your-Practice-into-a-Thriving-Business-Best-Practices-to-Attract-and-Retain-Patients-in-Medical-Aesthetics-e2q9l9n"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center bg-[#1650EF] text-white hover:bg-transparent hover:text-[#1650EF] hover:border hover:border-[#1650EF] font-semibold px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#1650EF] rounded-md transition-all text-sm sm:text-base"
                         >
-                          <path
-                            d="M8 5.14v14.72a1 1 0 001.5.87l11-7.36a1 1 0 000-1.74l-11-7.36a1 1 0 00-1.5.87z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        Listen now
-                      </a>
+                          <svg
+                            className="mr-2 w-4 h-4 sm:w-5 sm:h-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.14v14.72a1 1 0 001.5.87l11-7.36a1 1 0 000-1.74l-11-7.36a1 1 0 00-1.5.87z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          Listen now
+                        </a>
+                        {featuredEpisode.title
+                          .toLowerCase()
+                          .includes("demo") && (
+                          <Link
+                            href="/contact_form"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center bg-transparent text-[#1650EF] hover:bg-[#1650EF] hover:text-white font-semibold px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#1650EF] rounded-md transition-all text-sm sm:text-base"
+                          >
+                            Request a Demo
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 w-full lg:w-[256px]">
                       <img
                         src={featuredEpisode.image}
                         alt={featuredEpisode.title}
-                        className="w-[256px] h-[256px] object-cover rounded-lg"
+                        className="w-full h-[200px] lg:h-[256px] object-cover rounded-lg"
                       />
                     </div>
                   </div>
@@ -176,99 +192,152 @@ export default function Episodes() {
               </div>
             )}
 
+            {/* Mobile Topic Dropdown */}
+            <div className="lg:hidden mb-6">
+              <button
+                onClick={() => setIsTopicOpen(!isTopicOpen)}
+                className="w-full flex items-center justify-between bg-white px-4 py-3 rounded-lg shadow-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-900">
+                    Topic:
+                  </span>
+                  <span className="text-sm text-gray-600">
+                    {selectedCategory}
+                  </span>
+                </div>
+                <svg
+                  className={`w-5 h-5 text-gray-500 transition-transform ${
+                    isTopicOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isTopicOpen && (
+                <div className="absolute z-10 mt-1 w-[calc(100%-2rem)] bg-white rounded-lg shadow-lg overflow-hidden">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => {
+                        setSelectedCategory(category);
+                        setIsTopicOpen(false);
+                      }}
+                      className={`w-full px-4 py-3 text-left text-sm transition-colors ${
+                        category === selectedCategory
+                          ? "bg-[#1650EF] text-white"
+                          : "text-gray-600 hover:bg-gray-50"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* Regular Episodes Section */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div className="mb-4">
-                <p className="text-[#0B1C39] text-lg">
+                <p className="text-[#0B1C39] text-base sm:text-lg">
                   Showing{" "}
                   <span className="font-medium">{regularEpisodes.length}</span>{" "}
                   of{" "}
                   <span className="font-medium">{regularEpisodes.length}</span>
                 </p>
               </div>
-              {regularEpisodeRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="space-y-6">
-                  {/* Row of Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {row.map((episode) => (
-                      <div
-                        key={episode.id}
-                        className={`bg-white rounded-2xl overflow-hidden shadow-sm cursor-pointer transition-transform duration-200 ${
-                          selectedEpisode === episode.id ? "scale-[1.02]" : ""
-                        }`}
-                        onClick={() => handleEpisodeClick(episode.id)}
-                      >
-                        <div className="flex flex-col h-full">
-                          <div className="aspect-square">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                {regularEpisodes.map((episode) => (
+                  <div key={episode.id} className="contents">
+                    <div
+                      className={`bg-white rounded-2xl overflow-hidden shadow-sm cursor-pointer transition-transform duration-200 ${
+                        selectedEpisode === episode.id ? "scale-[1.02]" : ""
+                      }`}
+                      onClick={() => handleEpisodeClick(episode.id)}
+                    >
+                      <div className="flex flex-col h-full">
+                        <div className="aspect-square">
+                          <img
+                            src={episode.image}
+                            alt={episode.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h3 className="text-base sm:text-lg font-semibold text-[#0B1C39] mb-3 line-clamp-2">
+                            {episode.title}
+                          </h3>
+                          <button className="text-[#1650EF] font-medium text-sm sm:text-base">
+                            Learn More
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Expanded Details - Shows right after the clicked card */}
+                    {selectedEpisode === episode.id && (
+                      <div className="bg-white rounded-2xl overflow-hidden shadow-sm col-span-full">
+                        <div className="p-4 sm:p-8 flex flex-col lg:flex-row gap-4 sm:gap-8">
+                          <div className="flex-1">
+                            <h3 className="text-xl sm:text-2xl font-semibold text-[#0B1C39] mb-4">
+                              {episode.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                              {episode.description}
+                            </p>
+                            <div className="flex gap-4 mt-6">
+                              <a
+                                href="https://creators.spotify.com/pod/profile/nextmotion/episodes/Transform-Your-Practice-into-a-Thriving-Business-Best-Practices-to-Attract-and-Retain-Patients-in-Medical-Aesthetics-e2q9l9n"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center bg-[#1650EF] text-white hover:bg-transparent hover:text-[#1650EF] hover:border hover:border-[#1650EF] font-semibold px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#1650EF] rounded-md transition-all text-sm sm:text-base"
+                              >
+                                <svg
+                                  className="mr-2 w-4 h-4 sm:w-5 sm:h-5"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 5.14v14.72a1 1 0 001.5.87l11-7.36a1 1 0 000-1.74l-11-7.36a1 1 0 00-1.5.87z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                Listen now
+                              </a>
+                              {episode.title.toLowerCase().includes("demo") && (
+                                <Link
+                                  href="/contact_form"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center bg-transparent text-[#1650EF] hover:bg-[#1650EF] hover:text-white font-semibold px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#1650EF] rounded-md transition-all text-sm sm:text-base"
+                                >
+                                  Request a Demo
+                                </Link>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex-shrink-0 w-full lg:w-[256px]">
                             <img
                               src={episode.image}
                               alt={episode.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-[200px] lg:h-[256px] object-cover rounded-lg"
                             />
-                          </div>
-                          <div className="p-4">
-                            <h3 className="text-lg font-semibold text-[#0B1C39] mb-3 line-clamp-2">
-                              {episode.title}
-                            </h3>
-                            <button className="text-[#1650EF] font-medium">
-                              Learn More
-                            </button>
                           </div>
                         </div>
                       </div>
-                    ))}
+                    )}
                   </div>
-
-                  {/* Expanded Details */}
-                  {row.some((episode) => episode.id === selectedEpisode) && (
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-                      {row.map((episode) => {
-                        if (episode.id === selectedEpisode) {
-                          return (
-                            <div key={episode.id} className="p-8 flex gap-8">
-                              <div className="flex-1">
-                                <h3 className="text-2xl font-semibold text-[#0B1C39] mb-4">
-                                  {episode.title}
-                                </h3>
-                                <p className="text-gray-600 text-base leading-relaxed">
-                                  {episode.description}
-                                </p>
-                                <a
-                                  href="https://creators.spotify.com/pod/profile/nextmotion/episodes/Transform-Your-Practice-into-a-Thriving-Business-Best-Practices-to-Attract-and-Retain-Patients-in-Medical-Aesthetics-e2q9l9n"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="mt-6 inline-flex items-center bg-[#1650EF] text-white hover:bg-transparent hover:text-[#1650EF] hover:border hover:border-[#1650EF] font-semibold px-6 py-2.5 border-2 border-[#1650EF] rounded-md transition-all"
-                                >
-                                  <svg
-                                    className="mr-2 w-5 h-5"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 5.14v14.72a1 1 0 001.5.87l11-7.36a1 1 0 000-1.74l-11-7.36a1 1 0 00-1.5.87z"
-                                      fill="currentColor"
-                                    />
-                                  </svg>
-                                  Listen now
-                                </a>
-                              </div>
-                              <div className="flex-shrink-0">
-                                <img
-                                  src={episode.image}
-                                  alt={episode.title}
-                                  className="w-[256px] h-[256px] object-cover rounded-lg"
-                                />
-                              </div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      })}
-                    </div>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

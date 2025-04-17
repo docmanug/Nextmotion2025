@@ -2,8 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function RevolutionSection() {
+export default function NextMotionJourney() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -16,21 +17,27 @@ export default function RevolutionSection() {
             className="object-cover"
             priority
           />
-          
+
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col items-center justify-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-4xl sm:text-4xl font-bold text-white mb-12">
-              Start your NextMotion journey now!
+                Start your NextMotion journey now!
               </h2>
-            
-              <Button className="bg-white text-black hover:text-[#0066FF] hover:bg-white px-8 py-3 rounded-lg text-lg font-medium">
-                Conatct Us
-              </Button>
+
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-white text-black hover:text-[#0066FF] hover:bg-white px-8 py-3 rounded-lg text-lg font-medium">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

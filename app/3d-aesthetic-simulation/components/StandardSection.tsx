@@ -32,19 +32,35 @@ export default function StandardSection() {
 
             <div className="space-y-6 text-gray-600">
               <p className="text-md leading-relaxed">
-                Our model is composed by <span className="font-bold text-[#081F4D]">anatomic layers</span> that can <span className="font-bold text-[#081F4D]">be highlighted or removed</span>. This way, you will be able to perform a <span className="font-bold text-[#081F4D]">digital dissection</span> in
-                order to visualize any structure.
+                Our model is composed by{" "}
+                <span className="font-bold text-[#081F4D]">
+                  anatomic layers
+                </span>{" "}
+                that can{" "}
+                <span className="font-bold text-[#081F4D]">
+                  be highlighted or removed
+                </span>
+                . This way, you will be able to perform a{" "}
+                <span className="font-bold text-[#081F4D]">
+                  digital dissection
+                </span>{" "}
+                in order to visualize any structure.
               </p>
 
               <p className="text-md leading-relaxed">
-                It can display <span className="font-bold text-[#081F4D]">the danger zones</span> where a cannula will be necessary,
-                depending on the treatment plan you have mind for your patients.
+                It can display{" "}
+                <span className="font-bold text-[#081F4D]">
+                  the danger zones
+                </span>{" "}
+                where a cannula will be necessary, depending on the treatment
+                plan you have mind for your patients.
               </p>
 
               <p className="text-md leading-relaxed">
-                Get full access to Nextmotion 3D for just <span className="font-bold text-[#081F4D]">€49/month</span>, no commitment
-                required. Enjoy all features, updates, and support with the flexibility to
-                cancel anytime.
+                Get full access to Nextmotion 3D for just{" "}
+                <span className="font-bold text-[#081F4D]">€49/month</span>, no
+                commitment required. Enjoy all features, updates, and support
+                with the flexibility to cancel anytime.
               </p>
             </div>
           </div>
@@ -52,4 +68,4 @@ export default function StandardSection() {
       </div>
     </section>
   );
-} 
+}

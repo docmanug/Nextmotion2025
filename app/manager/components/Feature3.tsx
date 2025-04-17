@@ -114,13 +114,19 @@ export default function Feature3() {
             </div>
 
             <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Demo personnalisée
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Demo personnalisée
+                </Button>
+              </Link>
             </div>
           </div>
 

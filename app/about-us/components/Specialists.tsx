@@ -51,46 +51,48 @@ const specialists = [
 export default function Specialists() {
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <h2 className="text-[#051238] text-3xl md:text-4xl text-center mb-16 font-bold">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <h2 className="text-[#051238] text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 font-bold">
           Developed by <span className="text-[#284fe6]">specialists</span> for
           their colleagues
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {specialists.map((specialist, index) => (
             <div
               key={specialist.firstName}
-              className={`bg-[#F3F8FD] rounded-2xl shadow-lg overflow-hidden flex flex-row h-full ${
+              className={`bg-white md:bg-[#F3F8FD] rounded-lg md:rounded-2xl shadow-sm md:shadow-lg overflow-hidden ${
                 index === specialists.length - 1
                   ? "md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto"
                   : ""
               }`}
             >
-              <div className="w-[45%] relative">
-                <img
-                  src={`/about/about_${specialist.firstName}.png`}
-                  alt={specialist.name}
-                  className="w-full h-full object-cover absolute inset-0"
-                />
-              </div>
-              <div className="w-[55%] p-8 flex flex-col">
-                <p className="text-[#051238] text-lg leading-relaxed mb-8">
-                  {specialist.description}
-                </p>
-                <div className="mt-auto">
-                  <h3 className="text-[#051238] text-[38px] font-bold leading-tight">
-                    {specialist.name}
-                  </h3>
-                  <div className="flex items-center justify-between mt-1">
-                    <p className="text-[#051238] text-2xl">
-                      {specialist.credentials}
-                    </p>
+              {/* Mobile Layout */}
+              <div className="block md:hidden">
+                <div className="relative w-full h-[400px]">
+                  <img
+                    src={`/about/about_${specialist.firstName}.png`}
+                    alt={specialist.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-[#051238] text-base mb-6">
+                    {specialist.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-[#051238] font-bold text-lg">
+                        {specialist.name}
+                      </h3>
+                      <p className="text-[#051238] text-sm">
+                        {specialist.credentials}
+                      </p>
+                    </div>
                     <a
                       href={specialist.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8"
                     >
                       <img
                         src={`/about/icons/${
@@ -99,9 +101,53 @@ export default function Specialists() {
                             : "about_link.png"
                         }`}
                         alt={specialist.isInstagram ? "Instagram" : "LinkedIn"}
-                        className="w-full h-full object-contain"
+                        className="w-6 h-6 object-contain"
                       />
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop Layout */}
+              <div className="hidden md:flex flex-row h-full">
+                <div className="w-[45%] relative">
+                  <img
+                    src={`/about/about_${specialist.firstName}.png`}
+                    alt={specialist.name}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                </div>
+                <div className="w-[55%] p-8 flex flex-col">
+                  <p className="text-[#051238] text-lg leading-relaxed mb-8">
+                    {specialist.description}
+                  </p>
+                  <div className="mt-auto">
+                    <h3 className="text-[#051238] text-[38px] font-bold leading-tight">
+                      {specialist.name}
+                    </h3>
+                    <div className="flex items-center justify-between mt-1">
+                      <p className="text-[#051238] text-2xl">
+                        {specialist.credentials}
+                      </p>
+                      <a
+                        href={specialist.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8"
+                      >
+                        <img
+                          src={`/about/icons/${
+                            specialist.isInstagram
+                              ? "about_instagram.png"
+                              : "about_link.png"
+                          }`}
+                          alt={
+                            specialist.isInstagram ? "Instagram" : "LinkedIn"
+                          }
+                          className="w-full h-full object-contain"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -51,13 +51,15 @@ export default function Feature8() {
               performances globales"
             </p>
             <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
-              >
-                Voir la vidéo
-              </Button>
+              <Link href="/before-after">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Voir la vidéo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

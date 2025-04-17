@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function TryNextmotion() {
   return (
@@ -19,14 +20,6 @@ export default function TryNextmotion() {
               dès aujourd'hui. Demandez une démonstration gratuite dès
               maintenant.
             </p>
-
-            <Button
-              variant="secondary"
-              size="lg"
-              className="bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
-            >
-              Réservez votre démo
-            </Button>
           </div>
         </div>
       </div>

@@ -1,5 +1,8 @@
 "use client";
 
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
 interface Release {
   id: string;
   date: string;
@@ -44,12 +47,43 @@ const releases: Release[] = [
 ];
 
 export default function ReleaseContent() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-24">
       <div className="container max-w-[1280px] mx-auto">
         <div className="mx-4 sm:mx-6 lg:mx-12">
+          {/* Mobile Dropdown */}
+          <div className="lg:hidden mb-8">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-full flex items-center justify-between bg-white rounded-lg border border-gray-200 px-4 py-3"
+            >
+              <span className="text-[#1650EF] font-bold">1er Octobre 2024</span>
+              <ChevronDown
+                className={`w-5 h-5 text-[#1650EF] transition-transform ${
+                  isOpen ? "transform rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isOpen && (
+              <div className="absolute z-20 mt-2 w-[calc(100%-2rem)] bg-white rounded-lg border border-gray-200 shadow-lg">
+                {releases.map((release) => (
+                  <a
+                    key={release.id}
+                    href={`#${release.id}`}
+                    className="block px-4 py-3 text-[#1650EF] hover:bg-gray-50 font-bold"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {release.date}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Introduction text */}
-          <div className="max-w-4xl mb-16 text-[#081F4D]/80 space-y-4">
+          <div className="max-w-4xl mb-8 sm:mb-16 text-[#081F4D]/80 space-y-3 sm:space-y-4 text-sm sm:text-base">
             <p>
               Bienvenue sur notre page Release Notes ! Ici, vous retrouverez
               toutes les dernières mises à jour et nouveautés concernant nos
@@ -67,9 +101,9 @@ export default function ReleaseContent() {
             </p>
           </div>
 
-          <div className="flex gap-8">
-            {/* Sticky navigation */}
-            <div className="w-64 flex-shrink-0">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Desktop Sticky navigation */}
+            <div className="hidden lg:block w-64 flex-shrink-0">
               <div className="sticky top-24 bg-white z-10 py-4">
                 {releases.map((release) => (
                   <a
@@ -89,21 +123,21 @@ export default function ReleaseContent() {
                 <div
                   key={release.id}
                   id={release.id}
-                  className="space-y-8 mb-16"
+                  className="space-y-6 sm:space-y-8 mb-12 sm:mb-16"
                 >
-                  <h2 className="text-4xl font-bold text-[#1650EF]">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1650EF]">
                     {release.date}
                   </h2>
 
-                  <div className="relative w-full aspect-[16/9] mb-12">
+                  <div className="relative w-full aspect-[16/9] mb-8 sm:mb-12">
                     <img
                       src={release.image}
                       alt={`Release update illustration for ${release.date}`}
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                     />
                   </div>
 
-                  <ul className="list-disc space-y-4 text-[#081F4D]/80 ml-5">
+                  <ul className="list-disc space-y-3 sm:space-y-4 text-[#081F4D]/80 ml-4 sm:ml-5 text-sm sm:text-base">
                     <li>
                       Ajout de la fonctionnalité{" "}
                       <span className="text-[#1650EF]">"Parrainage"</span> :{" "}
@@ -153,7 +187,12 @@ export default function ReleaseContent() {
                     </li>
                     <li>
                       Video explicative{" "}
-                      <a href="#" className="text-[#1650EF] hover:underline">
+                      <a
+                        href="/contact_form"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#1650EF] hover:underline"
+                      >
                         ICI
                       </a>
                     </li>

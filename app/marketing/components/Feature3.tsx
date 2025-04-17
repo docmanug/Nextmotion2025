@@ -2,15 +2,16 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Feature3() {
   return (
-    <section className="py-24 bg-[#F3F8FD]">
+    <section className="py-16 sm:py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="order-1 lg:order-1">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
+            <div className="flex items-center gap-4 mb-4 sm:mb-6">
+              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
                 <Image
                   src="/marketing/icons/marketing_3_icon.png"
                   alt="Online booking Icon"
@@ -19,56 +20,61 @@ export default function Feature3() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 Online booking
               </h2>
             </div>
 
-            <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
+            <p className="text-base sm:text-[18px] leading-relaxed text-gray-600 mb-6 sm:mb-10">
               Enhance Appointment Booking with Nextmotion : create specific
               pages for each treatment, integrate GTAG to target patients who
               abandoned the booking process, and track the source of every
               appointment.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   Specific Pages
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Create appointment booking pages for each treatment type.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   GTAG Integration
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Target patients who abandoned their appointment process.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
                   Appointment Source Tracking
                 </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
+                <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
                   Identify the source of every booking.
                 </p>
               </div>
             </div>
 
-            <div className="mt-10">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+            <div className="mt-8 sm:mt-10">
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Demandez une demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Demandez une demo
+                </Button>
+              </Link>
             </div>
           </div>
 

@@ -79,29 +79,31 @@ const pricingData = [
 
 export default function SmallPricingCards() {
   return (
-    <section className="py-24 bg-[#F8FAFF]">
+    <section className="py-16 sm:py-24 bg-[#F8FAFF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {pricingData.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.12)] transition-shadow duration-300 flex flex-col"
+              className="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.12)] transition-shadow duration-300 flex flex-col"
             >
-              <div className="flex-grow space-y-3">
-                <h2 className="text-3xl font-bold text-[#0B1C39]">
+              <div className="flex-grow space-y-2 sm:space-y-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1C39]">
                   {card.title}
                 </h2>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                   {card.description}
                 </p>
 
                 <div className="space-y-2">
                   <div className="flex items-baseline">
-                    <span className="text-2xl font-bold text-[#0B1C39]">
+                    <span className="text-xl sm:text-2xl font-bold text-[#0B1C39]">
                       {card.price} {card.period}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500">{card.note}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    {card.note}
+                  </p>
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function TryNextmotion() {
   return (
@@ -11,22 +12,29 @@ export default function TryNextmotion() {
             <h2 className="text-4xl font-bold text-white mb-6">
               Try Nextmotion
             </h2>
-            
+
             <p className="text-[18px] leading-relaxed text-white/90 mb-8">
-              Sign up for a free demonstration and discover how Nextmotion can transform the management of your aesthetic clinic.
-              Maximize your efficiency and reduce your administrative tasks starting today.
+              Sign up for a free demonstration and discover how Nextmotion can
+              transform the management of your aesthetic clinic. Maximize your
+              efficiency and reduce your administrative tasks starting today.
             </p>
 
-            <Button 
-              variant="secondary"
-              size="lg"
-              className="bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+            <Link
+              href="/contact_form"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Réservez votre démo
-            </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              >
+                Réservez votre démo
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

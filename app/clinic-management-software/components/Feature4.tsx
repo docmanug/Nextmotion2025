@@ -20,54 +20,71 @@ export default function Feature4() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Team Management</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Team Management
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Monitor and Track Your Team's Actions with Precision: Ensure secure and transparent management of your medical team, allowing you
-              to control and track actions with accuracy.
+              Monitor and Track Your Team's Actions with Precision: Ensure
+              secure and transparent management of your medical team, allowing
+              you to control and track actions with accuracy.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Access Control</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Access Control
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Define access rights for each role.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Action Tracking</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Action Tracking
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Track the actions performed by each team member.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Restricted Access</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Restricted Access
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Doctors can only access their own patients' records.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Statistical Reports</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Statistical Reports
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Analyze the revenue generated, number of treatments performed
                   per team member, and more.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 

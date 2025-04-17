@@ -20,9 +20,11 @@ export default function Feature3() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Portfolio and Tags</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Portfolio and Tags
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
               Integrate tags to your medias and Build a Complete Portfolio: add
               tags to your photos and create a comprehensive portfolio of your
@@ -30,42 +32,54 @@ export default function Feature3() {
               consultations and showcase the results achieved to demonstrate
               your expertise to patients.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Easy Media Organization</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Easy Media Organization
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Add tags to your photos for easy searching, allowing you to find any
-                  before/after images in seconds.
+                  Add tags to your photos for easy searching, allowing you to
+                  find any before/after images in seconds.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Comprehensive Portfolio</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Comprehensive Portfolio
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Build a comprehensive portfolio of all your treatments, which will be
-                  your best asset for converting patients to the proposed procedures.
+                  Build a comprehensive portfolio of all your treatments, which
+                  will be your best asset for converting patients to the
+                  proposed procedures.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Consultation Illustration</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Consultation Illustration
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Showcase results already achieved with similar patients to highlight
-                  your expertise, reassure, and build trust.
+                  Showcase results already achieved with similar patients to
+                  highlight your expertise, reassure, and build trust.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
-hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Schedule a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Schedule a demo
+                </Button>
+              </Link>
             </div>
           </div>
 

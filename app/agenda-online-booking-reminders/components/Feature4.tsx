@@ -20,41 +20,54 @@ export default function Feature4() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Online Patient Access</h2>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Online Patient Access
+              </h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
               Offer your patients the ability to schedule appointments online,
               anytime. A secure and customizable portal allows you to attract
               new patients and manage their scheduling efficiently.
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Secure Portal</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Secure Portal
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
                   Patients can view their appointment history and book online
                   securely.
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Customizable Portal</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  Customizable Portal
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Add your branding and easily integrate the portal into your website.
+                  Add your branding and easily integrate the portal into your
+                  website.
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-10">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+              <Link
+                href="/contact_form"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a demo
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
+ hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                >
+                  Book a demo
+                </Button>
+              </Link>
             </div>
           </div>
 
