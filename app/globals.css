@@ -81,7 +81,10 @@
     @apply bg-background text-foreground;
   }
 }
-
+html,
+body {
+  font-family: var(--font-gilroy), system-ui, sans-serif;
+}
 .bg-navy-900 {
   background-color: #0a192f;
 }
