@@ -2,23 +2,39 @@
 
 import Image from "next/image";
 
-export default function SolutionsSection() {
+interface SolutionsSectionProps {
+  title?: string;
+  subtitle?: string;
+  individuals?: string;
+  clinics?: string;
+  chains?: string;
+  marketing?: string;
+}
+
+export default function SolutionsSection({
+  title = "All in one solution designed by a doctor for aesthetic clinics",
+  subtitle = "Nextmotion is a comprehensive ecosystem of solutions offering all the tools you need, whether you are an individual physician, clinic manager, or chain clinic owner.",
+  individuals = "Individuals",
+  clinics = "Clinics",
+  chains = "Clinic chains",
+  marketing = "Marketing",
+}: SolutionsSectionProps = {}) {
   const solutions = [
     {
       icon: "clinical_notes.png",
-      title: "Individuals",
+      title: individuals,
     },
     {
       icon: "medical.png",
-      title: "Clinics",
+      title: clinics,
     },
     {
       icon: "medication.png",
-      title: "Clinic chains",
+      title: chains,
     },
     {
       icon: "marketing.png",
-      title: "Marketing",
+      title: marketing,
     },
   ];
 
@@ -27,12 +43,10 @@ export default function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#081F4D] mb-4 sm:mb-8">
-            All in one solution designed by a doctor for aesthetic clinics
+            {title}
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-5xl mx-auto px-4">
-            Nextmotion is a comprehensive ecosystem of solutions offering all
-            the tools you need, whether you are an individual physician, clinic
-            manager, or chain clinic owner.
+            {subtitle}
           </p>
         </div>
 

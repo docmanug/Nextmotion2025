@@ -4,32 +4,32 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface ApprovalSectionProps {
-  title: string;
-  subtitle: string;
-  description: string;
-  certifications: {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  certifications?: {
     medical: string;
     security: string;
     quality: string;
   };
-  resources: {
-    ebook: {
+  resources?: {
+    ebook?: {
       type: string;
       title: string;
     };
-    social: {
+    social?: {
       type: string;
       title: string;
     };
-    events: {
+    events?: {
       type: string;
       title: string;
     };
   };
-  discoverButton: string;
+  discoverButton?: string;
 }
 
-const resources = [
+const defaultResources = [
   {
     type: "E-BOOK",
     title: "Learn more about Digital Consultation in Aesthetic Medicine",
@@ -48,14 +48,18 @@ const resources = [
 ];
 
 export default function ApprovalSection({
-  title,
-  subtitle,
-  description,
-  certifications,
-  resources: translatedResources,
-  discoverButton,
-}: ApprovalSectionProps) {
-  const translatedContent = resources.map((resource, index) => {
+  title = "Resources for aesthetic clinics",
+  subtitle = "Discover our resources",
+  description = "Explore our collection of resources designed to help aesthetic clinics thrive",
+  certifications = {
+    medical: "Medical-grade certified",
+    security: "Data security compliant",
+    quality: "Quality management system",
+  },
+  resources: translatedResources = {},
+  discoverButton = "Discover all our resources",
+}: ApprovalSectionProps = {}) {
+  const translatedContent = defaultResources.map((resource, index) => {
     const keys = ["ebook", "social", "events"];
     const key = keys[index];
     const translatedResource =
@@ -102,7 +106,7 @@ export default function ApprovalSection({
             variant="outline"
             className="border-2 border-[#0045FF] text-[#0045FF] hover:bg-[#0045FF] hover:text-white px-8 py-3 h-auto text-base font-semibold transition-colors"
           >
-            {discoverButton || "Discover all our resources"}
+            {discoverButton}
           </Button>
         </div>
       </div>

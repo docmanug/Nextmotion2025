@@ -158,7 +158,7 @@ export default function Navbar() {
               <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href="/clinic-manager"
+                  href="/manager"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.clinicManager")}

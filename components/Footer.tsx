@@ -5,14 +5,16 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 interface FooterProps {
-  professional: {
+  professional?: {
     title: string;
     description: string;
     button: string;
   };
-  platform: {
+  platform?: {
     title: string;
     links: {
       home: string;
@@ -25,7 +27,7 @@ interface FooterProps {
       robotics: string;
     };
   };
-  company: {
+  company?: {
     title: string;
     links: {
       about: string;
@@ -38,7 +40,7 @@ interface FooterProps {
       releases: string;
     };
   };
-  help: {
+  help?: {
     title: string;
     links: {
       login: string;
@@ -47,7 +49,7 @@ interface FooterProps {
       legal: string;
     };
   };
-  newsletter: {
+  newsletter?: {
     title: string;
     highlight: string;
     placeholder: string;
@@ -61,7 +63,89 @@ export default function Footer({
   company,
   help,
   newsletter,
-}: FooterProps) {
+}: FooterProps = {}) {
+  const pathname = usePathname();
+  const currentLocale = pathname?.startsWith("/fr") ? "fr" : "en";
+  const [translations, setTranslations] = useState<any>(null);
+
+  useEffect(() => {
+    const loadTranslations = async () => {
+      try {
+        const module = await import(`../messages/${currentLocale}.json`);
+        setTranslations(module.default);
+      } catch (error) {
+        const module = await import(`../messages/en.json`);
+        setTranslations(module.default);
+      }
+    };
+
+    if (!professional || !platform || !company || !help || !newsletter) {
+      loadTranslations();
+    }
+  }, [professional, platform, company, help, newsletter, currentLocale]);
+
+  const t = (key: string) => {
+    if (!translations) return key;
+    return key.split(".").reduce((obj, k) => obj?.[k], translations) || key;
+  };
+
+  // If props are not provided and translations are not loaded yet, show a loading state
+  if (
+    (!professional || !platform || !company || !help || !newsletter) &&
+    !translations
+  ) {
+    return null;
+  }
+
+  const footerData = {
+    professional: professional || {
+      title: t("footer.professional.title"),
+      description: t("footer.professional.description"),
+      button: t("footer.professional.button"),
+    },
+    platform: platform || {
+      title: t("footer.platform.title"),
+      links: {
+        home: t("footer.platform.links.home"),
+        capture: t("footer.platform.links.capture"),
+        revolution: t("footer.platform.links.revolution"),
+        "3d": t("footer.platform.links.3d"),
+        consult: t("footer.platform.links.consult"),
+        agenda: t("footer.platform.links.agenda"),
+        classes: t("footer.platform.links.classes"),
+        robotics: t("footer.platform.links.robotics"),
+      },
+    },
+    company: company || {
+      title: t("footer.company.title"),
+      links: {
+        about: t("footer.company.links.about"),
+        contact: t("footer.company.links.contact"),
+        contents: t("footer.company.links.contents"),
+        cases: t("footer.company.links.cases"),
+        blog: t("footer.company.links.blog"),
+        events: t("footer.company.links.events"),
+        podcast: t("footer.company.links.podcast"),
+        releases: t("footer.company.links.releases"),
+      },
+    },
+    help: help || {
+      title: t("footer.help.title"),
+      links: {
+        login: t("footer.help.links.login"),
+        demo: t("footer.help.links.demo"),
+        privacy: t("footer.help.links.privacy"),
+        legal: t("footer.help.links.legal"),
+      },
+    },
+    newsletter: newsletter || {
+      title: t("footer.newsletter.title"),
+      highlight: t("footer.newsletter.highlight"),
+      placeholder: t("footer.newsletter.placeholder"),
+      button: t("footer.newsletter.button"),
+    },
+  };
+
   return (
     <footer className="bg-white w-full">
       <div className="w-full">
@@ -78,17 +162,17 @@ export default function Footer({
                   className="mb-6"
                 />
                 <h3 className="text-[#005fa6] text-[20px] md:text-[24px] font-bold mb-4">
-                  {professional.title}
+                  {footerData.professional.title}
                 </h3>
                 <p className="text-white text-[15px] md:text-[16px] font-light mb-6 leading-relaxed">
-                  {professional.description}
+                  {footerData.professional.description}
                 </p>
                 <Link href="/">
                   <Button
                     variant="outline"
                     className="border-2 border-white text-black hover:bg-white hover:text-black px-8 py-2.5 h-auto text-sm font-semibold"
                   >
-                    {professional.button}
+                    {footerData.professional.button}
                   </Button>
                 </Link>
               </div>
@@ -103,7 +187,7 @@ export default function Footer({
                 {/* Platform Section */}
                 <div className="flex flex-col">
                   <h4 className="text-[#000B45] font-bold text-[15px] mb-4">
-                    {platform.title}
+                    {footerData.platform.title}
                   </h4>
                   <ul className="space-y-3">
                     <li>
@@ -111,7 +195,7 @@ export default function Footer({
                         href="/"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.home}
+                        {footerData.platform.links.home}
                       </Link>
                     </li>
                     <li>
@@ -119,7 +203,7 @@ export default function Footer({
                         href="/before-after"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.capture}
+                        {footerData.platform.links.capture}
                       </Link>
                     </li>
                     <li>
@@ -127,7 +211,7 @@ export default function Footer({
                         href="/revolution"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.revolution}
+                        {footerData.platform.links.revolution}
                       </Link>
                     </li>
                     <li>
@@ -135,7 +219,7 @@ export default function Footer({
                         href="/3d-aesthetic-simulation"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links["3d"]}
+                        {footerData.platform.links["3d"]}
                       </Link>
                     </li>
                     <li>
@@ -143,7 +227,7 @@ export default function Footer({
                         href="/clinic-management-software"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.consult}
+                        {footerData.platform.links.consult}
                       </Link>
                     </li>
                     <li>
@@ -151,7 +235,7 @@ export default function Footer({
                         href="/agenda-online-booking-reminders"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.agenda}
+                        {footerData.platform.links.agenda}
                       </Link>
                     </li>
                     <li>
@@ -159,7 +243,7 @@ export default function Footer({
                         href="/virtual-classes"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.classes}
+                        {footerData.platform.links.classes}
                       </Link>
                     </li>
                     <li>
@@ -167,7 +251,7 @@ export default function Footer({
                         href="/injector-robot-aesthetic-medicine"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {platform.links.robotics}
+                        {footerData.platform.links.robotics}
                       </Link>
                     </li>
                   </ul>
@@ -176,7 +260,7 @@ export default function Footer({
                 {/* Company Section */}
                 <div className="flex flex-col">
                   <h4 className="text-[#000B45] font-bold text-[15px] mb-4">
-                    {company.title}
+                    {footerData.company.title}
                   </h4>
                   <ul className="space-y-3">
                     <li>
@@ -184,7 +268,7 @@ export default function Footer({
                         href="/about-us"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.about}
+                        {footerData.company.links.about}
                       </Link>
                     </li>
                     <li>
@@ -192,7 +276,7 @@ export default function Footer({
                         href="/contact"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.contact}
+                        {footerData.company.links.contact}
                       </Link>
                     </li>
                     <li>
@@ -200,7 +284,7 @@ export default function Footer({
                         href="/"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.contents}
+                        {footerData.company.links.contents}
                       </Link>
                     </li>
                     <li>
@@ -208,7 +292,7 @@ export default function Footer({
                         href="/case-studies"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.cases}
+                        {footerData.company.links.cases}
                       </Link>
                     </li>
                     <li>
@@ -216,7 +300,7 @@ export default function Footer({
                         href="/blog"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.blog}
+                        {footerData.company.links.blog}
                       </Link>
                     </li>
                     <li>
@@ -224,7 +308,7 @@ export default function Footer({
                         href="/"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.events}
+                        {footerData.company.links.events}
                       </Link>
                     </li>
                     <li>
@@ -232,7 +316,7 @@ export default function Footer({
                         href="/podcast"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.podcast}
+                        {footerData.company.links.podcast}
                       </Link>
                     </li>
                     <li>
@@ -240,7 +324,7 @@ export default function Footer({
                         href="/release-notes"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {company.links.releases}
+                        {footerData.company.links.releases}
                       </Link>
                     </li>
                   </ul>
@@ -249,7 +333,7 @@ export default function Footer({
                 {/* Need Help Section */}
                 <div className="flex flex-col col-span-2 md:col-span-1">
                   <h4 className="text-[#000B45] font-bold text-[15px] mb-4">
-                    {help.title}
+                    {footerData.help.title}
                   </h4>
                   <ul className="space-y-3">
                     <li>
@@ -257,7 +341,7 @@ export default function Footer({
                         href="/login"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {help.links.login}
+                        {footerData.help.links.login}
                       </Link>
                     </li>
                     <li>
@@ -267,7 +351,7 @@ export default function Footer({
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {help.links.demo}
+                        {footerData.help.links.demo}
                       </Link>
                     </li>
                     <li>
@@ -277,7 +361,7 @@ export default function Footer({
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {help.links.privacy}
+                        {footerData.help.links.privacy}
                       </Link>
                     </li>
                     <li>
@@ -287,7 +371,7 @@ export default function Footer({
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
-                        {help.links.legal}
+                        {footerData.help.links.legal}
                       </Link>
                     </li>
                   </ul>
@@ -298,9 +382,9 @@ export default function Footer({
               <div className="mt-12">
                 <div className="mb-4">
                   <p className="text-[#000B45] font-bold text-[15px]">
-                    {newsletter.title}{" "}
+                    {footerData.newsletter.title}{" "}
                     <span className="text-[#0045FF]">
-                      {newsletter.highlight}
+                      {footerData.newsletter.highlight}
                     </span>
                   </p>
                 </div>
@@ -308,11 +392,11 @@ export default function Footer({
                   <div className="flex w-full md:w-auto">
                     <Input
                       type="email"
-                      placeholder={newsletter.placeholder}
+                      placeholder={footerData.newsletter.placeholder}
                       className="w-full md:w-[330px] bg-[#F8F9FB] text-[#4A5578] h-11 rounded-r-none border-r-0"
                     />
                     <Button className="bg-[#0045FF] text-white font-semibold hover:bg-[#0037CC] px-6 h-11 rounded-l-none">
-                      {newsletter.button}
+                      {footerData.newsletter.button}
                     </Button>
                   </div>
                   <div className="flex gap-3">
