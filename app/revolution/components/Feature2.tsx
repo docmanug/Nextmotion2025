@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature2() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature2 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +31,7 @@ export default function Feature2() {
             <div className="relative">
               <Image
                 src="/seventh/rev_2.png"
-                alt="Nextmotion Revolution Patient Experience"
+                alt={t("deviceAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"
@@ -33,48 +51,38 @@ export default function Feature2() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Patient Experience
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Offer a Unique Experience to Your Patients with Nextmotion
-              Revolution; the modern and aesthetic device not only enhances the
-              patient experience but also sets your clinic apart from
-              competitors.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Unique Experience
+                  {t("features.experience.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Provide your patients with an innovative and memorable
-                  experience using modern technology that reassures them about
-                  the quality of care you offer in your clinic.
+                  {t("features.experience.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Aesthetic Device
+                  {t("features.device.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  A visually appealing machine that will seamlessly integrate
-                  into your premises and enhance their appearance.
+                  {t("features.device.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Differentiation of Your Clinic
+                  {t("features.differentiation.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Utilize technology that your patients won't find anywhere
-                  else, significantly improving the experience they have during
-                  their successive visits to your clinic.
+                  {t("features.differentiation.description")}
                 </p>
               </div>
             </div>
@@ -90,7 +98,7 @@ export default function Feature2() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>

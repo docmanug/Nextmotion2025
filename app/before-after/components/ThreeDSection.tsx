@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function ThreeDSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.threeD || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,53 +32,44 @@ export default function ThreeDSection() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/second/showcase.png"
-                  alt="Portfolio Icon"
+                  alt={t("showcaseIconAlt")}
                   width={80}
                   height={80}
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Showcase Expertise with Portfolios and Keywords
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Boost your expertise by adding searchable keywords to your photos
-              and building a complete treatment portfolio. Use this powerful
-              tool to showcase similar cases, enhance consultations, and inspire
-              confidence by presenting successful results.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Keyword-Driven Organization
+                  {t("features.simulation.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Tag your photos with searchable keywords to instantly locate
-                  specific before/after cases and build a comprehensive archive.
+                  {t("features.simulation.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Powerful Patient Portfolio
+                  {t("features.visualization.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Create a visually compelling portfolio of your treatments to
-                  convert prospects during consultations, showcasing similar
-                  cases to inspire confidence and trust.
+                  {t("features.visualization.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Consultation Illustration
+                  {t("features.planning.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Showcase results from similar patients to highlight your
-                  expertise, reassure, and build trust during consultations.
+                  {t("features.planning.description")}
                 </p>
               </div>
             </div>
@@ -76,7 +85,7 @@ export default function ThreeDSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Sign up for a 15min demo
+                  {t("learnMore")}
                 </Button>
               </Link>
             </div>
@@ -86,7 +95,7 @@ export default function ThreeDSection() {
             <div className="relative">
               <Image
                 src="/capture-app-demo.png"
-                alt="Portfolio Showcase"
+                alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"

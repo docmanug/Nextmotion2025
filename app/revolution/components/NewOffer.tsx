@@ -2,8 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function NewOffer() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.newOffer || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-16 sm:py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,7 +29,7 @@ export default function NewOffer() {
           {/* Background Image */}
           <Image
             src="/seventh/new_offer_bg.png"
-            alt="Special Offer Background"
+            alt={t("bgAlt")}
             fill
             className="object-cover"
             priority
@@ -23,7 +41,7 @@ export default function NewOffer() {
             <div className="mb-6 sm:mb-8">
               <Image
                 src="/seventh/new_offer_logo.png"
-                alt="Nextmotion Logo"
+                alt={t("logoAlt")}
                 width={64}
                 height={64}
                 className="mx-auto w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
@@ -32,24 +50,27 @@ export default function NewOffer() {
 
             {/* Title */}
             <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
-              IMCAS SPECIAL OFFER
+              {t("title")}
             </h2>
 
             {/* Main Offer Text */}
             <p className="text-lg sm:text-xl text-white mb-3 sm:mb-4">
-              Enjoy a 35% discount on the Nextmotion Revolution device !
+              {t("description")}
             </p>
 
             {/* Availability Text */}
             <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 opacity-90">
-              (Available on 20 units only, between jan 30 and feb 1st 2025 - 6pm
-              CET)
+              {t("availability")}
             </p>
 
             {/* Price Button */}
-            <Link href="/revolution">
+            <Link
+              href="/contact_form"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="bg-white text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-opacity-90 transition-colors">
-                €12 990 instead of €19 990
+                {t("price")}
               </button>
             </Link>
           </div>

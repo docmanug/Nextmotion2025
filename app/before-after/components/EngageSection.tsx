@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function EngageSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.beforeAfter?.engage || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,42 +32,47 @@ export default function EngageSection() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/second/engage_icon.png"
-                  alt="Engage Icon"
+                  alt={t("engageIconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Attract and Engage New Patients</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Attract new patients with engaging, social media-ready content. Effortlessly create vertical-format visuals that highlight before/after transformations. Secure patient consent electronically through the app and generate interactive web links to showcase your results, boosting visibility and trust.
+              {t("description")}
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Social Media-Ready Content</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.socialMedia.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Instantly generate vertical-format content optimized for social platforms. Drive engagement with authentic before/after stories that resonate with potential patients.
+                  {t("features.socialMedia.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Integrated Consent Management</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.consent.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Secure patient image rights within the app and ensure compliance when sharing their transformations across digital platforms.
+                  {t("features.consent.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Interactive Web Links</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.webLinks.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  With a single click, generate web links that can be easily integrated into your website, enabling your audience to interact with before/after image comparisons of your best results.
+                  {t("features.webLinks.description")}
                 </p>
               </div>
             </div>
-            
           </div>
 
           <div>
@@ -68,4 +91,4 @@ export default function EngageSection() {
       </div>
     </section>
   );
-} 
+}

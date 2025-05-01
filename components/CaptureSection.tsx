@@ -4,7 +4,32 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function CaptureSection() {
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Features {
+  standardization: Feature;
+  experience: Feature;
+  automation: Feature;
+}
+
+interface CaptureSectionProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: Features;
+  learnMore: string;
+}
+
+export default function CaptureSection({
+  title,
+  subtitle,
+  description,
+  features,
+  learnMore,
+}: CaptureSectionProps) {
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,48 +46,43 @@ export default function CaptureSection() {
                 />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Nextmotion Capture
+                {title}
               </h2>
             </div>
 
             <p className="text-base sm:text-lg lg:text-[18px] font-[700] text-gray-900 mb-4 sm:mb-6">
-              The ultimate tool for standardized patient photos and videos.
+              {subtitle}
             </p>
 
             <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-gray-600 mb-8 sm:mb-10">
-              Capture high-quality before-and-after images effortlessly. Manage
-              your patient records with unlimited cloud storage and elevate your
-              consultations with professional-grade tools.
+              {description}
             </p>
 
             <div className="space-y-6 sm:space-y-8">
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
-                  Effortless Standardization
+                  {features.standardization.title}
                 </h3>
                 <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-gray-600">
-                  Capture high-quality before-and-after photos and videos in
-                  seconds, with tools designed to simplify your daily practice.
+                  {features.standardization.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
-                  Enhanced Patient Experience
+                  {features.experience.title}
                 </h3>
                 <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-gray-600">
-                  Impress your patients with professional-grade results that
-                  highlight your expertise and build trust during consultations.
+                  {features.experience.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
-                  Time-Saving Automation
+                  {features.automation.title}
                 </h3>
                 <p className="text-base sm:text-lg lg:text-[18px] leading-relaxed text-gray-600">
-                  Generate standardized images instantly, ensuring consistency
-                  across every session without extra effort.
+                  {features.automation.description}
                 </p>
               </div>
             </div>
@@ -75,7 +95,7 @@ export default function CaptureSection() {
                   className="w-full sm:w-auto border-[2px] border-[#284fe6] text-black-600 bg-transparent
  hover:bg-blue-50 rounded-lg px-6 sm:px-8 py-3 text-[14px] sm:text-[16px] font-semibold h-auto"
                 >
-                  Know more about Nextmotion Capture
+                  {learnMore}
                 </Button>
               </Link>
             </div>

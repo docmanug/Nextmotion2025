@@ -4,7 +4,34 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function RevolutionSection() {
+interface RevolutionSectionProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: {
+    innovation: {
+      title: string;
+      description: string;
+    };
+    integration: {
+      title: string;
+      description: string;
+    };
+    results: {
+      title: string;
+      description: string;
+    };
+  };
+  learnMore: string;
+}
+
+export default function RevolutionSection({
+  title,
+  subtitle,
+  description,
+  features,
+  learnMore,
+}: RevolutionSectionProps) {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,49 +60,42 @@ export default function RevolutionSection() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Nextmotion Revolution
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
             </div>
 
             <p className="text-[18px] font-[700] text-gray-900 mb-6">
-              The robotic arm redefining aesthetic consultations.
+              {subtitle}
             </p>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Capture dynamic, perfectly standardized videos with precision.
-              Highlight natural results, showcase your expertise, and impress
-              your patients with cutting-edge technology.
+              {description}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Dynamic Standardization
+                  {features.innovation.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Capture perfectly standardized, dynamic videos to showcase
-                  your expertise.
+                  {features.innovation.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Cutting-Edge Precision
+                  {features.integration.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Our robotic arm ensures consistent angles, lighting, and
-                  patient positioning for flawless before-and-after comparisons.
+                  {features.integration.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Patient Engagement
+                  {features.results.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Highlight natural movements and expressions to build trust and
-                  confidence in your results.
+                  {features.results.description}
                 </p>
               </div>
             </div>
@@ -85,10 +105,9 @@ export default function RevolutionSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Know more about Nextmotion Revolution
+                  {learnMore}
                 </Button>
               </Link>
             </div>

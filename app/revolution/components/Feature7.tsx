@@ -2,8 +2,26 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature7() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature7 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,15 +37,11 @@ export default function Feature7() {
                   className="text-white"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Compact Design</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[16px] leading-relaxed text-gray-600">
-            Thanks to its built-in battery, Nextmotion Revolution requires no
-power outlet or dedicated space. It can operate in any environment
-while delivering high-quality photos and videos with maximum
-standardization. It only needs a floor space of just 1.5 square meters
-for daily use.
+              {t("description")}
             </p>
           </div>
 
@@ -35,7 +49,7 @@ for daily use.
             <div className="relative w-full max-w-[600px] mx-auto">
               <Image
                 src="/seventh/rev_7.png"
-                alt="Feature 7 Illustration"
+                alt={t("deviceAlt")}
                 width={600}
                 height={400}
                 className="w-full h-auto rounded-lg"
@@ -47,4 +61,4 @@ for daily use.
       </div>
     </section>
   );
-} 
+}

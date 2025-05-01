@@ -3,8 +3,24 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
 
 export default function SimpleSection() {
+  const [messages, setMessages] = useState<any>(null);
+  const t = useTranslations(messages);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await import(`@/messages/${locale}.json`);
+      setMessages(msgs.default.beforeAfter.simple);
+    };
+    loadMessages();
+  }, []);
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,20 +30,17 @@ export default function SimpleSection() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/second/intuitive.png"
-                  alt="Portfolio Icon"
+                  alt={t("intuitiveIconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Simple and intuitive</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-            Experience the power of NextMotion with our interactive demo!
-Explore our intuitive features directly on an iPhone and see how
-effortless patient's pictures management can be. Click ‘Start’ to
-begin your guided tour and discover why clinics love our solution
+              {t("description")}
             </p>
           </div>
 
@@ -35,7 +48,7 @@ begin your guided tour and discover why clinics love our solution
             <div className="relative w-full max-w-[300px] mx-auto">
               <Image
                 src="/second/mobile.png"
-                alt="Portfolio Showcase"
+                alt={t("mobileImageAlt")}
                 width={300}
                 height={400}
                 className="w-full h-auto rounded-lg"
@@ -47,4 +60,4 @@ begin your guided tour and discover why clinics love our solution
       </div>
     </section>
   );
-} 
+}

@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
-const DiscoverCard = ({ 
-  title, 
+const DiscoverCard = ({
+  title,
   imageSrc,
-  isPhone = false
-}: { 
+  isPhone = false,
+}: {
   title: string;
   imageSrc: string;
   isPhone?: boolean;
@@ -19,7 +22,7 @@ const DiscoverCard = ({
           src={imageSrc}
           alt={title}
           fill
-          className={`object-cover ${isPhone ? 'object-contain px-12' : ''}`}
+          className={`object-cover ${isPhone ? "object-contain px-12" : ""}`}
         />
         <div className="absolute bottom-8 left-8">
           <h3 className="text-[#081F4D] text-[28px] font-bold">{title}</h3>
@@ -30,29 +33,42 @@ const DiscoverCard = ({
 };
 
 export default function DiscoverSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.discover || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F8FAFC]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-[#081F4D] mb-4">
-            Want to go further ?
+            {t("title")}
           </h2>
-          <p className="text-lg text-gray-600">
-          Integrate your images directly into your interface with NextMotion Photo and NextMotion 3D
-          </p>
+          <p className="text-lg text-gray-600">{t("description")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="w-full">
             <DiscoverCard
-              title="Nextmotion Revolution"
+              title={t("cards.revolution.title")}
               imageSrc="/seventh/discovery_1.jpg"
               isPhone={true}
             />
           </div>
           <div className="w-full">
             <DiscoverCard
-              title="Nextmotion 3D"
+              title={t("cards.3d.title")}
               imageSrc="/second/part2.jpg"
               isPhone={true}
             />
@@ -61,4 +77,4 @@ export default function DiscoverSection() {
       </div>
     </section>
   );
-} 
+}
