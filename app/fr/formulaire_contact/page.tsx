@@ -402,50 +402,50 @@ export default function ContactFormPage() {
       </section>
       <Footer
         professional={{
-          title: t("professional.title"),
-          description: t("professional.description"),
-          button: t("professional.button"),
+          title: t("footer.professional.title"),
+          description: t("footer.professional.description"),
+          button: t("footer.professional.button"),
         }}
         platform={{
-          title: t("platform.title"),
+          title: t("footer.platform.title"),
           links: {
-            home: t("platform.links.home"),
-            capture: t("platform.links.capture"),
-            revolution: t("platform.links.revolution"),
-            "3d": t("platform.links.3d"),
-            consult: t("platform.links.consult"),
-            agenda: t("platform.links.agenda"),
-            classes: t("platform.links.classes"),
-            robotics: t("platform.links.robotics"),
+            home: t("footer.platform.links.home"),
+            capture: t("footer.platform.links.capture"),
+            revolution: t("footer.platform.links.revolution"),
+            "3d": t("footer.platform.links.3d"),
+            consult: t("footer.platform.links.consult"),
+            agenda: t("footer.platform.links.agenda"),
+            classes: t("footer.platform.links.classes"),
+            robotics: t("footer.platform.links.robotics"),
           },
         }}
         company={{
-          title: t("company.title"),
+          title: t("footer.company.title"),
           links: {
-            about: t("company.links.about"),
-            contact: t("company.links.contact"),
-            contents: t("company.links.contents"),
-            cases: t("company.links.cases"),
-            blog: t("company.links.blog"),
-            events: t("company.links.events"),
-            podcast: t("company.links.podcast"),
-            releases: t("company.links.releases"),
+            about: t("footer.company.links.about"),
+            contact: t("footer.company.links.contact"),
+            contents: t("footer.company.links.contents"),
+            cases: t("footer.company.links.cases"),
+            blog: t("footer.company.links.blog"),
+            events: t("footer.company.links.events"),
+            podcast: t("footer.company.links.podcast"),
+            releases: t("footer.company.links.releases"),
           },
         }}
         help={{
-          title: t("help.title"),
+          title: t("footer.help.title"),
           links: {
-            login: t("help.links.login"),
-            demo: t("help.links.demo"),
-            privacy: t("help.links.privacy"),
-            legal: t("help.links.legal"),
+            login: t("footer.help.links.login"),
+            demo: t("footer.help.links.demo"),
+            privacy: t("footer.help.links.privacy"),
+            legal: t("footer.help.links.legal"),
           },
         }}
         newsletter={{
-          title: t("newsletter.title"),
-          highlight: t("newsletter.highlight"),
-          placeholder: t("newsletter.placeholder"),
-          button: t("newsletter.button"),
+          title: t("footer.newsletter.title"),
+          highlight: t("footer.newsletter.highlight"),
+          placeholder: t("footer.newsletter.placeholder"),
+          button: t("footer.newsletter.button"),
         }}
       />
     </main>
