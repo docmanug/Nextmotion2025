@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function CaptureSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.beforeAfter?.capture || {});
+
+  if (!messages) return null; // Or a loading state
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,49 +32,44 @@ export default function CaptureSection() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/second/easeofuse.png"
-                  alt="Mobile Icon"
+                  alt={t("easeOfUseIconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Ease of use</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Easily capture flawless before/after photos with NM Capture on
-              your iPhone or iPad. Achieve professional-quality results with
-              high- speed workflows and advanced standardization tools—perfect
-              for aesthetic clinics.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Photo Capture
+                  {t("features.photoCapture.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Capture standardized images directly from your iPhone or iPad.
+                  {t("features.photoCapture.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Speed and Simplicity
+                  {t("features.speed.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Take photos quickly and efficiently, automatically synced to
-                  patient records and available across all your devices.
+                  {t("features.speed.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Professional Results
+                  {t("features.results.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Get high-quality standardized photos with our exclusive "color
-                  control" and "ghost image" technologies.
+                  {t("features.results.description")}
                 </p>
               </div>
             </div>
@@ -72,7 +85,7 @@ export default function CaptureSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>
@@ -82,7 +95,7 @@ export default function CaptureSection() {
             <div className="relative">
               <Image
                 src="/capture-app-demo.png"
-                alt="Nextmotion Capture App Screenshot"
+                alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"

@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { getMessages } from "@/utils/i18n";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -124,13 +125,17 @@ const gilroy = localFont({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale = "en" },
 }: {
   children: React.ReactNode;
+  params: { locale?: string };
 }) {
+  const messages = await getMessages(locale);
+
   return (
-    <html lang="en" className={gilroy.variable}>
+    <html lang={locale} className={gilroy.variable}>
       <body>{children}</body>
     </html>
   );

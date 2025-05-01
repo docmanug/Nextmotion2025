@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function RevolutionSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +31,7 @@ export default function RevolutionSection() {
             <div className="relative">
               <Image
                 src="/capture-app-demo.png"
-                alt="Dynamic Video Showcase"
+                alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"
@@ -27,44 +45,44 @@ export default function RevolutionSection() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/second/video_icon.png"
-                  alt="Video Icon"
+                  alt={t("videoIconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Dynamic Videos for Natural Results
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Showcase natural results with NM Capture's dynamic videos.
-              Highlight the success of aesthetic treatments by extracting high-
-              resolution photos at any point in the video for precise
-              before-and- after comparisons.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Highlight Every Detail
+                  {t("features.innovation.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Capture dynamic 180°, 360°, or 720° videos to provide a
-                  holistic view of treatments. Extract high-quality stills from
-                  any frame for detailed comparisons.
+                  {t("features.innovation.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Natural Patient Outcomes
+                  {t("features.integration.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Reassure your patients by demonstrating natural results,
-                  whether it's Botox, dermal fillers, or other aesthetic
-                  procedures.
+                  {t("features.integration.description")}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.results.title")}
+                </h3>
+                <p className="text-[18px] leading-relaxed text-gray-600">
+                  {t("features.results.description")}
                 </p>
               </div>
             </div>
@@ -80,7 +98,7 @@ export default function RevolutionSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("learnMore")}
                 </Button>
               </Link>
             </div>

@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature4() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature4 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +31,7 @@ export default function Feature4() {
             <div className="relative">
               <Image
                 src="/seventh/rev_4.png"
-                alt="Transparent Results Interface"
+                alt={t("deviceAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"
@@ -21,7 +39,7 @@ export default function Feature4() {
               />
             </div>
           </div>
-          
+
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
@@ -33,38 +51,38 @@ export default function Feature4() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Transparent Results</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Ensure clear communication and adherence to regulations, building
-              trust with your patients while maintaining the highest standards of
-              care and ethical practice.
+              {t("description")}
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Visual Evidence</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.evidence.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Capture images from all angles for comprehensive initial
-                  documentation of all your patients.
+                  {t("features.evidence.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Legal Protection</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.protection.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Protect yourself against complaints about lack of results and
-                  mitigate potential disputes from the outset with our ultra-
-                  standardized before/after videos.
+                  {t("features.protection.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Compliance</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.compliance.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Meet documentation standards with complete images that will form
-                  the foundation of your patient records.
+                  {t("features.compliance.description")}
                 </p>
               </div>
             </div>

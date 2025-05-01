@@ -4,7 +4,34 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function ThreeDSection() {
+interface ThreeDSectionProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: {
+    simulation: {
+      title: string;
+      description: string;
+    };
+    visualization: {
+      title: string;
+      description: string;
+    };
+    planning: {
+      title: string;
+      description: string;
+    };
+  };
+  learnMore: string;
+}
+
+export default function ThreeDSection({
+  title,
+  subtitle,
+  description,
+  features,
+  learnMore,
+}: ThreeDSectionProps) {
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,50 +47,42 @@ export default function ThreeDSection() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Nextmotion 3D
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
             </div>
 
             <p className="text-[18px] font-[700] text-gray-900 mb-6">
-              A powerful 3D and augmented reality anatomy app to educate and
-              engage patients
+              {subtitle}
             </p>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Visualize detailed anatomical layers and project them in real-time
-              on your patients' faces. Explain procedures like never before and
-              build trust with interactive tools.
+              {description}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Augmented Reality for Patient Education
+                  {features.simulation.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Visualize detailed 3D anatomical layers in real-time to
-                  explain treatments clearly.
+                  {features.simulation.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Engage and Impress
+                  {features.visualization.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Use augmented reality to project anatomical structures onto
-                  your patient's face and enhance understanding.
+                  {features.visualization.description}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Boost Patient Trust
+                  {features.planning.title}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Simplify complex procedures with interactive tools that build
-                  confidence and improve decision-making.
+                  {features.planning.description}
                 </p>
               </div>
             </div>
@@ -73,10 +92,9 @@ export default function ThreeDSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Know more about Nextmotion 3D
+                  {learnMore}
                 </Button>
               </Link>
             </div>

@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature1() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature1 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,52 +38,38 @@ export default function Feature1() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Nextmotion Revolution
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Nextmotion Revolution is a rotating motorized machine controlled
-              by the iPhone and the NM Capture app. It rotates around the
-              patient at a constant speed, ensuring optimal standardization of
-              images in both photo and dynamic video formats.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Rotating Motorized Robot
+                  {t("features.robot.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Nextmotion Revolution is controlled by the NM Capture app via
-                  your iPhone, ensuring a constant rotation for highly
-                  standardized shots. The blue background allows for perfect
-                  separation of faces and bodies, providing you with flawless
-                  content.
+                  {t("features.robot.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Optimal Standardization
+                  {t("features.standardization.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Achieve consistent lighting, shadows, positions, and colors
-                  with every capture, along with the same dynamic expressions if
-                  you choose to make videos. The content you will create is sure
-                  to impress.
+                  {t("features.standardization.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Superior Quality
+                  {t("features.quality.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Obtain original and differentiating content that will help you
-                  attract and convert more patients: photos and videos taken
-                  with our device will be of unmatched professional quality.
+                  {t("features.quality.description")}
                 </p>
               </div>
             </div>
@@ -81,7 +85,7 @@ export default function Feature1() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>
@@ -91,7 +95,7 @@ export default function Feature1() {
             <div className="relative w-full">
               <Image
                 src="/seventh/rev_1.png"
-                alt="Nextmotion Revolution Device"
+                alt={t("deviceAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto"

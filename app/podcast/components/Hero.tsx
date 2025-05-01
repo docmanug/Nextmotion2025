@@ -1,13 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useTranslations, getMessages } from "@/utils/i18n";
+
 export default function Hero() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.podcast?.hero || {});
+
+  if (!messages) return null;
+
   return (
     <section className="bg-[#051238] min-h-[400px] sm:min-h-[500px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-16 sm:pt-24 pb-12 sm:pb-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-10">
           <div className="lg:w-1/2 pt-4 sm:pt-8 text-center lg:text-left">
             <h1 className="text-white text-3xl sm:text-4xl md:text-[54px] font-bold leading-[1.1]">
-              Listen. Learn. Grow.
+              {t("title")}
             </h1>
           </div>
 

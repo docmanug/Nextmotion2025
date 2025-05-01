@@ -5,6 +5,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+interface CommunitySectionProps {
+  title: string;
+  subtitle: string;
+}
+
 const testimonials = [
   {
     name: "Dr. Sophie Loubeyres",
@@ -50,18 +55,17 @@ const testimonials = [
   },
 ];
 
-export default function CommunitySection() {
+export default function CommunitySection({
+  title,
+  subtitle,
+}: CommunitySectionProps) {
   return (
     <section className="py-20 bg-[#051238] text-white">
       <div className="max-w-[1600px] mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-[40px] font-bold mb-3">
-            Join the Nextmotion community
-          </h2>
+          <h2 className="text-[40px] font-bold mb-3">{title}</h2>
           <p className="text-white/80 max-w-[700px] mx-auto mb-12 text-base leading-relaxed">
-            Adopting our technology also means joining a community of doctors
-            committed to the democratization of digital consultation and
-            knowledge sharing.
+            {subtitle}
           </p>
 
           <Link href="/contact_form" target="_blank" rel="noopener noreferrer">

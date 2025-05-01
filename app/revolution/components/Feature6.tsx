@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature6() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature6 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +31,7 @@ export default function Feature6() {
             <div className="relative w-full max-w-[600px] mx-auto">
               <Image
                 src="/seventh/rev_6.png"
-                alt="Use Case Illustration"
+                alt={t("deviceAlt")}
                 width={600}
                 height={400}
                 className="w-full h-auto rounded-lg"
@@ -33,13 +51,11 @@ export default function Feature6() {
                   className="text-white"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Use case</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[16px] leading-relaxed text-gray-600">
-              Discover How Clinics Use Nextmotion Revolution and see how they
-              are enhancing the quality of their before/after photos and videos,
-              attracting more patients in the process.
+              {t("description")}
             </p>
             <div className="mt-10">
               <Link
@@ -52,7 +68,7 @@ export default function Feature6() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>

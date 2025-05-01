@@ -1,65 +1,80 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-const posts = [
-  {
-    id: 1,
-    title: "Discover medical innovation at the Corsica Medical Summit 2024!",
-    subtitle: "à l'évènement CMS 2024",
-    date: "21 et 22 juin 2024",
-    location: "Le Palais des Congrès d'Ajaccio",
-    author: "NextMotion",
-    image: "/blog/blog_1.png",
-    excerpt:
-      "Ajaccio, the pearl of the Mediterranean, will host the Corsica Medical Summit (CMS) on June 21st and 22nd, 2024, at...",
-    category: "Events",
-  },
-  {
-    id: 2,
-    title:
-      "Robotics and Augmented Reality: Highlights from Dr. Elard's Presentation at the AIME 2024 Conference",
-    subtitle: "at the AIME 2024 event",
-    date: "May 30th and 31st",
-    author: "NextMotion",
-    image: "/blog/blog_1.png",
-    excerpt:
-      "The AIME 2024 conference, held in Paris on May 30th and 31st, was a resounding success, bringing together aesthetic...",
-    category: "Events",
-  },
-];
-
-const popularPosts = [
-  {
-    id: 1,
-    title: "Discover medical innovation at the Corsica Medical Summit 2024!",
-    image: "/blog/blog_1.png",
-  },
-  {
-    id: 2,
-    title:
-      "Robotics and Augmented Reality: Highlights from Dr. Elard's Presentation at the AIME 2024 Conference",
-    image: "/blog/blog_1.png",
-  },
-  {
-    id: 3,
-    title: "Join the AIME Congress 2024 with NextMotion!",
-    image: "/blog/blog_1.png",
-  },
-  {
-    id: 4,
-    title: "FME Congress 2024: Were we there, and you?",
-    image: "/blog/blog_1.png",
-  },
-  {
-    id: 5,
-    title: "FME 2024 Congress: witness the future of aesthetic medicine",
-    image: "/blog/blog_1.png",
-  },
-];
-
 export default function BlogPosts() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages?.blog || {});
+
+  if (!messages) return null;
+
+  const posts = [
+    {
+      id: 1,
+      title: t("articles.cms2024.title"),
+      subtitle: t("articles.cms2024.subtitle"),
+      date: t("articles.cms2024.date"),
+      location: t("articles.cms2024.location"),
+      author: t("posts.author"),
+      image: "/blog/blog_1.png",
+      excerpt: t("articles.cms2024.excerpt"),
+      category: t("posts.category"),
+    },
+    {
+      id: 2,
+      title: t("articles.aime2024.title"),
+      subtitle: t("articles.aime2024.subtitle"),
+      date: t("articles.aime2024.date"),
+      author: t("posts.author"),
+      image: "/blog/blog_1.png",
+      excerpt: t("articles.aime2024.excerpt"),
+      category: t("posts.category"),
+    },
+  ];
+
+  const popularPosts = [
+    {
+      id: 1,
+      title: t("articles.cms2024.title"),
+      image: "/blog/blog_1.png",
+    },
+    {
+      id: 2,
+      title: t("articles.aime2024.title"),
+      image: "/blog/blog_1.png",
+    },
+    {
+      id: 3,
+      title: t("articles.popularTitles.1"),
+      image: "/blog/blog_1.png",
+    },
+    {
+      id: 4,
+      title: t("articles.popularTitles.2"),
+      image: "/blog/blog_1.png",
+    },
+    {
+      id: 5,
+      title: t("articles.popularTitles.3"),
+      image: "/blog/blog_1.png",
+    },
+  ];
+
   return (
     <section className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +98,7 @@ export default function BlogPosts() {
                         {post.category}
                       </span>
                       <Link href="/author/nextmotion" className="text-sm">
-                        NextMotion
+                        {post.author}
                       </Link>
                     </div>
                     <Link href={`/blog/${post.id}`} className="block">
@@ -97,7 +112,7 @@ export default function BlogPosts() {
                         href={`/blog/${post.id}`}
                         className="text-[#1650EF] text-sm font-medium hover:underline"
                       >
-                        Read More
+                        {t("posts.readMore")}
                       </Link>
                     </div>
                   </div>
@@ -111,16 +126,16 @@ export default function BlogPosts() {
             {/* Newsletter Subscription */}
             <div className="bg-[#F8F9FF] rounded-2xl p-6">
               <h2 className="text-[#1650EF] text-xl font-semibold mb-4">
-                Subscribe to our newsletter
+                {t("sidebar.newsletter.title")}
               </h2>
               <div className="space-y-3">
                 <input
                   type="email"
-                  placeholder="Your business email"
+                  placeholder={t("sidebar.newsletter.placeholder")}
                   className="w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
                 />
                 <button className="w-full bg-[#1650EF] text-white py-2.5 rounded-lg hover:bg-[#1345D1] transition-colors flex items-center justify-center gap-2">
-                  Join the business revolution
+                  {t("sidebar.newsletter.button")}
                   <span role="img" aria-label="sparkles">
                     ✨
                   </span>
@@ -131,7 +146,7 @@ export default function BlogPosts() {
             {/* Most Popular */}
             <div className="bg-[#F8F9FF] rounded-2xl p-6">
               <h2 className="text-[#1650EF] text-xl font-semibold mb-4">
-                Most Popular
+                {t("sidebar.popular.title")}
               </h2>
               <div className="space-y-4">
                 {popularPosts.map((post) => (
@@ -156,38 +171,43 @@ export default function BlogPosts() {
             {/* Post By Topic */}
             <div className="bg-[#F8F9FF] rounded-2xl p-6">
               <h2 className="text-[#1650EF] text-xl font-semibold mb-4">
-                Post By Topic
+                {t("sidebar.topics.title")}
               </h2>
               <div className="space-y-2">
                 <Link
                   href="/blog/topic/events"
                   className="block text-sm hover:text-[#1650EF]"
                 >
-                  • Events (8)
+                  • {t("sidebar.topics.events")} (
+                  {t("sidebar.topics.count.events")})
                 </Link>
                 <Link
                   href="/blog/topic/before-after"
                   className="block text-sm hover:text-[#1650EF]"
                 >
-                  • Before & After (2)
+                  • {t("sidebar.topics.beforeAfter")} (
+                  {t("sidebar.topics.count.beforeAfter")})
                 </Link>
                 <Link
                   href="/blog/topic/digital-consultation"
                   className="block text-sm hover:text-[#1650EF]"
                 >
-                  • Digital Consultation (2)
+                  • {t("sidebar.topics.digitalConsultation")} (
+                  {t("sidebar.topics.count.digitalConsultation")})
                 </Link>
                 <Link
                   href="/blog/topic/e-learning"
                   className="block text-sm hover:text-[#1650EF]"
                 >
-                  • E-learning (2)
+                  • {t("sidebar.topics.eLearning")} (
+                  {t("sidebar.topics.count.eLearning")})
                 </Link>
                 <Link
                   href="/blog/topic/case-studies"
                   className="block text-sm hover:text-[#1650EF]"
                 >
-                  • Case studies (1)
+                  • {t("sidebar.topics.caseStudies")} (
+                  {t("sidebar.topics.count.caseStudies")})
                 </Link>
               </div>
             </div>
@@ -199,12 +219,6 @@ export default function BlogPosts() {
           <span className="w-8 h-8 flex items-center justify-center bg-[#1650EF] text-white rounded">
             1
           </span>
-          <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded">
-            2
-          </button>
-          <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded">
-            →
-          </button>
         </div>
       </div>
     </section>

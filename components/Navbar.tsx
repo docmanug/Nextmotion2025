@@ -1,17 +1,80 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Globe, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { usePathname, useRouter } from "next/navigation";
+import { useTranslations, getMessages } from "@/utils/i18n";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+  const router = useRouter();
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
+    if (newLocale === currentLocale) return;
+
+    if (newLocale === "en") {
+      // Handle special case for photos-avant-apres to before-after
+      if (pathname === "/fr/photos-avant-apres") {
+        router.push("/before-after");
+      } else if (pathname === "/fr/pricing-aesthetic-solution") {
+        router.push("/en/pricing-aesthetic-solution");
+      } else if (pathname.includes("/fr/case-studies")) {
+        router.push("/en/case-studies");
+      } else if (pathname === "/fr/contact" || pathname === "/contact") {
+        router.push("/en/contact");
+      } else if (pathname === "/fr/about-us") {
+        router.push("/en/about-us");
+      } else if (pathname === "/fr/podcast") {
+        router.push("/podcast");
+      } else if (pathname === "/fr/formulaire_contact") {
+        router.push("/contact_form");
+      } else {
+        router.push(pathname.replace("/fr", ""));
+      }
+    } else {
+      // Handle special case for before-after to photos-avant-apres
+      if (pathname === "/before-after") {
+        router.push("/fr/photos-avant-apres");
+      } else if (pathname.includes("/en/pricing-aesthetic-solution")) {
+        router.push("/fr/pricing-aesthetic-solution");
+      } else if (pathname.includes("/en/case-studies")) {
+        router.push("/fr/case-studies");
+      } else if (pathname === "/en/contact" || pathname === "/contact") {
+        router.push("/fr/contact");
+      } else if (pathname === "/en/about-us") {
+        router.push("/fr/about-us");
+      } else if (pathname === "/podcast") {
+        router.push("/fr/podcast");
+      } else if (pathname === "/contact_form") {
+        router.push("/fr/formulaire_contact");
+      } else {
+        router.push(`/fr${pathname}`);
+      }
+    }
   };
 
   return (
@@ -31,161 +94,171 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10">
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
-                <span>Solution</span>
+                <span>{t("navbar.solutions")}</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
               <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href="/before-after"
+                  href={
+                    currentLocale === "fr"
+                      ? "/fr/photos-avant-apres"
+                      : "/before-after"
+                  }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  NextMotion - Capture
+                  {t("navbar.solutionsMenu.capture")}
                 </Link>
                 <Link
-                  href="/revolution"
+                  href={
+                    currentLocale === "fr" ? "/fr/revolution" : "/revolution"
+                  }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Nextmotion Revolution
+                  {t("navbar.solutionsMenu.revolution")}
                 </Link>
                 <Link
                   href="/3d-aesthetic-simulation"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Nextmotion - 3D
+                  {t("navbar.solutionsMenu.3d")}
                 </Link>
                 <Link
                   href="/clinic-management-software"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  NextMotion - Consult
+                  {t("navbar.solutionsMenu.consult")}
                 </Link>
                 <Link
                   href="/agenda-online-booking-reminders"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Nextmotion Agenda
+                  {t("navbar.solutionsMenu.agenda")}
                 </Link>
                 <Link
                   href="/virtual-classes"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Virtual Classes
+                  {t("navbar.solutionsMenu.virtualClasses")}
                 </Link>
                 <Link
                   href="/injector-robot-aesthetic-medicine"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Robotics
+                  {t("navbar.solutionsMenu.robotics")}
                 </Link>
               </div>
             </div>
 
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
-                <span>You are</span>
+                <span>{t("navbar.youAre")}</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
-              <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
+              <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href="/manager"
+                  href="/clinic-manager"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Clinic manager
+                  {t("navbar.youAreMenu.clinicManager")}
                 </Link>
                 <Link
                   href="/medecin-esthetique"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Aesthetic practitioner
+                  {t("navbar.youAreMenu.aestheticPractitioner")}
                 </Link>
                 <Link
                   href="/assistant"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Assistant / Secretary
+                  {t("navbar.youAreMenu.assistant")}
                 </Link>
                 <Link
                   href="/chaines"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Clinic chain manager
+                  {t("navbar.youAreMenu.clinicChainManager")}
                 </Link>
                 <Link
                   href="/marketing"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Responsable Marketing
+                  {t("navbar.youAreMenu.marketingManager")}
                 </Link>
               </div>
             </div>
 
             <Link
-              href="/pricing-aesthetic-solution"
+              href={
+                currentLocale === "fr"
+                  ? "/fr/pricing-aesthetic-solution"
+                  : "/en/pricing-aesthetic-solution"
+              }
               className="text-[15px] text-gray-900 hover:text-[#0066FF]"
             >
-              Pricing
+              {t("navbar.pricing")}
             </Link>
 
             <div className="relative group">
               <button className="flex items-center gap-1 text-[15px] text-gray-900 hover:text-[#0066FF]">
-                <span>Resources</span>
+                <span>{t("navbar.resources")}</span>
                 <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
               </button>
-              <div className="absolute hidden group-hover:block w-56 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
+              <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href="/about-us"
+                  href={`/${currentLocale}/about-us`}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  About us
+                  {t("navbar.resourcesMenu.aboutUs")}
                 </Link>
                 <Link
-                  href="/blog"
+                  href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Blog
+                  {t("navbar.resourcesMenu.blog")}
                 </Link>
                 <Link
                   href="https://honey-vulture-ed5.notion.site/Nextmotion-Academy-1b4dff6c85d9808e9c01fb45bf1b173b?pvs=4"
-                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  Academy
-                </Link>
-                <Link
-                  href="/podcast"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Podcast
+                  {t("navbar.resourcesMenu.academy")}
                 </Link>
                 <Link
-                  href="/contact"
+                  href={currentLocale === "fr" ? "/fr/podcast" : "/podcast"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Contact us
+                  {t("navbar.resourcesMenu.podcast")}
                 </Link>
                 <Link
-                  href="/case-studies"
+                  href={`/${currentLocale}/contact`}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Case studies
+                  {t("navbar.resourcesMenu.contact")}
+                </Link>
+                <Link
+                  href={`/${currentLocale}/case-studies`}
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
+                >
+                  {t("navbar.resourcesMenu.caseStudies")}
                 </Link>
                 <Link
                   href="/release-notes"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  Release notes
+                  {t("navbar.resourcesMenu.releaseNotes")}
                 </Link>
                 <Link
                   href="https://api.nextmotion.net/open_api/docs/redoc/"
-                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
-                  API
+                  {t("navbar.resourcesMenu.api")}
                 </Link>
               </div>
             </div>
@@ -194,26 +267,31 @@ export default function Navbar() {
               href="/login"
               className="text-[15px] text-gray-900 hover:text-[#0066FF]"
             >
-              Login
+              {t("navbar.login")}
             </Link>
 
             <Link
-              href="/contact_form"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={
+                currentLocale === "fr"
+                  ? "/fr/formulaire_contact"
+                  : "/contact_form"
+              }
             >
               <Button className="bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto">
-                Contact us
+                {t("navbar.contactUs")}
               </Button>
             </Link>
 
             <div className="flex items-center pl-2">
               <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
                 <Globe className="w-5 h-5 text-black" />
-                <select className="bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6">
+                <select
+                  className="bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6"
+                  value={currentLocale}
+                  onChange={handleLanguageChange}
+                >
                   <option value="en">English</option>
                   <option value="fr">Français</option>
-                  <option value="es">Español</option>
                 </select>
                 <ChevronDown className="w-4 h-4 text-black absolute right-2" />
               </div>
@@ -249,7 +327,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-between px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                     onClick={() => toggleDropdown("solution")}
                   >
-                    <span>Solution</span>
+                    <span>{t("navbar.solutions")}</span>
                     <ChevronDown
                       className={`h-3.5 w-3.5 transition-transform duration-200 ${
                         activeDropdown === "solution" ? "rotate-180" : ""
@@ -259,46 +337,54 @@ export default function Navbar() {
                   {activeDropdown === "solution" && (
                     <div className="bg-[#F8F9FB] py-2">
                       <Link
-                        href="/before-after"
+                        href={
+                          currentLocale === "fr"
+                            ? "/fr/photos-avant-apres"
+                            : "/before-after"
+                        }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        NextMotion - Capture
+                        {t("navbar.solutionsMenu.capture")}
                       </Link>
                       <Link
-                        href="/revolution"
+                        href={
+                          currentLocale === "fr"
+                            ? "/fr/revolution"
+                            : "/revolution"
+                        }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Nextmotion Revolution
+                        {t("navbar.solutionsMenu.revolution")}
                       </Link>
                       <Link
                         href="/3d-aesthetic-simulation"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Nextmotion - 3D
+                        {t("navbar.solutionsMenu.3d")}
                       </Link>
                       <Link
                         href="/clinic-management-software"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        NextMotion - Consult
+                        {t("navbar.solutionsMenu.consult")}
                       </Link>
                       <Link
                         href="/agenda-online-booking-reminders"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Nextmotion Agenda
+                        {t("navbar.solutionsMenu.agenda")}
                       </Link>
                       <Link
                         href="/virtual-classes"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Virtual Classes
+                        {t("navbar.solutionsMenu.virtualClasses")}
                       </Link>
                       <Link
                         href="/injector-robot-aesthetic-medicine"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Robotics
+                        {t("navbar.solutionsMenu.robotics")}
                       </Link>
                     </div>
                   )}
@@ -310,7 +396,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-between px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                     onClick={() => toggleDropdown("youare")}
                   >
-                    <span>You are</span>
+                    <span>{t("navbar.youAre")}</span>
                     <ChevronDown
                       className={`h-3.5 w-3.5 transition-transform duration-200 ${
                         activeDropdown === "youare" ? "rotate-180" : ""
@@ -323,41 +409,45 @@ export default function Navbar() {
                         href="/manager"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Clinic manager
+                        {t("navbar.youAreMenu.clinicManager")}
                       </Link>
                       <Link
                         href="/medecin-esthetique"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Aesthetic practitioner
+                        {t("navbar.youAreMenu.aestheticPractitioner")}
                       </Link>
                       <Link
                         href="/assistant"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Assistant / Secretary
+                        {t("navbar.youAreMenu.assistant")}
                       </Link>
                       <Link
                         href="/chaines"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Clinic chain manager
+                        {t("navbar.youAreMenu.clinicChainManager")}
                       </Link>
                       <Link
                         href="/marketing"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Responsable Marketing
+                        {t("navbar.youAreMenu.marketingManager")}
                       </Link>
                     </div>
                   )}
                 </div>
 
                 <Link
-                  href="/pricing-aesthetic-solution"
+                  href={
+                    currentLocale === "fr"
+                      ? "/fr/pricing-aesthetic-solution"
+                      : "/en/pricing-aesthetic-solution"
+                  }
                   className="px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                 >
-                  Pricing
+                  {t("navbar.pricing")}
                 </Link>
 
                 {/* Resources Dropdown */}
@@ -366,7 +456,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-between px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                     onClick={() => toggleDropdown("resources")}
                   >
-                    <span>Resources</span>
+                    <span>{t("navbar.resources")}</span>
                     <ChevronDown
                       className={`h-3.5 w-3.5 transition-transform duration-200 ${
                         activeDropdown === "resources" ? "rotate-180" : ""
@@ -376,56 +466,58 @@ export default function Navbar() {
                   {activeDropdown === "resources" && (
                     <div className="bg-[#F8F9FB] py-2">
                       <Link
-                        href="/about-us"
+                        href={`/${currentLocale}/about-us`}
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        About us
+                        {t("navbar.resourcesMenu.aboutUs")}
                       </Link>
                       <Link
-                        href="/blog"
+                        href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Blog
+                        {t("navbar.resourcesMenu.blog")}
                       </Link>
                       <Link
                         href="https://honey-vulture-ed5.notion.site/Nextmotion-Academy-1b4dff6c85d9808e9c01fb45bf1b173b?pvs=4"
-                        className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                         target="_blank"
                         rel="noopener noreferrer"
-                      >
-                        Academy
-                      </Link>
-                      <Link
-                        href="/podcast"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Podcast
+                        {t("navbar.resourcesMenu.academy")}
                       </Link>
                       <Link
-                        href="/contact"
+                        href={
+                          currentLocale === "fr" ? "/fr/podcast" : "/podcast"
+                        }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Contact us
+                        {t("navbar.resourcesMenu.podcast")}
                       </Link>
                       <Link
-                        href="/case-studies"
+                        href={`/${currentLocale}/contact`}
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Case studies
+                        {t("navbar.resourcesMenu.contact")}
+                      </Link>
+                      <Link
+                        href={`/${currentLocale}/case-studies`}
+                        className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
+                      >
+                        {t("navbar.resourcesMenu.caseStudies")}
                       </Link>
                       <Link
                         href="/release-notes"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        Release notes
+                        {t("navbar.resourcesMenu.releaseNotes")}
                       </Link>
                       <Link
                         href="https://api.nextmotion.net/open_api/docs/redoc/"
-                        className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
-                        API
+                        {t("navbar.resourcesMenu.api")}
                       </Link>
                     </div>
                   )}
@@ -435,29 +527,29 @@ export default function Navbar() {
                   href="/login"
                   className="px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                 >
-                  Login
+                  {t("navbar.login")}
                 </Link>
 
                 <div className="px-6 py-3">
                   <Link
-                    href="/contact_form"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`/${currentLocale}/contact`}
+                    className="w-full bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto"
                   >
-                    <Button className="w-full bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto">
-                      Contact us
-                    </Button>
+                    {t("navbar.contactUs")}
                   </Link>
                 </div>
 
                 {/* Language Selector - Mobile */}
-                <div className="px-6 py-3 border-t border-gray-100">
+                <div className="px-6 py-3">
                   <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
                     <Globe className="w-5 h-5 text-black" />
-                    <select className="w-full bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6">
+                    <select
+                      className="w-full bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6"
+                      value={currentLocale}
+                      onChange={handleLanguageChange}
+                    >
                       <option value="en">English</option>
                       <option value="fr">Français</option>
-                      <option value="es">Español</option>
                     </select>
                     <ChevronDown className="w-4 h-4 text-black absolute right-2" />
                   </div>

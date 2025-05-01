@@ -4,15 +4,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { logos } from "@/public/logos";
 
+interface LogoSliderProps {
+  title: string;
+  subtitle: string;
+}
+
 // Duplicate logos for seamless loop
 const duplicatedLogos = [...logos, ...logos];
 
-export default function LogoSlider() {
+export default function LogoSlider({ title, subtitle }: LogoSliderProps) {
   return (
     <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16 leading-tight">
-          Approved by 1000 clinics and practitioners worldwide
+          {title}
         </h2>
 
         <div className="relative">

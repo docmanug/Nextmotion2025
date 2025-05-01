@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature5() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.revolution?.route?.feature5 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,65 +38,61 @@ export default function Feature5() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Dynamic Videos</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Use Nextmotion Revolution's Dynamic Videos: showcase the natural
-              results achieved. Extract photos at any point in the video for precise
-              image comparisons.
+              {t("description")}
             </p>
-            
+
             <div className="space-y-8">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Transparency and Trust</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.trust.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Utilize the power of dynamic videos to instill confidence in your
-                  patients about the natural results achieved with treatments, such as
-                  Botox that doesn't freeze expressions when done correctly, or lip
-                  injections that provide a natural look when smiling or puckering.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Maximum Engagement</h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  Create captivating content to illustrate your social media posts and
-                  provide material for all your communication channels.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Multi-Angle Results</h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  Showcase your results from all angles to better demonstrate the
-                  quality of your care.
+                  {t("features.trust.description")}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Dynamic Comparisons</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.engagement.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Select any moment in the video to extract photos and compare
-                  them in perfect synchronization.
+                  {t("features.engagement.description")}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.angles.title")}
+                </h3>
+                <p className="text-[18px] leading-relaxed text-gray-600">
+                  {t("features.angles.description")}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.comparisons.title")}
+                </h3>
+                <p className="text-[18px] leading-relaxed text-gray-600">
+                  {t("features.comparisons.description")}
                 </p>
               </div>
             </div>
-            
-            
           </div>
 
           <div className="relative">
-            <div className="relative">
-              <Image
-                src="/seventh/rev_5.png"
-                alt="Dynamic Videos Demonstration"
-                width={800}
-                height={1000}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/seventh/rev_5.png"
+              alt={t("deviceAlt")}
+              width={800}
+              height={1000}
+              className="w-full h-auto"
+              priority
+            />
           </div>
         </div>
       </div>
