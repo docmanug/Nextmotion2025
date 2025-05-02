@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature9() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature9 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +31,7 @@ export default function Feature9() {
             <div className="relative w-full max-w-[600px] mx-auto">
               <Image
                 src="/third/feature9.png"
-                alt="Use Case Illustration"
+                alt={t("imageAlt")}
                 width={600}
                 height={400}
                 className="w-full h-auto rounded-lg"
@@ -33,17 +51,15 @@ export default function Feature9() {
                   className="text-white"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Use case</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-            
+
             <p className="text-[16px] leading-relaxed text-gray-600">
-              Sophie, assistant to Dr. Loubeyres in Pau, reduced her administrative
-              time by 32%, saving over 1.5 hours a day to focus more on patient
-              care.
+              {t("description")}
             </p>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

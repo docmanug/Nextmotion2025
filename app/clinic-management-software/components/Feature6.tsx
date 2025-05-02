@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature6() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature6 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,63 +38,56 @@ export default function Feature6() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Practice Growth
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Use Our Tools to Grow and Optimize Your Practice: enhance patient
-              interactions and boost your marketing efficiency to drive growth
-              and improve your clinic's performance.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Automatic Reminders
+                  {t("features.reminders.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Send SMS and email reminders to patients to encourage them to
-                  book follow-up appointments.
+                  {t("features.reminders.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Patient Export
+                  {t("features.export.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Manage personalized or automated follow-ups through Zapier.
+                  {t("features.export.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Positive Reviews
+                  {t("features.reviews.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Request reviews to improve your online reputation.
+                  {t("features.reviews.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Patient Conversion
+                  {t("features.conversion.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Use keywords to easily find the best before/after results and
-                  convert more patients.
+                  {t("features.conversion.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Patient Education
+                  {t("features.education.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Utilize Nextmotion 3D to explain aging processes and present
-                  your treatment plans effectively.
+                  {t("features.education.description")}
                 </p>
               </div>
             </div>
@@ -93,7 +104,7 @@ export default function Feature6() {
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
  hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("features.bookDemoButton")}
                 </Button>
               </Link>
             </div>

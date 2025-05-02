@@ -3,8 +3,27 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Feature5() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,57 +33,65 @@ export default function Feature5() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/fourth/icons/feature5_icon.png"
-                  alt="Photo Solution Icon"
+                  alt={t("agendaOnlineBookingReminders.feature5.iconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
-                Performance Tracking and Statistics
+                {t("agendaOnlineBookingReminders.feature5.title")}
               </h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Analyze your clinic's performance in detail with precise
-              statistical reports. Track appointment numbers, cancellation
-              rates, and staff productivity in just a few clicks.
+              {t("agendaOnlineBookingReminders.feature5.description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Real-Time Reports
+                  {t(
+                    "agendaOnlineBookingReminders.feature5.features.reports.title"
+                  )}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Instantly view key performance indicators for your clinic.
+                  {t(
+                    "agendaOnlineBookingReminders.feature5.features.reports.description"
+                  )}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Data Analysis
+                  {t(
+                    "agendaOnlineBookingReminders.feature5.features.analysis.title"
+                  )}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Make informed decisions to improve efficiency and
-                  profitability.
+                  {t(
+                    "agendaOnlineBookingReminders.feature5.features.analysis.description"
+                  )}
                 </p>
               </div>
             </div>
 
             <div className="mt-10">
               <Link
-                href="/contact_form"
+                href={
+                  currentLocale === "fr"
+                    ? "/fr/formulaire_contact"
+                    : "/contact_form"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("agendaOnlineBookingReminders.feature5.bookDemoButton")}
                 </Button>
               </Link>
             </div>
@@ -75,7 +102,7 @@ export default function Feature5() {
               <div className="relative">
                 <Image
                   src="/fourth/feature5.png"
-                  alt="Nextmotion Photo Solution Screenshot"
+                  alt={t("agendaOnlineBookingReminders.feature5.imageAlt")}
                   width={800}
                   height={1000}
                   className="w-full h-auto"

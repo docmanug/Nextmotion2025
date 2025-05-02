@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature7() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature7 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,20 +37,15 @@ export default function Feature7() {
                 className="text-blue-600"
               />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900">
-              Treatment records
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
           </div>
 
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
-            Nextmotion Consult can be used seamlessly with an iPhone, iPad, or
-            any computer (Mac or PC). We offer you the opportunity to test a
-            part of the patient journey using an iPad to show you how our
-            solution can simplify your practice.
+            {t("description")}
           </p>
 
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
-            Simply click on "Start the demo" below to get started !
+            {t("note")}
           </p>
 
           <div className="mb-8">
@@ -45,7 +58,7 @@ export default function Feature7() {
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[15px] sm:text-base px-6 sm:px-8 py-3 h-auto rounded-full"
               >
-                Start the demo
+                {t("startDemoButton")}
               </Button>
             </Link>
           </div>

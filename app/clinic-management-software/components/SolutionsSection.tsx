@@ -1,24 +1,48 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function SolutionsSection() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(
+    messages?.clinicManagementSoftware?.solutions || {}
+  );
+
+  if (!messages) return null;
+
   const solutions = [
     {
-      icon: "third/icons/contract.png",
-      title: "Paperless solution",
+      icon: "/third/icons/contract.png",
+      title: t("items.paperless.title"),
+      alt: t("items.paperless.alt"),
     },
     {
-      icon: "third/icons/signature.png",
-      title: "Electronic Signature",
+      icon: "/third/icons/signature.png",
+      title: t("items.signature.title"),
+      alt: t("items.signature.alt"),
     },
     {
-      icon: "third/icons/leaderboard.png",
-      title: "Business Development",
+      icon: "/third/icons/leaderboard.png",
+      title: t("items.business.title"),
+      alt: t("items.business.alt"),
     },
     {
-      icon: "third/icons/graph.png",
-      title: "Process Optimization",
+      icon: "/third/icons/graph.png",
+      title: t("items.optimization.title"),
+      alt: t("items.optimization.alt"),
     },
   ];
 
@@ -27,13 +51,10 @@ export default function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#081F4D] mb-8">
-            An all-in-one software to simplify your administrative tasks
-            and boost your clinic's growth.
+            {t("title")}
           </h2>
           <p className="text-2xl text-gray-600 max-w-5xl mx-auto">
-            Nextmotion Consult is an all-in-one solution designed for aesthetic clinics. It centralizes
-            patient management, streamlines processes, and boosts productivity. Discover how
-            Nextmotion Consult can transform your clinic and attract more patients.
+            {t("description")}
           </p>
         </div>
 
@@ -43,13 +64,15 @@ export default function SolutionsSection() {
               <div className="mb-4 w-16 h-16">
                 <Image
                   src={solution.icon}
-                  alt={solution.title}
+                  alt={solution.alt}
                   width={70}
                   height={70}
                   className="w-full h-full"
                 />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">{solution.title}</h3>
+              <h3 className="text-2xl font-semibold text-gray-900">
+                {solution.title}
+              </h3>
             </div>
           ))}
         </div>

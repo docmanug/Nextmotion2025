@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Feature {
   title: string;
@@ -30,6 +31,16 @@ export default function CaptureSection({
   features,
   learnMore,
 }: CaptureSectionProps) {
+  const [learnMoreLink, setLearnMoreLink] = useState("/before-after");
+
+  useEffect(() => {
+    setLearnMoreLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/photos-avant-apres"
+        : "/before-after"
+    );
+  }, []);
+
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,7 +99,7 @@ export default function CaptureSection({
             </div>
 
             <div className="mt-8 sm:mt-10">
-              <Link href="/before-after">
+              <Link href={learnMoreLink}>
                 <Button
                   variant="outline"
                   size="lg"

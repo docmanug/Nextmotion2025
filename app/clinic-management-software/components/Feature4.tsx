@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature4() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature4 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,52 +38,47 @@ export default function Feature4() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Team Management
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Monitor and Track Your Team's Actions with Precision: Ensure
-              secure and transparent management of your medical team, allowing
-              you to control and track actions with accuracy.
+              {t("description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Access Control
+                  {t("features.access.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Define access rights for each role.
+                  {t("features.access.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Action Tracking
+                  {t("features.tracking.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Track the actions performed by each team member.
+                  {t("features.tracking.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Restricted Access
+                  {t("features.restricted.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Doctors can only access their own patients' records.
+                  {t("features.restricted.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Statistical Reports
+                  {t("features.reports.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Analyze the revenue generated, number of treatments performed
-                  per team member, and more.
+                  {t("features.reports.description")}
                 </p>
               </div>
             </div>
@@ -82,7 +95,7 @@ export default function Feature4() {
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
  hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("bookDemoButton")}
                 </Button>
               </Link>
             </div>

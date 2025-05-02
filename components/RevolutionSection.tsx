@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface RevolutionSectionProps {
   title: string;
@@ -32,6 +33,16 @@ export default function RevolutionSection({
   features,
   learnMore,
 }: RevolutionSectionProps) {
+  const [learnMoreLink, setLearnMoreLink] = useState("/revolution");
+
+  useEffect(() => {
+    setLearnMoreLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/revolution"
+        : "/revolution"
+    );
+  }, []);
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,7 +112,7 @@ export default function RevolutionSection({
             </div>
 
             <div className="mt-10">
-              <Link href="/revolution">
+              <Link href={learnMoreLink}>
                 <Button
                   variant="outline"
                   size="lg"

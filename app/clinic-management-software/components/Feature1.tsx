@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature1() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature1 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +39,7 @@ export default function Feature1() {
               />
             </div>
           </div>
-          
+
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
@@ -33,45 +51,41 @@ export default function Feature1() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900">Innovative Patient Management</h2>
+              <h2 className="text-4xl font-bold text-gray-900">{t("title")}</h2>
             </div>
-      
-            
+
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-            Software designed by a Doctor for Fellow Practitioners An intuitive, user-friendly, and scalable interface: access all relevant information
-              on a single page. Benefit from automated medical observations (via
-              questionnaires or AI) and an efficient "treatment plan" module that
-              allows you to generate quotes, consents, and invoices with a single
-              click.
+              {t("description")}
             </p>
-            
-            <div className="space-y-8">
+
+            <div className="space-y-6">
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Intuitive Interface</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.interface.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  All relevant information on a single page—no more wasting time
-                  searching for the right consultation, before/after photos, treatment
-                  plan, or administrative documents.
+                  {t("features.interface.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Automated Observations</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.observations.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Using our quick questionnaires (Bolt notes) or AI-powered
-                  transcription of consultation audio recordings, your observations are
-                  effortlessly recorded, allowing you to focus on your patients.
+                  {t("features.observations.description")}
                 </p>
               </div>
-              
+
               <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Treatment Plans</h3>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.treatment.title")}
+                </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Generate quotes, consents, and invoices with just one click.
+                  {t("features.treatment.description")}
                 </p>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

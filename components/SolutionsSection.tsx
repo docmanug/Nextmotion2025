@@ -18,7 +18,7 @@ export default function SolutionsSection({
   clinics = "Clinics",
   chains = "Clinic chains",
   marketing = "Marketing",
-}: SolutionsSectionProps = {}) {
+}: SolutionsSectionProps) {
   const solutions = [
     {
       icon: "clinical_notes.png",
