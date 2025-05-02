@@ -3,8 +3,27 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Feature3() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,56 +33,65 @@ export default function Feature3() {
               <div className="bg-blue-100 rounded-full p-3">
                 <Image
                   src="/fourth/icons/feature3_icon.png"
-                  alt="Reminders Icon"
+                  alt={t("agendaOnlineBookingReminders.feature3.iconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
-                SMS and Email Reminders
+                {t("agendaOnlineBookingReminders.feature3.title")}
               </h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Reduce missed appointments with an automated system of SMS and
-              email reminders. Patients receive personalized notifications
-              before their consultation to ensure their attendance.
+              {t("agendaOnlineBookingReminders.feature3.description")}
             </p>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Customized Reminders
+                  {t(
+                    "agendaOnlineBookingReminders.feature3.features.reminders.title"
+                  )}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Create personalized messages for each patient.
+                  {t(
+                    "agendaOnlineBookingReminders.feature3.features.reminders.description"
+                  )}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Confirmation Tracking
+                  {t(
+                    "agendaOnlineBookingReminders.feature3.features.tracking.title"
+                  )}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  See patient responses and anticipate absences.
+                  {t(
+                    "agendaOnlineBookingReminders.feature3.features.tracking.description"
+                  )}
                 </p>
               </div>
             </div>
 
             <div className="mt-10">
               <Link
-                href="/contact_form"
+                href={
+                  currentLocale === "fr"
+                    ? "/fr/formulaire_contact"
+                    : "/contact_form"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("agendaOnlineBookingReminders.feature3.bookDemoButton")}
                 </Button>
               </Link>
             </div>
@@ -74,7 +102,7 @@ export default function Feature3() {
               <div className="relative">
                 <Image
                   src="/fourth/feature3.png"
-                  alt="SMS and Email Reminders Screenshot"
+                  alt={t("agendaOnlineBookingReminders.feature3.imageAlt")}
                   width={800}
                   height={1000}
                   className="w-full h-auto"

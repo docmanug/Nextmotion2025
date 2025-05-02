@@ -1,24 +1,49 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function SolutionsSection() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
+
   const solutions = [
     {
-      icon: "third/icons/contract.png",
-      title: "Paperless solution",
+      icon: "/third/icons/contract.png",
+      title: t("agendaOnlineBookingReminders.solutions.items.paperless.title"),
+      alt: t("agendaOnlineBookingReminders.solutions.items.paperless.alt"),
     },
     {
-      icon: "third/icons/signature.png",
-      title: "Electronic Signature",
+      icon: "/third/icons/signature.png",
+      title: t("agendaOnlineBookingReminders.solutions.items.signature.title"),
+      alt: t("agendaOnlineBookingReminders.solutions.items.signature.alt"),
     },
     {
-      icon: "third/icons/leaderboard.png",
-      title: "Business Development",
+      icon: "/third/icons/leaderboard.png",
+      title: t("agendaOnlineBookingReminders.solutions.items.business.title"),
+      alt: t("agendaOnlineBookingReminders.solutions.items.business.alt"),
     },
     {
-      icon: "third/icons/graph.png",
-      title: "Process Optimization",
+      icon: "/third/icons/graph.png",
+      title: t(
+        "agendaOnlineBookingReminders.solutions.items.optimization.title"
+      ),
+      alt: t("agendaOnlineBookingReminders.solutions.items.optimization.alt"),
     },
   ];
 
@@ -27,32 +52,31 @@ export default function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#081F4D] mb-8">
-          An All-in-One Agenda to Simplify Your Tasks and Enhance
-          Your Clinic's Efficiency
+            {t("agendaOnlineBookingReminders.solutions.title")}
           </h2>
           <p className="text-2xl text-gray-600 max-w-5xl mx-auto">
-          Nextmotion Agenda is an all-in-one solution designed for aesthetic clinics. It centralizes
-          appointment management, improves resource planning, and enhances productivity.
+            {t("agendaOnlineBookingReminders.solutions.description")}
           </p>
           <p className="text-2xl text-gray-600 max-w-5xl mx-auto mt-6">
-          Discover how Nextmotion Agenda can streamline your clinic operations, reduce no-
-shows with SMS and email reminders, and optimize resource usage.
+            {t("agendaOnlineBookingReminders.solutions.description2")}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {solutions.map((solution, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="mb-4 w-16 h-16">
                 <Image
                   src={solution.icon}
-                  alt={solution.title}
+                  alt={solution.alt}
                   width={70}
                   height={70}
                   className="w-full h-full"
                 />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">{solution.title}</h3>
+              <h3 className="text-2xl font-semibold text-gray-900">
+                {solution.title}
+              </h3>
             </div>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface HeroProps {
   title: string;
@@ -17,6 +18,16 @@ export default function Hero({
   demoButton,
   watchButton,
 }: HeroProps) {
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
+
   return (
     <div className="relative pt-[120px] sm:pt-[160px] lg:pt-[200px] px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/30 via-white to-white -z-10" />
@@ -30,7 +41,7 @@ export default function Hero({
               {subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Link href="/contact_form">
+              <Link href={contactFormLink}>
                 <Button
                   size="lg"
                   className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base px-6 sm:px-8 py-3 h-auto rounded-full"

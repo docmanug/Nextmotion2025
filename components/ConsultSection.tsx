@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Feature {
   title: string;
@@ -32,6 +33,18 @@ export default function ConsultSection({
   features,
   learnMore,
 }: ConsultSectionProps) {
+  const [learnMoreLink, setLearnMoreLink] = useState(
+    "/clinic-management-software"
+  );
+
+  useEffect(() => {
+    setLearnMoreLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/logiciel-consultation-esthetique"
+        : "/clinic-management-software"
+    );
+  }, []);
+
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,7 +134,7 @@ export default function ConsultSection({
             </div>
 
             <div className="mt-8 sm:mt-10">
-              <Link href="/clinic-management-software">
+              <Link href={learnMoreLink}>
                 <Button
                   variant="outline"
                   size="lg"

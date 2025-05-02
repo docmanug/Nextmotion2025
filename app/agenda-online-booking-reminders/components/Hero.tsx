@@ -3,8 +3,27 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Hero() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
+
   return (
     <div className="relative pt-[120px] sm:pt-[200px] px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/30 via-white to-white -z-10" />
@@ -12,15 +31,19 @@ export default function Hero() {
         <div className="flex flex-col items-start gap-6 sm:gap-8 pt-0 pb-12 sm:pb-16">
           <div className="flex flex-col items-start gap-4 sm:gap-6 max-w-[700px]">
             <h1 className="text-[32px] sm:text-[50px] font-extrabold leading-tight text-gray-900">
-              Boost Your Clinic with Nextmotion Agenda
+              {t("agendaOnlineBookingReminders.hero.title")}
             </h1>
             <p className="text-base sm:text-xl font-bold leading-relaxed text-black max-w-2xl">
-              A complete solution designed for appointment management, room
-              coordination, and patient communication.
+              {t("agendaOnlineBookingReminders.hero.description")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact_form"
+                href={
+                  currentLocale === "fr"
+                    ? "/fr/formulaire_contact"
+                    : "/contact_form"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -28,7 +51,7 @@ export default function Hero() {
                   size="lg"
                   className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[15px] sm:text-base px-6 sm:px-8 py-3 h-auto rounded-full"
                 >
-                  Book a demo
+                  {t("agendaOnlineBookingReminders.hero.bookDemoButton")}
                 </Button>
               </Link>
               <Link
@@ -41,7 +64,7 @@ export default function Hero() {
                   variant="outline"
                   className="w-full sm:w-auto text-gray-900 border-2 border-black hover:bg-gray-50 font-semibold text-[15px] sm:text-base px-8 sm:px-12 py-3 h-auto rounded-full"
                 >
-                  Play video
+                  {t("agendaOnlineBookingReminders.hero.playVideoButton")}
                 </Button>
               </Link>
             </div>

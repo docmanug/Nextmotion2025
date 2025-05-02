@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Link as LucideLink } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface CommunitySectionProps {
   title: string;
@@ -59,6 +60,16 @@ export default function CommunitySection({
   title,
   subtitle,
 }: CommunitySectionProps) {
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
+
   return (
     <section className="py-20 bg-[#051238] text-white">
       <div className="max-w-[1600px] mx-auto px-4">
@@ -68,7 +79,11 @@ export default function CommunitySection({
             {subtitle}
           </p>
 
-          <Link href="/contact_form" target="_blank" rel="noopener noreferrer">
+          <Link
+            href={contactFormLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="outline"
               size="lg"

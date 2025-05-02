@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface ThreeDSectionProps {
   title: string;
@@ -32,6 +33,18 @@ export default function ThreeDSection({
   features,
   learnMore,
 }: ThreeDSectionProps) {
+  const [learnMoreLink, setLearnMoreLink] = useState(
+    "/3d-aesthetic-simulation"
+  );
+
+  useEffect(() => {
+    setLearnMoreLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/3d-aesthetic-simulation"
+        : "/3d-aesthetic-simulation"
+    );
+  }, []);
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,7 +101,7 @@ export default function ThreeDSection({
             </div>
 
             <div className="mt-10">
-              <Link href="/3d-aesthetic-simulation">
+              <Link href={learnMoreLink}>
                 <Button
                   variant="outline"
                   size="lg"

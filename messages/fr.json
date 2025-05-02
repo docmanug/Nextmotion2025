@@ -1227,5 +1227,1404 @@
       },
       "submitButton": "Envoyer"
     }
+  },
+  "threeDAestheticSimulation": {
+    "hero": {
+      "label": "NEXTMOTION 3D",
+      "title": "Renforcez vos consultations avec la réalité augmentée",
+      "description": "Nextmotion 3D vous permet de visualiser les couches anatomiques en temps réel, d'éduquer vos patients avec des outils interactifs et de renforcer la confiance grâce à une technologie de pointe."
+    },
+    "imageSection": {
+      "title": "Un modèle d'anatomie 3D époustouflant",
+      "subtitle": "conçu par des praticiens esthétiques",
+      "imageAlt": "Démonstration du modèle d'anatomie 3D"
+    },
+    "standardSection": {
+      "label": "APPRENDRE",
+      "title": "L'anatomie 3D à portée de main",
+      "description1": "Notre modèle est composé de **couches anatomiques** qui peuvent être **mises en évidence ou supprimées**. Ainsi, vous pourrez effectuer une **dissection numérique** pour visualiser n'importe quelle structure.",
+      "description2": "Il peut afficher **les zones de danger** où une canule sera nécessaire, en fonction du plan de traitement que vous avez en tête pour vos patients.",
+      "description3": "Obtenez un accès complet à Nextmotion 3D pour seulement **49€/mois**, sans engagement. Profitez de toutes les fonctionnalités, mises à jour et support avec la flexibilité d'annuler à tout moment."
+    },
+    "standard2Section": {
+      "label": "ÉDUQUER",
+      "title": "Une compréhension approfondie du processus de vieillissement",
+      "description1": "Chaque couche anatomique a **2 versions : jeune et âgée**.",
+      "description2": "Ainsi, vous pourrez **expliquer à vos patients** que les fillers doivent être utilisés pour remplacer la perte de volume graisseux ou les changements structurels osseux, tandis que la toxine botulique doit être utilisée pour détendre les muscles et lisser les rides."
+    },
+    "standard3Section": {
+      "label": "CONVERTIR",
+      "title": "Créez une relation de confiance avec vos patients",
+      "description1": "Transformez d'un simple tap le modèle anatomique 3D en un masque d'anatomie en réalité augmentée qui s'adaptera directement au visage de vos patients, transformant votre iPad/iPhone en **un miroir magique**.",
+      "description2": "NextMotion 3D est la **meilleure façon d'expliquer** à vos patients le processus de vieillissement."
+    },
+    "faq": {
+      "title": "Vous avez des questions ?",
+      "subtitle": "Nous avons les réponses",
+      "questions": [
+        {
+          "question": "Combien coûte la licence de l'application ?",
+          "answer": "Notre tarification est structurée pour offrir une valeur maximale aux professionnels de santé. Veuillez contacter notre équipe commerciale pour obtenir des informations détaillées sur les prix adaptées à vos besoins et exigences spécifiques."
+        },
+        {
+          "question": "L'application fonctionne-t-elle sur Android et iOS ?",
+          "answer": "Actuellement, l'application est optimisée pour les appareils iOS (iPad et iPhone) pour garantir la meilleure expérience de réalité augmentée. Nous travaillons continuellement à l'extension de la prise en charge des plateformes."
+        },
+        {
+          "question": "L'anatomie affichée à l'écran est-elle spécifique à mon patient ?",
+          "answer": "Oui, le modèle anatomique 3D s'adapte au visage de votre patient en temps réel grâce à la technologie AR. Cela crée une visualisation personnalisée qui reflète avec précision la structure faciale unique de votre patient."
+        },
+        {
+          "question": "Puis-je utiliser l'application sur un ordinateur ?",
+          "answer": "Les fonctionnalités AR de l'application nécessitent un appareil mobile (iPad/iPhone) pour une meilleure expérience. Cependant, vous pouvez accéder à certaines fonctionnalités et gérer votre compte via notre plateforme web sur votre ordinateur."
+        }
+      ]
+    },
+    "discover": {
+      "title": "Découvrez notre suite complète d'outils",
+      "cards": [
+        {
+          "title": "Nextmotion Capture"
+        },
+        {
+          "title": "Nextmotion Revolution"
+        }
+      ]
+    }
+  },
+  "clinicManagementSoftware": {
+    "hero": {
+      "title": "Boostez Votre Clinique avec Nextmotion Consult",
+      "description": "Une solution complète conçue pour la gestion des patients, les photos avant/après et la digitalisation de votre clinique esthétique.",
+      "signUpDemoButton": "S'inscrire pour une démo",
+      "playVideoButton": "Lancer la vidéo"
+    },
+    "solutions": {
+      "title": "Un logiciel tout-en-un pour simplifier vos tâches administratives et stimuler la croissance de votre clinique.",
+      "description": "Nextmotion Consult est une solution tout-en-un conçue pour les cliniques esthétiques. Elle centralise la gestion des patients, optimise les processus et augmente la productivité. Découvrez comment Nextmotion Consult peut transformer votre clinique et attirer plus de patients.",
+      "items": {
+        "paperless": {
+          "title": "Solution sans papier",
+          "alt": "Icône de contrat"
+        },
+        "signature": {
+          "title": "Signature électronique",
+          "alt": "Icône de signature"
+        },
+        "business": {
+          "title": "Développement commercial",
+          "alt": "Icône de classement"
+        },
+        "optimization": {
+          "title": "Optimisation des processus",
+          "alt": "Icône de graphique"
+        }
+      }
+    },
+    "feature1": {
+      "title": "Gestion Innovante des Patients",
+      "subtitle": "Logiciel conçu par un Médecin pour ses Confrères",
+      "description": "Une interface intuitive, conviviale et évolutive : accédez à toutes les informations pertinentes sur une seule page. Bénéficiez d'observations médicales automatisées (via questionnaires ou IA) et d'un module 'plan de traitement' efficace qui vous permet de générer devis, consentements et factures en un seul clic.",
+      "features": {
+        "interface": {
+          "title": "Interface Intuitive",
+          "description": "Toutes les informations pertinentes sur une seule page—plus de perte de temps à chercher la bonne consultation, les photos avant/après, le plan de traitement ou les documents administratifs."
+        },
+        "observations": {
+          "title": "Observations Automatisées",
+          "description": "Grâce à nos questionnaires rapides (notes Bolt) ou à la transcription IA des enregistrements audio de consultation, vos observations sont enregistrées sans effort, vous permettant de vous concentrer sur vos patients."
+        },
+        "treatment": {
+          "title": "Plans de Traitement",
+          "description": "Générez devis, consentements et factures en un seul clic."
+        }
+      }
+    },
+    "feature2": {
+      "title": "Optimisation des Processus",
+      "description": "Optimisez vos processus cliniques et déléguez efficacement les tâches à votre équipe. Améliorez la capture de photos et la gestion des documents pour une pratique plus fluide.",
+      "features": {
+        "capture": {
+          "title": "Nextmotion Capture",
+          "description": "Déléguez la capture de photos à votre équipe tout en obtenant des résultats professionnels."
+        },
+        "dictation": {
+          "title": "Dictée Vocale",
+          "description": "Rédigez rapidement vos observations grâce à la fonction de dictée vocale intégrée."
+        },
+        "questionnaire": {
+          "title": "Questionnaire Pré-Consultation",
+          "description": "Faites remplir les questionnaires aux patients à l'accueil ou sur leur smartphone, synchronisés avec leur dossier médical."
+        },
+        "signature": {
+          "title": "Signature Électronique",
+          "description": "Faites signer les documents administratifs électroniquement avant la consultation."
+        },
+        "speed": {
+          "title": "Générez des documents à la vitesse de l'éclair",
+          "description": "Concevez de beaux modèles de documents avec votre logo et votre propre mise en page, générez-les en un clic et demandez à vos patients de les signer électroniquement. Zéro papier et zéro stress"
+        },
+        "Solution": {
+          "title": "Solution Multiplateforme",
+          "description": "Ajoutez un nouveau patient depuis l'iPhone, concevez son plan de traitement depuis notre logiciel web et demandez-lui de signer les devis et formulaires de consentement sur votre iPad. Découvrez notre solution multiplateforme intuitive et conviviale"
+        },
+        "bookDemoButton": "En savoir plus sur NM Capture"
+      }
+    },
+    "feature3": {
+      "title": "Suivi des Performances",
+      "description": "Suivez et Analysez les Performances de Votre Clinique : Surveillez les indicateurs clés pour prendre des décisions éclairées qui améliorent vos services et optimisent la croissance.",
+      "features": {
+        "origin": {
+          "title": "Origine Géographique",
+          "description": "Analysez l'origine de vos patients et segmentez vos communications en conséquence."
+        },
+        "patients": {
+          "title": "Nombre de Patients",
+          "description": "Suivez le nombre de patients par jour, semaine, mois ou année."
+        },
+        "performance": {
+          "title": "Performance des Traitements",
+          "description": "Analysez le nombre de procédures, les revenus et le taux de conversion par type de traitement."
+        },
+        "monitoring": {
+          "title": "Suivi des Consultations",
+          "description": "Surveillez le nombre de consultations selon le type de visite."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature4": {
+      "title": "Gestion d'Équipe",
+      "description": "Surveillez et Suivez les Actions de Votre Équipe avec Précision : Assurez une gestion sécurisée et transparente de votre équipe médicale, vous permettant de contrôler et suivre les actions avec précision.",
+      "features": {
+        "access": {
+          "title": "Contrôle d'Accès",
+          "description": "Définissez les droits d'accès pour chaque rôle."
+        },
+        "tracking": {
+          "title": "Suivi des Actions",
+          "description": "Suivez les actions effectuées par chaque membre de l'équipe."
+        },
+        "restricted": {
+          "title": "Accès Restreint",
+          "description": "Les médecins ne peuvent accéder qu'aux dossiers de leurs propres patients."
+        },
+        "reports": {
+          "title": "Rapports Statistiques",
+          "description": "Analysez les revenus générés, le nombre de traitements effectués par membre de l'équipe, et plus encore."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature5": {
+      "title": "Solution Photo Intégrée",
+      "description": "Créez des Photos et Vidéos Avant/Après Dynamiques : obtenez une standardisation parfaite tout en gagnant du temps et en assurant un résultat professionnel et uniforme qui se synchronisera automatiquement avec les dossiers de vos patients.",
+      "features": {
+        "Standardization": {
+          "title": "Haute Standardisation",
+          "description": "Assurez des photos uniformes avec des couleurs et un positionnement cohérents."
+        },
+        "Editing": {
+          "title": "Édition Rapide",
+          "description": "Créez facilement des superpositions ou des collages avec des outils d'édition simples."
+        },
+        "Removal": {
+          "title": "Suppression d'Arrière-plan par IA",
+          "description": "Floutez automatiquement les yeux, les tatouages et remplacez les arrière-plans."
+        },
+        "Retrieval": {
+          "title": "Récupération Facile",
+          "description": "Ajoutez des mots-clés pour une récupération facile de vos photos."
+        },
+        "Forms": {
+          "title": "Formulaires de Consentement Électroniques",
+          "description": "Intégrez des formulaires de consentement pour les droits d'image signables électroniquement."
+        },
+        "sharing": {
+          "title": "Partage Facile",
+          "description": "Partagez facilement les images avec vos patients ou sur les réseaux sociaux."
+        },
+        "bookDemoButton": "Réserver une démo"
+      }
+    },
+    "feature6": {
+      "title": "Croissance de la Pratique",
+      "description": "Utilisez Nos Outils pour Développer et Optimiser Votre Pratique : améliorez les interactions avec les patients et boostez votre efficacité marketing pour stimuler la croissance et améliorer les performances de votre clinique.",
+      "features": {
+        "reminders": {
+          "title": "Rappels Automatiques",
+          "description": "Envoyez des rappels SMS et e-mail aux patients pour les encourager à prendre des rendez-vous de suivi."
+        },
+        "export": {
+          "title": "Export Patient",
+          "description": "Gérez les suivis personnalisés ou automatisés via Zapier."
+        },
+        "reviews": {
+          "title": "Avis Positifs",
+          "description": "Demandez des avis pour améliorer votre réputation en ligne."
+        },
+        "conversion": {
+          "title": "Conversion Patient",
+          "description": "Utilisez des mots-clés pour trouver facilement les meilleurs résultats avant/après et convertir plus de patients."
+        },
+        "education": {
+          "title": "Éducation Patient",
+          "description": "Utilisez Nextmotion 3D pour expliquer les processus de vieillissement et présenter efficacement vos plans de traitement."
+        },
+        "bookDemoButton": "Réserver une démo"
+      }
+    },
+    "feature7": {
+      "title": "Dossiers de traitement",
+      "description": "Nextmotion Consult peut être utilisé de manière transparente avec un iPhone, iPad ou tout ordinateur (Mac ou PC). Nous vous offrons la possibilité de tester une partie du parcours patient en utilisant un iPad pour vous montrer comment notre solution peut simplifier votre pratique.",
+      "note": "Cliquez simplement sur 'Démarrer la démo' ci-dessous pour commencer !",
+      "startDemoButton": "Démarrer la démo"
+    },
+    "feature8": {
+      "title": "Centre d'intégration",
+      "description": "Nextmotion vous permet de connecter facilement votre clinique à un large écosystème d'outils via notre marketplace. Profitez d'intégrations natives avec des solutions comme Mailchimp, Brevo, HubSpot et Stripe pour automatiser vos communications, simplifier le traitement des paiements et booster l'efficacité de votre clinique. En un seul clic, accédez à ces services pour améliorer à la fois les performances et les relations avec les patients.",
+      "features": {
+        "crm": {
+          "title": "Mailchimp, Brevo & HubSpot",
+          "description": "Automatisez les campagnes marketing, planifiez les communications et suivez l'engagement des patients avec des intégrations fluides avec ces plateformes CRM."
+        },
+        "stripe": {
+          "title": "Stripe",
+          "description": "Simplifiez les paiements en ligne avec Stripe, offrant à vos patients un moyen sécurisé et rapide de payer les consultations directement via le système de réservation en ligne."
+        },
+        "zapier": {
+          "title": "Zapier",
+          "description": "Connectez plus de 8 000 applications à Nextmotion, vous permettant de personnaliser davantage les flux de travail et d'automatiser les tâches répétitives comme les rappels de rendez-vous ou la gestion des ressources."
+        },
+        "Integrations": {
+          "title": "APIs pour Intégrations Personnalisées",
+          "description": "Nos APIs vous permettent d'aller encore plus loin dans l'intégration avec vos systèmes internes. Que vous intégriez la page de réservation en ligne directement dans votre site web ou que vous synchronisiez votre base de données patients avec un logiciel existant, nos APIs offrent une flexibilité totale pour répondre à vos besoins spécifiques."
+        },
+        "knowMoreApiButton": "En savoir plus sur notre API"
+      }
+    },
+    "feature9": {
+      "title": "Cas d'utilisation",
+      "description": "Sophie, assistante du Dr. Loubeyres à Pau, a réduit son temps administratif de 32%, économisant plus d'1h30 par jour pour se concentrer davantage sur les soins aux patients.",
+      "imageAlt": "Illustration du Cas d'Utilisation"
+    },
+    "tryNextmotion": {
+      "title": "Essayez Nextmotion",
+      "description": "Inscrivez-vous pour une démonstration gratuite et découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et réduisez vos tâches administratives dès aujourd'hui.",
+      "reserveDemoButton": "Réserver votre démo"
+    },
+    "discover": {
+      "title": "Vous voulez aller plus loin ?",
+      "description": "Découvrez Nextmotion Revolution et Nextmotion 3D pour intégrer directement des photos parfaitement standardisées dans vos dossiers patients et améliorer significativement la qualité de vos consultations.",
+      "cards": {
+        "revolution": {
+          "title": "Nextmotion Revolution",
+          "alt": "Nextmotion Revolution"
+        },
+        "3d": {
+          "title": "Nextmotion 3D",
+          "alt": "Nextmotion 3D"
+        }
+      }
+    }
+  },
+  "agendaOnlineBookingReminders": {
+    "hero": {
+      "title": "Optimisez Votre Clinique avec Nextmotion Agenda",
+      "description": "Une solution complète conçue pour la gestion des rendez-vous, la coordination des salles et la communication avec les patients.",
+      "bookDemoButton": "Réserver une démo",
+      "playVideoButton": "Voir la vidéo"
+    },
+    "solutions": {
+      "title": "Un Agenda Tout-en-Un pour Simplifier Vos Tâches et Améliorer l'Efficacité de Votre Clinique",
+      "description": "Nextmotion Agenda est une solution tout-en-un conçue pour les cliniques esthétiques. Elle centralise la gestion des rendez-vous, améliore la planification des ressources et augmente la productivité.",
+      "description2": "Découvrez comment Nextmotion Agenda peut optimiser les opérations de votre clinique, réduire les absences grâce aux rappels SMS et email, et optimiser l'utilisation des ressources.",
+      "items": {
+        "paperless": {
+          "title": "Solution sans papier",
+          "alt": "Icône de contrat"
+        },
+        "signature": {
+          "title": "Signature électronique",
+          "alt": "Icône de signature"
+        },
+        "business": {
+          "title": "Développement commercial",
+          "alt": "Icône de classement"
+        },
+        "optimization": {
+          "title": "Optimisation des processus",
+          "alt": "Icône de graphique"
+        }
+      }
+    },
+    "feature1": {
+      "title": "Gestion Simplifiée des Rendez-vous",
+      "description": "Organisez et suivez tous vos rendez-vous patients en temps réel avec une interface intuitive conçue pour les cliniques esthétiques. Gagnez du temps et évitez les erreurs de planification grâce à la synchronisation automatique.",
+      "iconAlt": "Icône de gestion des rendez-vous",
+      "imageAlt": "Capture d'écran de gestion des rendez-vous",
+      "features": {
+        "calendar": {
+          "title": "Calendrier en Temps Réel",
+          "description": "Visualisez vos rendez-vous du jour, de la semaine ou du mois en un coup d'œil."
+        },
+        "notifications": {
+          "title": "Notifications Automatiques",
+          "description": "Recevez des alertes pour les changements ou annulations."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature2": {
+      "title": "Coordination des Salles et Équipements",
+      "description": "Optimisez l'utilisation de vos ressources en planifiant les salles et les machines pour chaque procédure. Gérez facilement la disponibilité des équipements pour assurer un flux de travail fluide.",
+      "iconAlt": "Icône de coordination des salles",
+      "imageAlt": "Capture d'écran de coordination des salles",
+      "features": {
+        "planning": {
+          "title": "Planification des Ressources",
+          "description": "Assurez-vous que chaque salle et machine est disponible au bon moment."
+        },
+        "equipment": {
+          "title": "Gestion des Équipements",
+          "description": "Prévenez les conflits d'utilisation et maximisez l'efficacité de votre clinique."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature3": {
+      "title": "Rappels SMS et Email",
+      "description": "Réduisez les rendez-vous manqués grâce à un système automatisé de rappels SMS et email. Les patients reçoivent des notifications personnalisées avant leur consultation pour assurer leur présence.",
+      "iconAlt": "Icône de rappels",
+      "imageAlt": "Capture d'écran des rappels",
+      "features": {
+        "reminders": {
+          "title": "Rappels Personnalisés",
+          "description": "Créez des messages personnalisés pour chaque patient."
+        },
+        "tracking": {
+          "title": "Suivi des Confirmations",
+          "description": "Visualisez les réponses des patients et anticipez les absences."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature4": {
+      "title": "Accès Patient en Ligne",
+      "description": "Offrez à vos patients la possibilité de prendre rendez-vous en ligne, à tout moment. Un portail sécurisé et personnalisable vous permet d'attirer de nouveaux patients et de gérer efficacement leur planification.",
+      "iconAlt": "Icône d'accès en ligne",
+      "imageAlt": "Capture d'écran d'accès en ligne",
+      "features": {
+        "portal": {
+          "title": "Portail Sécurisé",
+          "description": "Les patients peuvent consulter leur historique de rendez-vous et réserver en ligne en toute sécurité."
+        },
+        "customization": {
+          "title": "Portail Personnalisable",
+          "description": "Ajoutez votre marque et intégrez facilement le portail à votre site web."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    },
+    "feature5": {
+      "title": "Suivi des Performances et Statistiques",
+      "description": "Analysez en détail les performances de votre clinique avec des rapports statistiques précis. Suivez le nombre de rendez-vous, les taux d'annulation et la productivité du personnel en quelques clics.",
+      "iconAlt": "Icône des statistiques",
+      "imageAlt": "Capture d'écran des statistiques",
+      "features": {
+        "reports": {
+          "title": "Rapports en Temps Réel",
+          "description": "Visualisez instantanément les indicateurs clés de performance de votre clinique."
+        },
+        "analysis": {
+          "title": "Analyse des Données",
+          "description": "Prenez des décisions éclairées pour améliorer l'efficacité et la rentabilité."
+        }
+      },
+      "bookDemoButton": "Réserver une démo"
+    }
+  },
+  "virtualClasses": {
+    "hero": {
+      "label": "Classes Virtuelles",
+      "title": "Le niveau supérieur des formations à distance",
+      "description": "Amenez la formation à distance immersive au niveau supérieur avec les technologies de réalité mixte et holographique.",
+      "contactButton": "Contactez-nous"
+    },
+    "standard": {
+      "label": "FONCTIONNEMENT",
+      "title": "Un nouveau standard est né",
+      "description": "**NextMotion VirtualClasses** est une alternative intelligente et efficace aux formats de formation traditionnels qui permet des économies de coûts pour les entreprises et est impactante pour les étudiants souhaitant maîtriser les nouvelles techniques dans un environnement immersif où ils peuvent avoir une interaction directe avec leur formateur."
+    },
+    "hardware": {
+      "label": "MATÉRIEL",
+      "title": "Tout ce dont vous avez besoin est le web",
+      "description": "VirtualClasses ne nécessite qu'un seul appareil Hololens pour fonctionner (inclus dans le package). Le reste de la technologie est accessible depuis un lien web unique avec votre **appareil iOS** ou votre **ordinateur portable**."
+    },
+    "teacher": {
+      "label": "FORMATEUR",
+      "title": "L'avenir de l'enseignement en ligne",
+      "description": "Le formateur peut diriger une masterclass à distance en portant un Hololens. Les étudiants à distance peuvent assister à sa session et interagir avec le formateur depuis leur iPhone, iPad et ordinateur portable en utilisant Google Chrome.",
+      "button": "Contactez un expert NextMotion"
+    },
+    "student": {
+      "label": "ÉTUDIANT",
+      "title": "Apprenez de manière immersive",
+      "description": "Les étudiants peuvent bénéficier d'une session de formation à distance en portant un Hololens. Les formateurs peuvent les guider à distance depuis leur iPad ou ordinateur portable en utilisant Google Chrome. Tout le monde peut interagir de manière immersive.",
+      "button": "Contactez un expert NextMotion"
+    },
+    "market": {
+      "label": "OPPORTUNITÉS DU MARCHÉ",
+      "title": "La formation est un moteur clé de croissance pour les industries esthétiques.",
+      "description": "Les clients doivent d'abord être convaincus de l'efficacité des produits proposés par la marque et apprendre à les utiliser correctement pour obtenir les mêmes résultats avec leurs propres patients. Aujourd'hui, plusieurs formats de formation sont disponibles avec des coûts variables pour les entreprises",
+      "downloadButton": "Télécharger le guide",
+      "features": {
+        "easy": "Facile à utiliser",
+        "oneToOne": "Formations individuelles",
+        "custom": "Frais d'atelier personnalisés",
+        "growth": "Un moteur clé de croissance",
+        "formats": "Formats de formation multiples",
+        "congresses": "Congrès symposiums",
+        "webinars": "Webinaires",
+        "cost": "Économies de coûts"
+      }
+    },
+    "revolution": {
+      "title": "Prêt à rejoindre la révolution ?",
+      "description": "Essayez la Suite NextMotion gratuitement pendant 14 jours !",
+      "button": "Demander une démo"
+    },
+    "journey": {
+      "title": "Commencez votre parcours NextMotion maintenant !",
+      "button": "Contactez-nous"
+    },
+    "approval": {
+      "title": "Découvrez les autres solutions de NextMotion",
+      "description": "Nos solutions d'imagerie, de numérisation et de simulation peuvent être utilisées ensemble ou séparément. Combinez avec nous des solutions pour obtenir le maximum d'avantages de notre technologie.",
+      "solutions": {
+        "capture": {
+          "label": "NEXTMOTION CAPTURE",
+          "title": "Une solution d'imagerie de référence qui est cohérente, efficace et facile à utiliser"
+        },
+        "consult": {
+          "label": "NEXTMOTION CONSULT",
+          "title": "Un système de dossiers médicaux électroniques qui dépasse vos attentes"
+        },
+        "3d": {
+          "label": "NEXTMOTION 3D",
+          "title": "Transformez votre smartphone en caméra 3D haute résolution et solution d'anatomie numérique"
+        }
+      }
+    },
+    "market2": {
+      "label": "NOTRE PARCOURS",
+      "title": "Depuis notre création,\nnous n'avons cessé de croître\nà un rythme effréné.",
+      "description": "NextMotion est une entreprise MedTech innovante établie depuis 2016 qui a commencé par proposer une solution de documentation photographique. Par la suite, l'entreprise a créé une plateforme EMR/SaaS pour aider les médecins à numériser l'ensemble de leur flux de travail et proposer une plateforme web privée innovante à leurs patients.",
+      "imageAlt": "Parcours NextMotion"
+    }
+  },
+  "injectorRobot": {
+    "hero": {
+      "label": "ROBOTIQUE",
+      "title": "Le premier robot injecteur autonome avec IA pour la médecine esthétique",
+      "description": "Découvrez LENA, le premier robot injecteur auto-piloté par intelligence artificielle, dédié à la médecine esthétique",
+      "button": "Lancer la vidéo"
+    },
+    "standard": {
+      "label": "UNE RÉVOLUTION",
+      "title": "Un nouveau chapitre s'ouvre dans l'industrie esthétique",
+      "description1": "Présentation de **LENA** (**L**ight **E**nabled **N**euro-robotic **A**rm), notre bras robotique autonome de dernière génération capable d'effectuer des injections de toxine botulique avec une précision remarquable.",
+      "description2": "Contrairement à la main humaine, **LENA** atteindra chacun des points d'injection que vous avez choisis avec une précision sub-millimétrique sans jamais trembler ni se fatiguer.",
+      "description3": "La localisation des points d'injection ainsi que leur profondeur seront parfaitement réalisées grâce à son bras robotique médical équipé de **6 axes**.",
+      "description4": "Combiné avec une seringue électronique capable de délivrer de manière constante des doses calibrées au millième de ml, les injections effectuées par **LENA** sont constantes et parfaitement reproductibles."
+    },
+    "standard2": {
+      "label": "COMMENT ÇA MARCHE",
+      "title": "Une vision 3D et une application dédiée",
+      "description1": "Le visage du patient est préalablement scanné en **3D** pour vous permettre de reporter les points d'injection via une application iOS dédiée. Ceux-ci seront ensuite envoyés au robot.",
+      "description2": "**LENA** est équipé d'une caméra **3D** capable de percevoir la profondeur et de mesurer les distances. Après réception de votre plan de traitement, le robot s'animera et complétera les points d'injection sans aucune douleur pour le patient.",
+      "description3": "L'ensemble de la procédure sera effectué sous la stricte supervision d'un **médecin**."
+    },
+    "capabilities": {
+      "label": "IMCAS 2023",
+      "title": "Découvrez LENA et ses capacités",
+      "description": "L'équipe NextMotion serait ravie de vous rencontrer pendant l'IMCAS Paris 2023",
+      "feature": "Vous pourrez assister à une démonstration en direct de LENA effectuant des injections sur un visage en silicone",
+      "button": "Lancer la vidéo"
+    },
+    "revolution": {
+      "title": "Prêt à rejoindre la révolution ?",
+      "description": "Essayez la Suite NextMotion gratuitement pendant 14 jours !",
+      "button": "Demander une démo"
+    },
+    "approval": {
+      "title": "Découvrez les autres solutions de NextMotion",
+      "description": "Nos solutions d'imagerie, de numérisation et de simulation peuvent être utilisées ensemble ou séparément. Combinez avec nous des solutions pour obtenir le maximum d'avantages de notre technologie.",
+      "solutions": {
+        "capture": {
+          "label": "NEXTMOTION CAPTURE",
+          "title": "Une solution d'imagerie de référence qui est cohérente, efficace et facile à utiliser"
+        },
+        "consult": {
+          "label": "NEXTMOTION CONSULT",
+          "title": "Un système de dossiers médicaux électroniques qui dépasse vos attentes"
+        },
+        "3d": {
+          "label": "NEXTMOTION 3D",
+          "title": "Transformez votre smartphone en caméra 3D haute résolution et solution d'anatomie numérique"
+        }
+      }
+    },
+    "lastSection": {
+      "resources": {
+        "useCases": {
+          "type": "CAS D'UTILISATION",
+          "title": "Découvrez les précieux témoignages de nos clients sur l'utilisation de nos solutions"
+        },
+        "ebook": {
+          "type": "E-BOOK",
+          "title": "Téléchargez notre e-book sur la consultation numérique et boostez votre activité"
+        },
+        "events": {
+          "type": "ÉVÉNEMENTS",
+          "title": "Ne manquez aucune de nos participations à un congrès ou un Webinaire"
+        }
+      },
+      "button": "Plus de ressources"
+    }
+  },
+  "manager": {
+    "hero": {
+      "title": "Optimisez la Gestion de Votre Clinique Esthétique avec Nextmotion",
+      "description": "Une solution tout-en-un pour attirer plus de patients, suivre l'activité de votre clinique et améliorer les performances de votre équipe.",
+      "demoButton": "Demandez une demo",
+      "videoButton": "Voir la vidéo"
+    },
+    "solutions": {
+      "title": "Une seule plateforme qui centralise tous vos outils",
+      "description": "Nextmotion est conçu pour répondre aux besoins spécifiques des managers de cliniques esthétiques. Découvrez comment notre solution peut transformer la gestion de votre clinique en vous offrant tous les outils nécessaires dans une seule plateforme intuitive.",
+      "items": {
+        "process": "Process",
+        "business": "Business",
+        "agenda": "Agenda",
+        "tracking": "Tracking Tool"
+      }
+    },
+    "features": {
+      "patientJourney": {
+        "title": "Parcours patient simplifié",
+        "description": "Le module parcours patient simplifie l'utilisation de notre solution par vos équipes grâce à une interface épurée qui liste des patients de la journée, impose des étapes pré-définies sans nécessité d'aller dans le dossier médical ainsi que des filtres pour trier les parcours complétés, en cours ou non débuté.",
+        "sections": {
+          "patientList": {
+            "title": "Liste des Patients de la Journée",
+            "description": "Accédez rapidement à la liste des patients prévus pour la journée, permettant une gestion efficace et sans stress de votre emploi du temps."
+          },
+          "predefinedSteps": {
+            "title": "Étapes Pré-définies",
+            "description": "Suivez les étapes pré-définies du parcours patient sans avoir à naviguer dans chaque dossier. Cela simplifie le flux de travail et réduit le temps de gestion administrative."
+          },
+          "journeyFilters": {
+            "title": "Filtres par Parcours",
+            "description": "Filtrez facilement les patients par parcours complété, en cours, ou non débuté. Cette fonctionnalité vous offre une vision claire de l'état des soins, vous permettant de prioriser vos actions et d'assurer un suivi rigoureux."
+          }
+        },
+        "demoButton": "Réservez votre démo"
+      },
+      "processOptimization": {
+        "title": "Optimisez vos Process",
+        "description": "Réduisez le temps administratif avec la signature électronique et les questionnaires synchronisés. Gérez facilement les honoraires entre la clinique et les praticiens. Optimisez les appels entrants avec des notes et mots-clés pour les rendez-vous. Utilisez des outils de caisse et de comptabilité avancés pour la TVA et les exports en un clic. Suivez intuitivement le statut des patients présents depuis notre agenda.",
+        "sections": {
+          "electronicSignature": {
+            "title": "Signature Électronique et Questionnaires Synchronisés",
+            "description": "Réduisez le temps administratif avec la signature électronique des documents et les questionnaires de pré-consultation sur tablette synchronisés avec les dossiers médicaux."
+          },
+          "feeDistribution": {
+            "title": "Répartition des Honoraires",
+            "description": "Gérez facilement la répartition des honoraires entre la clinique et les praticiens pour une gestion financière transparente."
+          },
+          "incomingCalls": {
+            "title": "Gestion des Appels Entrants",
+            "description": "Gardez un oeil sur les appels entrants depuis votre logiciel qui intègre prise de notes et mots-clés pour identifier facilement les opportunités de rendez-vous."
+          },
+          "cashTools": {
+            "title": "Outils de Caisse et Comptabilité",
+            "description": "Utilisez des outils avancés pour la gestion de la TVA et des exports comptables personnalisés en un clic, simplifiant ainsi vos tâches comptables."
+          },
+          "patientStatus": {
+            "title": "Suivi du Statut des Patients",
+            "description": "Suivez intuitivement le statut des patients présents dans la clinique grâce à notre agenda, indiquant les paiements réglés, les séances forfait, et les paiements en attente."
+          }
+        },
+        "demoButton": "Démo personnalisée"
+      },
+      "activityTracking": {
+        "title": "Suivi de l'Activité",
+        "description": "Grâce à notre Dashboard intuitif, suivez les principaux indicateurs de votre activité, comme le nombre de nouveaux patients, le chiffre d'affaires généré, l'état des stocks, et les sources des prises de rendez-vous. Gérez précisément les impayés et anticipez le chiffre d'affaires futur en fonction des rendez-vous à venir, pour une gestion optimale de votre clinique.",
+        "sections": {
+          "newPatients": {
+            "title": "Suivi des Nouveaux Patients",
+            "description": "Grâce à notre Dashboard, suivez le nombre de nouveaux patients qui ont pris rendez-vous. Gardez un œil sur la croissance de votre patiente."
+          },
+          "revenue": {
+            "title": "Chiffre d'Affaires Généré",
+            "description": "Visualisez le chiffre d'affaires généré par votre équipe sur une période donnée. Analysez les performances financières de votre clinique."
+          },
+          "stock": {
+            "title": "Gestion des Stocks",
+            "description": "Surveillez l'état de votre stock avec des alertes pour ne jamais être à court. Assurez une disponibilité constante de vos produits."
+          },
+          "appointmentSources": {
+            "title": "Sources des Prises de Rendez-vous",
+            "description": "Identifiez les sources des prises de rendez-vous de vos patients. Optimisez vos efforts marketing en fonction des canaux les plus efficaces."
+          },
+          "unpaid": {
+            "title": "Suivi des Impayés",
+            "description": "Effectuez un suivi précis des impayés pour une gestion financière rigoureuse. Relancez les paiements en retard facilement."
+          },
+          "revenueForecast": {
+            "title": "Prévisionnel du Chiffre d'Affaires",
+            "description": "Anticipez le chiffre d'affaires en fonction des rendez-vous à venir. Planifiez stratégiquement pour maximiser vos revenus futurs."
+          },
+          "performance": {
+            "title": "Analyse des Performances",
+            "description": "Utilisez des indicateurs clés pour évaluer et améliorer les performances de votre clinique. Prenez des décisions éclairées pour une gestion optimale."
+          }
+        },
+        "demoButton": "Demo personnalisée"
+      },
+      "agenda": {
+        "title": "Agenda et RDV",
+        "description": "Notre partie Agenda offre une gestion complète des plannings par salle, collaborateur et machine, permettant une organisation optimale de votre clinique esthétique. Intégrez facilement notre portail de prise de rendez-vous en ligne directement sur votre site internet, offrant à vos patients une interface conviviale pour planifier leurs visites. De plus, la gestion des SMS et emails de rappel automatisés assure que vos patients n'oublient jamais leurs rendez-vous, réduisant ainsi les absences et augmentant l'efficacité de votre clinique.",
+        "sections": {
+          "onlinePortal": {
+            "title": "Portail de Prise de Rendez-vous en Ligne",
+            "description": "Intégrez facilement notre portail de prise de rendez-vous en ligne directement sur votre site internet, offrant à vos patients une interface conviviale pour planifier leurs visites."
+          },
+          "reminders": {
+            "title": "Rappels Automatisés par SMS et Email",
+            "description": "La gestion des SMS et emails de rappel automatisés assure que vos patients n'oublient jamais leurs rendez-vous, réduisant ainsi les absences et augmentant l'efficacité de votre clinique."
+          }
+        }
+      },
+      "feature6": {
+        "title": "Marketing optimisé",
+        "description": "Attirez plus de patients avec des campagnes email et SMS ciblées. Sollicitez-les automatiquement pour obtenir une bonne évaluation sur internet. Collectez des données précises pour personnaliser vos stratégies marketing et obtenir de bonnes évaluations. Intégrez Google Tag Manager pour connaître les sources de prise de rendez-vous. Synchronisez Nextmotion avec Hubspot pour une gestion fluide et efficace de vos campagnes marketing.",
+        "sections": {
+          "emailSms": {
+            "title": "Campagnes Email et SMS Ciblées",
+            "description": "Attirez plus de patients avec des campagnes email et SMS ciblées. Sollicitez-les automatiquement pour obtenir une bonne évaluation sur internet."
+          },
+          "dataCollection": {
+            "title": "Collecte de Données Précises",
+            "description": "Collectez des données précises pour personnaliser vos stratégies marketing."
+          },
+          "tagManager": {
+            "title": "Intégration de Google Tag Manager",
+            "description": "Intégrez Google Tag Manager pour connaître les sources de prise de rendez-vous et optimiser vos efforts marketing."
+          },
+          "hubspot": {
+            "title": "Synchronisation avec Hubspot",
+            "description": "Synchronisez Nextmotion avec Hubspot pour une gestion fluide et efficace de vos campagnes marketing."
+          }
+        },
+        "demoButton": "En savoir plus sur les Intégrations"
+      },
+      "feature7": {
+        "title": "Portail patient",
+        "description": "La web-application portail patient affiche le logo de votre clinique et intègre un portail de prise de rendez-vous en ligne, avec chat intégré et questionnaires de pré-consultation synchronisés. Elle simplifie la gestion avec la signature électronique, un carnet digital de traçabilité et un portfolio avant/après. Tous les documents sont centralisés et des notifications pour relances, anniversaires et promotions peuvent être envoyées.",
+        "sections": {
+          "customization": {
+            "title": "Personnalisation et Prise de Rendez-vous",
+            "description": "L'icône de l'application affiche le logo de votre clinique et intègre un portail de prise de rendez-vous en ligne avec la possibilité de modifier les rendez-vous."
+          },
+          "communication": {
+            "title": "Communication et Pré-consultation",
+            "description": "Le chat intégré permet une communication directe avec la clinique, tandis que le questionnaire de pré-consultation se synchronise automatiquement avec le dossier patient."
+          },
+          "documents": {
+            "title": "Documents et Traçabilité",
+            "description": "La signature électronique facilite la gestion des documents, et le carnet digital assure la traçabilité des interventions. Le portfolio digital permet de partager facilement les avant/après."
+          },
+          "centralization": {
+            "title": "Centralisation et Notifications",
+            "description": "Tous les documents, tels que les factures et ordonnances, sont centralisés pour un accès facile. Vous pouvez également envoyer des notifications pour les relances, anniversaires et offres promotionnelles (fonctionnalité en cours de développement)."
+          }
+        }
+      },
+      "feature8": {
+        "title": "Cas client",
+        "description": "Méline Puech, directrice du CEL Gramont à Toulouse, gère au quotidien une équipe de 27 personnes, composée de médecins, d'assistantes et de secrétaires qui reçoivent plusieurs centaines de patients par jour. 'L'intégration complète de la gestion des patients, des rendez-vous et de la comptabilité dans Nextmotion nous a permis de simplifier notre gestion quotidienne et d'améliorer nos performances globales.'",
+        "videoButton": "Voir la vidéo"
+      },
+      "tryNextmotion": {
+        "title": "Essayez Nextmotion",
+        "description": "Inscrivez-vous pour une démonstration gratuite et découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et attirez plus de patients dès aujourd'hui. Demandez une démonstration gratuite dès maintenant."
+      },
+      "feature5": {
+        "title": "Développement du business",
+        "description": "Nos outils de développement business intégrés propulsent votre activité. Utilisez des rappels automatiques par email ou SMS pour relancer les patients ayant un devis en cours ou leur rappeler de reprendre rendez-vous. La synchronisation avec Hubspot vous permet de réaliser du marketing professionnel et des ventes performantes grâce aux séquences et automatisations. Avec l'application Nextmotion Capture et son portfolio, attirez plus de patients et augmentez votre taux de conversion, stimulant ainsi la croissance de votre clinique.",
+        "sections": {
+          "reminders": {
+            "title": "Rappels Automatiques",
+            "description": "Vous aurez à disposition des outils de rappels automatiques par email ou SMS pour relancer les patients avec un devis en cours de réflexion ou leur rappeler de reprendre rendez-vous pour leurs traitements récurrents."
+          },
+          "hubspot": {
+            "title": "Synchronisation avec Hubspot",
+            "description": "La synchronisation avec Hubspot vous permettra de faire du marketing professionnel et de la vente à un tout autre niveau de performance via les séquences et autres automatisations."
+          },
+          "capturePortfolio": {
+            "title": "Nextmotion Capture et Portfolio",
+            "description": "L'application Nextmotion Capture et son portfolio vous permettront d'attirer plus de patients et d'augmenter votre taux de conversion, stimulant ainsi la croissance de votre clinique."
+          }
+        }
+      }
+    }
+  },
+  "medecinEsthetique": {
+    "hero": {
+      "title": "Attirez, Convertissez et Fidélisez Vos Patients dans Votre Clinique Esthétique",
+      "subtitle": "Une Solution Tout-en-Un pour Optimiser la Gestion de Votre Clinique Esthétique et Améliorer la Satisfaction des Patients",
+      "demoButton": "Demander une démo",
+      "videoButton": "Lancer la vidéo"
+    },
+    "solutions": {
+      "title": "Une plateforme unique qui centralise tous vos outils",
+      "description": "Nextmotion est conçu pour répondre aux besoins spécifiques des médecins esthétiques. Découvrez comment notre solution peut transformer votre pratique en fournissant tous les outils nécessaires dans une plateforme intuitive unique.",
+      "items": {
+        "process": "Processus",
+        "business": "Développement",
+        "agenda": "Agenda",
+        "tracking": "Suivi"
+      }
+    },
+    "feature1": {
+      "title": "Zéro papier",
+      "description": "Optimisez la gestion administrative de votre clinique esthétique avec des outils numériques avancés. Passez au zéro papier, gagnez du temps et assurez une traçabilité précise des documents et des stocks.",
+      "sections": {
+        "quoteConsent": {
+          "title": "Génération de devis et consentements en un clic",
+          "description": "Créez rapidement des devis et consentements que les patients peuvent signer électroniquement."
+        },
+        "eSignature": {
+          "title": "Signature électronique",
+          "description": "Simplifiez la validation de tous vos documents avec la signature électronique."
+        },
+        "invoice": {
+          "title": "Transformation en facture",
+          "description": "Transformez les devis en factures d'un simple geste."
+        },
+        "accounting": {
+          "title": "Comptabilité simplifiée",
+          "description": "Logiciel de caisse certifié NF525 pour une gestion comptable efficace."
+        },
+        "stock": {
+          "title": "Traçabilité et gestion du stock",
+          "description": "Suivi dynamique et digital des stocks."
+        },
+        "reporting": {
+          "title": "Reporting digital",
+          "description": "Générez des rapports détaillés des points d'injection."
+        },
+        "sendDocs": {
+          "title": "Envoi de documents",
+          "description": "Envoyez des documents à vos patients en un clic."
+        }
+      },
+      "demoButton": "Réserver une démo"
+    },
+    "feature2": {
+      "title": "Gestion d'équipe",
+      "description": "Surveillez et suivez précisément les actions de votre équipe médicale. Assurez une gestion sécurisée et transparente pour les cliniques esthétiques.",
+      "sections": {
+        "accessControl": {
+          "title": "Contrôle d'accès complet pour les cliniques esthétiques",
+          "description": "Définissez et gérez les droits d'accès pour chaque rôle dans votre clinique, garantissant des autorisations sécurisées et adaptées."
+        },
+        "actionTracking": {
+          "title": "Suivi des actions pour une meilleure responsabilité",
+          "description": "Suivez chaque action effectuée par votre équipe médicale pour une transparence opérationnelle accrue."
+        },
+        "restrictedAccess": {
+          "title": "Accès restreint aux dossiers patients",
+          "description": "Donnez aux médecins l'accès uniquement aux informations de leurs propres patients, garantissant la confidentialité des données."
+        },
+        "reports": {
+          "title": "Rapports statistiques détaillés",
+          "description": "Analysez le chiffre d'affaires, suivez le nombre de traitements réalisés par chaque membre de l'équipe et optimisez la performance de votre clinique grâce à des outils de reporting avancés."
+        }
+      },
+      "demoButton": "Réserver une démo"
+    },
+    "feature3": {
+      "title": "Croissance de la pratique",
+      "description": "Exploitez nos outils pour développer et optimiser votre pratique esthétique.",
+      "sections": {
+        "export": {
+          "title": "Export patient",
+          "description": "Gérez les suivis personnalisés ou automatisés via Zapier."
+        },
+        "reviews": {
+          "title": "Avis positifs",
+          "description": "Demandez des avis pour améliorer votre réputation en ligne."
+        },
+        "conversion": {
+          "title": "Conversion patient",
+          "description": "Utilisez des mots-clés pour trouver les meilleurs résultats avant/après et convertir plus de patients."
+        },
+        "education": {
+          "title": "Éducation patient",
+          "description": "Utilisez Nextmotion 3D pour expliquer les processus de vieillissement et vos plans de traitement."
+        }
+      },
+      "demoButton": "Démo personnalisée"
+    },
+    "feature4": {
+      "title": "Optimisation des process",
+      "description": "Améliorez la documentation photo et simplifiez la gestion des documents pour une pratique esthétique plus efficace.",
+      "sections": {
+        "capture": {
+          "title": "Nextmotion Capture",
+          "description": "Déléguez la prise de photos à votre équipe avec des résultats professionnels."
+        },
+        "dictation": {
+          "title": "Dictée vocale",
+          "description": "Enregistrez rapidement vos observations grâce à la dictée vocale intégrée."
+        },
+        "questionnaire": {
+          "title": "Questionnaire de pré-consultation",
+          "description": "Faites remplir les questionnaires aux patients à l'accueil ou sur leur smartphone, synchronisés automatiquement avec leur dossier médical."
+        },
+        "eSignature": {
+          "title": "Signature électronique",
+          "description": "Recueillez les signatures électroniques pour les documents administratifs avant la consultation."
+        }
+      }
+    },
+    "feature5": {
+      "title": "Suivi des performances",
+      "description": "Prenez des décisions basées sur les données pour améliorer les services aux patients et accélérer la croissance de votre pratique.",
+      "sections": {
+        "origin": {
+          "title": "Origine géographique",
+          "description": "Analysez d'où viennent vos patients et segmentez vos communications en conséquence."
+        },
+        "patients": {
+          "title": "Nombre de patients",
+          "description": "Suivez le nombre de patients par jour, semaine, mois ou année."
+        },
+        "performance": {
+          "title": "Performance des traitements",
+          "description": "Analysez le nombre de procédures, le chiffre d'affaires et le taux de conversion par type de traitement."
+        },
+        "reasons": {
+          "title": "Motifs de consultation",
+          "description": "Surveillez le nombre de consultations selon le motif de visite."
+        }
+      }
+    },
+    "feature6": {
+      "title": "Solution photo",
+      "description": "Capturez des photos et vidéos avant/après dynamiques. Obtenez une standardisation parfaite à chaque prise. Gagnez du temps et assurez des résultats professionnels et cohérents.",
+      "sections": {
+        "standardization": {
+          "title": "Standardisation élevée",
+          "description": "Assurez des photos uniformes avec des couleurs et des positions cohérentes."
+        },
+        "editing": {
+          "title": "Édition rapide",
+          "description": "Créez rapidement et facilement des superpositions ou des collages simples."
+        },
+        "removal": {
+          "title": "Suppression d'arrière-plan par IA",
+          "description": "Floutez les yeux, les tatouages et remplacez automatiquement les arrière-plans. Ajoutez des mots-clés pour retrouver facilement vos photos."
+        },
+        "consent": {
+          "title": "Consentements signables",
+          "description": "Intégrez des formulaires de droits à l'image signables électroniquement."
+        },
+        "sharing": {
+          "title": "Partage facile",
+          "description": "Partagez les images avec vos patients ou sur les réseaux sociaux."
+        }
+      },
+      "demoButton": "Réserver une démo personnalisée"
+    },
+    "feature7": {
+      "title": "Intégration optimale",
+      "description": "Nextmotion s'intègre à Stripe pour les paiements, Mailchimp pour les emails marketing, Hubspot pour l'automatisation marketing & ventes et Zapier pour l'automatisation des tâches. Ces intégrations vous font gagner du temps et automatisent les tâches répétitives.",
+      "sections": {
+        "customization": {
+          "title": "Personnalisation et prise de rendez-vous",
+          "description": "L'icône de l'application affiche le logo de votre clinique et intègre un portail de prise de rendez-vous en ligne avec la possibilité de modifier les rendez-vous."
+        },
+        "communication": {
+          "title": "Communication et pré-consultation",
+          "description": "Le chat intégré permet une communication directe avec la clinique, tandis que le questionnaire de pré-consultation se synchronise automatiquement avec le dossier patient."
+        },
+        "documents": {
+          "title": "Documents et traçabilité",
+          "description": "La signature électronique facilite la gestion des documents, et le carnet digital assure la traçabilité des interventions. Le portfolio digital permet de partager facilement les avant/après."
+        },
+        "centralization": {
+          "title": "Centralisation et notifications",
+          "description": "Tous les documents, tels que les factures et ordonnances, sont centralisés pour un accès facile. Vous pouvez également envoyer des notifications pour les relances, anniversaires et offres promotionnelles (fonctionnalité en cours de développement)."
+        }
+      }
+    },
+    "feature8": {
+      "title": "Cas client",
+      "description": "Sophie, assistante du Dr. Loubeyres à Pau, a réduit son temps administratif de 32 %, économisant plus d'1h30 par jour pour se concentrer davantage sur les soins aux patients.",
+      "videoButton": "Voir la vidéo"
+    },
+    "tryNextmotion": {
+      "title": "Essayez Nextmotion",
+      "description": "Inscrivez-vous pour une démonstration gratuite et découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et attirez plus de patients dès aujourd'hui. Demandez une démonstration gratuite dès maintenant.",
+      "button": "Réserver une démo"
+    }
+  },
+  "assistantPage": {
+    "hero": {
+      "title": "Optimisez la gestion de votre clinique esthétique",
+      "subtitle": "Logiciel tout-en-un pour simplifier et optimiser vos tâches administratives",
+      "button": "Inscrivez-vous pour une démo",
+      "videoButton": "Lancer la vidéo"
+    },
+    "solutions": {
+      "title": "Logiciel tout-en-un pour simplifier et optimiser vos tâches administratives",
+      "description": "Nextmotion est spécifiquement conçu pour les besoins des assistants et secrétaires de cliniques esthétiques : découvrez comment notre solution vous aide à gagner du temps, à réduire les tâches administratives et à améliorer l'efficacité globale de votre clinique.",
+      "solutions": [
+        { "title": "Solution sans papier" },
+        { "title": "Signature électronique" },
+        { "title": "Développement commercial" },
+        { "title": "Optimisation des processus" }
+      ]
+    },
+    "feature1": {
+      "title": "Fonctionnalités clés",
+      "description": "Utilisez notre solution pour une gestion administrative et pré-consultation sans couture : remplissez des questionnaires pré-consultation sur iPad ou smartphone, générez des devis et des consentements avec des signatures électroniques, et ajustez automatiquement les niveaux de stock. Simplifiez la conversion des devis en factures, rationalisez la comptabilité et la gestion des stocks, et intégrez les photos avant/après directement dans les dossiers des patients.",
+      "sections": [
+        {
+          "title": "Questionnaire pré-consultation numérique",
+          "description": "Faites remplir des questionnaires aux patients sur iPad ou smartphone, automatiquement synchronisés avec leurs dossiers patients."
+        },
+        {
+          "title": "Génération de devis et consentements",
+          "description": "Générez des documents en un seul clic, permettant aux patients de signer électroniquement sur une tablette ou un smartphone."
+        },
+        {
+          "title": "Traçabilité des produits",
+          "description": "Prenez des photos des étiquettes des consommables pour une déduction automatique des stocks dans l'inventaire numérique."
+        },
+        {
+          "title": "Transformation devis en facture",
+          "description": "Convertissez facilement les devis en factures en un seul clic et gérez les paiements, y compris différés."
+        },
+        {
+          "title": "Comptabilité simplifiée",
+          "description": "Exportez rapidement les données comptables au format Excel, adaptées à la comptabilité des cliniques esthétiques avec gestion de la TVA."
+        },
+        {
+          "title": "Inventaire simplifié",
+          "description": "Gérez facilement les consommables, recevez des alertes de stock bas et effectuez des vérifications d'inventaire sans effort."
+        },
+        {
+          "title": "Photos avant/après",
+          "description": "Intégrez Nextmotion Capture avec le logiciel pour inclure automatiquement les photos avant/après dans les dossiers des patients."
+        }
+      ],
+      "button": "Planifier une démo"
+    },
+    "feature2": {
+      "title": "Simplifiez vos tâches administratives",
+      "description": "Gagnez du temps avec les signatures électroniques et la gestion numérique : signez des devis et des consentements éclairés électroniquement, et gérez la traçabilité des produits et le suivi des stocks numériquement. Réduisez la paperasse et simplifiez les opérations quotidiennes avec notre interface intuitive.",
+      "sections": [
+        {
+          "title": "Liste quotidienne des patients",
+          "description": "Accédez rapidement à la liste des patients prévus pour la journée, permettant une gestion efficace et sans stress des horaires."
+        },
+        {
+          "title": "Étapes pré-définies",
+          "description": "Suivez les étapes du parcours patient pré-définies sans naviguer dans chaque dossier individuel. Cela rationalise le flux de travail et réduit le temps administratif."
+        },
+        {
+          "title": "Filtres de parcours",
+          "description": "Filtrez facilement les patients par parcours terminés, en cours ou non commencés. Cette fonctionnalité vous donne une vue claire de l'état des soins, vous permettant de prioriser les actions et d'assurer un suivi approfondi."
+        }
+      ],
+      "button": "En savoir plus sur NM Capture"
+    },
+    "feature3": {
+      "title": "Bénéfices spécifiques",
+      "description": "Notre logiciel est parfaitement adapté aux pratiques médicales esthétiques : gérez les devis, les consentements, les factures, la traçabilité des produits et le contrôle des stocks sans effort. Gagnez du temps avec des photos automatiquement intégrées dans les dossiers des patients et instantanément disponibles sur les iPads et iPhones des médecins.",
+      "sections": [
+        {
+          "title": "Gestion complète",
+          "description": "Gérez sans effort les devis, les consentements, les factures, la traçabilité des produits et le contrôle des stocks, le tout sur une seule plateforme."
+        },
+        {
+          "title": "Intégration de photos économisant du temps",
+          "description": "Intégrez automatiquement les photos avant/après dans les dossiers des patients, les rendant instantanément accessibles aux médecins."
+        },
+        {
+          "title": "Accès instantané sur appareils mobiles",
+          "description": "Les médecins peuvent consulter les dossiers des patients et les photos instantanément sur les iPads et iPhones pour un flux de travail sans couture."
+        },
+        {
+          "title": "Optimisé pour les pratiques esthétiques",
+          "description": "Fonctionnalités adaptées pour répondre aux besoins spécifiques des cliniques médicales esthétiques, améliorant les opérations quotidiennes et les soins aux patients."
+        }
+      ],
+      "button": "Réserver une démo personnalisée"
+    },
+    "feature4": {
+      "title": "Agenda simplifié",
+      "description": "Gérez facilement les rendez-vous avec notre agenda intégré ou synchronisé avec Doctolib, et envoyez des rappels automatiques par SMS et email. Utilisez notre messagerie interne via le portail patient pour améliorer la communication et rassurer les patients.",
+      "sections": [
+        {
+          "title": "Gestion des rendez-vous sans couture",
+          "description": "Planifiez et gérez les rendez-vous sans effort avec notre agenda intégré, ou intégrez avec Doctolib pour une expérience synchronisée."
+        },
+        {
+          "title": "Rappels automatisés",
+          "description": "Envoyez des rappels automatiques par SMS et email pour réduire les absences et assurer que les patients sont bien informés."
+        },
+        {
+          "title": "Système de messagerie interne",
+          "description": "Utilisez notre messagerie interne via le portail patient pour améliorer la communication et fournir une assurance à vos patients."
+        },
+        {
+          "title": "Engagement des patients",
+          "description": "Gardez vos patients engagés et informés avec des mises à jour opportunes et un accès facile aux détails de leurs rendez-vous."
+        }
+      ]
+    },
+    "feature5": {
+      "title": "Gestion des patients",
+      "description": "Accédez rapidement aux dossiers des patients via une interface tout-en-un ergonomique. Consultez les notes cliniques, les devis, les consentements, les photos avant/après, les plans de traitement et l'historique. Utilisez des filtres pour rechercher facilement n'importe quel événement ou document.",
+      "sections": [
+        {
+          "title": "Rappels automatiques",
+          "description": "Vous aurez des outils à votre disposition pour envoyer des rappels automatiques par email ou SMS pour suivre les patients envisageant un devis ou pour leur rappeler de réserver leur prochain rendez-vous pour des traitements récurrents."
+        },
+        {
+          "title": "Synchronisation Hubspot",
+          "description": "La synchronisation avec Hubspot vous permettra de prendre votre marketing et vos ventes à un nouveau niveau de performance grâce à des séquences et d'autres automatisations."
+        },
+        {
+          "title": "Nextmotion Capture et Portfolio",
+          "description": "L'application Nextmotion Capture et son portfolio vous aideront à attirer plus de patients et à augmenter votre taux de conversion, stimulant la croissance de votre clinique."
+        }
+      ]
+    },
+    "feature6": {
+      "title": "Comptabilité simplifiée",
+      "description": "Convertissez les devis en factures en un seul clic et centralisez les paiements. Gérez facilement la TVA et effectuez des exportations comptables rapides. Suivez les revenus par praticien, procédure et période, et gérez efficacement les stocks et l'inventaire.",
+      "button": "Démo personnalisée"
+    },
+    "feature7": {
+      "title": "Intégration optimale",
+      "description": "Intégrez-vous parfaitement à vos systèmes existants pour rationaliser les flux de travail. Connectez-vous avec des outils comme Hubspot et Zapier pour automatiser les tâches, améliorer la gestion des patients et l'efficacité globale."
+    },
+    "feature8": {
+      "title": "Cas d'utilisation",
+      "description": "Sophie, assistante du Dr. Loubeyres à Pau, a réduit son temps administratif de 32 %, économisant plus de 1,5 heure par jour pour se concentrer davantage sur les soins aux patients.",
+      "button": "Lancer la vidéo"
+    },
+    "tryNextmotion": {
+      "title": "Essayez Nextmotion",
+      "description": "Inscrivez-vous pour une démo gratuite et découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et attirez plus de patients aujourd'hui.",
+      "button": "Réservez votre démo"
+    }
+  },
+  "chainesPage": {
+    "hero": {
+      "title": "Centralisez et Optimisez la Gestion de Vos Cliniques",
+      "description": "Nextmotion est conçu pour répondre aux besoins des gestionnaires de chaînes de cliniques esthétiques. Découvrez comment notre solution tout-en-un centralise toutes vos opérations, de la gestion du personnel à la prise de rendez-vous en ligne.",
+      "button": "Réserver une démo",
+      "videoButton": "Lancer la vidéo"
+    },
+    "solutionsSection": {
+      "title": "Une plateforme unique qui centralise tous vos outils",
+      "description": "Nextmotion est conçu pour répondre aux besoins spécifiques des gestionnaires de cliniques esthétiques. Découvrez comment notre solution peut transformer la gestion de votre clinique en fournissant tous les outils essentiels sur une plateforme intuitive.",
+      "solutions": [
+        {
+          "title": "Processus",
+          "iconAlt": "Icône Processus"
+        },
+        {
+          "title": "Business",
+          "iconAlt": "Icône Business"
+        },
+        {
+          "title": "Agenda",
+          "iconAlt": "Icône Agenda"
+        },
+        {
+          "title": "Outil de Suivi",
+          "iconAlt": "Icône Outil de Suivi"
+        }
+      ]
+    },
+    "feature1": {
+      "title": "Gestion Centralisée",
+      "description": "Gérez toutes vos cliniques depuis une interface unique. Centralisez les documents, gérez les plannings, les ouvertures de cliniques et les prises de rendez-vous en ligne en toute simplicité.",
+      "iconAlt": "Icône Gestion Centralisée",
+      "imageAlt": "Interface de Gestion Centralisée",
+      "sections": [
+        {
+          "title": "Gestion d'Équipe",
+          "description": "Attribuez et gérez les droits d'accès pour chaque membre de l'équipe."
+        },
+        {
+          "title": "Centralisation des Documents",
+          "description": "Devis, factures, ordonnances, questionnaires pré-consultation et consentements éclairés."
+        },
+        {
+          "title": "Gestion des Plannings",
+          "description": "Gérez les plannings et les ouvertures de cliniques sur tous vos sites."
+        },
+        {
+          "title": "Prise de Rendez-vous en Ligne",
+          "description": "Simplifiez la planification des rendez-vous avec un portail de réservation intégré."
+        }
+      ],
+      "button": "Planifier une démo"
+    },
+    "feature2": {
+      "title": "Ventes & Marketing",
+      "description": "Optimisez Votre Marketing et Vos Ventes : générez des leads, suivez les conversions et personnalisez facilement vos campagnes avec des outils puissants.",
+      "iconAlt": "Icône Ventes & Marketing",
+      "imageAlt": "Interface Ventes & Marketing",
+      "sections": [
+        {
+          "title": "Marketing Intégré",
+          "description": "Gérez vos campagnes marketing depuis une interface unique."
+        },
+        {
+          "title": "Outils de Vente",
+          "description": "Optimisez vos processus de vente avec des outils dédiés."
+        },
+        {
+          "title": "Personnalisation des Campagnes",
+          "description": "Utilisez les données pour créer des campagnes ciblées."
+        }
+      ],
+      "button": "Réserver une démo"
+    },
+    "feature3": {
+      "title": "Intégration Complète",
+      "description": "Bénéficiez d'une intégration complète avec vos outils existants. Connectez Hubspot, Salesforce, Zapier, Make et Sendgrid pour une gestion fluide et centralisée.",
+      "iconAlt": "Icône Intégration Complète",
+      "imageAlt": "Interface Intégration Complète",
+      "sections": [
+        {
+          "title": "API Complète",
+          "description": "Connectez vos données à vos outils comptables et autres systèmes."
+        },
+        {
+          "title": "Hubspot et Salesforce",
+          "description": "Intégrez pour une gestion efficace de la relation client et des ventes."
+        },
+        {
+          "title": "Zapier et Make",
+          "description": "Automatisez les tâches répétitives pour gagner du temps."
+        },
+        {
+          "title": "Sendgrid",
+          "description": "Envoyez des emails HTML personnalisés."
+        }
+      ],
+      "button": "Réserver une démo"
+    },
+    "feature4": {
+      "title": "Facilité d'Utilisation",
+      "description": "Notre Solution est Facile à Utiliser et Intuitive : conçue pour maximiser votre efficacité, gérez tout depuis l'agenda jusqu'à la page de rendez-vous patient sans effort.",
+      "iconAlt": "Icône Facilité d'Utilisation",
+      "imageAlt": "Interface Facilité d'Utilisation",
+      "sections": [
+        {
+          "title": "Interface Ergonomique",
+          "description": "Une interface intuitive et conviviale."
+        },
+        {
+          "title": "Gestion via l'Agenda",
+          "description": "Gérez toutes vos opérations directement depuis l'agenda."
+        },
+        {
+          "title": "Prise de Rendez-vous Simplifiée",
+          "description": "Intégrez facilement le portail de prise de rendez-vous sur votre site web."
+        }
+      ]
+    },
+    "feature5": {
+      "title": "Cas d'Usage",
+      "description": "Découvrez Comment les Chaînes de Cliniques comme la Clinique des Champs Élysées ont Centralisé Leur Gestion avec Nextmotion en optimisant leurs opérations et en se détournant des solutions tierces comme Doctolib, elles ont rationalisé leurs processus avec notre plateforme.",
+      "iconAlt": "Icône Cas d'Usage",
+      "imageAlt": "Interface Cas d'Usage"
+    },
+    "tryNextmotion": {
+      "title": "Planifiez une démo gratuite",
+      "description": "Découvrez comment Nextmotion peut transformer la gestion de votre chaîne de cliniques esthétiques. Maximisez votre efficacité et attirez plus de patients dès aujourd'hui. Demandez votre démo gratuite maintenant.",
+      "button": "Réserver votre démo"
+    }
+  },
+  "marketingPage": {
+    "hero": {
+      "title": "Boostez le Marketing de Votre Clinique Esthétique",
+      "description": "Maximisez vos campagnes marketing avec des outils puissants et intégrés conçus pour développer votre base de patients en esthétique.",
+      "button": "Demander une démo",
+      "videoButton": "Lancer la vidéo"
+    },
+    "solutionsSection": {
+      "title": "Une Plateforme Marketing Intégrée",
+      "description": "Découvrez Comment Nextmotion Peut Transformer Vos Efforts Marketing : exploitez une suite complète d'outils intégrés pour attirer plus de patients, personnaliser vos campagnes et renforcer la visibilité de votre clinique esthétique.",
+      "solutions": [
+        {
+          "title": "NM Capture",
+          "iconAlt": "Icône NM Capture"
+        },
+        {
+          "title": "Emails marketing",
+          "iconAlt": "Icône Emails Marketing"
+        },
+        {
+          "title": "Automatisations",
+          "iconAlt": "Icône Automatisations"
+        },
+        {
+          "title": "Analyse des performances",
+          "iconAlt": "Icône Analyse des Performances"
+        }
+      ]
+    },
+    "feature1": {
+      "title": "Nextmotion Capture",
+      "description": "Créez des Photos Avant/Après Parfaitement Standardisées avec NM Capture : remplacez les arrière-plans par votre logo grâce à l'IA, collectez facilement les consentements pour les droits d'image, et partagez vos résultats sur les réseaux sociaux en un seul clic pour attirer plus de patients.",
+      "sections": [
+        {
+          "title": "Standardisation Parfaite",
+          "description": "Créez facilement des photos avant/après uniformes. Remplacez automatiquement les arrière-plans par votre logo."
+        },
+        {
+          "title": "Consentements Simplifiés",
+          "description": "Obtenez facilement les signatures électroniques pour les droits d'image."
+        },
+        {
+          "title": "Partage Social",
+          "description": "Publiez vos résultats sur les réseaux sociaux en un seul clic."
+        }
+      ],
+      "button": "Demander une démo",
+      "imageAlt": "Interface Nextmotion Capture"
+    },
+    "feature2": {
+      "title": "Bons avis",
+      "description": "Demandez Facilement des Avis Positifs : utilisez NM Consult pour envoyer des invitations aux patients afin qu'ils laissent des avis sur votre clinique et vos praticiens, améliorant ainsi votre réputation en ligne.",
+      "sections": [
+        {
+          "title": "Demandes Simplifiées",
+          "description": "Invitez vos patients à laisser des avis en un seul clic."
+        },
+        {
+          "title": "Amélioration de la Réputation",
+          "description": "Renforcez votre réputation en ligne grâce aux avis positifs."
+        },
+        {
+          "title": "Utilisation de NM Consult",
+          "description": "Générez des demandes d'avis directement via NM Consult."
+        }
+      ],
+      "button": "Demander une démo",
+      "imageAlt": "Interface Bons Avis"
+    },
+    "feature3": {
+      "title": "Réservation en ligne",
+      "description": "Améliorez la réservation de rendez-vous avec Nextmotion : créez des pages spécifiques pour chaque traitement, intégrez GTAG pour cibler les patients ayant abandonné le processus de réservation, et suivez la source de chaque rendez-vous.",
+      "sections": [
+        {
+          "title": "Pages Spécifiques",
+          "description": "Créez des pages de réservation pour chaque type de traitement."
+        },
+        {
+          "title": "Intégration GTAG",
+          "description": "Ciblez les patients qui ont abandonné leur processus de rendez-vous."
+        },
+        {
+          "title": "Suivi des Sources de Rendez-vous",
+          "description": "Identifiez la source de chaque réservation."
+        }
+      ],
+      "button": "Demandez une démo",
+      "imageAlt": "Interface de réservation en ligne"
+    },
+    "feature4": {
+      "title": "Analyse des Performances",
+      "description": "Utilisez le Tableau de Bord Nextmotion pour le Suivi des Performances : surveillez les revenus par type de traitement et période. Mesurez l'efficacité de vos campagnes marketing et ajustez vos stratégies pour optimiser les résultats.",
+      "sections": [
+        {
+          "title": "Tableau de Bord Complet",
+          "description": "Suivez les revenus par type de traitement et période."
+        },
+        {
+          "title": "Mesure de l'Efficacité",
+          "description": "Évaluez l'impact de vos campagnes marketing."
+        },
+        {
+          "title": "Optimisation des Stratégies",
+          "description": "Ajustez vos campagnes pour de meilleurs résultats."
+        }
+      ],
+      "imageAlt": "Interface d'Analyse des Performances"
+    },
+    "feature5": {
+      "title": "Emails marketing",
+      "description": "Connectez Nextmotion à Brevo ou Sendgrid : créez des emails HTML personnalisés parfaits ! Lancez des campagnes d'emails efficaces et engageantes pour vos patients actuels et potentiels afin de promouvoir des événements spéciaux ou simplement leur souhaiter un joyeux anniversaire 🎉.",
+      "sections": [
+        {
+          "title": "Intégration Sendgrid",
+          "description": "Créez des emails HTML de haute qualité."
+        },
+        {
+          "title": "Campagnes Efficaces",
+          "description": "Lancez des campagnes d'emails engageantes."
+        },
+        {
+          "title": "Emails Personnalisés",
+          "description": "Concevez des emails personnalisés adaptés à vos patients."
+        }
+      ],
+      "imageAlt": "Interface Emails Marketing"
+    },
+    "feature6": {
+      "title": "Automatisations",
+      "description": "Optimisez Vos Processus Marketing avec des Automatisations : connectez Nextmotion à Hubspot, Zapier ou Make pour automatiser vos campagnes marketing et vos suivis patients. Créez des workflows personnalisés pour une gestion efficace de la relation client.",
+      "sections": [
+        {
+          "title": "Intégration CRM",
+          "description": "Connectez-vous à Hubspot pour une gestion avancée de la relation client."
+        },
+        {
+          "title": "Automatisation des Tâches",
+          "description": "Utilisez Zapier ou Make pour automatiser les tâches marketing répétitives."
+        },
+        {
+          "title": "Workflows Personnalisés",
+          "description": "Créez des séquences marketing automatisées adaptées à vos besoins."
+        }
+      ],
+      "button": "Demander une démo",
+      "imageAlt": "Interface Automatisations"
+    },
+    "feature7": {
+      "title": "Cas d'utilisation",
+      "description": "Découvrez Comment des Cliniques Comme la Clinique des Champs Élysées Utilisent Nextmotion : optimisez vos efforts marketing avec la réservation centralisée des rendez-vous, les campagnes d'emails personnalisées et les intégrations API transparentes pour une gestion fluide.",
+      "imageAlt": "Interface Cas d'Utilisation"
+    },
+    "tryNextmotion": {
+      "title": "Réservez une démo personnalisée",
+      "description": "Inscrivez-vous pour une Démo Gratuite : découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et attirez plus de patients dès aujourd'hui. Demandez une démo gratuite maintenant.",
+      "button": "Réservez votre démo"
+    }
   }
 }

@@ -3,8 +3,27 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations, getMessages } from "@/utils/i18n";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Feature1() {
+  const [messages, setMessages] = useState<any>(null);
+  const pathname = usePathname();
+  const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const msgs = await getMessages(currentLocale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [currentLocale]);
+
+  const t = useTranslations(messages || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +32,7 @@ export default function Feature1() {
             <div className="relative flex justify-center items-center">
               <Image
                 src="/third/patient.png"
-                alt="Nextmotion Consult App Screenshot"
+                alt={t("agendaOnlineBookingReminders.feature1.imageAlt")}
                 width={800}
                 height={1000}
                 className="w-full h-auto max-w-[400px] sm:max-w-[600px]"
@@ -27,55 +46,65 @@ export default function Feature1() {
               <div className="bg-blue-100 rounded-full p-2 sm:p-3">
                 <Image
                   src="/third/icons/camera.png"
-                  alt="Consult Icon"
+                  alt={t("agendaOnlineBookingReminders.feature1.iconAlt")}
                   width={60}
                   height={60}
                   className="text-blue-600"
                 />
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                Simplified Appointment Management
+                {t("agendaOnlineBookingReminders.feature1.title")}
               </h2>
             </div>
 
             <p className="text-base sm:text-[18px] leading-relaxed text-gray-600 mb-8 sm:mb-10">
-              Organize and track all your patient appointments in real time with
-              an intuitive interface designed for aesthetic clinics. Save time
-              and avoid scheduling errors with automatic synchronization.
+              {t("agendaOnlineBookingReminders.feature1.description")}
             </p>
 
             <div className="space-y-6 sm:space-y-8">
               <div>
                 <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
-                  Real-Time Calendar
+                  {t(
+                    "agendaOnlineBookingReminders.feature1.features.calendar.title"
+                  )}
                 </h3>
                 <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
-                  View your day, week, or month appointments at a glance.
+                  {t(
+                    "agendaOnlineBookingReminders.feature1.features.calendar.description"
+                  )}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg sm:text-[20px] font-bold text-gray-900 mb-2 sm:mb-3">
-                  Automatic Notifications
+                  {t(
+                    "agendaOnlineBookingReminders.feature1.features.notifications.title"
+                  )}
                 </h3>
                 <p className="text-base sm:text-[18px] leading-relaxed text-gray-600">
-                  Receive alerts for changes or cancellations.
+                  {t(
+                    "agendaOnlineBookingReminders.feature1.features.notifications.description"
+                  )}
                 </p>
               </div>
             </div>
+
             <div className="mt-10">
               <Link
-                href="/contact_form"
+                href={
+                  currentLocale === "fr"
+                    ? "/fr/formulaire_contact"
+                    : "/contact_form"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                  className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Demandez une demo
+                  {t("agendaOnlineBookingReminders.feature1.bookDemoButton")}
                 </Button>
               </Link>
             </div>

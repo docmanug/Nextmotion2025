@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature2() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature2 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,77 +38,65 @@ export default function Feature2() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Process Optimization
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Optimize your clinical processes and efficiently delegate tasks to
-              your team. Improve photo capture and document management for a
-              smoother practice.
+              {t("description")}
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Nextmotion Capture
+                  {t("features.capture.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Delegate photo capture to your team while achieving
-                  professional results.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Voice Dictation
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  Quickly draft your observations with the integrated voice
-                  dictation feature.
+                  {t("features.capture.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Pre-Consultation Questionnaire
+                  {t("features.dictation.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Have patients fill out questionnaires at reception or on their
-                  smartphone, synchronized with their medical records.
+                  {t("features.dictation.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Electronic Signature
+                  {t("features.questionnaire.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Have administrative documents signed electronically before the
-                  consultation.
+                  {t("features.questionnaire.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Generate documents lightning speed
+                  {t("features.signature.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Design beautiful document templates with your logo and own
-                  layout, generate them in one click and ask your patients to
-                  sign them electronically. Zero paper and zero stress
+                  {t("features.signature.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Multiplatform Solution
+                  {t("features.speed.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Add a new patient from iPhone, design his treatment plan from
-                  our web-software and ask him to sign quote and consent forms
-                  on your iPad. Get a taste of our intuitive and user-friendly
-                  multiplatform solution
+                  {t("features.speed.description")}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+                  {t("features.Solution.title")}
+                </h3>
+                <p className="text-[18px] leading-relaxed text-gray-600">
+                  {t("features.Solution.description")}
                 </p>
               </div>
             </div>
@@ -103,7 +109,7 @@ export default function Feature2() {
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
  hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Know more about NM Capture
+                  {t("features.bookDemoButton")}
                 </Button>
               </Link>
             </div>

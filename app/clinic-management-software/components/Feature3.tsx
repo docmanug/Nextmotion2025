@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations } from "@/utils/i18n";
+import { useEffect, useState } from "react";
+import { getMessages } from "@/utils/i18n";
 
 export default function Feature3() {
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+      const msgs = await getMessages(locale);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, []);
+
+  const t = useTranslations(messages?.clinicManagementSoftware?.feature3 || {});
+
+  if (!messages) return null;
+
   return (
     <section className="py-24 bg-[#F3F8FD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,53 +53,47 @@ export default function Feature3() {
                   className="text-blue-600"
                 />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                Performance Tracking
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Track and Analyze Your Clinic's Performance: Monitor key
-              indicators to make informed decisions that enhance your services
-              and optimize growth.
+              {t("description")}
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Geographical Origin
+                  {t("features.origin.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Analyze the origin of your patients and segment your
-                  communications accordingly.
+                  {t("features.origin.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Number of Patients
+                  {t("features.patients.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Track the number of patients by day, week, month, or year.
+                  {t("features.patients.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Treatment Performance
+                  {t("features.performance.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Analyze the number of procedures, revenue, and conversion rate
-                  by treatment type.
+                  {t("features.performance.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  Consultation Monitoring
+                  {t("features.monitoring.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Monitor the number of consultations based on the visit type
+                  {t("features.monitoring.description")}
                 </p>
               </div>
             </div>
@@ -98,7 +110,7 @@ export default function Feature3() {
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
  hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  Book a demo
+                  {t("bookDemoButton")}
                 </Button>
               </Link>
             </div>

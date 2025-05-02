@@ -146,6 +146,53 @@ export default function Footer({
     },
   };
 
+  // Update links based on currentLocale to match navbar
+  const contactFormLink =
+    currentLocale === "fr" ? "/fr/formulaire_contact" : "/contact_form";
+  const beforeAfterLink =
+    currentLocale === "fr" ? "/fr/photos-avant-apres" : "/before-after";
+  const revolutionLink =
+    currentLocale === "fr" ? "/fr/revolution" : "/revolution";
+  const threeDLink =
+    currentLocale === "fr"
+      ? "/fr/3d-simulation-esthetique"
+      : "/en/3d-aesthetic-simulation";
+  const consultLink =
+    currentLocale === "fr"
+      ? "/fr/logiciel-consultation-esthetique"
+      : "/clinic-management-software";
+  const agendaLink =
+    currentLocale === "fr"
+      ? "/fr/agenda-patient-en-ligne-rdv"
+      : "/agenda-online-booking-reminders";
+  const virtualClassesLink =
+    currentLocale === "fr" ? "/fr/virtual-classes" : "/en/virtual-classes";
+  const roboticsLink =
+    currentLocale === "fr"
+      ? "/fr/robot-injecteur-medecine-esthetique"
+      : "/en/injector-robot-aesthetic-medicine";
+  const managerLink = currentLocale === "fr" ? "/fr/manager" : "/en/manager";
+  const medecinLink =
+    currentLocale === "fr"
+      ? "/fr/medecin-esthetique"
+      : "/en/medecin-esthetique";
+  const assistantLink =
+    currentLocale === "fr" ? "/fr/assistant" : "/en/assistant";
+  const chainesLink = currentLocale === "fr" ? "/fr/chaines" : "/en/chaines";
+  const marketingLink =
+    currentLocale === "fr" ? "/fr/marketing" : "/en/marketing";
+  const pricingLink =
+    currentLocale === "fr"
+      ? "/fr/tarifs-solution-esthetique"
+      : "/en/pricing-aesthetic-solution";
+  const aboutUsLink = currentLocale === "fr" ? "/fr/a-propos" : "/en/about-us";
+  const blogLink = currentLocale === "fr" ? "/fr/blog" : "/blog";
+  const podcastLink = currentLocale === "fr" ? "/fr/podcast" : "/podcast";
+  const caseStudiesLink =
+    currentLocale === "fr" ? "/fr/cas-clients" : "/en/case-studies";
+
+  const contactLink = currentLocale === "fr" ? "/fr/contact" : "/en/contact";
+
   return (
     <footer className="bg-white w-full">
       <div className="w-full">
@@ -200,7 +247,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/before-after"
+                        href={beforeAfterLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.capture}
@@ -208,7 +255,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/revolution"
+                        href={revolutionLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.revolution}
@@ -216,7 +263,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/3d-aesthetic-simulation"
+                        href={threeDLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links["3d"]}
@@ -224,7 +271,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/clinic-management-software"
+                        href={consultLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.consult}
@@ -232,7 +279,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/agenda-online-booking-reminders"
+                        href={agendaLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.agenda}
@@ -240,7 +287,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/virtual-classes"
+                        href={virtualClassesLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.classes}
@@ -248,7 +295,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/injector-robot-aesthetic-medicine"
+                        href={roboticsLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.platform.links.robotics}
@@ -265,7 +312,7 @@ export default function Footer({
                   <ul className="space-y-3">
                     <li>
                       <Link
-                        href="/about-us"
+                        href={aboutUsLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.company.links.about}
@@ -273,7 +320,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/contact"
+                        href={contactFormLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.company.links.contact}
@@ -289,7 +336,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/case-studies"
+                        href={caseStudiesLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.company.links.cases}
@@ -297,7 +344,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/blog"
+                        href={blogLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.company.links.blog}
@@ -313,7 +360,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/podcast"
+                        href={podcastLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.company.links.podcast}
@@ -346,7 +393,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/contact_form"
+                        href={contactFormLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
