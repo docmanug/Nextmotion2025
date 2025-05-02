@@ -58,7 +58,7 @@ export default function ApprovalSection({
   },
   resources: translatedResources = {},
   discoverButton = "Discover all our resources",
-}: ApprovalSectionProps = {}) {
+}: ApprovalSectionProps) {
   const translatedContent = defaultResources.map((resource, index) => {
     const keys = ["ebook", "social", "events"];
     const key = keys[index];

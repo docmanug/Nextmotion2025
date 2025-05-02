@@ -17,10 +17,16 @@ export default function Hero() {
         window.location.pathname.startsWith("/fr")
           ? "fr"
           : "en";
-      const msgs = await import(`@/../messages/${locale}.json`).then(
-        (m) => m.default
-      );
-      setMessages(msgs?.marketingPage?.hero ? msgs.marketingPage.hero : {});
+      try {
+        const msgs = await import(`../../../../messages/${locale}.json`).then(
+          (m) => m.default
+        );
+        setMessages(msgs?.marketingPage?.hero ? msgs.marketingPage.hero : {});
+      } catch (error) {
+        console.error("Failed to load messages:", error);
+        // Fallback to empty object if messages can't be loaded
+        setMessages({});
+      }
     };
     loadMessages();
   }, []);

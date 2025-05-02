@@ -63,7 +63,7 @@ export default function Footer({
   company,
   help,
   newsletter,
-}: FooterProps = {}) {
+}: FooterProps) {
   const pathname = usePathname();
   const currentLocale = pathname?.startsWith("/fr") ? "fr" : "en";
   const [translations, setTranslations] = useState<any>(null);
