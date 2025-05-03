@@ -36,13 +36,13 @@
     }
   },
   "hero": {
-    "title": "Transformez votre pratique esthétique avec Nextmotion",
+    "title": "Une solution complète pour dynamiser votre clinique de médecine esthétique",
     "subtitle": "Découvrez nos outils de pointe conçus pour améliorer vos consultations, standardiser vos résultats et engager vos patients comme jamais auparavant",
     "demoButton": "Planifier une démo",
     "watchButton": "Regarder la vidéo"
   },
   "solutions": {
-    "title": "Une solution tout-en-un conçue par un médecin pour les cliniques esthétiques",
+    "title": "Solution tout-en-un conçue par un médecin pour les professionnels de la médecine esthétique",
     "subtitle": "Nextmotion est un écosystème complet de solutions offrant tous les outils dont vous avez besoin, que vous soyez un médecin individuel, un gestionnaire de clinique ou un propriétaire de chaîne de cliniques.",
     "individuals": "Particuliers",
     "clinics": "Cliniques",
@@ -147,7 +147,7 @@
         "description": "Découvrez Nextmotion Revolution pour des photos esthétiques inégalées"
       },
       "solutions": {
-        "title": "La référence en matière de standardisation",
+        "title": "Le gold standart de la standardisation",
         "description": "Découvrez comment la machine Nextmotion Revolution, associée à l'application NM Capture, peut transformer vos photos et vidéos avant/après. Obtenez des résultats professionnels avec des fonctionnalités avancées et une qualité d'image inégalée.",
         "features": {
           "robot": {
@@ -419,13 +419,13 @@
   "beforeAfter": {
     "hero": {
       "subtitle": "CAPTURE DE MOUVEMENTS SUIVANTS",
-      "title": "Nextmotion Capture : redéfinir la photographie esthétique",
+      "title": "La Référence pour des Photos Avant/Après Professionnelles en Médecine Esthétique",
       "getStartedButton": "Commencer",
       "bookDemoButton": "Réserver une démo",
       "imageAlt": "Démo de l'application NextMotion Capture"
     },
     "solutions": {
-      "title": "Photos avant/après intuitives et professionnelles",
+      "title": "Simple, intuitif et rapide pour vos avant/après",
       "description": "Simplifiez la capture de photos avant/après avec l'application NM Capture. Conçue pour iPhone et iPad, notre solution garantit rapidité, simplicité et standardisation de haute qualité, offrant aux cliniques des résultats professionnels.",
       "items": {
         "lighting": {
@@ -636,7 +636,7 @@
   },
   "pricing": {
     "hero": {
-      "title": "Choisissez les solutions Nextmotion pour élever votre clinique avec",
+      "title": "Sélectionnez la formule qui correspond à vos besoins",
       "highlight": "innovation et précision."
     },
     "cards": {
@@ -871,7 +871,7 @@
   },
   "caseStudies": {
     "hero": {
-      "title": "Études de cas",
+      "title": "Cas clients",
       "subtitle": "Des centaines de médecins et de chirurgiens plastiques du monde entier utilisent nos solutions pour optimiser leur croissance commerciale et améliorer le parcours patient.",
       "description": "Découvrez comment ces professionnels de l'esthétique médicale utilisent les différentes solutions NextMotion."
     },
@@ -889,7 +889,7 @@
   "contact": {
     "hero": {
       "label": "CONTACT",
-      "title": "Contactez l'équipe NextMotion",
+      "title": "Entrez en contact avec l'équipe NextMotion",
       "subtitle": "Vous cherchez un plan qui correspond à vos besoins spécifiques ?",
       "button": "Contact"
     },
@@ -947,7 +947,7 @@
   "aboutUs": {
     "hero": {
       "label": "À PROPOS",
-      "title": "L'innovation au service des médecins et de leurs patients",
+      "title": "Créer de la valeur pour les médecins et les patients du monde entier",
       "description": "Passez moins de temps à gérer vos dossiers cliniques avec NextMotion Consult. Devis, consentements, factures ou même comptes patients : profitez de nos nombreuses fonctionnalités dans un environnement unique.",
       "demoButton": "Demander une démo"
     },
@@ -1231,7 +1231,7 @@
   "threeDAestheticSimulation": {
     "hero": {
       "label": "NEXTMOTION 3D",
-      "title": "Renforcez vos consultations avec la réalité augmentée",
+      "title": "Un outil de référence dédié à l'éducation de vos patients",
       "description": "Nextmotion 3D vous permet de visualiser les couches anatomiques en temps réel, d'éduquer vos patients avec des outils interactifs et de renforcer la confiance grâce à une technologie de pointe."
     },
     "imageSection": {
@@ -1241,7 +1241,7 @@
     },
     "standardSection": {
       "label": "APPRENDRE",
-      "title": "L'anatomie 3D à portée de main",
+      "title": "L'anatomie du visage toujours à portée de main",
       "description1": "Notre modèle est composé de **couches anatomiques** qui peuvent être **mises en évidence ou supprimées**. Ainsi, vous pourrez effectuer une **dissection numérique** pour visualiser n'importe quelle structure.",
       "description2": "Il peut afficher **les zones de danger** où une canule sera nécessaire, en fonction du plan de traitement que vous avez en tête pour vos patients.",
       "description3": "Obtenez un accès complet à Nextmotion 3D pour seulement **49€/mois**, sans engagement. Profitez de toutes les fonctionnalités, mises à jour et support avec la flexibilité d'annuler à tout moment."
@@ -1294,13 +1294,13 @@
   },
   "clinicManagementSoftware": {
     "hero": {
-      "title": "Boostez Votre Clinique avec Nextmotion Consult",
+      "title": "Propulsez votre Clinique avec Nextmotion Consult",
       "description": "Une solution complète conçue pour la gestion des patients, les photos avant/après et la digitalisation de votre clinique esthétique.",
       "signUpDemoButton": "S'inscrire pour une démo",
       "playVideoButton": "Lancer la vidéo"
     },
     "solutions": {
-      "title": "Un logiciel tout-en-un pour simplifier vos tâches administratives et stimuler la croissance de votre clinique.",
+      "title": "Un logiciel tout-en-un pour simplifier vos tâches administratives et propulser votre clinique",
       "description": "Nextmotion Consult est une solution tout-en-un conçue pour les cliniques esthétiques. Elle centralise la gestion des patients, optimise les processus et augmente la productivité. Découvrez comment Nextmotion Consult peut transformer votre clinique et attirer plus de patients.",
       "items": {
         "paperless": {
@@ -1531,13 +1531,13 @@
   },
   "agendaOnlineBookingReminders": {
     "hero": {
-      "title": "Optimisez Votre Clinique avec Nextmotion Agenda",
+      "title": "Simplifiez la gestion de votre cabinet avec Nextmotion Agenda",
       "description": "Une solution complète conçue pour la gestion des rendez-vous, la coordination des salles et la communication avec les patients.",
       "bookDemoButton": "Réserver une démo",
       "playVideoButton": "Voir la vidéo"
     },
     "solutions": {
-      "title": "Un Agenda Tout-en-Un pour Simplifier Vos Tâches et Améliorer l'Efficacité de Votre Clinique",
+      "title": "Un agenda en ligne pour améliorer votre productivité et optimiser vos ressources",
       "description": "Nextmotion Agenda est une solution tout-en-un conçue pour les cliniques esthétiques. Elle centralise la gestion des rendez-vous, améliore la planification des ressources et augmente la productivité.",
       "description2": "Découvrez comment Nextmotion Agenda peut optimiser les opérations de votre clinique, réduire les absences grâce aux rappels SMS et email, et optimiser l'utilisation des ressources.",
       "items": {
@@ -1648,13 +1648,13 @@
   "virtualClasses": {
     "hero": {
       "label": "Classes Virtuelles",
-      "title": "Le niveau supérieur des formations à distance",
+      "title": "L'expérience ultime des formations à distance",
       "description": "Amenez la formation à distance immersive au niveau supérieur avec les technologies de réalité mixte et holographique.",
       "contactButton": "Contactez-nous"
     },
     "standard": {
       "label": "FONCTIONNEMENT",
-      "title": "Un nouveau standard est né",
+      "title": "La naissance d'un nouveau standard",
       "description": "**NextMotion VirtualClasses** est une alternative intelligente et efficace aux formats de formation traditionnels qui permet des économies de coûts pour les entreprises et est impactante pour les étudiants souhaitant maîtriser les nouvelles techniques dans un environnement immersif où ils peuvent avoir une interaction directe avec leur formateur."
     },
     "hardware": {
@@ -1727,7 +1727,7 @@
   "injectorRobot": {
     "hero": {
       "label": "ROBOTIQUE",
-      "title": "Le premier robot injecteur autonome avec IA pour la médecine esthétique",
+      "title": "Le premier robot injecteur autonome au monde",
       "description": "Découvrez LENA, le premier robot injecteur auto-piloté par intelligence artificielle, dédié à la médecine esthétique",
       "button": "Lancer la vidéo"
     },
@@ -1983,13 +1983,13 @@
   },
   "medecinEsthetique": {
     "hero": {
-      "title": "Attirez, Convertissez et Fidélisez Vos Patients dans Votre Clinique Esthétique",
+      "title": "Attirez, Convertissez et Fidélisez Vos Patients",
       "subtitle": "Une Solution Tout-en-Un pour Optimiser la Gestion de Votre Clinique Esthétique et Améliorer la Satisfaction des Patients",
       "demoButton": "Demander une démo",
       "videoButton": "Lancer la vidéo"
     },
     "solutions": {
-      "title": "Une plateforme unique qui centralise tous vos outils",
+      "title": "Un logiciel tout-en-un pour simplifier vos tâches administratives et propulser votre clinique",
       "description": "Nextmotion est conçu pour répondre aux besoins spécifiques des médecins esthétiques. Découvrez comment notre solution peut transformer votre pratique en fournissant tous les outils nécessaires dans une plateforme intuitive unique.",
       "items": {
         "process": "Processus",
@@ -2191,7 +2191,7 @@
       "videoButton": "Lancer la vidéo"
     },
     "solutions": {
-      "title": "Logiciel tout-en-un pour simplifier et optimiser vos tâches administratives",
+      "title": "Un logiciel tout-en-un pour simplifier et optimiser vos tâches administratives",
       "description": "Nextmotion est spécifiquement conçu pour les besoins des assistants et secrétaires de cliniques esthétiques : découvrez comment notre solution vous aide à gagner du temps, à réduire les tâches administratives et à améliorer l'efficacité globale de votre clinique.",
       "solutions": [
         { "title": "Solution sans papier" },
@@ -2345,7 +2345,7 @@
       "videoButton": "Lancer la vidéo"
     },
     "solutionsSection": {
-      "title": "Une plateforme unique qui centralise tous vos outils",
+      "title": "Une seule plateforme qui centralise tous vos outils",
       "description": "Nextmotion est conçu pour répondre aux besoins spécifiques des gestionnaires de cliniques esthétiques. Découvrez comment notre solution peut transformer la gestion de votre clinique en fournissant tous les outils essentiels sur une plateforme intuitive.",
       "solutions": [
         {

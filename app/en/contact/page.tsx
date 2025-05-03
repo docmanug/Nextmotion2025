@@ -1,9 +1,19 @@
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "./components/Hero";
 import ContactForm from "./components/ContactForm";
 import Footer from "@/components/Footer";
 import TestinomialSlider from "./components/TestinomialSlider";
 import { getMessages, useTranslations } from "@/utils/i18n";
+
+export const metadata: Metadata = {
+  title: "Contact NextMotion, we can help you grow your aesthetic practice!",
+  description:
+    "Our sales team can answer your questions, provide product demos, and create custom plans that fit your needs. Fill out the form below, or call us directly.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/en/contact",
+  },
+};
 
 export default async function ContactPage() {
   const messages = await getMessages("en");

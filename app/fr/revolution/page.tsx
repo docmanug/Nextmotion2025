@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "../../revolution/components/Hero";
 import SolutionsSection from "../../revolution/components/SolutionsSection";
 import DiscoverSection from "../../revolution/components/DiscoverSection";
@@ -14,6 +15,15 @@ import Feature5 from "../../revolution/components/Feature5";
 import Feature6 from "../../revolution/components/Feature6";
 import Feature7 from "../../revolution/components/Feature7";
 import { getMessages, useTranslations } from "@/utils/i18n";
+
+export const metadata: Metadata = {
+  title: "Des photos esthétiques inégalées",
+  description:
+    "Découvrez comment la machine Nextmotion Revolution, combinée à l'application NM Capture, peut transformer vos prises de photos et vidéos avant/après.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/revolution",
+  },
+};
 
 export default async function RevolutionLandingPage() {
   const messages = await getMessages("fr");

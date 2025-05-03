@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
 import CaptureSection from "./components/CaptureSection";
@@ -16,6 +17,16 @@ import FaqSection from "./components/FaqSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
+
+export const metadata: Metadata = {
+  title:
+    "Nextmotion Capture - Professional Before-and-After Photos & Videos for Aesthetic Clinics",
+  description:
+    "Discover NM Capture, the ultimate tool for aesthetic clinics. Capture professional before-and-after photos, standardize patient images, compare details, and share results effortlessly.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/en/before-after",
+  },
+};
 
 export default async function SecondLandingPage() {
   const messages = await getMessages("en");

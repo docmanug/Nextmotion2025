@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
 import Feature2 from "./components/Feature2";
@@ -14,6 +15,15 @@ import DiscoverSection from "./components/DiscoverSection";
 import ReviewsSection from "./components/ReviewsSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Aesthetic Clinic Software: Simplify Management",
+  description:
+    "Optimisez la gestion de votre clinique esthétique avec notre solution tout-en-un",
+  alternates: {
+    canonical: "https://www.nextmotion.net/clinic-management-software",
+  },
+};
 
 export default function ClinicManagementSoftwarePage() {
   return (

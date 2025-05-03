@@ -9,10 +9,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
 import ImageSection from "../../en/3d-aesthetic-simulation/components/ImageSection";
+
 export const metadata: Metadata = {
-  title: "Simulation Esthétique 3D | NextMotion",
+  title:
+    "Nextmotion 3D - L'application révolutionnaire pour la médecine esthétique",
   description:
-    "Découvrez comment NextMotion 3D peut transformer vos consultations avec la réalité augmentée et la visualisation des couches anatomiques en temps réel.",
+    "En quelques secondes, réalisez des scans 3D hyper réalistes du visage de vos patients. Proposez des simulations 3D des procédures durant la consultation.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/3d-simulation-esthetique",
+  },
 };
 
 export default async function ThreeDAestheticSimulationPage() {

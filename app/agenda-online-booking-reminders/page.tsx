@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
 import Feature2 from "./components/Feature2";
@@ -15,6 +16,15 @@ import ReviewsSection from "./components/ReviewsSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages, useTranslations } from "@/utils/i18n";
+
+export const metadata: Metadata = {
+  title: "Online agenda for aesthetic clinics: scheduling, reminders",
+  description:
+    "Online agenda for aesthetic clinics: manage appointments, automated reminders, secure patient access, and real-time performance tracking.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/en/agenda-online-booking-reminders",
+  },
+};
 
 export default async function AgendaOnlineBookingRemindersPage() {
   const messages = await getMessages("en");

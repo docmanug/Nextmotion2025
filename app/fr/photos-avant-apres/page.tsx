@@ -17,9 +17,12 @@ import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
 
 export const metadata: Metadata = {
-  title: "Photos Avant/Après | NextMotion",
+  title: "Des photos et vidéos avant-après parfaitement standardisées",
   description:
-    "Découvrez comment NextMotion peut transformer votre pratique esthétique avec des photos avant/après standardisées et professionnelles.",
+    "Utilisez NM Capture pour des photos esthétiques professionnelles. Standardisez les photos de vos patients, comparez chaque détail et partagez vos résultats !",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/photos-avant-apres",
+  },
 };
 
 export default async function BeforeAfterPage() {

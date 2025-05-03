@@ -18,9 +18,12 @@ import { getMessages } from "@/utils/i18n";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Logiciel de Gestion de Clinique | NextMotion",
+  title: "Logiciel Clinique Esthétique : Simplifiez la Gestion",
   description:
-    "Découvrez comment NextMotion peut transformer la gestion de votre clinique esthétique avec notre solution tout-en-un.",
+    "Optimisez la gestion de votre clinique esthétique avec notre solution tout-en-un",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/logiciel-consultation-esthetique",
+  },
 };
 
 export default async function ClinicManagementSoftwarePage() {

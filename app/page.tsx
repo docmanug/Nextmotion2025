@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getMessages, useTranslations } from "@/utils/i18n";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -11,6 +12,16 @@ import ApprovalSection from "@/components/ApprovalSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
+
+export const metadata: Metadata = {
+  title:
+    "Management software for aesthetic clinics: simplify your appointments and cash management.",
+  description:
+    "Optimize the management of your aesthetic clinic with our software dedicated to physicians, aesthetic surgeons, and managers. Simplify appointment scheduling, cash management, and much more.",
+  alternates: {
+    canonical: "https://www.nextmotion.net",
+  },
+};
 
 export default async function Home() {
   const messages = await getMessages("en");
