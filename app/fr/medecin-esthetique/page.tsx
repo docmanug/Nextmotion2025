@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "../../en/medecin-esthetique/components/Hero";
 import SolutionsSection from "../../en/medecin-esthetique/components/SolutionsSection";
 import Feature2 from "../../en/medecin-esthetique/components/Feature2";
@@ -12,6 +13,15 @@ import Feature5 from "../../en/medecin-esthetique/components/Feature5";
 import Feature6 from "../../en/medecin-esthetique/components/Feature6";
 import Feature7 from "../../en/medecin-esthetique/components/Feature7";
 import Feature8 from "../../en/medecin-esthetique/components/Feature8";
+
+export const metadata: Metadata = {
+  title: "Logiciel Clinique Esthétique : Simplifiez la Gestion",
+  description:
+    "Optimisez la gestion de votre clinique esthétique avec notre solution tout-en-un.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/medecin-esthetique",
+  },
+};
 
 export default function Medecin() {
   return (

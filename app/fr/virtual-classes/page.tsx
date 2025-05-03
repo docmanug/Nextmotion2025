@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "../../en/virtual-classes/components/Hero";
 import StandardSection from "../../en/virtual-classes/components/StandardSection";
 import Standard2Section from "../../en/virtual-classes/components/Standard2Section";
@@ -10,6 +11,15 @@ import Footer from "@/components/Footer";
 import NextMotionJourney from "../../en/virtual-classes/components/NextMotionJourney";
 import ApprovalSection from "../../en/virtual-classes/components/ApprovalSection";
 import ImageSection from "../../en/virtual-classes/components/ImageSection";
+
+export const metadata: Metadata = {
+  title: "L'expérience ultime des formations à distance en médecine esthétique",
+  description:
+    "Une alternative innovante aux formations à distance. Offrez à vos étudiants des trainings immersifs grâce à la réalité mixte et aux hologrammes 3D",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/virtual-classes",
+  },
+};
 
 export default function VirtualClassesPage() {
   return (

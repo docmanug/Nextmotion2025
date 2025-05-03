@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Hero from "../../en/marketing/components/Hero";
 import SolutionsSection from "../../en/marketing/components/SolutionsSection";
 import Feature2 from "../../en/marketing/components/Feature2";
@@ -11,6 +12,15 @@ import Feature4 from "../../en/marketing/components/Feature4";
 import Feature5 from "../../en/marketing/components/Feature5";
 import Feature6 from "../../en/marketing/components/Feature6";
 import Feature7 from "../../en/marketing/components/Feature7";
+
+export const metadata: Metadata = {
+  title: "Boostez le Marketing de Votre Clinique Esthétique avec Nextmotion",
+  description:
+    "Attirez plus de patients et optimisez vos campagnes marketing avec Nextmotion. Demandez une démo",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr/marketing",
+  },
+};
 
 export default function Marketing() {
   return (

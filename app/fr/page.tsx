@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getMessages, useTranslations } from "@/utils/i18n";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -11,6 +12,15 @@ import ApprovalSection from "@/components/ApprovalSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
+
+export const metadata: Metadata = {
+  title: "Le logiciel n°1 pensé exclusivement pour les cliniques esthétiques",
+  description:
+    "Découvrez Nextmotion, solution pour cliniques esthétiques : photos avant/après, gestion des patients, comptabilité certifiée, agenda en ligne.",
+  alternates: {
+    canonical: "https://www.nextmotion.net/fr",
+  },
+};
 
 export default async function Home() {
   const messages = await getMessages("fr");
