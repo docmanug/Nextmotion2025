@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Discover NM Capture, the ultimate tool for aesthetic clinics. Capture professional before-and-after photos, standardize patient images, compare details, and share results effortlessly.",
   alternates: {
-    canonical: "https://www.nextmotion.net/en/before-after",
+    canonical: "https://www.nextmotion.net/before-after",
   },
 };
 

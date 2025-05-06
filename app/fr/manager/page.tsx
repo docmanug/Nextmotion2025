@@ -1,18 +1,18 @@
 import { Metadata } from "next";
-import Hero from "../../en/manager/components/Hero";
-import SolutionsSection from "../../en/manager/components/SolutionsSection";
-import Feature2 from "../../en/manager/components/Feature2";
-import Feature1 from "../../en/manager/components/Feature1";
+import Hero from "../../manager/components/Hero";
+import SolutionsSection from "../../manager/components/SolutionsSection";
+import Feature2 from "../../manager/components/Feature2";
+import Feature1 from "../../manager/components/Feature1";
 
-import TryNextmotion from "../../en/manager/components/TryNextmotion";
+import TryNextmotion from "../../manager/components/TryNextmotion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Feature3 from "../../en/manager/components/Feature3";
-import Feature4 from "../../en/manager/components/Feature4";
-import Feature5 from "../../en/manager/components/Feature5";
-import Feature6 from "../../en/manager/components/Feature6";
-import Feature7 from "../../en/manager/components/Feature7";
-import Feature8 from "../../en/manager/components/Feature8";
+import Feature3 from "../../manager/components/Feature3";
+import Feature4 from "../../manager/components/Feature4";
+import Feature5 from "../../manager/components/Feature5";
+import Feature6 from "../../manager/components/Feature6";
+import Feature7 from "../../manager/components/Feature7";
+import Feature8 from "../../manager/components/Feature8";
 
 export const metadata: Metadata = {
   title:

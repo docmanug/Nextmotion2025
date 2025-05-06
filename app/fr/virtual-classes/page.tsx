@@ -1,16 +1,16 @@
 import { Metadata } from "next";
-import Hero from "../../en/virtual-classes/components/Hero";
-import StandardSection from "../../en/virtual-classes/components/StandardSection";
-import Standard2Section from "../../en/virtual-classes/components/Standard2Section";
-import TeacherStudentSection from "../../en/virtual-classes/components/TeacherStudentSection";
-import RevolutionSection from "../../en/virtual-classes/components/RevolutionSection";
-import MarketSection from "../../en/virtual-classes/components/MarketSection";
-import Market2Section from "../../en/virtual-classes/components/Market2Section";
+import Hero from "../../virtual-classes/components/Hero";
+import StandardSection from "../../virtual-classes/components/StandardSection";
+import Standard2Section from "../../virtual-classes/components/Standard2Section";
+import TeacherStudentSection from "../../virtual-classes/components/TeacherStudentSection";
+import RevolutionSection from "../../virtual-classes/components/RevolutionSection";
+import MarketSection from "../../virtual-classes/components/MarketSection";
+import Market2Section from "../../virtual-classes/components/Market2Section";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NextMotionJourney from "../../en/virtual-classes/components/NextMotionJourney";
-import ApprovalSection from "../../en/virtual-classes/components/ApprovalSection";
-import ImageSection from "../../en/virtual-classes/components/ImageSection";
+import NextMotionJourney from "../../virtual-classes/components/NextMotionJourney";
+import ApprovalSection from "../../virtual-classes/components/ApprovalSection";
+import ImageSection from "../../virtual-classes/components/ImageSection";
 
 export const metadata: Metadata = {
   title: "L'expérience ultime des formations à distance en médecine esthétique",

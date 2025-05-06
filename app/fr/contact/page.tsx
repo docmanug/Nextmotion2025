@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Hero from "../../en/contact/components/Hero";
-import ContactForm from "../../en/contact/components/ContactForm";
+import Hero from "../../contact/components/Hero";
+import ContactForm from "../../contact/components/ContactForm";
 import Footer from "@/components/Footer";
-import TestinomialSlider from "../../en/contact/components/TestinomialSlider";
+import TestinomialSlider from "../../contact/components/TestinomialSlider";
 import { getMessages, useTranslations } from "@/utils/i18n";
 
 export const metadata: Metadata = {

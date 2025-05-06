@@ -41,37 +41,37 @@ export default function Navbar() {
       if (pathname === "/fr/photos-avant-apres") {
         router.push("/before-after");
       } else if (pathname === "/fr/tarifs-solution-esthetique") {
-        router.push("/en/pricing-aesthetic-solution");
+        router.push("/pricing-aesthetic-solution");
       } else if (pathname.includes("/fr/cas-clients")) {
-        router.push("/en/case-studies");
-      } else if (pathname === "/fr/contact" || pathname === "/contact") {
-        router.push("/en/contact");
+        router.push("/case-studies");
+      } else if (pathname === "/fr/contact") {
+        router.push("/contact");
       } else if (pathname === "/fr/a-propos") {
-        router.push("/en/about-us");
+        router.push("/about-us");
       } else if (pathname === "/fr/podcast") {
         router.push("/podcast");
       } else if (pathname === "/fr/formulaire_contact") {
         router.push("/contact_form");
       } else if (pathname === "/fr/3d-simulation-esthetique") {
-        router.push("/en/3d-aesthetic-simulation");
+        router.push("/3d-aesthetic-simulation");
       } else if (pathname === "/fr/logiciel-consultation-esthetique") {
         router.push("/clinic-management-software");
       } else if (pathname === "/fr/agenda-patient-en-ligne-rdv") {
         router.push("/agenda-online-booking-reminders");
       } else if (pathname === "/fr/virtual-classes") {
-        router.push("/en/virtual-classes");
+        router.push("/virtual-classes");
       } else if (pathname === "/fr/robot-injecteur-medecine-esthetique") {
-        router.push("/en/injector-robot-aesthetic-medicine");
+        router.push("/injector-robot-aesthetic-medicine");
       } else if (pathname === "/fr/manager") {
-        router.push("/en/manager");
+        router.push("/manager");
       } else if (pathname === "/fr/medecin-esthetique") {
-        router.push("/en/medecin-esthetique");
+        router.push("/medecin-esthetique");
       } else if (pathname === "/fr/assistant") {
-        router.push("/en/assistant");
+        router.push("/assistant");
       } else if (pathname === "/fr/chaines") {
-        router.push("/en/chaines");
+        router.push("/chaines");
       } else if (pathname === "/fr/marketing") {
-        router.push("/en/marketing");
+        router.push("/marketing");
       } else if (pathname === "/fr") {
         router.push("/");
       } else {
@@ -81,37 +81,37 @@ export default function Navbar() {
       // Handle special case for before-after to photos-avant-apres
       if (pathname === "/before-after") {
         router.push("/fr/photos-avant-apres");
-      } else if (pathname.includes("/en/pricing-aesthetic-solution")) {
+      } else if (pathname.includes("/pricing-aesthetic-solution")) {
         router.push("/fr/tarifs-solution-esthetique");
-      } else if (pathname.includes("/en/case-studies")) {
+      } else if (pathname.includes("/case-studies")) {
         router.push("/fr/cas-clients");
-      } else if (pathname === "/en/contact" || pathname === "/contact") {
+      } else if (pathname === "/contact") {
         router.push("/fr/contact");
-      } else if (pathname === "/en/about-us") {
+      } else if (pathname === "/about-us") {
         router.push("/fr/a-propos");
       } else if (pathname === "/podcast") {
         router.push("/fr/podcast");
       } else if (pathname === "/contact_form") {
         router.push("/fr/formulaire_contact");
-      } else if (pathname === "/en/3d-aesthetic-simulation") {
+      } else if (pathname === "/3d-aesthetic-simulation") {
         router.push("/fr/3d-simulation-esthetique");
       } else if (pathname === "/clinic-management-software") {
         router.push("/fr/logiciel-consultation-esthetique");
       } else if (pathname === "/agenda-online-booking-reminders") {
         router.push("/fr/agenda-patient-en-ligne-rdv");
-      } else if (pathname === "/en/virtual-classes") {
+      } else if (pathname === "/virtual-classes") {
         router.push("/fr/virtual-classes");
-      } else if (pathname === "/en/injector-robot-aesthetic-medicine") {
+      } else if (pathname === "/injector-robot-aesthetic-medicine") {
         router.push("/fr/robot-injecteur-medecine-esthetique");
-      } else if (pathname === "/en/manager") {
+      } else if (pathname === "/manager") {
         router.push("/fr/manager");
-      } else if (pathname === "/en/medecin-esthetique") {
+      } else if (pathname === "/medecin-esthetique") {
         router.push("/fr/medecin-esthetique");
-      } else if (pathname === "/en/assistant") {
+      } else if (pathname === "/assistant") {
         router.push("/fr/assistant");
-      } else if (pathname === "/en/chaines") {
+      } else if (pathname === "/chaines") {
         router.push("/fr/chaines");
-      } else if (pathname === "/en/marketing") {
+      } else if (pathname === "/marketing") {
         router.push("/fr/marketing");
       } else if (pathname === "/") {
         router.push("/fr");
@@ -168,7 +168,7 @@ export default function Navbar() {
                   href={
                     currentLocale === "fr"
                       ? "/fr/3d-simulation-esthetique"
-                      : "/en/3d-aesthetic-simulation"
+                      : "/3d-aesthetic-simulation"
                   }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
@@ -198,7 +198,7 @@ export default function Navbar() {
                   href={
                     currentLocale === "fr"
                       ? "/fr/virtual-classes"
-                      : "/en/virtual-classes"
+                      : "/virtual-classes"
                   }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
@@ -208,7 +208,7 @@ export default function Navbar() {
                   href={
                     currentLocale === "fr"
                       ? "/fr/robot-injecteur-medecine-esthetique"
-                      : "/en/injector-robot-aesthetic-medicine"
+                      : "/injector-robot-aesthetic-medicine"
                   }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
@@ -225,7 +225,7 @@ export default function Navbar() {
               <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href={currentLocale === "fr" ? "/fr/manager" : "/en/manager"}
+                  href={currentLocale === "fr" ? "/fr/manager" : "/manager"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.clinicManager")}
@@ -234,30 +234,26 @@ export default function Navbar() {
                   href={
                     currentLocale === "fr"
                       ? "/fr/medecin-esthetique"
-                      : "/en/medecin-esthetique"
+                      : "/medecin-esthetique"
                   }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.aestheticPractitioner")}
                 </Link>
                 <Link
-                  href={
-                    currentLocale === "fr" ? "/fr/assistant" : "/en/assistant"
-                  }
+                  href={currentLocale === "fr" ? "/fr/assistant" : "/assistant"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.assistant")}
                 </Link>
                 <Link
-                  href={currentLocale === "fr" ? "/fr/chaines" : "/en/chaines"}
+                  href={currentLocale === "fr" ? "/fr/chaines" : "/chaines"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.clinicChainManager")}
                 </Link>
                 <Link
-                  href={
-                    currentLocale === "fr" ? "/fr/marketing" : "/en/marketing"
-                  }
+                  href={currentLocale === "fr" ? "/fr/marketing" : "/marketing"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.youAreMenu.marketingManager")}
@@ -269,7 +265,7 @@ export default function Navbar() {
               href={
                 currentLocale === "fr"
                   ? "/fr/tarifs-solution-esthetique"
-                  : "/en/pricing-aesthetic-solution"
+                  : "/pricing-aesthetic-solution"
               }
               className="text-[15px] text-gray-900 hover:text-[#0066FF]"
             >
@@ -284,9 +280,7 @@ export default function Navbar() {
               <div className="absolute hidden group-hover:block w-72 bg-[#0066FF] shadow-lg rounded-lg mt-1 transition-all duration-300">
                 <div className="absolute h-6 w-full -top-6 bg-transparent"></div>
                 <Link
-                  href={
-                    currentLocale === "fr" ? "/fr/a-propos" : "/en/about-us"
-                  }
+                  href={currentLocale === "fr" ? "/fr/a-propos" : "/about-us"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.resourcesMenu.aboutUs")}
@@ -312,16 +306,14 @@ export default function Navbar() {
                   {t("navbar.resourcesMenu.podcast")}
                 </Link>
                 <Link
-                  href={`/${currentLocale}/contact`}
+                  href={currentLocale === "fr" ? "/fr/contact" : "/contact"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.resourcesMenu.contact")}
                 </Link>
                 <Link
                   href={
-                    currentLocale === "fr"
-                      ? "/fr/cas-clients"
-                      : "/en/case-studies"
+                    currentLocale === "fr" ? "/fr/cas-clients" : "/case-studies"
                   }
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
@@ -441,7 +433,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/3d-simulation-esthetique"
-                            : "/en/3d-aesthetic-simulation"
+                            : "/3d-aesthetic-simulation"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -471,7 +463,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/virtual-classes"
-                            : "/en/virtual-classes"
+                            : "/virtual-classes"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -481,7 +473,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/robot-injecteur-medecine-esthetique"
-                            : "/en/injector-robot-aesthetic-medicine"
+                            : "/injector-robot-aesthetic-medicine"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -508,7 +500,7 @@ export default function Navbar() {
                     <div className="bg-[#F8F9FB] py-2">
                       <Link
                         href={
-                          currentLocale === "fr" ? "/fr/manager" : "/en/manager"
+                          currentLocale === "fr" ? "/fr/manager" : "/manager"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -518,7 +510,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/medecin-esthetique"
-                            : "/en/medecin-esthetique"
+                            : "/medecin-esthetique"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -528,7 +520,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/assistant"
-                            : "/en/assistant"
+                            : "/assistant"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -536,7 +528,7 @@ export default function Navbar() {
                       </Link>
                       <Link
                         href={
-                          currentLocale === "fr" ? "/fr/chaines" : "/en/chaines"
+                          currentLocale === "fr" ? "/fr/chaines" : "/chaines"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -546,7 +538,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/marketing"
-                            : "/en/marketing"
+                            : "/marketing"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -560,7 +552,7 @@ export default function Navbar() {
                   href={
                     currentLocale === "fr"
                       ? "/fr/tarifs-solution-esthetique"
-                      : "/en/pricing-aesthetic-solution"
+                      : "/pricing-aesthetic-solution"
                   }
                   className="px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                 >
@@ -584,9 +576,7 @@ export default function Navbar() {
                     <div className="bg-[#F8F9FB] py-2">
                       <Link
                         href={
-                          currentLocale === "fr"
-                            ? "/fr/a-propos"
-                            : "/en/about-us"
+                          currentLocale === "fr" ? "/fr/a-propos" : "/about-us"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -615,7 +605,9 @@ export default function Navbar() {
                         {t("navbar.resourcesMenu.podcast")}
                       </Link>
                       <Link
-                        href={`/${currentLocale}/contact`}
+                        href={
+                          currentLocale === "fr" ? "/fr/contact" : "/contact"
+                        }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
                         {t("navbar.resourcesMenu.contact")}
@@ -624,7 +616,7 @@ export default function Navbar() {
                         href={
                           currentLocale === "fr"
                             ? "/fr/cas-clients"
-                            : "/en/case-studies"
+                            : "/case-studies"
                         }
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
@@ -657,7 +649,11 @@ export default function Navbar() {
 
                 <div className="px-6 py-3">
                   <Link
-                    href={`/${currentLocale}/contact`}
+                    href={
+                      currentLocale === "fr"
+                        ? "/fr/formulaire_contact"
+                        : "/contact_form"
+                    }
                     className="w-full bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto"
                   >
                     {t("navbar.contactUs")}

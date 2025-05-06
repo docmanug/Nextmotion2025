@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import Hero from "../../en/3d-aesthetic-simulation/components/Hero";
-import StandardSection from "../../en/3d-aesthetic-simulation/components/StandardSection";
-import Standard2Section from "../../en/3d-aesthetic-simulation/components/Standard2Section";
-import Standard3Section from "../../en/3d-aesthetic-simulation/components/Standard3Section";
-import FaqSection from "../../en/3d-aesthetic-simulation/components/FaqSection";
-import DiscoverSection from "../../en/3d-aesthetic-simulation/components/DiscoverSection";
+import Hero from "../../3d-aesthetic-simulation/components/Hero";
+import StandardSection from "../../3d-aesthetic-simulation/components/StandardSection";
+import Standard2Section from "../../3d-aesthetic-simulation/components/Standard2Section";
+import Standard3Section from "../../3d-aesthetic-simulation/components/Standard3Section";
+import FaqSection from "../../3d-aesthetic-simulation/components/FaqSection";
+import DiscoverSection from "../../3d-aesthetic-simulation/components/DiscoverSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
-import ImageSection from "../../en/3d-aesthetic-simulation/components/ImageSection";
+import ImageSection from "../../3d-aesthetic-simulation/components/ImageSection";
 
 export const metadata: Metadata = {
   title:

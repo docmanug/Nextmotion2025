@@ -1,13 +1,13 @@
 import { Metadata } from "next";
-import Hero from "../../en/injector-robot-aesthetic-medicine/components/Hero";
-import StandardSection from "../../en/injector-robot-aesthetic-medicine/components/StandardSection";
-import Standard2Section from "../../en/injector-robot-aesthetic-medicine/components/Standard2Section";
-import CapabilitiesSection from "../../en/injector-robot-aesthetic-medicine/components/CapabilitiesSection";
+import Hero from "../../injector-robot-aesthetic-medicine/components/Hero";
+import StandardSection from "../../injector-robot-aesthetic-medicine/components/StandardSection";
+import Standard2Section from "../../injector-robot-aesthetic-medicine/components/Standard2Section";
+import CapabilitiesSection from "../../injector-robot-aesthetic-medicine/components/CapabilitiesSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import JoinRevolution from "../../en/injector-robot-aesthetic-medicine/components/JoinRevolution";
-import ApprovalSection from "../../en/injector-robot-aesthetic-medicine/components/ApprovalSection";
-import LastSection from "../../en/injector-robot-aesthetic-medicine/components/LastSection";
+import JoinRevolution from "../../injector-robot-aesthetic-medicine/components/JoinRevolution";
+import ApprovalSection from "../../injector-robot-aesthetic-medicine/components/ApprovalSection";
+import LastSection from "../../injector-robot-aesthetic-medicine/components/LastSection";
 
 export const metadata: Metadata = {
   title: "Un robot injecteur doté d'une IA pour la médecine esthétique",

@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Hero from "../../en/case-studies/components/Hero";
-import CaseStudies from "../../en/case-studies/components/CaseStudies";
+import Hero from "../../case-studies/components/Hero";
+import CaseStudies from "../../case-studies/components/CaseStudies";
 import Footer from "@/components/Footer";
-import TestimonialSlider from "../../en/case-studies/components/TestinomialSlider";
-import MoreCaseStudies from "../../en/case-studies/components/MoreCaseStudies";
-import TryNextmotion from "../../en/case-studies/components/TryNextMotion";
+import TestimonialSlider from "../../case-studies/components/TestinomialSlider";
+import MoreCaseStudies from "../../case-studies/components/MoreCaseStudies";
+import TryNextmotion from "../../case-studies/components/TryNextMotion";
 import { getMessages, useTranslations } from "@/utils/i18n";
 
 export const metadata: Metadata = {

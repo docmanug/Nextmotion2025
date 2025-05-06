@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Online agenda for aesthetic clinics: manage appointments, automated reminders, secure patient access, and real-time performance tracking.",
   alternates: {
-    canonical: "https://www.nextmotion.net/en/agenda-online-booking-reminders",
+    canonical: "https://www.nextmotion.net/agenda-online-booking-reminders",
   },
 };
 

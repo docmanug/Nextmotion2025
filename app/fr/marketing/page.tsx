@@ -1,17 +1,17 @@
 import { Metadata } from "next";
-import Hero from "../../en/marketing/components/Hero";
-import SolutionsSection from "../../en/marketing/components/SolutionsSection";
-import Feature2 from "../../en/marketing/components/Feature2";
-import Feature1 from "../../en/marketing/components/Feature1";
+import Hero from "../../marketing/components/Hero";
+import SolutionsSection from "../../marketing/components/SolutionsSection";
+import Feature2 from "../../marketing/components/Feature2";
+import Feature1 from "../../marketing/components/Feature1";
 
-import TryNextmotion from "../../en/marketing/components/TryNextmotion";
+import TryNextmotion from "../../marketing/components/TryNextmotion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Feature3 from "../../en/marketing/components/Feature3";
-import Feature4 from "../../en/marketing/components/Feature4";
-import Feature5 from "../../en/marketing/components/Feature5";
-import Feature6 from "../../en/marketing/components/Feature6";
-import Feature7 from "../../en/marketing/components/Feature7";
+import Feature3 from "../../marketing/components/Feature3";
+import Feature4 from "../../marketing/components/Feature4";
+import Feature5 from "../../marketing/components/Feature5";
+import Feature6 from "../../marketing/components/Feature6";
+import Feature7 from "../../marketing/components/Feature7";
 
 export const metadata: Metadata = {
   title: "Boostez le Marketing de Votre Clinique Esthétique avec Nextmotion",

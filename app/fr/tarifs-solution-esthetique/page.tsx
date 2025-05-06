@@ -1,14 +1,14 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Hero from "../../en/pricing-aesthetic-solution/components/Hero";
-import PricingCards from "../../en/pricing-aesthetic-solution/components/PricingCards";
-import SmallPricingCards from "../../en/pricing-aesthetic-solution/components/SmallPricingCards";
-import ComparisonPlans from "../../en/pricing-aesthetic-solution/components/ComparisonPlans";
-import TestimonialSlider from "../../en/pricing-aesthetic-solution/components/TestimonialSlider";
+import Hero from "../../pricing-aesthetic-solution/components/Hero";
+import PricingCards from "../../pricing-aesthetic-solution/components/PricingCards";
+import SmallPricingCards from "../../pricing-aesthetic-solution/components/SmallPricingCards";
+import ComparisonPlans from "../../pricing-aesthetic-solution/components/ComparisonPlans";
+import TestimonialSlider from "../../pricing-aesthetic-solution/components/TestimonialSlider";
 import Footer from "@/components/Footer";
-import FaqSection from "../../en/pricing-aesthetic-solution/components/FaqSection";
-import TryNextmotion from "../../en/pricing-aesthetic-solution/components/TryNextMotion";
+import FaqSection from "../../pricing-aesthetic-solution/components/FaqSection";
+import TryNextmotion from "../../pricing-aesthetic-solution/components/TryNextMotion";
 import { getMessages, useTranslations } from "@/utils/i18n";
 
 export default async function PricingAestheticSolutionPage() {

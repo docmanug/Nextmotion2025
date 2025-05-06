@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Revolutionize aesthetic consultations with Nextmotion Revolution. Capture dynamic videos, extract HD photos, and deliver consistent before-and-after results",
   alternates: {
-    canonical: "https://www.nextmotion.net/en/revolution",
+    canonical: "https://www.nextmotion.net/revolution",
   },
 };
 

@@ -1,12 +1,12 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Hero from "../../en/about-us/components/Hero";
-import Timeline from "../../en/about-us/components/Timeline";
-import Founder from "../../en/about-us/components/Founder";
-import TeamMembers from "../../en/about-us/components/TeamMembers";
-import Specialists from "../../en/about-us/components/Specialists";
-import CallToAction from "../../en/about-us/components/CallToAction";
+import Hero from "../../about-us/components/Hero";
+import Timeline from "../../about-us/components/Timeline";
+import Founder from "../../about-us/components/Founder";
+import TeamMembers from "../../about-us/components/TeamMembers";
+import Specialists from "../../about-us/components/Specialists";
+import CallToAction from "../../about-us/components/CallToAction";
 import Footer from "@/components/Footer";
 import { getMessages, useTranslations } from "@/utils/i18n";
 

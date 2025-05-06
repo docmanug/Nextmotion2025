@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import Hero from "../../en/chaines/components/Hero";
-import SolutionsSection from "../../en/chaines/components/SolutionsSection";
-import Feature2 from "../../en/chaines/components/Feature2";
-import Feature1 from "../../en/chaines/components/Feature1";
-import TryNextmotion from "../../en/chaines/components/TryNextmotion";
+import Hero from "../../chaines/components/Hero";
+import SolutionsSection from "../../chaines/components/SolutionsSection";
+import Feature2 from "../../chaines/components/Feature2";
+import Feature1 from "../../chaines/components/Feature1";
+import TryNextmotion from "../../chaines/components/TryNextmotion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Feature3 from "../../en/chaines/components/Feature3";
-import Feature4 from "../../en/chaines/components/Feature4";
-import Feature5 from "../../en/chaines/components/Feature5";
+import Feature3 from "../../chaines/components/Feature3";
+import Feature4 from "../../chaines/components/Feature4";
+import Feature5 from "../../chaines/components/Feature5";
 
 export const metadata: Metadata = {
   title: "Optimisez la gestion de vos cliniques esthétiques avec Nextmotion",

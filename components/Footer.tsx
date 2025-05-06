@@ -156,7 +156,7 @@ export default function Footer({
   const threeDLink =
     currentLocale === "fr"
       ? "/fr/3d-simulation-esthetique"
-      : "/en/3d-aesthetic-simulation";
+      : "/3d-aesthetic-simulation";
   const consultLink =
     currentLocale === "fr"
       ? "/fr/logiciel-consultation-esthetique"
@@ -166,32 +166,28 @@ export default function Footer({
       ? "/fr/agenda-patient-en-ligne-rdv"
       : "/agenda-online-booking-reminders";
   const virtualClassesLink =
-    currentLocale === "fr" ? "/fr/virtual-classes" : "/en/virtual-classes";
+    currentLocale === "fr" ? "/fr/virtual-classes" : "/virtual-classes";
   const roboticsLink =
     currentLocale === "fr"
       ? "/fr/robot-injecteur-medecine-esthetique"
-      : "/en/injector-robot-aesthetic-medicine";
-  const managerLink = currentLocale === "fr" ? "/fr/manager" : "/en/manager";
+      : "/injector-robot-aesthetic-medicine";
+  const managerLink = currentLocale === "fr" ? "/fr/manager" : "/manager";
   const medecinLink =
-    currentLocale === "fr"
-      ? "/fr/medecin-esthetique"
-      : "/en/medecin-esthetique";
-  const assistantLink =
-    currentLocale === "fr" ? "/fr/assistant" : "/en/assistant";
-  const chainesLink = currentLocale === "fr" ? "/fr/chaines" : "/en/chaines";
-  const marketingLink =
-    currentLocale === "fr" ? "/fr/marketing" : "/en/marketing";
+    currentLocale === "fr" ? "/fr/medecin-esthetique" : "/medecin-esthetique";
+  const assistantLink = currentLocale === "fr" ? "/fr/assistant" : "/assistant";
+  const chainesLink = currentLocale === "fr" ? "/fr/chaines" : "/chaines";
+  const marketingLink = currentLocale === "fr" ? "/fr/marketing" : "/marketing";
   const pricingLink =
     currentLocale === "fr"
       ? "/fr/tarifs-solution-esthetique"
-      : "/en/pricing-aesthetic-solution";
-  const aboutUsLink = currentLocale === "fr" ? "/fr/a-propos" : "/en/about-us";
+      : "/pricing-aesthetic-solution";
+  const aboutUsLink = currentLocale === "fr" ? "/fr/a-propos" : "/about-us";
   const blogLink = currentLocale === "fr" ? "/fr/blog" : "/blog";
   const podcastLink = currentLocale === "fr" ? "/fr/podcast" : "/podcast";
   const caseStudiesLink =
-    currentLocale === "fr" ? "/fr/cas-clients" : "/en/case-studies";
+    currentLocale === "fr" ? "/fr/cas-clients" : "/case-studies";
 
-  const contactLink = currentLocale === "fr" ? "/fr/contact" : "/en/contact";
+  const contactLink = currentLocale === "fr" ? "/fr/contact" : "/contact";
 
   return (
     <footer className="bg-white w-full">
