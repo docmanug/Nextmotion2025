@@ -337,7 +337,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/login"
+              href="https://app.nextmotion.net"
               className="text-[15px] text-gray-900 hover:text-[#0066FF]"
             >
               {t("navbar.login")}
@@ -641,7 +641,7 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="/login"
+                  href="https://app.nextmotion.net"
                   className="px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]"
                 >
                   {t("navbar.login")}
