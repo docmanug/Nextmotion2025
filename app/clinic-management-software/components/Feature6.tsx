@@ -37,17 +37,17 @@ export default function Feature6() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-1 lg:order-1">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature6_icon.png"
-                  alt="Practice Growth Icon"
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/third/icons/feature6.svg"
+                alt="Feature 6 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                {t("title")}
+              </h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">

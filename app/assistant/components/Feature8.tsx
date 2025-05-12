@@ -43,17 +43,17 @@ export default function Feature8() {
           </div>
 
           <div className="lg:max-w-[470px]">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature9_icon.png"
-                  alt={t("iconAlt")}
-                  width={40}
-                  height={40}
-                  className="text-white"
-                />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900">{t("title")}</h2>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/assistant/icons/feature8.svg"
+                alt="Feature 8 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                {t("title")}
+              </h2>
             </div>
             <p className="text-[14px] leading-relaxed text-gray-600 pt-2">
               {t("description")}

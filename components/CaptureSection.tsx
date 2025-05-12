@@ -47,15 +47,14 @@ export default function CaptureSection({
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 sm:gap-12 lg:gap-16 items-start">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/icons/mobile.png"
-                  alt="Mobile Icon"
-                  width={60}
-                  height={60}
-                  className="w-10 h-10 sm:w-[60px] sm:h-[60px] text-blue-600"
-                />
-              </div>
+              <Image
+                src="/icons/mobile.svg"
+                alt="Mobile Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
+              />
+
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {title}
               </h2>

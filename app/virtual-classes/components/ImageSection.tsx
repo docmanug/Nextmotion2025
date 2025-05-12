@@ -7,24 +7,21 @@ export default function ImageSection() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Video Section */}
-        <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden">
-          <Image
-            src="/fifth/video_bg.png"
-            alt="Virtual Classes Overview"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Play Button Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors">
-              <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[#0066FF] border-b-[12px] border-b-transparent ml-1"></div>
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-8 sm:py-16">
+          <div className="flex justify-center">
+            <div className="relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/Q8PiP6CIoeQ"
+                title="Nextmotion Virtual Classes Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

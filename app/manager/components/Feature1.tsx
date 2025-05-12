@@ -38,15 +38,13 @@ export default function Feature1() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/manager/icons/manager_1_icon.png"
-                  alt="Patient Icon"
-                  width={60}
-                  height={60}
-                  className="text-blue-600 w-10 h-10 sm:w-[60px] sm:h-[60px]"
-                />
-              </div>
+              <Image
+                src="/manager/icons/feature1.svg"
+                alt="Feature 1 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {t("title")}
               </h2>

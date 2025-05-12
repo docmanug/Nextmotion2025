@@ -41,17 +41,17 @@ export default function Feature1() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/camera.png"
-                  alt="Consult Icon"
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-900">{t("title")}</h2>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/third/icons/feature1.svg"
+                alt="Feature 1 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                {t("title")}
+              </h2>
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">

@@ -42,16 +42,14 @@ export default function Feature6() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/marketing/icons/marketing_6_icon.png"
-                  alt={t("imageAlt")}
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/marketing/icons/feature6.svg"
+                alt="Feature 6 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {t("title")}
               </h2>

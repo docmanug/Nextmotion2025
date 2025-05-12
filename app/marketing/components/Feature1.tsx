@@ -27,16 +27,14 @@ export default function Feature1() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="order-1 lg:order-1">
-            <div className="flex items-center gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/marketing/icons/marketing_1_icon.png"
-                  alt="Nextmotion Capture Icon"
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/marketing/icons/feature1.svg"
+                alt="Feature 1 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {t("title")}
               </h2>

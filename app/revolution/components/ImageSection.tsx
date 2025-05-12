@@ -8,18 +8,16 @@ export default function ImageSection() {
     <section className="py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Video Section */}
-        <div className="relative w-full max-w-5xl mx-auto aspect-[16/9] sm:aspect-video rounded-lg sm:rounded-2xl overflow-hidden">
-          <Image
-            src="/seventh/rev_image.png"
-            alt="Virtual Classes Overview"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Play Button Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white/90 rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors">
-              <div className="w-0 h-0 border-t-[8px] sm:border-t-[10px] md:border-t-[12px] border-t-transparent border-l-[14px] sm:border-l-[16px] md:border-l-[20px] border-l-[#0066FF] border-b-[8px] sm:border-b-[10px] md:border-b-[12px] border-b-transparent ml-1"></div>
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-2 sm:py-16">
+          <div className="flex justify-center">
+            <div className="relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/3aI4hHgQKek"
+                title="Nextmotion Revolution Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
             </div>
           </div>
         </div>

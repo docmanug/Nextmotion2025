@@ -42,17 +42,15 @@ export default function Feature1() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/third/icons/camera.png"
-                  alt={t("agendaOnlineBookingReminders.feature1.iconAlt")}
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/fourth/icons/feature1.svg"
+                alt="Feature 1 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {t("agendaOnlineBookingReminders.feature1.title")}
               </h2>
             </div>
