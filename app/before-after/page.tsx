@@ -11,8 +11,6 @@ import ReviewsSection from "./components/ReviewsSection";
 import EngageSection from "./components/EngageSection";
 import ComparisonSection from "./components/ComparisonSection";
 import DiscoverSection from "./components/DiscoverSection";
-import CommunitySection from "./components/CommunitySection";
-import ApprovalSection from "./components/ApprovalSection";
 import FaqSection from "./components/FaqSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

@@ -9,7 +9,15 @@ import { getMessages } from "@/utils/i18n";
 
 export default function Feature6() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
 
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
   useEffect(() => {
     const loadMessages = async () => {
       const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
@@ -59,7 +67,7 @@ export default function Feature6() {
             </p>
             <div className="mt-10">
               <Link
-                href="/contact_form"
+                href={contactFormLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >

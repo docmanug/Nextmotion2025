@@ -52,6 +52,15 @@ const secondRow = testimonials.slice(3);
 
 export default function TestimonialSlider() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
   const pathname = usePathname();
   const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
   const controlsFirstRow = useAnimationControls();
@@ -115,7 +124,7 @@ export default function TestimonialSlider() {
           <Button
             className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#051238] transition-colors rounded-md px-8 py-2"
             onClick={() =>
-              window.open("/contact_form", "_blank", "noopener,noreferrer")
+              window.open(contactFormLink, "_blank", "noopener,noreferrer")
             }
           >
             {t("pricing.testimonials.button")}

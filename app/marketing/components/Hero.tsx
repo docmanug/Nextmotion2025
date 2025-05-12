@@ -8,6 +8,15 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
 
   useEffect(() => {
     const loadMessages = async () => {
@@ -36,7 +45,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/contact_form"
+                href={contactFormLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >

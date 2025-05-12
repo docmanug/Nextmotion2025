@@ -8,7 +8,15 @@ import { getMessages } from "@/utils/i18n";
 
 export default function NewOffer() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
 
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
   useEffect(() => {
     const loadMessages = async () => {
       const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
@@ -65,7 +73,7 @@ export default function NewOffer() {
 
             {/* Price Button */}
             <Link
-              href="/contact_form"
+              href={contactFormLink}
               target="_blank"
               rel="noopener noreferrer"
             >
