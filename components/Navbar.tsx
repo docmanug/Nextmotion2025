@@ -286,7 +286,9 @@ export default function Navbar() {
                   {t("navbar.resourcesMenu.aboutUs")}
                 </Link>
                 <Link
-                  href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
+                  href="https://blog.nextmotion.net/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.resourcesMenu.blog")}
@@ -583,7 +585,9 @@ export default function Navbar() {
                         {t("navbar.resourcesMenu.aboutUs")}
                       </Link>
                       <Link
-                        href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
+                        href="https://blog.nextmotion.net/en"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]"
                       >
                         {t("navbar.resourcesMenu.blog")}

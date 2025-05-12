@@ -9,6 +9,15 @@ import { usePathname } from "next/navigation";
 
 export default function PricingCards() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
   const pathname = usePathname();
   const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
 
@@ -96,7 +105,7 @@ export default function PricingCards() {
 
                   <div className="flex justify-center md:justify-start">
                     <Link
-                      href="/contact_form"
+                      href={contactFormLink}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

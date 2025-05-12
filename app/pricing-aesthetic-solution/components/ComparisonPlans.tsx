@@ -8,6 +8,15 @@ import { usePathname } from "next/navigation";
 
 export default function ComparisonPlans() {
   const [messages, setMessages] = useState<any>(null);
+  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
   const pathname = usePathname();
   const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
 
@@ -54,7 +63,7 @@ export default function ComparisonPlans() {
   ];
 
   const handleDemoClick = () => {
-    window.open("/contact_form", "_blank", "noopener,noreferrer");
+    window.open(contactFormLink, "_blank", "noopener,noreferrer");
   };
 
   return (

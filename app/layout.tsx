@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { getMessages } from "@/utils/i18n";
 import HreflangTags from "./components/HreflangTags";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
@@ -143,6 +144,18 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={gilroy.variable}>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-W48ZXFFPW1"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W48ZXFFPW1');
+        `}
+      </Script>
       <head>
         <HreflangTags />
       </head>

@@ -182,12 +182,13 @@ export default function Footer({
       ? "/fr/tarifs-solution-esthetique"
       : "/pricing-aesthetic-solution";
   const aboutUsLink = currentLocale === "fr" ? "/fr/a-propos" : "/about-us";
-  const blogLink = currentLocale === "fr" ? "/fr/blog" : "/blog";
+  const blogLink = "https://blog.nextmotion.net/en";
   const podcastLink = currentLocale === "fr" ? "/fr/podcast" : "/podcast";
   const caseStudiesLink =
     currentLocale === "fr" ? "/fr/cas-clients" : "/case-studies";
 
   const contactLink = currentLocale === "fr" ? "/fr/contact" : "/contact";
+  const loginLink = "https://app.nextmotion.net";
 
   return (
     <footer className="bg-white w-full">
@@ -381,7 +382,7 @@ export default function Footer({
                   <ul className="space-y-3">
                     <li>
                       <Link
-                        href="/login"
+                        href={loginLink}
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.help.links.login}
