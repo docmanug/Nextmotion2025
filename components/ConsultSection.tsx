@@ -64,15 +64,13 @@ export default function ConsultSection({
 
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/icons/consult.png"
-                  alt="Consult Icon"
-                  width={60}
-                  height={60}
-                  className="w-12 h-12 sm:w-[60px] sm:h-[60px] text-blue-600"
-                />
-              </div>
+              <Image
+                src="/icons/consult.svg"
+                alt="Consult Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
+              />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {title}
               </h2>

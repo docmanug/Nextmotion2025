@@ -66,17 +66,18 @@ export default function Hero({
           </div>
         </div>
       </div>
-      {/* Image Section */}
+      {/* Video Section */}
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-8 sm:py-16">
         <div className="flex justify-center">
-          <Image
-            src="/covers/iframe1.png"
-            alt="Nextmotion Platform"
-            width={1200}
-            height={600}
-            className="rounded-lg shadow-lg w-full"
-            priority
-          />
+          <div className="relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/5ppBRo2iFYg"
+              title="Nextmotion Platform Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </div>

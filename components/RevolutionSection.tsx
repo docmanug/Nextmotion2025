@@ -61,17 +61,17 @@ export default function RevolutionSection({
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/icons/icon_revolution.png"
-                  alt="Revolution Icon"
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/icons/icon_revolution.svg"
+                alt="Revolution Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                {title}
+              </h2>
             </div>
 
             <p className="text-[18px] font-[700] text-gray-900 mb-6">

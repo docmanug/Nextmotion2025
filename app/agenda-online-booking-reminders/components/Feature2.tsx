@@ -29,17 +29,15 @@ export default function Feature2() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="order-1 lg:order-1">
-            <div className="flex items-center gap-4 mb-4 sm:mb-6">
-              <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/fourth/icons/feature2_icon.png"
-                  alt={t("agendaOnlineBookingReminders.feature2.iconAlt")}
-                  width={60}
-                  height={60}
-                  className="text-blue-600"
-                />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <Image
+                src="/fourth/icons/feature2.svg"
+                alt="Feature 2 Icon"
+                width={60}
+                height={60}
+                className="w-[70px] h-[70px] text-blue-600"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 {t("agendaOnlineBookingReminders.feature2.title")}
               </h2>
             </div>

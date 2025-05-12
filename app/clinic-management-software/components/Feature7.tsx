@@ -36,17 +36,17 @@ export default function Feature7() {
     <section className="py-24 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col max-w-3xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="bg-blue-100 rounded-full p-3">
-              <Image
-                src="/second/intuitive.png"
-                alt="Treatment Records Icon"
-                width={60}
-                height={60}
-                className="text-blue-600"
-              />
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900">{t("title")}</h2>
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <Image
+              src="/third/icons/feature7.svg"
+              alt="Feature 7 Icon"
+              width={60}
+              height={60}
+              className="w-[70px] h-[70px] text-blue-600"
+            />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              {t("title")}
+            </h2>
           </div>
 
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
