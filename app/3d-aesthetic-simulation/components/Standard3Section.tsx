@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -29,13 +28,13 @@ export default function Standard3Section() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
-            <Image
-              src="/eighth/3d_3.png"
-              alt={t("imageAlt")}
-              width={600}
-              height={600}
-              className="w-full h-auto"
-              priority
+            <video
+              src="https://6086964.fs1.hubspotusercontent-na1.net/hubfs/6086964/3D%20trust.mp4"
+              className="w-full h-auto rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
 

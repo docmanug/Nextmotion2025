@@ -50,58 +50,17 @@ export default function MarketSection() {
             </Link>
           </div>
 
-          {/* Right Side - Features Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-6">
-            {/* Row 1 */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4">
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.easy")}
-                </p>
-              </div>
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.oneToOne")}
-                </p>
-              </div>
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.custom")}
-                </p>
-              </div>
-            </div>
-
-            {/* Row 2 */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-4">
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.growth")}
-                </p>
-              </div>
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.formats")}
-                </p>
-              </div>
-            </div>
-
-            {/* Row 3 */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4">
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.congresses")}
-                </p>
-              </div>
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.webinars")}
-                </p>
-              </div>
-              <div className="bg-[#F8FAFC] rounded-xl p-3 sm:p-4 text-center">
-                <p className="text-[#0066FF] text-sm sm:text-base">
-                  {t("features.cost")}
-                </p>
-              </div>
+          {/* Right Side - Image */}
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+            <div className="relative w-full h-full max-w-[400px] sm:max-w-[500px] lg:max-w-[550px] mx-auto">
+              <Image
+                src="/training.png"
+                alt="Training"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

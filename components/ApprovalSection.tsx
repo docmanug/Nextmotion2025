@@ -33,17 +33,20 @@ const defaultResources = [
   {
     type: "E-BOOK",
     title: "Learn more about Digital Consultation in Aesthetic Medicine",
-    image: "/ebook.png",
+    image: "/ebook_digital.png",
+    redirect: "fr/ressources",
   },
   {
     type: "SOCIAL MEDIA KIT",
     title: "Increase awareness of your clinic on Social Media",
-    image: "/ebook.png",
+    image: "/social_media.png",
+    redirect: "https://pages.nextmotion.net/social-media-kit",
   },
   {
     type: "EVENTS FOR AESTHETIC SURGEONS",
     title: "Our events for the year 2025",
-    image: "/ebook.png",
+    image: "/coffee.png",
+    redirect: "https://pages.nextmotion.net/events-for-aesthetic-surgeons",
   },
 ];
 

@@ -36,7 +36,7 @@ export default async function RevolutionLandingPage() {
       <Hero />
       <ImageSection />
       <SolutionsSection />
-      <NewOffer />
+      {/* <NewOffer /> */}
       <Feature1 />
       <Feature2 />
       <Feature3 />
@@ -45,7 +45,7 @@ export default async function RevolutionLandingPage() {
       <Feature6 />
       <Feature7 />
       <FaqSection />
-      <NewOffer />
+      {/* <NewOffer /> */}
       <DiscoverSection />
       <Footer
         professional={{

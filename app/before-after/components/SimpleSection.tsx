@@ -42,6 +42,9 @@ export default function SimpleSection() {
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
               {t("description")}
             </p>
+            <Button className="bg-[#1650EF] text-white hover:bg-[#1650EF]/90">
+              Know more about NM Capture
+            </Button>
           </div>
 
           <div>

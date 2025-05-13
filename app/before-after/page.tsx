@@ -15,7 +15,7 @@ import FaqSection from "./components/FaqSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
-
+import ImageSection from "./components/ImageSection";
 export const metadata: Metadata = {
   title:
     "Nextmotion Capture - Professional Before-and-After Photos & Videos for Aesthetic Clinics",
@@ -37,6 +37,7 @@ export default async function SecondLandingPage() {
     <main>
       <Navbar />
       <Hero />
+      <ImageSection />
       <SolutionsSection />
       <CaptureSection />
       <ConsultSection />

@@ -47,7 +47,7 @@ export default function Standard2Section() {
             </div>
 
             {/* Main Title */}
-            <h2 className="text-2xl sm:text-[2.5rem] font-bold text-[#081F4D] mb-6 sm:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-[2.5rem] font-bold text-[#0C5394] mb-6 sm:mb-8 leading-tight">
               {t("title")}
             </h2>
 

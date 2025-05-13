@@ -27,7 +27,7 @@ export default function ThreeDSection() {
     loadMessages();
   }, []);
 
-  const t = useTranslations(messages?.threeD || {});
+  const t = useTranslations(messages?.beforeAfter?.threeD || {});
 
   if (!messages) return null;
 
@@ -56,28 +56,28 @@ export default function ThreeDSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.simulation.title")}
+                  {t("features.keywords.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.simulation.description")}
+                  {t("features.keywords.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.visualization.title")}
+                  {t("features.portfolio.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.visualization.description")}
+                  {t("features.portfolio.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.planning.title")}
+                  {t("features.consultation.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.planning.description")}
+                  {t("features.consultation.description")}
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function ThreeDSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  {t("learnMore")}
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>
@@ -102,7 +102,7 @@ export default function ThreeDSection() {
           <div>
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/portfolio.webp"
                 alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}

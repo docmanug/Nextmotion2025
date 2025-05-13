@@ -23,7 +23,7 @@ export default function ApprovalSection() {
   if (!messages) return null;
 
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 pt-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">

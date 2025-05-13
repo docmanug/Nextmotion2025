@@ -26,17 +26,20 @@ export default function LastSection() {
     {
       type: t("resources.useCases.type"),
       title: t("resources.useCases.title"),
-      image: "/ebook.png",
+      image: "/usecases.png",
+      redirect:"/fr/cas-clients"
     },
     {
       type: t("resources.ebook.type"),
       title: t("resources.ebook.title"),
       image: "/ebook.png",
+      redirect:"https://pages.nextmotion.net/ebook-digital-consultation"
     },
     {
       type: t("resources.events.type"),
       title: t("resources.events.title"),
-      image: "/ebook.png",
+      image: "/events.png",
+      redirect:"https://pages.nextmotion.net/ebook-digital-consultation"
     },
   ];
 
@@ -45,9 +48,10 @@ export default function LastSection() {
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mb-10">
           {resources.map((resource, index) => (
-            <div
+            <a
+              href={resource.redirect}
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition-shadow cursor-pointer max-w-[380px] w-full mx-auto"
+              className="bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition-shadow cursor-pointer max-w-[380px] w-full mx-auto block"
             >
               <div className="relative w-full aspect-[4/3] mb-6">
                 <Image
@@ -63,7 +67,7 @@ export default function LastSection() {
               <h3 className="text-[24px] font-bold text-[#000B45] leading-snug">
                 {resource.title}
               </h3>
-            </div>
+            </a>
           ))}
         </div>
 

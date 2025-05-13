@@ -10,14 +10,16 @@ import { getMessages } from "@/utils/i18n";
 export default function Feature2() {
   const [messages, setMessages] = useState<any>(null);
   const [contactFormLink, setContactFormLink] = useState("/contact_form");
+  const [isFrench, setIsFrench] = useState(false);
 
   useEffect(() => {
+    const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+    setIsFrench(locale === "fr");
     setContactFormLink(
-      window.location.pathname.startsWith("/fr")
-        ? "/fr/formulaire_contact"
-        : "/contact_form"
+      locale === "fr" ? "/fr/formulaire_contact" : "/contact_form"
     );
   }, []);
+
   useEffect(() => {
     const loadMessages = async () => {
       const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
@@ -37,24 +39,33 @@ export default function Feature2() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative">
-              <Image
-                src="/seventh/rev_2.png"
-                alt={t("deviceAlt")}
-                width={800}
-                height={1000}
-                className="w-full h-auto"
-                priority
-              />
+              {isFrench ? (
+                <video
+                  src="/revolution/video_after.mp4"
+                  className="w-full h-auto rounded-lg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <Image
+                  src="/seventh/rev_2.png"
+                  alt={t("deviceAlt")}
+                  width={800}
+                  height={1000}
+                  className="w-full h-auto"
+                  priority
+                />
+              )}
             </div>
           </div>
 
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <img
                 src="/seventh/icons/feature2.svg"
                 alt="Feature 2 Icon"
-                width={60}
-                height={60}
                 className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">

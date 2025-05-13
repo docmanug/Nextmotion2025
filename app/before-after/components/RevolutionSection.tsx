@@ -27,7 +27,7 @@ export default function RevolutionSection() {
     loadMessages();
   }, []);
 
-  const t = useTranslations(messages?.revolution || {});
+  const t = useTranslations(messages?.beforeAfter?.revolution || {});
 
   if (!messages) return null;
 
@@ -35,10 +35,10 @@ export default function RevolutionSection() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <div className="order-2 lg:order-1">
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/dynamvideos.webp"
                 alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}
@@ -48,7 +48,7 @@ export default function RevolutionSection() {
             </div>
           </div>
 
-          <div>
+          <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <Image
                 src="/second/video_icon.svg"
@@ -69,28 +69,28 @@ export default function RevolutionSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.innovation.title")}
+                  {t("features.details.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.innovation.description")}
+                  {t("features.details.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.integration.title")}
+                  {t("features.outcomes.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.integration.description")}
+                  {t("features.outcomes.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.results.title")}
+                  {t("features.comparison.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.results.description")}
+                  {t("features.comparison.description")}
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function RevolutionSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  {t("learnMore")}
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>
