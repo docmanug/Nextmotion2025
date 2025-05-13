@@ -65,7 +65,7 @@ export default function Feature8() {
               </h2>
             </div>
 
-            <p className="text-[14px] leading-relaxed text-gray-600 pt-2">
+            <p className="text-[17.156px] leading-[30px] text-[#081F4D] pt-2 font-normal">
               {t("description")}
             </p>
             <div className="mt-10">

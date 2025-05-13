@@ -45,7 +45,7 @@ export default function StandardSection() {
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-[2.5rem] font-bold text-[#081F4D] mb-4 sm:mb-5 leading-tight">
+            <h2 className="text-2xl sm:text-[2.5rem] font-bold text-[#0C5394] mb-4 sm:mb-5 leading-tight">
               {t("title")}
             </h2>
 

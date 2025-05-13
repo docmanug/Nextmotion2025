@@ -51,7 +51,7 @@ export default function Standard2Section() {
 
           <div className="relative order-2">
             <video
-              src="/3d/3d_2.mp4"
+              src="https://6086964.fs1.hubspotusercontent-na1.net/hubfs/6086964/3Dagingvideo.mp4"
               className="w-full h-auto rounded-lg"
               autoPlay
               loop

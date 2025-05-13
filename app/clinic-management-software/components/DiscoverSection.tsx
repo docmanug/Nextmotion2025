@@ -74,9 +74,9 @@ export default function DiscoverSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="w-full">
             <DiscoverCard
-              title={t("cards.revolution.title")}
-              imageSrc="/second/part1.jpg"
-              alt={t("cards.revolution.alt")}
+              title={t("cards.capture.title")}
+              imageSrc="/seventh/discovery_1.jpg"
+              alt={t("cards.capture.alt")}
               href={revolutionHref}
             />
           </div>
@@ -86,7 +86,7 @@ export default function DiscoverSection() {
               imageSrc="/second/part2.jpg"
               isPhone={true}
               alt={t("cards.3d.alt")}
-              href={threeDHref}
+              href="/3d-aesthetic-simulation"
             />
           </div>
         </div>

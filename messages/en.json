@@ -289,9 +289,9 @@
         "title": "Want to go further ?",
         "description": "Integrate your images directly into your interface with NextMotion Photo and NextMotion 3D",
         "cards": {
-          "revolution": {
-            "title": "Nextmotion Revolution",
-            "alt": "Nextmotion Revolution"
+          "capture": {
+            "title": "Nextmotion Capture",
+            "alt": "Nextmotion Capture"
           },
           "3d": {
             "title": "Nextmotion 3D",
@@ -1323,8 +1323,8 @@
           "description": "Analyze the number of procedures, revenue, and conversion rate by treatment type."
         },
         "monitoring": {
-          "title": "Consultation Monitoring",
-          "description": "Monitor the number of consultations based on the visit type."
+          "title": "Visit Types",
+          "description": "Monitor the number of consultations based on the visit type"
         }
       },
       "bookDemoButton": "Book a demo"
@@ -1453,9 +1453,9 @@
       "title": "Want to go further ?",
       "description": "Discover Nextmotion Revolution and Nextmotion 3D to directly integrate perfectly standardized photos into your patient records and significantly enhance the quality of your consultations.",
       "cards": {
-        "revolution": {
-          "title": "Nextmotion Revolution",
-          "alt": "Nextmotion Revolution"
+        "capture": {
+          "title": "Nextmotion Capture",
+          "alt": "Nextmotion Capture"
         },
         "3d": {
           "title": "Nextmotion 3D",
@@ -1694,7 +1694,7 @@
       "button": "Request a Demo"
     },
     "approval": {
-      "title": "Discover the other solutions of NextMotion",
+      "title": "An ecosystem that meets all your needs",
       "description": "Our imaging, digitization and simulation solutions can be used both altogether and separately. Combine with us solutions to obtain the maximum benefit of our technology.",
       "solutions": {
         "capture": {
@@ -1734,7 +1734,7 @@
       "title": "Optimisez la Gestion de Votre Clinique Esthétique avec Nextmotion",
       "description": "An all-in-one solution to attract more patients, track your clinic's activity, and improve your team's performance.",
       "demoButton": "Request a demo",
-      "videoButton": "Watch the video"
+      "videoButton": "Play Video"
     },
     "solutions": {
       "title": "Une seule plateforme qui centralise tous vos outils",
@@ -2098,13 +2098,13 @@
       }
     },
     "feature8": {
-      "title": "Client Case",
+      "title": "Use Case",
       "description": "Sophie, Assistant to Dr. Loubeyres in Pau, Reduced Her Administrative Time by 32%, Saving Over 1.5 Hours a Day to Focus More on Patient Care.",
       "videoButton": "Watch the video"
     },
     "tryNextmotion": {
-      "title": "Try Nextmotion",
-      "description": "Sign up for a free demonstration and discover how Nextmotion can transform the management of your aesthetic clinic. Maximize your efficiency and attract more patients starting today. Request a free demo now.",
+      "title": "Sign up for a free demo",
+      "description": "Discover how Nextmotion can transform the management of your aesthetic clinic. Maximize your efficiency and reduce administrative tasks starting today.",
       "button": "Book a demo"
     },
     "solutions": {

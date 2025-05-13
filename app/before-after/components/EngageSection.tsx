@@ -78,7 +78,7 @@ export default function EngageSection() {
           <div>
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/attract.webp"
                 alt="Engage Showcase"
                 width={800}
                 height={1000}

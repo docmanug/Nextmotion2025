@@ -62,19 +62,23 @@ export default function DiscoverSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="w-full">
-            <DiscoverCard
-              title={t("cards.revolution.title")}
-              imageSrc="/second/part1.jpg"
-              alt={t("cards.revolution.alt")}
-            />
+            <Link href="/revolution">
+              <DiscoverCard
+                title={t("cards.revolution.title")}
+                imageSrc="/second/part1.jpg"
+                alt={t("cards.revolution.alt")}
+              />
+            </Link>
           </div>
           <div className="w-full">
-            <DiscoverCard
-              title={t("cards.3d.title")}
-              imageSrc="/second/part2.jpg"
-              alt={t("cards.3d.alt")}
-              isPhone={true}
-            />
+            <Link href="/3d-aesthetic-simulation">
+              <DiscoverCard
+                title={t("cards.3d.title")}
+                imageSrc="/second/part2.jpg"
+                alt={t("cards.3d.alt")}
+                isPhone={true}
+              />
+            </Link>
           </div>
         </div>
       </div>

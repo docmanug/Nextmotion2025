@@ -101,13 +101,13 @@ export default function Feature1() {
 
           <div className="relative flex items-center justify-center">
             <div className="relative w-full">
-              <Image
-                src="/seventh/rev_1.png"
-                alt={t("deviceAlt")}
-                width={800}
-                height={1000}
+              <video
+                src="https://f.hubspotusercontent10.net/hubfs/6086964/iPhone%20seul%20Capture.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-auto"
-                priority
               />
             </div>
           </div>

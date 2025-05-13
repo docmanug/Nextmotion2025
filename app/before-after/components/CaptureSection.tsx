@@ -103,7 +103,7 @@ export default function CaptureSection() {
           <div className="relative">
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/easeofuse.webp"
                 alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}

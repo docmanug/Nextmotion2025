@@ -24,12 +24,13 @@ export default function Hero() {
 
   return (
     <div className="relative h-[500px] sm:h-[550px] md:h-[600px]">
-      <Image
-        src="/fifth/virtual_classes_bg.png"
-        alt="Virtual Classes Background"
-        fill
-        className="object-cover object-center"
-        priority
+      <video
+        src="https://f.hubspotusercontent10.net/hubfs/6086964/Nextmotion_2020/Videos/Videoheaderhome%20and%203Dsd.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#081F4D]/60 to-[#081F4D]/50" />
 

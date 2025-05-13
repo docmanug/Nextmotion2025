@@ -52,19 +52,19 @@
   "capture": {
     "title": "Nextmotion Capture",
     "subtitle": "la solution ultime pour des photos médicales standardisées",
-    "description": "Capturez facilement des images avant-après de haute qualité. Gérez vos dossiers patients avec un stockage cloud illimité et améliorez vos consultations avec des outils de qualité professionnelle.",
+    "description": "Nextmotion Capture est l’outil indispensable pour les médecins esthétiques, les chirurgiens plasticiens et les dermatologues souhaitant capturer des photos avant/après de haute qualité et standardisées. Améliorez vos consultations, renforcez la confiance de vos patients et valorisez votre expertise grâce à une gestion intelligente des dossiers patients avec un stockage cloud illimité.",
     "features": {
       "standardization": {
-        "title": "Standardisation sans effort",
-        "description": "Capturez des photos et vidéos avant-après de haute qualité en quelques secondes, avec des outils conçus pour simplifier votre pratique quotidienne."
+        "title": "Des photos médicales professionnelles en quelques secondes",
+        "description": "Obtenez des images standardisées avant/après avec une qualité optimale et un alignement automatique du visage et du corps. Gagnez du temps et assurez une cohérence parfaite entre chaque prise."
       },
       "experience": {
-        "title": "Expérience patient améliorée",
-        "description": "Impressionnez vos patients avec des résultats de qualité professionnelle qui mettent en valeur votre expertise et renforcent la confiance pendant les consultations."
+        "title": "Valorisez vos résultats et fidélisez vos patients",
+        "description": "Offrez à vos patients une visualisation précise de leurs traitements grâce à des comparaisons avant/après ultra-réalistes. Augmentez l’engagement et le taux de conversion en mettant en avant votre expertise en esthétique médicale."
       },
       "automation": {
-        "title": "Automatisation gain de temps",
-        "description": "Générez instantanément des images standardisées, garantissant la cohérence à chaque session sans effort supplémentaire."
+        "title": "Gagnez du temps grâce à l'automatisation",
+        "description": "Avec Nextmotion Capture, plus besoin de retraiter manuellement vos images. Nos algorithmes avancés garantissent une standardisation parfaite sans effort, pour des résultats professionnels à chaque consultation."
       }
     },
     "learnMore": "En savoir plus sur NM Capture"
@@ -289,9 +289,9 @@
         "title": "Vous voulez aller plus loin ?",
         "description": "Intégrez vos images directement dans votre interface avec NextMotion Photo et NextMotion 3D",
         "cards": {
-          "revolution": {
-            "title": "Nextmotion Revolution",
-            "alt": "Nextmotion Revolution"
+          "capture": {
+            "title": "Nextmotion Capture",
+            "alt": "Nextmotion Capture"
           },
           "3d": {
             "title": "Nextmotion 3D",

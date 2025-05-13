@@ -24,15 +24,19 @@ export default function CapabilitiesSection() {
   if (!messages) return null;
 
   return (
-    <section className="relative min-h-[600px] sm:min-h-screen overflow-hidden">
+    <section className="relative max-h-[600px] sm:max-h-[400] overflow-hidden bg-[#181F3D]">
       {/* Background Image */}
-      <Image
-        src="/sixth/capa_bg1.jpg"
-        alt="LENA Capabilities Background"
-        fill
-        className="object-cover"
-        priority
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/sixth/capa_bg1.jpg"
+          alt="LENA Capabilities Background"
+          width={1920}
+          height={600}
+          className="object-cover w-full h-full"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#181F3D] bg-opacity-70"></div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-32">

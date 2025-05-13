@@ -29,7 +29,7 @@ export default function Standard3Section() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <video
-              src="/3d/3d_3.mp4"
+              src="https://6086964.fs1.hubspotusercontent-na1.net/hubfs/6086964/3D%20trust.mp4"
               className="w-full h-auto rounded-lg"
               autoPlay
               loop

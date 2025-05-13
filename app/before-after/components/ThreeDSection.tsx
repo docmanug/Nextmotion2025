@@ -102,7 +102,7 @@ export default function ThreeDSection() {
           <div>
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/portfolio.webp"
                 alt={t("appScreenshotAlt")}
                 width={800}
                 height={1000}
