@@ -33,7 +33,7 @@ export default function Hero() {
   if (!messages) return null; // Or a loading state
 
   return (
-    <section className="min-h-screen bg-[#F3F8FD]">
+    <section className="bg-[#F3F8FD]">
       <div className="max-w-[1300px] mx-auto px-4 md:px-6 md:pl-16 pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}

@@ -209,11 +209,11 @@
         "description": "Integrate tags to your medias and Build a Complete Portfolio: add tags to your photos and create a comprehensive portfolio of your treatments. Use it to illustrate your treatment plans during consultations and showcase the results achieved to demonstrate your expertise to patients.",
         "features": {
           "organization": {
-            "title": "Easy Media Organization",
+            "title": "Tags",
             "description": "Add tags to your photos for easy searching, allowing you to find any before/after images in seconds."
           },
           "portfolio": {
-            "title": "Comprehensive Portfolio",
+            "title": "Portfolio",
             "description": "Build a comprehensive portfolio of all your treatments, which will be your best asset for converting patients to the proposed procedures."
           },
           "consultation": {
@@ -304,36 +304,32 @@
         "subtitle": "We have the answers",
         "items": [
           {
-            "question": "Is the application available on Android?",
-            "answer": "Yes, our application is available on both Android and iOS platforms. You can download it from the Google Play Store for Android devices. We ensure full functionality and regular updates across both platforms."
+            "question": "What does the purchase of the Revolution machine include?",
+            "answer": "The purchase includes: The motorized rotating robot, Lighting (two LED lamps on stands), Unlimited NM Capture license."
           },
           {
-            "question": "What if I don't have an iPhone or iPad?",
-            "answer": "No worries! Our application is compatible with Android devices as well. You can use any modern smartphone or tablet running Android 8.0 or higher. Additionally, we offer web-based solutions for desktop users."
+            "question": "Do I need to pay monthly fees or a subscription?",
+            "answer": "No, you can use the machine and the application without paying any monthly fees."
           },
           {
-            "question": "Can I import my personal photos into the application?",
-            "answer": "Yes, you can easily import your existing photos into the application. We support various image formats including JPEG, PNG, and HEIC. You can import photos from your device's gallery or directly from your camera."
+            "question": "I would like to travel with the machine. Is it possible?",
+            "answer": "Yes, the machine and its lighting kit fit into a travel suitcase weighing 32 kg, making it suitable for air travel."
           },
           {
-            "question": "Can I add my clinic's logo after cropping the patient's image?",
-            "answer": "Yes, you can customize your images by adding your clinic's logo. Our application includes a watermark feature that allows you to add your logo in various positions with adjustable size and opacity settings."
+            "question": "I have an Android phone. How can I use the application?",
+            "answer": "The application is not available on Android. We recommend having a dedicated iPhone for capturing photos, which stays with the machine. A minimum iPhone 12 purchase is advised for optimal usage."
           },
           {
-            "question": "Is the IMCAS offer free?",
-            "answer": "The IMCAS offer includes a special trial period with access to premium features. While basic features are available for free, premium features require a subscription. Contact our sales team for current promotional offers and pricing details."
+            "question": "How can I view the photos on my computer?",
+            "answer": "Photos can be accessed via our Nextmotion Consult software, available through an internet connection. Images are stored in our medical cloud, with 50 GB included in the subscription. Additional storage is available for €49/month."
           },
           {
-            "question": "How much does the monthly subscription cost?",
-            "answer": "Our subscription plans are designed to be flexible and cost-effective. The monthly subscription starts at €99/month, with different tiers available based on your needs. We also offer annual plans at a discounted rate. Contact our sales team for detailed pricing and custom enterprise solutions."
+            "question": "Is the machine under warranty? What should I do in case of a breakdown?",
+            "answer": "Yes, the machine is under a 2-year warranty. In case of a breakdown, we provide remote support and assistance to replace defective parts. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           },
           {
-            "question": "I work in multiple clinics. Can I use the application anywhere?",
-            "answer": "Yes, absolutely! Our application is designed for mobility. You can use your account across multiple locations, and all your data syncs automatically. This makes it perfect for practitioners who work at different clinics or locations. Just log in to your account on any device to access all your photos and settings."
-          },
-          {
-            "question": "Can I view the before/after photos on a computer?",
-            "answer": "Yes, you can access your before/after photos on any computer through our web platform. We provide a seamless cross-platform experience, allowing you to capture photos on your mobile device and view, edit, or present them on your computer. The web interface offers additional features for presentation and patient consultation."
+            "question": "Is training provided with the purchase of the machine?",
+            "answer": "Yes, a 2-hour training session is included with the purchase. It is conducted remotely via video conference. Additionally, our academy offers numerous training videos. The machine is simple to assemble and use."
           }
         ]
       }
@@ -1203,19 +1199,19 @@
       "questions": [
         {
           "question": "How much does the application license cost?",
-          "answer": "Our pricing is structured to provide maximum value for medical professionals. Please contact our sales team for detailed pricing information tailored to your specific needs and requirements."
+          "answer": "The license is €49/month per user, with no commitment. You can cancel anytime."
         },
         {
           "question": "Does the application work on Android and iOS?",
-          "answer": "Currently, the application is optimized for iOS devices (iPad and iPhone) to ensure the highest quality augmented reality experience. We are continuously working on expanding platform support."
+          "answer": "Yes, absolutely. The app is compatible with both smartphones and tablets, whether they run on Android or iOS."
         },
         {
           "question": "Is the anatomy displayed on the screen specific to my patient?",
-          "answer": "Yes, the 3D anatomic model adapts to your patient's face in real-time using advanced AR technology. This creates a personalized visualization that accurately reflects your patient's unique facial structure."
+          "answer": "No, the displayed anatomy is a \"generalized\" model shown in augmented reality. It provides a reference for the location of anatomical structures. However, variations do exist depending on the patient's sex, body type, and age."
         },
         {
           "question": "Can I use the application on a computer?",
-          "answer": "The AR features of the application require a mobile device (iPad/iPhone) for the best experience. However, you can access certain features and manage your account through our web platform on your computer."
+          "answer": "If you have a Mac, you can install the app via the App Store on your computer. Unfortunately, for Android users, Nextmotion 3D cannot currently be used on a computer."
         }
       ]
     },

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 
 const CheckIcon = () => (
   <svg
@@ -40,17 +40,20 @@ const CrossIcon = () => (
 
 const ProductCard = ({
   title,
-  imageSrc,
+  videoSrc,
   features,
   isPopular = false,
   variant = "white",
 }: {
   title: string;
-  imageSrc: string;
+  videoSrc: string;
   features: { text: string; available: boolean }[];
   isPopular?: boolean;
   variant?: "dark" | "white" | "light";
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const bgColor = {
     dark: "bg-[#081F4D]",
     white: "bg-white",
@@ -60,6 +63,16 @@ const ProductCard = ({
   const textColor = variant === "dark" ? "text-white" : "text-[#1650EF]";
   const subTextColor = variant === "dark" ? "text-white" : "text-black";
   const featureTextColor = variant === "dark" ? "text-white" : "text-black";
+
+  const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    if (isPlaying) {
+      video.pause();
+    } else {
+      video.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <div
@@ -72,23 +85,21 @@ const ProductCard = ({
           </div>
         </div>
       )}
-      <div className="mb-6">
-        <Image
-          src={imageSrc}
-          alt={`${title} demo`}
-          width={400}
-          height={300}
-          className="w-full h-auto rounded-lg"
+      <div
+        className="mb-6 relative group cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <video
+          src={videoSrc}
+          className="w-full h-auto rounded-lg transition-transform duration-300 group-hover:scale-[1.02]"
+          controls
+          playsInline
+          onClick={handleVideoClick}
         />
       </div>
       <div className="text-center mb-8">
-        <Image
-          src="/logo.png"
-          alt="Next Motion"
-          width={80}
-          height={15}
-          className="mx-auto mb-2"
-        />
+        <img src="/logo.png" alt="Next Motion" className="mx-auto mb-2 w-20" />
         <h2 className={`text-4xl font-bold ${textColor}`}>{title}</h2>
       </div>
       <div className="space-y-4 flex-grow">
@@ -156,20 +167,20 @@ export default function ComparisonSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ProductCard
             title="Capture"
-            imageSrc="/second/card3.png"
+            videoSrc="/before/capture.mp4"
             features={captureFeatures}
             isPopular={true}
             variant="dark"
           />
           <ProductCard
             title="RingLight"
-            imageSrc="/second/card2.png"
+            videoSrc="/before/ringlight.m4v"
             features={ringLightFeatures}
             variant="white"
           />
           <ProductCard
             title="Revolution"
-            imageSrc="/second/card1.png"
+            videoSrc="/before/revolution.m4v"
             features={revolutionFeatures}
             variant="light"
           />

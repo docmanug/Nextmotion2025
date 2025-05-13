@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -10,14 +9,16 @@ import { getMessages } from "@/utils/i18n";
 export default function Feature6() {
   const [messages, setMessages] = useState<any>(null);
   const [contactFormLink, setContactFormLink] = useState("/contact_form");
+  const [isFrench, setIsFrench] = useState(false);
 
   useEffect(() => {
+    const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
+    setIsFrench(locale === "fr");
     setContactFormLink(
-      window.location.pathname.startsWith("/fr")
-        ? "/fr/formulaire_contact"
-        : "/contact_form"
+      locale === "fr" ? "/fr/formulaire_contact" : "/contact_form"
     );
   }, []);
+
   useEffect(() => {
     const loadMessages = async () => {
       const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
@@ -37,24 +38,26 @@ export default function Feature6() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
-              <Image
-                src="/seventh/rev_6.png"
-                alt={t("deviceAlt")}
-                width={600}
-                height={400}
+              <video
+                src={
+                  isFrench
+                    ? "/revolution/french_cas.mp4"
+                    : "/revolution/english_cas.mp4"
+                }
                 className="w-full h-auto rounded-lg"
-                priority
+                autoPlay
+                loop
+                muted
+                playsInline
               />
             </div>
           </div>
 
           <div className="lg:max-w-[500px]">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <img
                 src="/seventh/icons/rev_6_icon.svg"
                 alt="Feature 6 Icon"
-                width={60}
-                height={60}
                 className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">

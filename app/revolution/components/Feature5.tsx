@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -29,11 +28,9 @@ export default function Feature5() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <img
                 src="/seventh/icons/rev_5_icon.svg"
                 alt="Feature 5 Icon"
-                width={60}
-                height={60}
                 className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -85,13 +82,13 @@ export default function Feature5() {
           </div>
 
           <div className="relative">
-            <Image
-              src="/seventh/rev_5.png"
-              alt={t("deviceAlt")}
-              width={800}
-              height={1000}
-              className="w-full h-auto"
-              priority
+            <video
+              src="/revolution/video_after.mp4"
+              className="w-full h-auto rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
         </div>

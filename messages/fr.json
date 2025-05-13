@@ -67,7 +67,7 @@
         "description": "Générez instantanément des images standardisées, garantissant la cohérence à chaque session sans effort supplémentaire."
       }
     },
-    "learnMore": "En savoir plus sur Nextmotion Capture"
+    "learnMore": "En savoir plus sur NM Capture"
   },
   "consult": {
     "title": "Nextmotion Consult",
@@ -330,10 +330,6 @@
           {
             "question": "Une formation est-elle incluse avec l'achat de la machine ?",
             "answer": "Oui, une formation de 2 heures est incluse avec l'achat. Elle est réalisée à distance via visioconférence. De plus, notre académie propose de nombreuses vidéos de formation. La machine est simple à monter et à utiliser."
-          },
-          {
-            "question": "Puis-je voir les photos avant/après sur un ordinateur ?",
-            "answer": "Oui, vous pouvez accéder à vos photos avant/après sur n'importe quel ordinateur via notre plateforme web. Nous offrons une expérience multiplateforme transparente, vous permettant de capturer des photos sur votre appareil mobile et de les visualiser, les modifier ou les présenter sur votre ordinateur. L'interface web offre des fonctionnalités supplémentaires pour la présentation et la consultation des patients."
           }
         ]
       }
@@ -620,6 +616,10 @@
           "answer": "Oui, vous pouvez personnaliser l’arrière-plan avec le logo de votre clinique une fois le détourage effectué."
         },
         {
+          "question": "L'offre IMCAS est-elle gratuite ?",
+          "answer": "Oui, nous vous offrons un essai gratuit d'un mois pour tester l'application. Si l'application ne répond pas à vos besoins, vous pouvez résilier l'abonnement par simple e-mail avant son lancement."
+        },
+        {
           "question": "Quel est le coût de l’abonnement mensuel ?",
           "answer": "L’abonnement coûte 99 €/mois."
         },
@@ -630,10 +630,6 @@
         {
           "question": "Puis-je consulter les photos avant/après sur un ordinateur ?",
           "answer": "Oui, en vous connectant à notre logiciel en ligne, vous pourrez accéder aux photos avant/après directement triées dans les dossiers de vos patients."
-        },
-        {
-          "question": "Puis-je voir les photos avant/après sur un ordinateur ?",
-          "answer": "Oui, vous pouvez accéder à vos photos avant/après sur n'importe quel ordinateur via notre plateforme web. Nous offrons une expérience multiplateforme transparente, vous permettant de capturer des photos sur votre appareil mobile et de les visualiser, les modifier ou les présenter sur votre ordinateur. L'interface web offre des fonctionnalités supplémentaires pour la présentation et la consultation des patients."
         }
       ]
     }

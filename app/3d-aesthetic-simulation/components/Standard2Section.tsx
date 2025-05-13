@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -51,13 +50,13 @@ export default function Standard2Section() {
           </div>
 
           <div className="relative order-2">
-            <Image
-              src="/eighth/3d_2.png"
-              alt={t("imageAlt")}
-              width={600}
-              height={600}
-              className="w-full h-auto"
-              priority
+            <video
+              src="/3d/3d_2.mp4"
+              className="w-full h-auto rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
         </div>
