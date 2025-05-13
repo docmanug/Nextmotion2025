@@ -15,7 +15,7 @@ import ReviewsSection from "../../before-after/components/ReviewsSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
-
+import ImageSection from "../../before-after/components/ImageSection";
 export const metadata: Metadata = {
   title: "Des photos et vidéos avant-après parfaitement standardisées",
   description:
@@ -36,6 +36,7 @@ export default async function BeforeAfterPage() {
     <main>
       <Navbar />
       <Hero />
+      <ImageSection />
       <SolutionsSection />
       <CaptureSection />
       <ConsultSection />

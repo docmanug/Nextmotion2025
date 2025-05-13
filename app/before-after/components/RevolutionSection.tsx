@@ -27,7 +27,7 @@ export default function RevolutionSection() {
     loadMessages();
   }, []);
 
-  const t = useTranslations(messages?.revolution || {});
+  const t = useTranslations(messages?.beforeAfter?.revolution || {});
 
   if (!messages) return null;
 
@@ -69,28 +69,28 @@ export default function RevolutionSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.innovation.title")}
+                  {t("features.details.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.innovation.description")}
+                  {t("features.details.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.integration.title")}
+                  {t("features.outcomes.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.integration.description")}
+                  {t("features.outcomes.description")}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("features.results.title")}
+                  {t("features.comparison.title")}
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("features.results.description")}
+                  {t("features.comparison.description")}
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function RevolutionSection() {
                   size="lg"
                   className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
                 >
-                  {t("learnMore")}
+                  {t("demoButton")}
                 </Button>
               </Link>
             </div>
