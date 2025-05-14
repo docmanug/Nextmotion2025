@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Dr. Diala Haykal",
     title: "Aesthetic doctor",
-    location: "Lebanon",
+    location: "Paris",
     videoThumbnail: "/covers/iframe1.png",
     videoUrl: "/videos/itw.mp4",
   },
@@ -63,15 +63,15 @@ const testimonials = [
   },
   {
     name: "Dr. Jesica Sosa",
-    title: "Dermatologist",
-    location: "Mexico",
+    title: "Aesthetic doctor",
+    location: "Columbia",
     videoThumbnail: "/covers/iframe3.png",
     videoUrl: "/videos/jessica.mp4",
   },
   {
     name: "Dr. Hermes Godoy",
     title: "Plastic surgeon",
-    location: "Brazil",
+    location: "Uruguay",
     videoThumbnail: "/covers/iframe4.png",
     videoUrl: "/videos/hermes.mp4",
   },
