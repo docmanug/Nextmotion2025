@@ -9,7 +9,7 @@
     "login": "Connexion",
     "contactUs": "Obtenir demo",
     "solutionsMenu": {
-      "capture": "NextMotion - Capture",
+      "capture": "NextMopngtion - Capture",
       "revolution": "Nextmotion Revolution",
       "3d": "Nextmotion - 3D",
       "consult": "NextMotion - Consult",
@@ -115,7 +115,7 @@
         "description": "Utilisez la réalité augmentée pour projeter des structures anatomiques sur le visage du patient et améliorer leur compréhension."
       },
       "planning": {
-        "title": "Planification Avancée",
+        "title": "Renforcez la confiance des patients",
         "description": "Simplifiez les procédures complexes avec des outils interactifs qui renforcent la confiance et facilitent la prise de décision."
       }
     },
