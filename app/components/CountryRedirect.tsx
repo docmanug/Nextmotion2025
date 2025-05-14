@@ -4,38 +4,29 @@ import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function CountryRedirect() {
-  const router = useRouter();
-  const pathname = usePathname();
-
   useEffect(() => {
-    // Only redirect at the root path
-    if (pathname !== "/") {
-      return;
+    // Method 1: Check browser language preferences
+    const userLanguages = navigator.languages || [navigator.language];
+    console.log(userLanguages);
+    const hasFrenchPreference = userLanguages.some(
+      (lang) => lang === "fr" || lang === "fr-FR" || lang.startsWith("fr-")
+    );
+
+    // Method 2: Check if timezone suggests France
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const isPossiblyFrance = timeZone === "Europe/Paris";
+
+    // Method 3: Check Accept-Language header (indirectly through language preferences)
+
+    // If we detect French preference and not already on French version
+    if (
+      (hasFrenchPreference || isPossiblyFrance) &&
+      !window.location.pathname.startsWith("/fr")
+    ) {
+      window.location.href = "/fr" + window.location.pathname;
     }
+  }, []);
 
-    // Get browser language to determine if user might be French
-    const userLanguage = navigator.language || (navigator as any).userLanguage;
-    const isLikelyFrench = userLanguage.startsWith("fr");
-
-    // Try to get country using a geolocation service
-    fetch(
-      "https://api.ipgeolocation.io/ipgeo?apiKey=7b69057a270148e1b27dac2813385c5a"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const country = data.country_code2;
-        if (country === "FR" || (country === "" && isLikelyFrench)) {
-          router.push("/fr");
-        }
-      })
-      .catch(() => {
-        // Fallback to browser language if geolocation fails
-        if (isLikelyFrench) {
-          router.push("/fr");
-        }
-      });
-  }, [pathname, router]);
-
-  // This component doesn't render anything
+  // This component doesn't render anything visible
   return null;
 }
