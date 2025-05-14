@@ -116,7 +116,7 @@ export default function ThreeDSection({
           <div className="relative">
             <div className="relative">
               <Image
-                src="/capture-app-demo.png"
+                src="/3d_anatomy.webp"
                 alt="Nextmotion 3D App Screenshot"
                 width={800}
                 height={1000}
