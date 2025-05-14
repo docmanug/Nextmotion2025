@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Link as LucideLink } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface CommunitySectionProps {
   title: string;
@@ -13,46 +13,67 @@ interface CommunitySectionProps {
 
 const testimonials = [
   {
+    name: "Dr. Diala Haykal",
+    title: "Aesthetic doctor",
+    location: "Lebanon",
+    videoThumbnail: "/covers/iframe1.png",
+    videoUrl: "/videos/itw.mp4",
+  },
+  {
     name: "Dr. Sophie Loubeyres",
     title: "Dermatologist",
     location: "Pau",
     videoThumbnail: "/covers/iframe1.png",
-    videoUrl: "#",
+    videoUrl: "",
   },
   {
     name: "Dr. Joseph Marciano",
     title: "Aesthetic doctor",
     location: "Paris",
     videoThumbnail: "/covers/iframe2.png",
-    videoUrl: "#",
-  },
-  {
-    name: "Meline Puech",
-    title: "Clinic owner",
-    location: "Toulouse",
-    videoThumbnail: "/covers/iframe3.png",
-    videoUrl: "#",
+    videoUrl: "/videos/joseph.mp4",
   },
   {
     name: "Dr. Nabila AZIB",
     title: "Plastic surgeon",
     location: "Morocco",
     videoThumbnail: "/covers/iframe4.png",
-    videoUrl: "#",
+    videoUrl: "/videos/nabila.mp4",
   },
   {
     name: "Dr. Miguel Stanley",
     title: "Founder of White Clinic",
     location: "Lisbon",
     videoThumbnail: "/covers/iframe5.png",
-    videoUrl: "#",
+    videoUrl: "/videos/miguel.mp4",
   },
   {
     name: "Dr. Per Heden",
     title: "Plastic surgeon",
     location: "Stockholm",
     videoThumbnail: "/covers/iframe5.png",
-    videoUrl: "#",
+    videoUrl: "/videos/perheden.mp4",
+  },
+  {
+    name: "Dr. Nikola Milojevic",
+    title: "Aesthetic doctor",
+    location: "Croatia",
+    videoThumbnail: "/covers/iframe2.png",
+    videoUrl: "/videos/nikola.mp4",
+  },
+  {
+    name: "Dr. Jesica Sosa",
+    title: "Dermatologist",
+    location: "Mexico",
+    videoThumbnail: "/covers/iframe3.png",
+    videoUrl: "/videos/jessica.mp4",
+  },
+  {
+    name: "Dr. Hermes Godoy",
+    title: "Plastic surgeon",
+    location: "Brazil",
+    videoThumbnail: "/covers/iframe4.png",
+    videoUrl: "/videos/hermes.mp4",
   },
 ];
 
@@ -61,6 +82,37 @@ export default function CommunitySection({
   subtitle,
 }: CommunitySectionProps) {
   const [contactFormLink, setContactFormLink] = useState("/contact_form");
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+
+  const handlePlayVideo = (index: number) => {
+    const video = videoRefs.current[index];
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  };
+
+  const scrollLeft = () => {
+    if (cardsContainerRef.current) {
+      cardsContainerRef.current.scrollBy({
+        left: -300, // Scroll approximately one card width plus gap
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (cardsContainerRef.current) {
+      cardsContainerRef.current.scrollBy({
+        left: 300, // Scroll approximately one card width plus gap
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     setContactFormLink(
@@ -96,26 +148,35 @@ export default function CommunitySection({
 
         <div className="relative">
           {/* Video Cards */}
-          <div className="flex gap-4 overflow-x-hidden mb-6 px-2">
+          <div
+            ref={cardsContainerRef}
+            className="flex gap-4 overflow-x-auto mb-6 px-2 scroll-smooth hide-scrollbar"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="relative shrink-0 w-[250px] bg-white rounded-[10px] p-4"
               >
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
-                  <Image
-                    src={testimonial.videoThumbnail}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
+                  <video
+                    ref={(el) => (videoRefs.current[index] = el)}
+                    src={testimonial.videoUrl}
+                    className="object-cover w-full h-full"
+                    preload="metadata"
+                    muted
+                    controls
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  {/* <div
+                    className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                    onClick={() => handlePlayVideo(index)}
+                  >
                     <div className="w-14 h-14 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
                         <div className="w-0 h-0 border-l-[12px] border-l-[#000B45] border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1" />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <h3 className="font-bold text-[#000B45] text-lg leading-tight mb-1">
                   {testimonial.name}
@@ -129,10 +190,16 @@ export default function CommunitySection({
 
           {/* Navigation Buttons - Directly below videos */}
           <div className="flex justify-center gap-3">
-            <button className="p-4 rounded-full bg-[#1A245C] hover:bg-[#2A3573] transition-colors">
+            <button
+              className="p-4 rounded-full bg-[#1A245C] hover:bg-[#2A3573] transition-colors"
+              onClick={scrollLeft}
+            >
               <ChevronLeft className="w-6 h-6 text-white/90" />
             </button>
-            <button className="p-4 rounded-full bg-[#1A245C] hover:bg-[#2A3573] transition-colors">
+            <button
+              className="p-4 rounded-full bg-[#1A245C] hover:bg-[#2A3573] transition-colors"
+              onClick={scrollRight}
+            >
               <ChevronRight className="w-6 h-6 text-white/90" />
             </button>
           </div>

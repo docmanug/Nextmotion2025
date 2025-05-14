@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Globe, X } from "lucide-react";
@@ -12,9 +12,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [messages, setMessages] = useState<any>(null);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const pathname = usePathname();
   const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
   const router = useRouter();
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const loadMessages = async () => {
@@ -24,6 +26,23 @@ export default function Navbar() {
     loadMessages();
   }, [currentLocale]);
 
+  useEffect(() => {
+    // Close language dropdown when clicking outside
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        langDropdownRef.current &&
+        !langDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsLangDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const t = useTranslations(messages || {});
 
   if (!messages) return null;
@@ -32,9 +51,11 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value;
-    if (newLocale === currentLocale) return;
+  const handleLanguageChange = (newLocale: string) => {
+    if (newLocale === currentLocale) {
+      setIsLangDropdownOpen(false);
+      return;
+    }
 
     if (newLocale === "en") {
       // Handle special case for photos-avant-apres to before-after
@@ -358,17 +379,47 @@ export default function Navbar() {
             </Link>
 
             <div className="flex items-center pl-2">
-              <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
+              <div
+                className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative cursor-pointer"
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                ref={langDropdownRef}
+              >
                 <Globe className="w-5 h-5 text-black" />
-                <select
-                  className="bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6"
-                  value={currentLocale}
-                  onChange={handleLanguageChange}
-                >
-                  <option value="en">English</option>
-                  <option value="fr">Français</option>
-                </select>
-                <ChevronDown className="w-4 h-4 text-black absolute right-2" />
+                <span className="bg-transparent text-black text-sm pr-6">
+                  {currentLocale === "en" ? "English" : "Français"}
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-black absolute right-2 transition-transform ${
+                    isLangDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+
+                {isLangDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50">
+                    <div
+                      className={`px-3 py-2 hover:bg-gray-100 ${
+                        currentLocale === "en" ? "bg-gray-50" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLanguageChange("en");
+                      }}
+                    >
+                      English
+                    </div>
+                    <div
+                      className={`px-3 py-2 hover:bg-gray-100 ${
+                        currentLocale === "fr" ? "bg-gray-50" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLanguageChange("fr");
+                      }}
+                    >
+                      Français
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -666,17 +717,46 @@ export default function Navbar() {
 
                 {/* Language Selector - Mobile */}
                 <div className="px-6 py-3">
-                  <div className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative">
+                  <div
+                    className="flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative cursor-pointer"
+                    onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                  >
                     <Globe className="w-5 h-5 text-black" />
-                    <select
-                      className="w-full bg-transparent border-none text-black text-sm focus:outline-none cursor-pointer appearance-none pr-6"
-                      value={currentLocale}
-                      onChange={handleLanguageChange}
-                    >
-                      <option value="en">English</option>
-                      <option value="fr">Français</option>
-                    </select>
-                    <ChevronDown className="w-4 h-4 text-black absolute right-2" />
+                    <span className="w-full bg-transparent text-black text-sm pr-6">
+                      {currentLocale === "en" ? "English" : "Français"}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-black absolute right-2 transition-transform ${
+                        isLangDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
+
+                    {isLangDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50">
+                        <div
+                          className={`px-3 py-2 hover:bg-gray-100 ${
+                            currentLocale === "en" ? "bg-gray-50" : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleLanguageChange("en");
+                          }}
+                        >
+                          English
+                        </div>
+                        <div
+                          className={`px-3 py-2 hover:bg-gray-100 ${
+                            currentLocale === "fr" ? "bg-gray-50" : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleLanguageChange("fr");
+                          }}
+                        >
+                          Français
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

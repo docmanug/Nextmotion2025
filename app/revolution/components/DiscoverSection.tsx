@@ -59,14 +59,28 @@ export default function DiscoverSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Link href="/before-after" className="w-full">
+          <Link
+            href={
+              window.location.pathname.startsWith("/fr")
+                ? "/fr/photos-avant-apres"
+                : "/before-after"
+            }
+            className="w-full"
+          >
             <DiscoverCard
               title={t("cards.capture.title")}
               imageSrc="/seventh/discovery_1.jpg"
               isPhone={true}
             />
           </Link>
-          <Link href="/3d-aesthetic-simulation" className="w-full">
+          <Link
+            href={
+              window.location.pathname.startsWith("/fr")
+                ? "/fr/3d-simulation-esthetique"
+                : "/3d-aesthetic-simulation"
+            }
+            className="w-full"
+          >
             <DiscoverCard
               title={t("cards.3d.title")}
               imageSrc="/second/part2.jpg"

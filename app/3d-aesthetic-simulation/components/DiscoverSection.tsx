@@ -68,14 +68,22 @@ export default function DiscoverSection() {
               title={t("cards.0.title")}
               imageSrc="/seventh/discovery_1.jpg"
               isPhone={true}
-              href="/before-after"
+              href={
+                window.location.pathname.startsWith("/fr")
+                  ? "/fr/photos-avant-apres"
+                  : "/before-after"
+              }
             />
           </div>
           <div className="w-full">
             <DiscoverCard
               title={t("cards.1.title")}
               imageSrc="/eighth/part1.jpg"
-              href="/revolution"
+              href={
+                window.location.pathname.startsWith("/fr")
+                  ? "/fr/logiciel-consultation-esthetique"
+                  : "/clinic-management-software"
+              }
             />
           </div>
         </div>

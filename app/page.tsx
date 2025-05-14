@@ -12,6 +12,7 @@ import ApprovalSection from "@/components/ApprovalSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
+import CountryRedirect from "./components/CountryRedirect";
 
 export const metadata: Metadata = {
   title:
@@ -29,6 +30,7 @@ export default async function Home() {
 
   return (
     <main>
+      <CountryRedirect />
       <Navbar />
       <Hero
         title={t("hero.title")}

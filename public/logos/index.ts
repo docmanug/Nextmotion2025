@@ -1,22 +1,42 @@
 export const logos = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
-    alt: "Google"
+    src: "/logos/tMJGK9-g.png",
+    alt: "Logo 1",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
-    alt: "Amazon"
+    src: "/logos/RaBIxjqQ.png",
+    alt: "Logo 2",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png",
-    alt: "Bootstrap"
+    src: "/logos/QPKxUzoA.png",
+    alt: "Logo 3",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
-    alt: "IBM"
+    src: "/logos/nk7M6BJw.png",
+    alt: "Logo 4",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Meta-Logo.png/2560px-Meta-Logo.png",
-    alt: "Meta"
-  }
-]; 
+    src: "/logos/jMUIOX4A.png",
+    alt: "Logo 5",
+  },
+  {
+    src: "/logos/GHAvLGKw.png",
+    alt: "Logo 6",
+  },
+  {
+    src: "/logos/gfTR_RmA.png",
+    alt: "Logo 7",
+  },
+  {
+    src: "/logos/attract.png",
+    alt: "Attract",
+  },
+  {
+    src: "/logos/a_vl1iBw.png",
+    alt: "Logo 9",
+  },
+  {
+    src: "/logos/1L_W-QfQ.png",
+    alt: "Logo 10",
+  },
+];

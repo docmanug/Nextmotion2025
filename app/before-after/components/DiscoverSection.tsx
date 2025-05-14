@@ -62,7 +62,13 @@ export default function DiscoverSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="w-full">
-            <Link href="/revolution">
+            <Link
+              href={
+                window.location.pathname.startsWith("/fr")
+                  ? "/fr/revolution"
+                  : "/revolution"
+              }
+            >
               <DiscoverCard
                 title={t("cards.revolution.title")}
                 imageSrc="/second/part1.jpg"
@@ -71,7 +77,13 @@ export default function DiscoverSection() {
             </Link>
           </div>
           <div className="w-full">
-            <Link href="/3d-aesthetic-simulation">
+            <Link
+              href={
+                window.location.pathname.startsWith("/fr")
+                  ? "/fr/3d-simulation-esthetique"
+                  : "/3d-aesthetic-simulation"
+              }
+            >
               <DiscoverCard
                 title={t("cards.3d.title")}
                 imageSrc="/second/part2.jpg"
