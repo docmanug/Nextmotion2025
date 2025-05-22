@@ -7,15 +7,31 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { countries } from "../../lib/countries";
-import { useToast } from "@/hooks/use-toast";
+import { FormEvent } from "react";
 
 export default function ContactFormPage() {
 	const [messages, setMessages] = useState<any>(null);
 	const pathname = usePathname();
 	const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
-	const { toast } = useToast();
-	const [isFormVisible, setIsFormVisible] = useState(false);
-	const [isIframeLoaded, setIsIframeLoaded] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitStatus, setSubmitStatus] = useState<{
+		success?: boolean;
+		message?: string;
+	}>({});
+
+	// Form state
+	const [formData, setFormData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		phone: "",
+		countryCode: "+1", // Default country code
+		profession: "",
+		practitioners: [] as string[],
+		country: "",
+		interestedIn: [] as string[],
+		additionalInfo: "",
+	});
 
 	useEffect(() => {
 		const loadMessages = async () => {
@@ -25,43 +41,103 @@ export default function ContactFormPage() {
 		loadMessages();
 	}, [currentLocale]);
 
-	// Listen for messages from Monday's iframe
-	useEffect(() => {
-		const handleMessage = (event: MessageEvent) => {
-			// Check if the message is from Monday's form
-			if (
-				event.data &&
-				typeof event.data === "string" &&
-				event.data.includes("monday-form-submit-success")
-			) {
-				toast({
-					title: t("contactForm.success.title") || "Success!",
-					description:
-						t("contactForm.success.message") ||
-						"Your message has been sent successfully.",
-					variant: "default",
-				});
-
-				// Reset the iframe visibility to allow for another submission
-				setIsFormVisible(false);
-				setTimeout(() => setIsFormVisible(true), 300);
-			}
-		};
-
-		window.addEventListener("message", handleMessage);
-		return () => {
-			window.removeEventListener("message", handleMessage);
-		};
-	}, []);
-
-	useEffect(() => {
-		// Show the form once the component is mounted
-		setIsFormVisible(true);
-	}, []);
-
 	const t = useTranslations(messages || {});
 
 	if (!messages) return null;
+
+	const handleInputChange = (
+		e: React.ChangeEvent<
+			HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+		>
+	) => {
+		const { name, value } = e.target;
+		setFormData((prev) => ({ ...prev, [name]: value }));
+	};
+
+	const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value, checked } = e.target;
+
+		if (checked) {
+			setFormData((prev) => ({
+				...prev,
+				[name]: [...(prev[name as keyof typeof formData] as string[]), value],
+			}));
+		} else {
+			setFormData((prev) => ({
+				...prev,
+				[name]: (prev[name as keyof typeof formData] as string[]).filter(
+					(item) => item !== value
+				),
+			}));
+		}
+	};
+
+	const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setFormData((prev) => ({ ...prev, countryCode: e.target.value }));
+	};
+
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setIsSubmitting(true);
+		setSubmitStatus({});
+
+		try {
+			// Prepare data for API
+			const apiData = {
+				firstName: formData.firstName,
+				lastName: formData.lastName,
+				email: formData.email,
+				phone: `${formData.countryCode} ${formData.phone}`,
+				profession: formData.profession,
+				practitioners: formData.practitioners.join(", "),
+				country: formData.country,
+				interestedIn: formData.interestedIn.join(", "),
+				additionalInfo: formData.additionalInfo,
+			};
+
+			const response = await fetch("/api/submit-form", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(apiData),
+			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				setSubmitStatus({
+					success: true,
+					message:
+						t("contactForm.submitSuccess") || "Form submitted successfully!",
+				});
+				// Reset form
+				setFormData({
+					firstName: "",
+					lastName: "",
+					email: "",
+					phone: "",
+					countryCode: "+1",
+					profession: "",
+					practitioners: [],
+					country: "",
+					interestedIn: [],
+					additionalInfo: "",
+				});
+			} else {
+				throw new Error(result.error || "Form submission failed");
+			}
+		} catch (error: any) {
+			setSubmitStatus({
+				success: false,
+				message:
+					error.message || t("contactForm.submitError") || "An error occurred",
+			});
+			console.error("Form submission error:", error);
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
 
 	return (
 		<main className='bg-white min-h-screen'>
@@ -74,29 +150,250 @@ export default function ContactFormPage() {
 							<h1 className='text-2xl sm:text-[28px] font-bold text-[#081F4D] mb-6 sm:mb-8'>
 								{t("contactForm.title")}
 							</h1>
+							<form onSubmit={handleSubmit} className='space-y-4 sm:space-y-6'>
+								<div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6'>
+									<div>
+										<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+											{t("contactForm.form.firstName.label")}
+											<span className='text-red-500'>*</span>
+										</label>
+										<input
+											type='text'
+											name='firstName'
+											value={formData.firstName}
+											onChange={handleInputChange}
+											required
+											className='w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base'
+											placeholder={t("contactForm.form.firstName.placeholder")}
+										/>
+									</div>
+									<div>
+										<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+											{t("contactForm.form.lastName.label")}
+											<span className='text-red-500'>*</span>
+										</label>
+										<input
+											type='text'
+											name='lastName'
+											value={formData.lastName}
+											onChange={handleInputChange}
+											required
+											className='w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base'
+											placeholder={t("contactForm.form.lastName.placeholder")}
+										/>
+									</div>
+								</div>
 
-							{/* Monday.com embedded form */}
-							<div className='relative' style={{ minHeight: "500px" }}>
-								{!isIframeLoaded && (
-									<div className='absolute inset-0 flex items-center justify-center'>
-										<div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#1650EF]'></div>
+								<div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6'>
+									<div>
+										<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+											{t("contactForm.form.email.label")}
+											<span className='text-red-500'>*</span>
+										</label>
+										<input
+											type='email'
+											name='email'
+											value={formData.email}
+											onChange={handleInputChange}
+											required
+											className='w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base'
+											placeholder={t("contactForm.form.email.placeholder")}
+										/>
+									</div>
+									<div>
+										<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+											{t("contactForm.form.phone.label")}
+											<span className='text-red-500'>*</span>
+										</label>
+										<div className='flex gap-2 flex-wrap sm:flex-nowrap'>
+											<select
+												className='w-[120px] px-2 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm'
+												value={formData.countryCode}
+												onChange={handleCountryCodeChange}
+											>
+												{countries.map((country) => (
+													<option key={country.code} value={country.dial_code}>
+														{country.name} ({country.dial_code})
+													</option>
+												))}
+											</select>
+											<input
+												type='tel'
+												name='phone'
+												value={formData.phone}
+												onChange={handleInputChange}
+												required
+												className='flex-1 min-w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base'
+												placeholder={t("contactForm.form.phone.placeholder")}
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div>
+									<label className='block text-sm text-[#081F4D] mb-2 sm:mb-3'>
+										{t("contactForm.form.profession.label")}
+										<span className='text-red-500'>*</span>
+									</label>
+									<div className='grid grid-cols-1 sm:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-3 text-sm sm:text-base'>
+										{[
+											"aestheticPhysician",
+											"aestheticSurgeon",
+											"clinicManager",
+											"assistant",
+											"secretary",
+											"marketingSpecialist",
+											"industry",
+											"other",
+										].map((option) => (
+											<label
+												key={option}
+												className='flex items-center gap-2 cursor-pointer'
+											>
+												<input
+													type='radio'
+													name='profession'
+													value={option}
+													checked={formData.profession === option}
+													onChange={handleInputChange}
+													required
+													className='w-4 h-4 text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+												/>
+												<span className='text-[#081F4D]'>
+													{t(`contactForm.form.profession.options.${option}`)}
+												</span>
+											</label>
+										))}
+									</div>
+								</div>
+
+								<div>
+									<label className='block text-sm text-[#081F4D] mb-2 sm:mb-3'>
+										{t("contactForm.form.practitioners.label")}
+									</label>
+									<div className='grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-3 text-sm sm:text-base'>
+										{[
+											"privatePractice",
+											"smallFacility",
+											"mediumFacility",
+											"largeFacility",
+										].map((option) => (
+											<label
+												key={option}
+												className='flex items-center gap-2 cursor-pointer'
+											>
+												<input
+													type='checkbox'
+													name='practitioners'
+													value={option}
+													checked={formData.practitioners.includes(option)}
+													onChange={handleCheckboxChange}
+													className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+												/>
+												<span className='text-[#081F4D]'>
+													{t(
+														`contactForm.form.practitioners.options.${option}`
+													)}
+												</span>
+											</label>
+										))}
+									</div>
+								</div>
+
+								<div>
+									<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+										{t("contactForm.form.country.label")}
+									</label>
+									<select
+										name='country'
+										value={formData.country}
+										onChange={handleInputChange}
+										className='w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm sm:text-base'
+									>
+										<option value=''>
+											{t("contactForm.form.country.placeholder")}
+										</option>
+										{countries.map((country) => (
+											<option key={country.code} value={country.name}>
+												{country.name}
+											</option>
+										))}
+									</select>
+								</div>
+
+								<div>
+									<label className='block text-sm text-[#081F4D] mb-2 sm:mb-3'>
+										{t("contactForm.form.interestedIn.label")}
+									</label>
+									<div className='grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-3 text-sm sm:text-base'>
+										{[
+											"photoApp",
+											"consultationSoftware",
+											"onlineAgenda",
+											"3DAnatomyTool",
+											"nextmotionRevolutionMachine",
+											"mixedRealityHeadset",
+											"injectionRobot",
+										].map((option) => (
+											<label
+												key={option}
+												className='flex items-center gap-2 cursor-pointer'
+											>
+												<input
+													type='checkbox'
+													name='interestedIn'
+													value={option}
+													checked={formData.interestedIn.includes(option)}
+													onChange={handleCheckboxChange}
+													className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+												/>
+												<span className='text-[#081F4D]'>
+													{t(`contactForm.form.interestedIn.options.${option}`)}
+												</span>
+											</label>
+										))}
+									</div>
+								</div>
+
+								<div>
+									<label className='block text-sm text-[#081F4D] mb-1.5 sm:mb-2'>
+										{t("contactForm.form.additionalInfo.label")}
+									</label>
+									<textarea
+										name='additionalInfo'
+										value={formData.additionalInfo}
+										onChange={handleInputChange}
+										className='w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none resize-none h-20 sm:h-24 text-[#081F4D] text-sm sm:text-base'
+										placeholder={t(
+											"contactForm.form.additionalInfo.placeholder"
+										)}
+									/>
+								</div>
+
+								{submitStatus.message && (
+									<div
+										className={`my-4 p-4 rounded-lg ${
+											submitStatus.success
+												? "bg-green-100 text-green-800"
+												: "bg-red-100 text-red-800"
+										}`}
+									>
+										{submitStatus.message}
 									</div>
 								)}
 
-								{isFormVisible && (
-									<iframe
-										src='https://forms.monday.com/forms/73df764e54603807815f0f0c516bfa65?r=use1'
-										width='100%'
-										height='1000px'
-										style={{
-											border: "0",
-											opacity: isIframeLoaded ? 1 : 0,
-											transition: "opacity 0.3s ease",
-										}}
-										onLoad={() => setIsIframeLoaded(true)}
-									></iframe>
-								)}
-							</div>
+								<div className='flex justify-center pt-2'>
+									<button
+										type='submit'
+										disabled={isSubmitting}
+										className='w-full sm:w-[200px] bg-[#1650EF] text-white hover:bg-[#1345D1] py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-colors disabled:bg-[#1650EF]/70'
+									>
+										{isSubmitting
+											? t("contactForm.form.submitting") || "Submitting..."
+											: t("contactForm.form.submitButton")}
+									</button>
+								</div>
+							</form>
 						</div>
 
 						{/* Image Section */}

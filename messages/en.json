@@ -871,13 +871,11 @@
 					"placeholder": "Additional questions, best moment to contact you, etc..."
 				}
 			},
-			"submit": "Submit"
+			"submit": "Submit",
+			"submitting": "Submitting..."
 		},
-		"testimonials": {
-			"title": "Join the NextMotion community",
-			"description": "Using our technology also means being part of a medical community committed to sharing knowledge and making digital practices accessible to all.",
-			"button": "Request a Demo"
-		}
+		"submitSuccess": "Thank you! Your form has been submitted successfully. We will contact you soon.",
+		"submitError": "Sorry, there was an error submitting your form. Please try again later or contact us directly at contact@nextmotion.net."
 	},
 	"aboutUs": {
 		"hero": {
@@ -1160,8 +1158,11 @@
 				"label": "Additional Information",
 				"placeholder": "Tell us more about your needs"
 			},
-			"submitButton": "Submit"
-		}
+			"submitButton": "Submit",
+			"submitting": "Submitting..."
+		},
+		"submitSuccess": "Thank you! Your form has been submitted successfully. We will contact you soon.",
+		"submitError": "Sorry, there was an error submitting your form. Please try again later or contact us directly at contact@nextmotion.net."
 	},
 	"threeDAestheticSimulation": {
 		"hero": {
@@ -1894,7 +1895,7 @@
 			},
 			"tryNextmotion": {
 				"title": "Try Nextmotion",
-				"description": "Sign up for a free demonstration and discover how Nextmotion can transform the management of your aesthetic clinic. Maximize your efficiency and attract more patients starting today. Request a free demo now."
+				"description": "Sign up for a free demonstration and discover how Nextmotion can transform the management of your aesthetic clinic. Maximize your efficiency and attract more patients starting today."
 			},
 			"feature5": {
 				"title": "Business Development",
@@ -2099,7 +2100,7 @@
 		},
 		"feature8": {
 			"title": "Use Case",
-			"description": "Sophie, Assistant to Dr. Loubeyres in Pau, Reduced Her Administrative Time by 32%, Saving Over 1.5 Hours a Day to Focus More on Patient Care.",
+			"description": "Sophie, assistant to Dr. Loubeyres in Pau, reduced her administrative time by 32%, saving over 1.5 hours per day to focus more on patient care.",
 			"videoButton": "Watch the video"
 		},
 		"tryNextmotion": {
