@@ -82,30 +82,44 @@ export default function ContactFormPage() {
 		setSubmitStatus({});
 
 		try {
+			// Find the country name based on the selected country code
+			const selectedCountry =
+				countries.find((c) => c.dial_code === formData.countryCode)?.name || "";
+
 			// Prepare data for API
 			const apiData = {
+				lng: currentLocale,
 				firstName: formData.firstName,
 				lastName: formData.lastName,
 				email: formData.email,
-				phone: `${formData.countryCode} ${formData.phone}`,
+				phone_country: selectedCountry,
+				phone: formData.phone,
 				profession: formData.profession,
-				practitioners: formData.practitioners.join(", "),
+				practitioners: formData.practitioners,
 				country: formData.country,
-				interestedIn: formData.interestedIn.join(", "),
+				interestedIn: formData.interestedIn,
 				additionalInfo: formData.additionalInfo,
 			};
 
-			const response = await fetch("/api/submit-form", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(apiData),
-			});
+			const response = await fetch(
+				"https://nextmotion.pythonanywhere.com/nextmotion/website/website-form",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Accept: "application/json",
+					},
+					body: JSON.stringify(apiData),
+				}
+			);
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
 
 			const result = await response.json();
 
-			if (result.success) {
+			if (response.ok) {
 				setSubmitStatus({
 					success: true,
 					message:
@@ -245,25 +259,28 @@ export default function ContactFormPage() {
 											"marketingSpecialist",
 											"industry",
 											"other",
-										].map((option) => (
-											<label
-												key={option}
-												className='flex items-center gap-2 cursor-pointer'
-											>
-												<input
-													type='radio'
-													name='profession'
-													value={option}
-													checked={formData.profession === option}
-													onChange={handleInputChange}
-													required
-													className='w-4 h-4 text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
-												/>
-												<span className='text-[#081F4D]'>
-													{t(`contactForm.form.profession.options.${option}`)}
-												</span>
-											</label>
-										))}
+										].map((option) => {
+											const value = t(
+												`contactForm.form.profession.options.${option}`
+											);
+											return (
+												<label
+													key={option}
+													className='flex items-center gap-2 cursor-pointer'
+												>
+													<input
+														type='radio'
+														name='profession'
+														value={value}
+														checked={formData.profession === value}
+														onChange={handleInputChange}
+														required
+														className='w-4 h-4 text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+													/>
+													<span className='text-[#081F4D]'>{value}</span>
+												</label>
+											);
+										})}
 									</div>
 								</div>
 
@@ -277,26 +294,27 @@ export default function ContactFormPage() {
 											"smallFacility",
 											"mediumFacility",
 											"largeFacility",
-										].map((option) => (
-											<label
-												key={option}
-												className='flex items-center gap-2 cursor-pointer'
-											>
-												<input
-													type='checkbox'
-													name='practitioners'
-													value={option}
-													checked={formData.practitioners.includes(option)}
-													onChange={handleCheckboxChange}
-													className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
-												/>
-												<span className='text-[#081F4D]'>
-													{t(
-														`contactForm.form.practitioners.options.${option}`
-													)}
-												</span>
-											</label>
-										))}
+										].map((option) => {
+											const value = t(
+												`contactForm.form.practitioners.options.${option}`
+											);
+											return (
+												<label
+													key={option}
+													className='flex items-center gap-2 cursor-pointer'
+												>
+													<input
+														type='checkbox'
+														name='practitioners'
+														value={value}
+														checked={formData.practitioners.includes(value)}
+														onChange={handleCheckboxChange}
+														className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+													/>
+													<span className='text-[#081F4D]'>{value}</span>
+												</label>
+											);
+										})}
 									</div>
 								</div>
 
@@ -334,24 +352,27 @@ export default function ContactFormPage() {
 											"nextmotionRevolutionMachine",
 											"mixedRealityHeadset",
 											"injectionRobot",
-										].map((option) => (
-											<label
-												key={option}
-												className='flex items-center gap-2 cursor-pointer'
-											>
-												<input
-													type='checkbox'
-													name='interestedIn'
-													value={option}
-													checked={formData.interestedIn.includes(option)}
-													onChange={handleCheckboxChange}
-													className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
-												/>
-												<span className='text-[#081F4D]'>
-													{t(`contactForm.form.interestedIn.options.${option}`)}
-												</span>
-											</label>
-										))}
+										].map((option) => {
+											const value = t(
+												`contactForm.form.interestedIn.options.${option}`
+											);
+											return (
+												<label
+													key={option}
+													className='flex items-center gap-2 cursor-pointer'
+												>
+													<input
+														type='checkbox'
+														name='interestedIn'
+														value={value}
+														checked={formData.interestedIn.includes(value)}
+														onChange={handleCheckboxChange}
+														className='w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]'
+													/>
+													<span className='text-[#081F4D]'>{value}</span>
+												</label>
+											);
+										})}
 									</div>
 								</div>
 
