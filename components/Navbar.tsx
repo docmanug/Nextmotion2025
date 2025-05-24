@@ -307,9 +307,7 @@ export default function Navbar() {
                   {t("navbar.resourcesMenu.aboutUs")}
                 </Link>
                 <Link
-                  href="https://blog.nextmotion.net/en"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
                   className="block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]"
                 >
                   {t("navbar.resourcesMenu.blog")}

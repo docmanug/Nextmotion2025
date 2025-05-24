@@ -6,8 +6,44 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+export interface BlogPost {
+  id: string;
+  title: {
+    rendered: string;
+  };
+  excerpt: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  category: string;
+  createdAt: string;
+  readTime?: number;
+  image?: string;
+  imageAlt?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  slug: string;
+  categories: string[];
+  sections?: {
+    id: string;
+    title: string;
+  }[];
+  date: string;
+  _embedded?: {
+    "wp:featuredmedia"?: Array<{
+      source_url: string;
+    }>;
+    "wp:author"?: Array<{
+      name: string;
+    }>;
+  };
+}
+
 export default function BlogPosts() {
   const [messages, setMessages] = useState<any>(null);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const pathname = usePathname();
   const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
 
@@ -17,63 +53,26 @@ export default function BlogPosts() {
       setMessages(msgs);
     };
     loadMessages();
+
+    const fetchData = async () => {
+      const response = await fetch("/api/posts", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const result = await response.json();
+      setPosts(result);
+    };
+    fetchData();
   }, [currentLocale]);
 
   const t = useTranslations(messages?.blog || {});
 
   if (!messages) return null;
 
-  const posts = [
-    {
-      id: 1,
-      title: t("articles.cms2024.title"),
-      subtitle: t("articles.cms2024.subtitle"),
-      date: t("articles.cms2024.date"),
-      location: t("articles.cms2024.location"),
-      author: t("posts.author"),
-      image: "/blog/blog_1.png",
-      excerpt: t("articles.cms2024.excerpt"),
-      category: t("posts.category"),
-    },
-    {
-      id: 2,
-      title: t("articles.aime2024.title"),
-      subtitle: t("articles.aime2024.subtitle"),
-      date: t("articles.aime2024.date"),
-      author: t("posts.author"),
-      image: "/blog/blog_1.png",
-      excerpt: t("articles.aime2024.excerpt"),
-      category: t("posts.category"),
-    },
-  ];
-
-  const popularPosts = [
-    {
-      id: 1,
-      title: t("articles.cms2024.title"),
-      image: "/blog/blog_1.png",
-    },
-    {
-      id: 2,
-      title: t("articles.aime2024.title"),
-      image: "/blog/blog_1.png",
-    },
-    {
-      id: 3,
-      title: t("articles.popularTitles.1"),
-      image: "/blog/blog_1.png",
-    },
-    {
-      id: 4,
-      title: t("articles.popularTitles.2"),
-      image: "/blog/blog_1.png",
-    },
-    {
-      id: 5,
-      title: t("articles.popularTitles.3"),
-      image: "/blog/blog_1.png",
-    },
-  ];
+  const popularPosts = posts.slice(0, 5);
 
   return (
     <section className="py-12">
@@ -86,8 +85,8 @@ export default function BlogPosts() {
                 <div className="space-y-6">
                   <div className="relative aspect-[16/9]">
                     <Image
-                      src={post.image}
-                      alt={post.title}
+                      src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}
+                      alt={post.title.rendered}
                       fill
                       className="rounded-xl object-cover"
                     />
@@ -98,18 +97,16 @@ export default function BlogPosts() {
                         {post.category}
                       </span>
                       <Link href="/author/nextmotion" className="text-sm">
-                        {post.author}
+                        {post._embedded?.["wp:author"]?.[0]?.name}
                       </Link>
                     </div>
                     <Link href={`/blog/${post.id}`} className="block">
-                      <h2 className="text-xl font-semibold hover:text-[#1650EF] transition-colors">
-                        {post.title}
-                      </h2>
+                      <h2 className="text-xl font-semibold hover:text-[#1650EF] transition-colors" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                     </Link>
-                    <p className="text-gray-600 text-sm">{post.excerpt}</p>
+                    <p className="text-gray-600 text-sm" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
                     <div className="pt-2">
                       <Link
-                        href={`/blog/${post.id}`}
+                        href={`/blog/${post.slug}`}
                         className="text-[#1650EF] text-sm font-medium hover:underline"
                       >
                         {t("posts.readMore")}
@@ -151,17 +148,15 @@ export default function BlogPosts() {
               <div className="space-y-4">
                 {popularPosts.map((post) => (
                   <div key={post.id} className="flex gap-3 group">
-                    <Link href={`/blog/${post.id}`} className="flex gap-3">
+                    <Link href={`/blog/${post.slug}`} className="flex gap-3">
                       <Image
-                        src={post.image}
-                        alt={post.title}
+                        src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}
+                        alt={post.title.rendered}
                         width={80}
                         height={60}
                         className="rounded-lg object-cover flex-shrink-0"
                       />
-                      <h3 className="text-sm group-hover:text-[#1650EF] transition-colors">
-                        {post.title}
-                      </h3>
+                      <h3 className="text-sm group-hover:text-[#1650EF] transition-colors" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                     </Link>
                   </div>
                 ))}
