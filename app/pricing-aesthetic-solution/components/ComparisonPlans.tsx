@@ -86,7 +86,7 @@ export default function ComparisonPlans() {
 	return (
 		<>
 			<section className='py-24 bg-[#F8FAFF]'>
-				<div className='max-w-[1560px] mx-auto px-4'>
+				<div className='max-w-7xl mx-auto px-4'>
 					{/* <h2 className="text-4xl font-bold text-center text-[#284fe6] mb-16">
           {t("pricing.comparisonPlans.title")}
         </h2> */}

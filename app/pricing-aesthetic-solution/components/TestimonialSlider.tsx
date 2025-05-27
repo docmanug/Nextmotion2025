@@ -79,7 +79,7 @@ export default function TestimonialSlider() {
 	return (
 		<section className='py-24 bg-[#051238] overflow-hidden'>
 			<div className='mx-auto px-4 sm:px-6 lg:px-8'>
-				<div className='text-center mb-16 max-w-[1560px] mx-auto'>
+				<div className='text-center mb-16 max-w-7xl mx-auto'>
 					<h2 className='text-5xl font-bold text-white mb-6'>
 						{t("pricing.testimonials.title")}
 					</h2>
