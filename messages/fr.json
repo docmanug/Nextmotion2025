@@ -636,10 +636,14 @@
 	},
 	"pricing": {
 		"hero": {
-			"title": "Découvrez nos modules pour construire votre solution à la carte",
-			"highlight": "innovation et précision."
+			"title": "Nos offres",
+			"subtitle": "Solutions ",
+			"highlight1": "flexibles, ",
+			"subtitle2": "adaptées à votre ",
+			"highlight2": "activité esthétique."
 		},
 		"cards": {
+			"title": "Nos autres solutions Nextmotion",
 			"capture": {
 				"title": "NM Capture",
 				"description": "Shootez des avant/après parfaitement standardisés",
@@ -677,6 +681,7 @@
 			"demoButton": "Demander une démo"
 		},
 		"smallPricingCards": {
+			"title": "Toutes nos options à la carte",
 			"consultDigital": {
 				"title": "Nextmotion Consult Digital",
 				"description": "A partir de 59€/mois, obtenez les fonctions de base de notre logiciel de gestion patient : créez des dossiers, ajoutez des consultations, générez des devis et consentements que vos patients pourront signer éléctroniquement, gérez votre stock digital ainsi que la traçabilité de vos consommables",
@@ -740,6 +745,14 @@
 				"period": "/ mois",
 				"note": "prix HT.",
 				"learnMore": "En savoir plus sur le module Nextmotion Visio"
+			},
+			"consult": {
+				"title": "Consult AI",
+				"description": "Génération automatique de rapports médicaux intégrés aux dossiers patients",
+				"price": "69€",
+				"period": "/ mois",
+				"note": "et par collaborateur, prix HT",
+				"learnMore": "En savoir plus sur Consult AI"
 			}
 		},
 		"comparisonPlans": {
@@ -784,23 +797,68 @@
 				"enterprise": {
 					"type": "NEXTMOTION",
 					"title": "Entreprise",
-					"subtitle": "Parfait pour gérer vos centres esthétiques multi-sites",
-					"price": "€599",
-					"period": "/mois",
-					"note": "prix HT.",
+					"subtitle": "Pour cliniques multi-sites",
+					"price": "Sur demande",
+					"period": " ",
+					"note": " ",
 					"features": [
-						"10 collaborateurs",
-						"Nextmotion Consult Digital",
-						"Appli iOS Nextmotion Capture",
+						"Nextmotion Premium",
+						"Portail patient",
+						"Messagerie interne & visioconférence",
+						"+5 utilisateurs (10 au total)",
+						"2 heures de support/mois"
+					],
+					"cta": "Contactez-nous"
+				},
+				"starter": {
+					"type": "NEXTMOTION",
+					"title": "Starter Pack",
+					"subtitle": "Découverte Revolution",
+					"price": "€99",
+					"period": "/mois",
+					"originalPrice": "€187",
+					"note": "prix HT, Engagement 12 mois",
+					"features": [
+						"Nextmotion Capture",
+						"Nextmotion Consult digital",
+						"1 utilisateur inclus"
+					],
+					"cta": "Commencer maintenant"
+				},
+				"essential": {
+					"type": "NEXTMOTION",
+					"title": "Essential",
+					"subtitle": "Parfait pour booster votre activité",
+					"price": "€199",
+					"period": "/mois",
+					"originalPrice": "€352",
+					"note": "prix HT, engagement 12 mois",
+					"features": [
+						"Nextmotion Starter Pack",
+						"Consult AI (1 utilisateur)",
 						"Comptabilité",
-						"Agenda Nextmotion",
-						"Bonnes évaluations",
-						"Portail patient personnalisé et web-application",
-						"Nextmotion visio",
-						"Sécurisez vos médias via notre cloud médical (50 GB)",
-						"Accès illimité à notre Nextmotion Academy en ligne",
-						"Assistance par Whatsapp et email"
-					]
+						"+2 utilisateurs (3 au total)",
+						"Bonnes évaluations"
+					],
+					"cta": "Demander une démo"
+				},
+				"premium": {
+					"type": "NEXTMOTION",
+					"title": "Premium",
+					"subtitle": "Pour cliniques multi-praticiens",
+					"price": "€399",
+					"period": "/mois",
+					"originalPrice": "€470",
+					"note": "prix HT, engagement 12 mois",
+					"features": [
+						"Nextmotion Essential",
+						"Nextmotion Agenda",
+						"+2 utilisateurs (5 au total)",
+						"1 heure de support/mois",
+						"Accès à nos APIs",
+						"Accès aux automatisations"
+					],
+					"cta": "Demander une démo"
 				}
 			}
 		},
@@ -875,6 +933,18 @@
 					"quote": "La solution complète NextMotion a changé ma façon de travailler"
 				}
 			]
+		},
+		"info": {
+			"engagement": {
+				"title": "Engagement annuel",
+				"desc": "5% de réduction pour 1 an, 7% pour 2 ans, 10% pour 3 ans."
+			},
+			"offers": {
+				"title": "Nos offres de service",
+				"desc1": "Nextmotion Support : 69€/mois hors TVA, inclut 1 heure de formation par mois avec nos équipes support",
+				"desc2": "Nextmotion Quickstart : 1 000€ hors TVA, configuration (15 heures) + 3 heures de formation.",
+				"desc3": "Formation supplémentaire : 200€ hors taxes/heure"
+			}
 		}
 	},
 	"caseStudies": {

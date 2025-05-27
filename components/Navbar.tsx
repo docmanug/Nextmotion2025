@@ -144,7 +144,7 @@ export default function Navbar() {
 
 	return (
 		<nav className='fixed top-0 w-full bg-white z-50 border-b border-gray-100 shadow-sm'>
-			<div className='max-w-[1300px] mx-auto px-6'>
+			<div className='max-w-[1560px] mx-auto px-6'>
 				<div className='flex justify-between items-center h-[72px]'>
 					<div className='flex items-center'>
 						<Link
