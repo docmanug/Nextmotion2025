@@ -182,7 +182,7 @@ export default function Footer({
       ? "/fr/tarifs-solution-esthetique"
       : "/pricing-aesthetic-solution";
   const aboutUsLink = currentLocale === "fr" ? "/fr/a-propos" : "/about-us";
-  const blogLink = "https://blog.nextmotion.net/en";
+  const blogLink = currentLocale === "fr" ? "/fr/blog" : "/blog";
   const podcastLink = currentLocale === "fr" ? "/fr/podcast" : "/podcast";
   const caseStudiesLink =
     currentLocale === "fr" ? "/fr/cas-clients" : "/case-studies";
