@@ -775,7 +775,8 @@
 						"+5 users (10 in total)",
 						"2 hours of support/month"
 					],
-					"cta": "Contact us"
+					"cta": "Contact us",
+					"bottomText": "Contact us for a personalized offer."
 				},
 				"starter": {
 					"type": "NEXTMOTION",
@@ -790,7 +791,8 @@
 						"Nextmotion Consult digital",
 						"1 user included"
 					],
-					"cta": "Start now"
+					"cta": "Start now",
+					"bottomText": "Chatbot and email support included."
 				},
 				"essential": {
 					"type": "NEXTMOTION",
@@ -807,7 +809,8 @@
 						"+2 users (3 in total)",
 						"Good reviews"
 					],
-					"cta": "Request a demo"
+					"cta": "Request a demo",
+					"bottomText": "Chatbot and email support."
 				},
 				"premium": {
 					"type": "NEXTMOTION",
@@ -825,7 +828,8 @@
 						"Access to our APIs",
 						"Access to automations"
 					],
-					"cta": "Request a demo"
+					"cta": "Request a demo",
+					"bottomText": "Chatbot support, priority email and Whatsapp."
 				}
 			}
 		},
