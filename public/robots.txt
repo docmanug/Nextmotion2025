@@ -25,3 +25,7 @@ Disallow: /*hsCtaTracking*
 Disallow: /*portalId*
 Disallow: /*messagesUtk*
 Disallow: /*traceId*
+
+# Sitemaps
+Sitemap: https://www.nextmotion.net/sitemap.xml
+Sitemap: https://www.nextmotion.net/fr/sitemap.xml
