@@ -1,0 +1,27 @@
+User-agent: *
+
+# Allow static resource file types
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.pdf$
+Allow: /*.webp$
+
+# Allow homepage and clean URLs
+Allow: /$
+Allow: /fr/$
+
+# Block all URLs with parameters
+Disallow: /*?*
+
+# Block specific system URLs
+Disallow: /_hcms/
+Disallow: /hs/
+Disallow: /*hsCtaTracking*
+Disallow: /*portalId*
+Disallow: /*messagesUtk*
+Disallow: /*traceId*
