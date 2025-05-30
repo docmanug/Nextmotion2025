@@ -637,10 +637,10 @@
 	"pricing": {
 		"hero": {
 			"title": "Nos offres",
-			"subtitle": "Solutions ",
+			"subtitle": "des solutions ",
 			"highlight1": "flexibles, ",
-			"subtitle2": "adaptées à votre ",
-			"highlight2": "activité esthétique."
+			"subtitle2": "adaptées à votre activité ",
+			"highlight2": "esthétique."
 		},
 		"cards": {
 			"title": "Nos autres solutions Nextmotion",
@@ -661,7 +661,7 @@
 				"description": "Eduquez vos patients et faites les mieux adhérer à vos plans de traitments",
 				"price": "€49",
 				"period": "/ mois",
-				"note": "Prix HT.",
+				"note": "Disponible pour iOS et Android",
 				"features": {
 					"feature1": "Capacités de reproduction des couleurs",
 					"feature2": "Positionnement cohérent du patient",
@@ -808,7 +808,8 @@
 						"+5 utilisateurs (10 au total)",
 						"2 heures de support/mois"
 					],
-					"cta": "Contactez-nous"
+					"cta": "Contactez-nous",
+					"bottomText": "Contactez-nous pour une offre personnalisée."
 				},
 				"starter": {
 					"type": "NEXTMOTION",
@@ -823,7 +824,8 @@
 						"Nextmotion Consult digital",
 						"1 utilisateur inclus"
 					],
-					"cta": "Commencer maintenant"
+					"cta": "Commencer maintenant",
+					"bottomText": "Support Chatbot et  email inclus."
 				},
 				"essential": {
 					"type": "NEXTMOTION",
@@ -840,7 +842,8 @@
 						"+2 utilisateurs (3 au total)",
 						"Bonnes évaluations"
 					],
-					"cta": "Demander une démo"
+					"cta": "Demander une démo",
+					"bottomText": "Support chatbot et email."
 				},
 				"premium": {
 					"type": "NEXTMOTION",
@@ -858,7 +861,8 @@
 						"Accès à nos APIs",
 						"Accès aux automatisations"
 					],
-					"cta": "Demander une démo"
+					"cta": "Demander une démo",
+					"bottomText": "Support chatbot, email prioritaire et Whatsapp."
 				}
 			}
 		},
@@ -941,9 +945,9 @@
 			},
 			"offers": {
 				"title": "Nos offres de service",
-				"desc1": "Nextmotion Support : 69€/mois hors TVA, inclut 1 heure de formation par mois avec nos équipes support",
-				"desc2": "Nextmotion Quickstart : 1 000€ hors TVA, configuration (15 heures) + 3 heures de formation.",
-				"desc3": "Formation supplémentaire : 200€ hors taxes/heure"
+				"desc1": "Nextmotion Support : 69€/mois HT , comprend 1h de training par mois avec nos équipes support",
+				"desc2": "Nextmotion Quickstart : 1000€ HT , paramétrage (15h) + 3h de formation.",
+				"desc3": "Formations complémentaires : 200€ ht/heure"
 			}
 		}
 	},
