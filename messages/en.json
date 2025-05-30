@@ -1071,6 +1071,13 @@
 			"author": "NextMotion",
 			"category": "Events"
 		},
+		"categories": {
+			"Events": "Events",
+			"Before&After": "Before & After",
+			"DigitalConsultation": "Digital Consultation",
+			"ELearning": "E-Aesthetics",
+			"CaseStudies": "Case studies"
+		},
 		"sidebar": {
 			"newsletter": {
 				"title": "Subscribe to our newsletter",
@@ -1085,7 +1092,7 @@
 				"events": "Events",
 				"beforeAfter": "Before & After",
 				"digitalConsultation": "Digital Consultation",
-				"eLearning": "E-learning",
+				"eLearning": "E-Aesthetics",
 				"caseStudies": "Case studies",
 				"count": {
 					"events": "8",
@@ -1115,6 +1122,38 @@
 				"2": "FME Congress 2024: Were we there, and you?",
 				"3": "FME 2024 Congress: witness the future of aesthetic medicine"
 			}
+		}
+	},
+	"article": {
+		"author": "NextMotion",
+		"appointment": {
+			"title": "Do you want to organize these 2 days of congress effectively?",
+			"subtitle": "Let's schedule a meeting beforehand.👇",
+			"button": "Scheduling an appointment"
+		},
+		"newsletter": {
+			"title": "Revolution your Business",
+			"placeholder": "Your business email",
+			"button": "Join the business revolution"
+		},
+		"popular": {
+			"title": "Popular articles"
+		},
+		"topics": {
+			"title": "Post By Topic",
+			"Events": "Events",
+			"BeforeAfter": "Before & After",
+			"DigitalConsultation": "Digital Consultation",
+			"ELearning": "E-Aesthetics",
+			"CaseStudies": "Case studies"
+		},
+		"contact": {
+			"firstName": "First Name",
+			"lastName": "Last Name",
+			"email": "Email",
+			"website": "Website",
+			"comment": "Comment",
+			"submit": "Submit Comment"
 		}
 	},
 	"podcast": {

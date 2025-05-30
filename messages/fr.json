@@ -1149,6 +1149,13 @@
 			"author": "NextMotion",
 			"category": "Événements"
 		},
+		"categories": {
+			"Events": "Événements",
+			"Before&After": "Avant & Après",
+			"DigitalConsultation": "Consultation Digitale",
+			"ELearning": "E-Aesthetics",
+			"CaseStudies": "Études de cas"
+		},
 		"sidebar": {
 			"newsletter": {
 				"title": "Abonnez-vous à notre newsletter",
@@ -1163,7 +1170,7 @@
 				"events": "Événements",
 				"beforeAfter": "Avant & Après",
 				"digitalConsultation": "Consultation Digitale",
-				"eLearning": "E-learning",
+				"eLearning": "E-Aesthetics",
 				"caseStudies": "Études de cas",
 				"count": {
 					"events": "8",
@@ -1193,6 +1200,38 @@
 				"2": "Congrès FME 2024 : Y étiez-vous avec nous ?",
 				"3": "Congrès FME 2024 : témoin de l'avenir de la médecine esthétique"
 			}
+		}
+	},
+	"article": {
+		"author": "NextMotion",
+		"appointment": {
+			"title": "Voulez-vous organiser ces 2 jours de congrès de manière efficace ?",
+			"subtitle": "Planifions une réunion avant.👇",
+			"button": "Planifier une réunion"
+		},
+		"newsletter": {
+			"title": "Révolutionnez votre entreprise",
+			"placeholder": "Votre email professionnel",
+			"button": "Rejoignez la révolution business"
+		},
+		"popular": {
+			"title": "Articles populaires"
+		},
+		"topics": {
+			"title": "Articles par thème",
+			"Events": "Événements",
+			"BeforeAfter": "Avant & Après",
+			"DigitalConsultation": "Consultation Digitale",
+			"ELearning": "E-Aesthetics",
+			"CaseStudies": "Études de cas"
+		},
+		"contact": {
+			"firstName": "Prénom",
+			"lastName": "Nom",
+			"email": "Email",
+			"website": "Site web",
+			"comment": "Commentaire",
+			"submit": "Envoyer un commentaire"
 		}
 	},
 	"podcast": {
