@@ -120,12 +120,12 @@ export default function SmallPricingCards() {
 								<div className='space-y-2'>
 									<div className='flex items-baseline'>
 										<span className='text-xl sm:text-2xl font-bold text-[#0B1C39]'>
-											{card.price} {card.period}
+											{card.price} {card.period}{" "}
+											<span className='text-xs sm:text-sm text-gray-500'>
+												{card.note}
+											</span>
 										</span>
 									</div>
-									<p className='text-xs sm:text-sm text-gray-500'>
-										{card.note}
-									</p>
 								</div>
 							</div>
 

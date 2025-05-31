@@ -96,10 +96,19 @@ export default function FaqSection() {
         </div> */}
 
 				<div className='mt-0 bg-white rounded-2xl p-8 text-center shadow-sm'>
-					<h3 className='text-2xl font-bold text-[#081F4D] mb-6'>
+					<h3 className='text-2xl font-bold text-[#081F4D] mb-3'>
 						{t("moreQuestions.title")}
 					</h3>
-					<p className='text-gray-600 mb-6'>{t("moreQuestions.description")}</p>
+					<p className='text-gray-600 mb-3 max-w-xs mx-auto'>
+						{t("moreQuestions.description")}
+					</p>
+					<a
+						href='mailto:contact@nextmotion.net'
+						className='block text-[#1650EF] text-2xl font-semibold hover:underline mb-3'
+					>
+						contact@nextmotion.net
+					</a>
+
 					<a
 						href='tel:+33767728137'
 						className='text-[#1650EF] text-2xl font-semibold hover:underline'
