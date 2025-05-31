@@ -110,16 +110,16 @@ export default function SmallPricingCards() {
 							className='bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.12)] transition-shadow duration-300 flex flex-col min-w-[328px]'
 						>
 							<div className='flex-grow space-y-2 sm:space-y-3'>
-								<h2 className='text-2xl sm:text-3xl font-bold text-[#0B1C39]'>
+								<h2 className='text-lg font-bold text-[#0B1C39]'>
 									{card.title}
 								</h2>
-								<p className='text-gray-600 text-sm sm:text-base leading-relaxed'>
+								<p className='text-[#4A5568] text-sm sm:text-base leading-relaxed'>
 									{card.description}
 								</p>
 
 								<div className='space-y-2'>
 									<div className='flex items-baseline'>
-										<span className='text-xl sm:text-2xl font-bold text-[#0B1C39]'>
+										<span className='text-xl font-bold text-[#0B1C39]'>
 											{card.price} {card.period}{" "}
 											<span className='text-xs sm:text-sm text-gray-500'>
 												{card.note}
@@ -132,7 +132,7 @@ export default function SmallPricingCards() {
 							<div className='mt-4'>
 								<Link
 									href='/'
-									className='block text-start text-[#284fe6] hover:text-blue-700 font-bold text-sm'
+									className='block text-start text-[#4299E1] hover:text-blue-700 text-sm'
 								>
 									{card.learnMoreLink}
 								</Link>
