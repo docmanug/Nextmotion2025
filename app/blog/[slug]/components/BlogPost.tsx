@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import BlogSidebar from "../../components/BlogSidebar";
+
 interface EnhancedBlogPostProps {
   post: BlogPost;
   posts: BlogPost[];
@@ -134,79 +136,12 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts,
             </article>
 
             {/* Sidebar - Right Side */}
-            <div className='space-y-8'>
-              {/* Newsletter Subscription */}
-              <div className='bg-[#EAF0F6] rounded-2xl p-6'>
-                <h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-                  {t("newsletter.title")}
-                </h2>
-                <div className='space-y-3'>
-                  <input
-                    type='email'
-                    placeholder={t("newsletter.placeholder")}
-                    className='w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none'
-                  />
-                  <button className='w-full bg-[#1650EF] text-white py-2.5 rounded-lg hover:bg-[#1345D1] transition-colors flex items-center justify-center gap-2'>
-                    {t("newsletter.button")}
-                    <span role='img' aria-label='sparkles'>
-                      ✨
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Most Popular */}
-              <div>
-                <h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-                  {t("popular.title")}
-                </h2>
-                <div className='space-y-4'>
-                  {popularPosts.map((post) => (
-                    <div key={post.id} className='flex gap-3 group bg-[#EAF0F6] rounded-2xl py-4 pr-4'>
-                      <Link href={`/blog/${post.slug}`} className='flex gap-3'>
-                        <Image
-                          src={
-                            post._embedded?.["wp:featuredmedia"]?.[0]
-                              ?.source_url || ""
-                          }
-                          alt={post.title.rendered}
-                          width={80}
-                          height={60}
-                          className='object-cover flex-shrink-0'
-                        />
-                        <h3
-                          className='text-sm group-hover:text-[#1650EF] transition-colors'
-                          dangerouslySetInnerHTML={{
-                            __html: post.title.rendered,
-                          }}
-                        />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Post By Topic */}
-              <div>
-                <h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-                  {t("topics.title")}
-                </h2>
-                <div className='space-y-2'>
-                  {categories && categories.length > 0 ? (
-                    categories.sort((a, b) => Number(a.id) - Number(b.id)).map((category) => (
-                      <div
-                        key={category.id}
-                        className='block text-sm hover:text-[#1650EF]'
-                      >
-                        • {t(`topics.${category.name}`)} ({category.count})
-                      </div>
-                    ))
-                  ) : (
-                    <div className="text-sm text-gray-500">Loading categories...</div>
-                  )}
-                </div>
-              </div>
-            </div>
+            <BlogSidebar
+              t={t}
+              categories={categories}
+              popularPosts={popularPosts}
+              topicsKey="topics"
+            />
           </div>
         </div>
       </section>

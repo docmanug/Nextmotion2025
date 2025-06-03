@@ -5,6 +5,7 @@ import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import BlogSidebar from "./BlogSidebar";
 
 export interface BlogPost {
 	id: string;
@@ -47,7 +48,7 @@ export default function BlogPosts() {
 	const [categories, setCategories] = useState<any[]>([]);
 	const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
-	const postsPerPage = 6; // Number of posts to show per page
+	const postsPerPage = 4; // Number of posts to show per page
 	const pathname = usePathname();
 	const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
 
@@ -66,28 +67,26 @@ export default function BlogPosts() {
 				},
 			});
 
-			const result = await response.json();
-			setPosts(result);
-		};
-		fetchData();
+			const postResult= await response.json();
 
-		const fetchCategories = async () => {
-			const response = await fetch("/api/categories", {
+			const responseCategories = await fetch("/api/categories", {
 				method: "GET",
 			});
-			const result = await response.json();
+			const result = await responseCategories.json();
 
 			setCategories(result);
+			const postData = postResult.map((post: BlogPost) => ({
+				...post,
+				category: result.find((category: any) => category.id === post.categories[0])?.name || post.category,
+			}));
+			setPosts(postData);
 		};
-		fetchCategories();
+		fetchData();
 	}, [currentLocale]);
 
 	const t = useTranslations(messages?.blog || {});
 
 	if (!messages) return null;
-
-	const categoryMap = new Map(categories.map((category) => [category.id, category.name]));
-	const category = posts.map((post) => post.categories.map((id) => categoryMap.get(id)));
 
 	const popularPosts = posts.slice(0, 5);
 
@@ -107,7 +106,11 @@ export default function BlogPosts() {
 	};
 
 	const handleCategoryClick = (categoryId: string) => {
-		setSelectedCategoryId(selectedCategoryId === categoryId ? null : categoryId);
+		if(categoryId === "all") {
+			setSelectedCategoryId(null);
+		} else {
+			setSelectedCategoryId(selectedCategoryId === categoryId ? null : categoryId);
+		}
 		setCurrentPage(1); // Reset to first page when category changes
 	};
 
@@ -143,12 +146,12 @@ export default function BlogPosts() {
 										/>
 									</Link>
 									<div className='flex items-center gap-2'>
-										{category && (
+										{post.category && (
 											<span className='bg-white px-3 py-1 rounded-full text-sm flex items-center gap-1'>
 												<svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M3.44001 4.50743C3.44001 4.50743 3.49233 4.45511 3.59696 4.35048C3.70159 4.24585 3.75391 4.04565 3.75391 3.7499C3.75391 3.45414 3.64927 3.20163 3.44001 2.99236C3.23075 2.7831 2.97824 2.67847 2.68248 2.67847C2.38672 2.67847 2.13421 2.7831 1.92494 2.99236C1.71568 3.20163 1.61105 3.45414 1.61105 3.7499C1.61105 4.04565 1.71568 4.29817 1.92494 4.50743C2.13421 4.71669 2.38672 4.82132 2.68248 4.82132C2.97824 4.82132 3.23075 4.71669 3.44001 4.50743ZM12.6853 8.57132C12.6853 8.86708 12.582 9.1182 12.3756 9.32467L8.26562 13.443C8.04799 13.6494 7.79408 13.7527 7.50391 13.7527C7.20815 13.7527 6.95703 13.6494 6.75056 13.443L0.765625 7.44967C0.553571 7.2432 0.373605 6.96139 0.225725 6.60425C0.077846 6.24711 0.00390625 5.92065 0.00390625 5.6249V2.14275C0.00390625 1.85257 0.109933 1.60146 0.321987 1.3894C0.53404 1.17735 0.785156 1.07132 1.07533 1.07132H4.55748C4.85324 1.07132 5.17969 1.14526 5.53683 1.29314C5.89397 1.44102 6.17857 1.62099 6.39062 1.83304L12.3756 7.80961C12.582 8.02724 12.6853 8.28115 12.6853 8.57132ZM15.8996 8.57132C15.8996 8.86708 15.7963 9.1182 15.5898 9.32467L11.4799 13.443C11.2623 13.6494 11.0084 13.7527 10.7182 13.7527C10.5173 13.7527 10.3527 13.7136 10.2243 13.6355C10.096 13.5574 9.9481 13.4318 9.78069 13.2588L13.7148 9.32467C13.9213 9.1182 14.0246 8.86708 14.0246 8.57132C14.0246 8.28115 13.9213 8.02724 13.7148 7.80961L7.72991 1.83304C7.51786 1.62099 7.23326 1.44102 6.87612 1.29314C6.51897 1.14526 6.19252 1.07132 5.89676 1.07132H7.77176C8.06752 1.07132 8.39397 1.14526 8.75112 1.29314C9.10826 1.44102 9.39286 1.62099 9.60491 1.83304L15.5898 7.80961C15.7963 8.02724 15.8996 8.28115 15.8996 8.57132Z" fill="#B3B2B2" />
 												</svg>
-												{t(`categories.${category}`)}
+												{t(`categories.${post.category}`)}
 											</span>
 										)}
 										<div className='text-sm flex items-center gap-1'>
@@ -178,80 +181,14 @@ export default function BlogPosts() {
 					</div>
 
 					{/* Sidebar - Right Side */}
-					<div className='space-y-8'>
-						{/* Newsletter Subscription */}
-						<div className='bg-[#EAF0F6] rounded-2xl p-6'>
-							<h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-								{t("sidebar.newsletter.title")}
-							</h2>
-							<div className='space-y-3'>
-								<input
-									type='email'
-									placeholder={t("sidebar.newsletter.placeholder")}
-									className='w-full px-4 py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none'
-								/>
-								<button className='w-full bg-[#1650EF] text-white py-2.5 rounded-lg hover:bg-[#1345D1] transition-colors flex items-center justify-center gap-2'>
-									{t("sidebar.newsletter.button")}
-									<span role='img' aria-label='sparkles'>
-										✨
-									</span>
-								</button>
-							</div>
-						</div>
-
-						{/* Most Popular */}
-						<div>
-							<h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-								{t("sidebar.popular.title")}
-							</h2>
-							<div className='space-y-4'>
-								{popularPosts.map((post) => (
-									<div key={post.id} className='flex gap-3 group bg-[#EAF0F6] rounded-2xl py-4 pr-4'>
-										<Link href={`/blog/${post.slug}`} className='flex gap-3'>
-											<Image
-												src={
-													post._embedded?.["wp:featuredmedia"]?.[0]
-														?.source_url || ""
-												}
-												alt={post.title.rendered}
-												width={80}
-												height={60}
-												className='object-cover flex-shrink-0'
-											/>
-											<h3
-												className='text-sm group-hover:text-[#1650EF] transition-colors'
-												dangerouslySetInnerHTML={{
-													__html: post.title.rendered,
-												}}
-											/>
-										</Link>
-									</div>
-								))}
-							</div>
-						</div>
-
-						{/* Post By Topic */}
-						<div>
-							<h2 className='text-[#1650EF] text-xl font-semibold mb-4'>
-								{t("sidebar.topics.title")}
-							</h2>
-							<div className='space-y-2'>
-								{categories.sort((a, b) => Number(a.id) - Number(b.id)).map((category) => (
-									<div
-										key={category.id}
-										onClick={() => handleCategoryClick(category.id)}
-										className={`block text-sm cursor-pointer ${
-											selectedCategoryId === category.id 
-												? 'text-[#1650EF] font-medium' 
-												: 'hover:text-[#1650EF]'
-										}`}
-									>
-										• {t(`categories.${category.name}`)} ({category.count})
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
+					<BlogSidebar
+						t={t}
+						categories={categories}
+						popularPosts={popularPosts}
+						selectedCategoryId={selectedCategoryId}
+						handleCategoryClick={handleCategoryClick}
+						topicsKey="categories"
+					/>
 				</div>
 
 				{/* Pagination */}

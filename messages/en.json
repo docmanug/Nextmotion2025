@@ -1158,6 +1158,31 @@
 			"website": "Website",
 			"comment": "Comment",
 			"submit": "Submit Comment"
+		},
+		"sidebar": {
+			"newsletter": {
+				"title": "Revolution your Business",
+				"placeholder": "Your business email",
+				"button": "Join the business revolution"
+			},
+			"popular": {
+				"title": "Popular articles"
+			},
+			"topics": {
+				"title": "Post By Topic",
+				"events": "Events",
+				"beforeAfter": "Before & After",
+				"digitalConsultation": "Digital Consultation",
+				"eLearning": "E-Aesthetics",
+				"caseStudies": "Case studies",
+				"count": {
+					"events": "8",
+					"beforeAfter": "2",
+					"digitalConsultation": "2",
+					"eLearning": "2",
+					"caseStudies": "1"
+				}
+			}
 		}
 	},
 	"podcast": {
