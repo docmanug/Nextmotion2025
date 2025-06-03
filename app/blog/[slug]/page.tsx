@@ -5,7 +5,7 @@ import { useTranslations, getMessages } from "@/utils/i18n";
 import { useParams, usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BlogPost } from "@/types/blog";
+import { BlogPost, Category } from "@/types/blog";
 import { EnhancedBlogPost } from "./components/BlogPost";
 
 export default function BlogPostPage() {
@@ -16,6 +16,8 @@ export default function BlogPostPage() {
 	const slug = params?.slug as string;
 	const [post, setPost] = useState<BlogPost | null>(null);
 	const [posts, setPosts] = useState<BlogPost[]>([]);
+	const [categories, setCategories] = useState<Category[]>([]);
+
 
 	useEffect(() => {
 		const loadMessages = async () => {
@@ -29,7 +31,6 @@ export default function BlogPostPage() {
 		const fetchPostData = async () => {
 			const fetchedPost = await fetch(`/api/post?slug=${slug}`);
 			const fetchedPostData = await fetchedPost.json();
-			console.log("Fetched Post Data:", fetchedPostData);
 			setPost(fetchedPostData);
 		};
 
@@ -39,19 +40,25 @@ export default function BlogPostPage() {
 			setPosts(fetchedPostsData);
 		};
 
+		const fetchCategoriesData = async () => {
+			const fetchedCategories = await fetch(`/api/categories`);
+			const fetchedCategoriesData = await fetchedCategories.json();
+			setCategories(fetchedCategoriesData);
+		};
+
 		fetchPostData();
 		fetchPostsData();
+		fetchCategoriesData();
 	}, [slug]);
 
 	const t = useTranslations(messages?.footer || {});
 
-	console.log("Post:", post);
 	if (!messages) return null;
 
 	return (
 		<main className='min-h-screen bg-white'>
 			<Navbar />
-			{post && <EnhancedBlogPost post={post} posts={posts} />}
+			{post && <EnhancedBlogPost post={post} posts={posts} categories={categories} />}
 			<Footer
 				professional={{
 					title: t("professional.title"),

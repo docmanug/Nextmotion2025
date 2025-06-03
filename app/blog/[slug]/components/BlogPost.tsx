@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { BlogPost } from "@/types/blog";
+import { BlogPost, Category } from "@/types/blog";
 import { ReadingProgress } from "./ReadingProgress";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,9 +14,10 @@ import { Input } from "@/components/ui/input";
 interface EnhancedBlogPostProps {
   post: BlogPost;
   posts: BlogPost[];
+  categories: Category[];
 }
 
-export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts }) => {
+export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts, categories }) => {
   const [messages, setMessages] = useState<any>(null);
   const t = useTranslations(messages?.article || {});
   const pathname = usePathname();
@@ -28,6 +29,9 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts 
     };
     loadMessages();
   }, [currentLocale]);
+
+  const categoryMap = categories ? new Map(categories.map((category) => [category.id, category.name])) : new Map();
+  const category = post.categories.map((id) => categoryMap.get(id));
 
   const popularPosts = posts.filter((p: BlogPost) => p.id !== post.id).slice(0, 5);
 
@@ -102,7 +106,7 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts 
                 </div>
               </div>
               <p className="text-lg text-stone-500 py-12">
-                Topics: <span className="text-zinc-800 font-bold">{t(`topics.Events`)}</span>
+                Topics: <span className="text-zinc-800 font-bold">{t(`topics.${category}`)}</span>
               </p>
               <form className="space-y-4">
                 <div>
@@ -188,36 +192,18 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts 
                   {t("topics.title")}
                 </h2>
                 <div className='space-y-2'>
-                  <Link
-                    href='/blog/topic/events'
-                    className='block text-sm hover:text-[#1650EF]'
-                  >
-                    • {t("topics.Events")} (6)
-                  </Link>
-                  <Link
-                    href='/blog/topic/before-after'
-                    className='block text-sm hover:text-[#1650EF]'
-                  >
-                    • {t("topics.BeforeAfter")} (4)
-                  </Link>
-                  <Link
-                    href='/blog/topic/digital-consultation'
-                    className='block text-sm hover:text-[#1650EF]'
-                  >
-                    • {t("topics.DigitalConsultation")} (2)
-                  </Link>
-                  <Link
-                    href='/blog/topic/e-learning'
-                    className='block text-sm hover:text-[#1650EF]'
-                  >
-                    • {t("topics.ELearning")} (3)
-                  </Link>
-                  <Link
-                    href='/blog/topic/case-studies'
-                    className='block text-sm hover:text-[#1650EF]'
-                  >
-                    • {t("topics.CaseStudies")} (1)
-                  </Link>
+                  {categories && categories.length > 0 ? (
+                    categories.sort((a, b) => Number(a.id) - Number(b.id)).map((category) => (
+                      <div
+                        key={category.id}
+                        className='block text-sm hover:text-[#1650EF]'
+                      >
+                        • {t(`topics.${category.name}`)} ({category.count})
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-sm text-gray-500">Loading categories...</div>
+                  )}
                 </div>
               </div>
             </div>

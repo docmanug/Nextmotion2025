@@ -1145,7 +1145,7 @@
 		},
 		"categories": {
 			"Events": "Événements",
-			"Before&After": "Avant & Après",
+			"BeforeAfter": "Avant & Après",
 			"DigitalConsultation": "Consultation Digitale",
 			"ELearning": "E-Aesthetics",
 			"CaseStudies": "Études de cas"
