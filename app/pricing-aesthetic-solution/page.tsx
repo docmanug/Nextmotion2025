@@ -5,8 +5,7 @@ import PricingCards from "./components/PricingCards";
 import SmallPricingCards from "./components/SmallPricingCards";
 import ComparisonPlans from "./components/ComparisonPlans";
 import TestimonialSlider from "./components/TestimonialSlider";
-import FaqSection from "./components/FaqSection";
-import TryNextmotion from "./components/TryNextMotion";
+import { FAQSection } from "@/components/ui/faq-section";
 import { getMessages, useTranslations } from "@/utils/i18n";
 
 export default async function PricingAestheticSolutionPage() {
@@ -20,7 +19,11 @@ export default async function PricingAestheticSolutionPage() {
 			<PricingCards />
 			<SmallPricingCards />
 			<TestimonialSlider />
-			<FaqSection />
+			<FAQSection
+				title={t("faq.title")}
+				subtitle={t("faq.subtitle")}
+				faqs={messages?.faq?.questions || []}
+			/>
 			{/* <TryNextmotion /> */}
 		</main>
 	);

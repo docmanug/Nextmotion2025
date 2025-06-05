@@ -22,7 +22,7 @@ export default async function PricingAestheticSolutionPage() {
 			<FAQSection
 				title={t("faq.title")}
 				subtitle={t("faq.subtitle")}
-				faqs={t("faq.questions")}
+				faqs={messages?.faq?.questions || []}
 			/>
 			{/* <TryNextmotion /> */}
 		</main>

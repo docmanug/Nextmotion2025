@@ -26,7 +26,7 @@ export default async function CaseStudiesPage() {
       <TestimonialSection
         title={t("testimonials.title")}
         subtitle={t("testimonials.description")}
-        testimonials={t("testimonials.items")}
+        testimonials={messages?.testimonials?.items || []}
       />
       <MoreCaseStudies />
       <TryNextmotion />

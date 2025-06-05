@@ -25,7 +25,7 @@ export default async function ContactPage() {
       <TestimonialSection
         title={t("testimonials.title")}
         subtitle={t("testimonials.description")}
-        testimonials={t("testimonials.items")}
+        testimonials={messages?.testimonials?.items || []}
       />
     </main>
   );

@@ -24,7 +24,7 @@ const FaqItem = ({
   number: number;
 }) => {
   return (
-    <div className="border border-gray-100 rounded-2xl border border-[#006BCC26] bg-white shadow-sm mb-4">
+    <div className="border-gray-100 rounded-2xl border border-[#006BCC26] bg-white shadow-sm mb-4">
       <button
         className="w-full px-8 py-6 text-left flex justify-between items-center"
         onClick={onClick}

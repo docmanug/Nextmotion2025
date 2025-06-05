@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Section, SectionHeader } from "./section";
 import { motion, AnimatePresence } from "framer-motion";

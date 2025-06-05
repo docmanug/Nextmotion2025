@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";

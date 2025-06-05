@@ -151,9 +151,11 @@ export default function Navbar() {
 							href={window.location.pathname.startsWith("/fr") ? "/fr" : "/"}
 							className='flex items-center'
 						>
-							<img
+							<Image
 								src='/logo.png'
 								alt='Nextmotion'
+								width={100}
+								height={22}
 								className='h-[22px] w-auto'
 							/>
 						</Link>

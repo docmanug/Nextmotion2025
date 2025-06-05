@@ -10,12 +10,6 @@ export default async function AboutPage() {
   const messages = await getMessages("en");
   const t = useTranslations(messages);
 
-  return <AboutPageClient t={t} />;
-}
-
-"use client";
-
-function AboutPageClient({ t }: { t: (key: string) => string }) {
   return (
     <main className="bg-[#F8FAFF]">
       <Hero />
