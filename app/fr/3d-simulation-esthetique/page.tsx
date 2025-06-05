@@ -5,8 +5,6 @@ import Standard2Section from "../../3d-aesthetic-simulation/components/Standard2
 import Standard3Section from "../../3d-aesthetic-simulation/components/Standard3Section";
 import FaqSection from "../../3d-aesthetic-simulation/components/FaqSection";
 import DiscoverSection from "../../3d-aesthetic-simulation/components/DiscoverSection";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { getMessages } from "@/utils/i18n";
 import ImageSection from "../../3d-aesthetic-simulation/components/ImageSection";
 
@@ -29,7 +27,6 @@ export default async function ThreeDAestheticSimulationPage() {
 
   return (
     <main>
-      <Navbar />
       <Hero />
       <ImageSection />
       <StandardSection />
@@ -37,39 +34,6 @@ export default async function ThreeDAestheticSimulationPage() {
       <Standard3Section />
       <FaqSection />
       <DiscoverSection />
-      <Footer
-        professional={{
-          title: t("footer.professional.title"),
-          description: t("footer.professional.description"),
-          button: t("footer.professional.button"),
-        }}
-        platform={{
-          title: t("footer.platform.title"),
-          links: {
-            home: t("footer.platform.links.home"),
-            capture: t("footer.platform.links.capture"),
-            revolution: t("footer.platform.links.revolution"),
-            "3d": t("footer.platform.links.3d"),
-            consult: t("footer.platform.links.consult"),
-            agenda: t("footer.platform.links.agenda"),
-            classes: t("footer.platform.links.classes"),
-            robotics: t("footer.platform.links.robotics"),
-          },
-        }}
-        company={{
-          title: t("footer.company.title"),
-          links: {
-            about: t("footer.company.links.about"),
-            contact: t("footer.company.links.contact"),
-            contents: t("footer.company.links.contents"),
-            cases: t("footer.company.links.cases"),
-            blog: t("footer.company.links.blog"),
-            events: t("footer.company.links.events"),
-            podcast: t("footer.company.links.podcast"),
-            releases: t("footer.company.links.releases"),
-          },
-        }}
-      />
     </main>
   );
 }

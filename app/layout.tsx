@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import { getMessages } from "@/utils/i18n";
 import HreflangTags from "./components/HreflangTags";
 import Script from "next/script";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title:
@@ -159,7 +161,11 @@ export default async function RootLayout({
       <head>
         <HreflangTags />
       </head>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

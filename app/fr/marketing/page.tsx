@@ -4,9 +4,7 @@ import SolutionsSection from "../../marketing/components/SolutionsSection";
 import Feature2 from "../../marketing/components/Feature2";
 import Feature1 from "../../marketing/components/Feature1";
 
-import TryNextmotion from "../../marketing/components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TryNextmotion from "../../components/shared/TryNextmotion";
 import Feature3 from "../../marketing/components/Feature3";
 import Feature4 from "../../marketing/components/Feature4";
 import Feature5 from "../../marketing/components/Feature5";
@@ -25,7 +23,6 @@ export const metadata: Metadata = {
 export default function Marketing() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -35,8 +32,7 @@ export default function Marketing() {
       <Feature5 />
       <Feature6 />
       <Feature7 />
-      <TryNextmotion />
-      <Footer />
+      <TryNextmotion translationKey="marketingPage.tryNextmotion" />
     </main>
   );
 }

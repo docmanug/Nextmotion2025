@@ -4,9 +4,7 @@ import SolutionsSection from "../../medecin-esthetique/components/SolutionsSecti
 import Feature2 from "../../medecin-esthetique/components/Feature2";
 import Feature1 from "../../medecin-esthetique/components/Feature1";
 
-import TryNextmotion from "../../medecin-esthetique/components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TryNextmotion from "../../components/shared/TryNextmotion";
 import Feature3 from "../../medecin-esthetique/components/Feature3";
 import Feature4 from "../../medecin-esthetique/components/Feature4";
 import Feature5 from "../../medecin-esthetique/components/Feature5";
@@ -26,7 +24,6 @@ export const metadata: Metadata = {
 export default function Medecin() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -37,8 +34,7 @@ export default function Medecin() {
       <Feature6 />
       <Feature7 />
       <Feature8 />
-      <TryNextmotion />
-      <Footer />
+      <TryNextmotion translationKey="medecinPage.tryNextmotion" />
     </main>
   );
 }

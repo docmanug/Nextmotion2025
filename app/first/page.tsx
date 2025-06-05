@@ -8,13 +8,10 @@ import LogoSlider from "./components/LogoSlider";
 import ReviewsSection from "./components/ReviewsSection";
 import CommunitySection from "./components/CommunitySection";
 import ApprovalSection from "./components/ApprovalSection";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function FirstLandingPage() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <CaptureSection />
@@ -25,7 +22,6 @@ export default function FirstLandingPage() {
       <ReviewsSection />
       <CommunitySection />
       <ApprovalSection />
-      <Footer />
     </main>
   );
 } 

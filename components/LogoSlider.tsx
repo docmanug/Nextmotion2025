@@ -1,62 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { logos } from "@/public/logos";
+import { Icon } from "@/components/ui/icon";
+import { LogoSliderSection } from "@/components/ui/logo-slider-section";
 
 interface LogoSliderProps {
   title: string;
   subtitle: string;
+  logos?: string[];
+  speed?: number;
+  pauseOnHover?: boolean;
+  showGradient?: boolean;
+  gradientColor?: "white" | "gray" | "blue";
 }
 
-// Duplicate logos for seamless loop
-const duplicatedLogos = [...logos, ...logos];
-
-export default function LogoSlider({ title, subtitle }: LogoSliderProps) {
+export default function LogoSlider({
+  title,
+  subtitle,
+  logos = [
+    "tMJGK9-g.png",
+    "nk7M6BJw.png",
+    "jMUIOX4A.png",
+    "gfTR_RmA.png",
+    "a_vl1iBw.png",
+    "RaBIxjqQ.png",
+  ],
+  speed = 30,
+  pauseOnHover = true,
+  showGradient = true,
+  gradientColor = "white",
+}: LogoSliderProps) {
   return (
-    <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16 leading-tight">
-          {title}
-        </h2>
-
-        <div className="relative">
-          {/* Add a gradient overlay on the sides */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
-
-          {/* Logo slider container */}
-          <div className="relative overflow-hidden py-8">
+    <LogoSliderSection
+      title={title}
+      subtitle={subtitle}
+      showGradient={showGradient}
+      gradientColor={gradientColor}
+    >
+      <div className="relative overflow-hidden">
+        <motion.div
+          className="flex space-x-8 sm:space-x-12"
+          animate={{
+            x: [0, -1920],
+          }}
+          transition={{
+            duration: speed,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          whileHover={pauseOnHover ? { animationPlayState: "paused" } : undefined}
+        >
+          {logos.map((logo, index) => (
             <motion.div
-              className="flex gap-16 items-center"
-              animate={{
-                x: [0, -1920],
-              }}
-              transition={{
-                duration: 30,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-              whileHover={{ animationPlayState: "paused" }}
+              key={index}
+              className="flex-shrink-0 w-24 sm:w-32 h-12 sm:h-16 relative grayscale hover:grayscale-0 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
             >
-              {duplicatedLogos.map((logo, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0 w-32 h-20 relative grayscale hover:grayscale-0 transition-all duration-300"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                    className="object-contain"
-                  />
-                </motion.div>
-              ))}
+              <Icon
+                src={`/logos/${logo}`}
+                alt={`Logo ${index + 1}`}
+                size="md"
+                className="w-full h-full"
+              />
             </motion.div>
-          </div>
-        </div>
+          ))}
+          {logos.map((logo, index) => (
+            <motion.div
+              key={`duplicate-${index}`}
+              className="flex-shrink-0 w-24 sm:w-32 h-12 sm:h-16 relative grayscale hover:grayscale-0 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+            >
+              <Icon
+                src={`/logos/${logo}`}
+                alt={`Logo ${index + 1}`}
+                size="md"
+                className="w-full h-full"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </section>
+    </LogoSliderSection>
   );
 }

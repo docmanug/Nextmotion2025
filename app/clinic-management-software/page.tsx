@@ -13,8 +13,6 @@ import Feature9 from "./components/Feature9";
 import TryNextmotion from "./components/TryNextmotion";
 import DiscoverSection from "./components/DiscoverSection";
 import ReviewsSection from "./components/ReviewsSection";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Aesthetic Clinic Software: Simplify Management",
@@ -28,7 +26,6 @@ export const metadata: Metadata = {
 export default function ClinicManagementSoftwarePage() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -43,7 +40,6 @@ export default function ClinicManagementSoftwarePage() {
       <TryNextmotion />
       <DiscoverSection />
       <ReviewsSection />
-      <Footer />
     </main>
   );
 }

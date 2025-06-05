@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import Hero from "./components/Hero";
 import StandardSection from "./components/StandardSection";
 import Standard2Section from "./components/Standard2Section";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ImageSection from "./components/ImageSection";
 import Standard3Section from "./components/Standard3Section";
 import FaqSection from "./components/FaqSection";
@@ -21,7 +19,6 @@ export const metadata: Metadata = {
 export default function ThreeDAestheticSimulation() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <ImageSection />
       <StandardSection />
@@ -29,7 +26,6 @@ export default function ThreeDAestheticSimulation() {
       <Standard3Section />
       <FaqSection />
       <DiscoverSection />
-      <Footer />
     </main>
   );
 }

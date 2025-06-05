@@ -3,9 +3,7 @@ import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
 import Feature2 from "./components/Feature2";
 import Feature1 from "./components/Feature1";
-import TryNextmotion from "./components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TryNextmotion from "@/app/components/shared/TryNextmotion";
 import Feature3 from "./components/Feature3";
 import Feature4 from "./components/Feature4";
 import Feature5 from "./components/Feature5";
@@ -25,7 +23,6 @@ export const metadata: Metadata = {
 export default function Medecin() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -36,8 +33,11 @@ export default function Medecin() {
       <Feature6 />
       <Feature7 />
       <Feature8 />
-      <TryNextmotion />
-      <Footer />
+      <TryNextmotion 
+        translationKey="medecinEsthetique.tryNextmotion"
+        sectionClassName="py-8 sm:py-12"
+        buttonClassName="w-full sm:w-auto bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-[16px] font-semibold h-auto"
+      />
     </main>
   );
 }

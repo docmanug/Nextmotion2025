@@ -3,9 +3,7 @@ import Hero from "./components/Hero";
 import SolutionsSection from "./components/SolutionsSection";
 import Feature2 from "./components/Feature2";
 import Feature1 from "./components/Feature1";
-import TryNextmotion from "./components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TryNextmotion from "@/app/components/shared/TryNextmotion";
 import Feature3 from "./components/Feature3";
 import Feature4 from "./components/Feature4";
 import Feature5 from "./components/Feature5";
@@ -24,7 +22,6 @@ export const metadata: Metadata = {
 export default function Marketing() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -34,8 +31,11 @@ export default function Marketing() {
       <Feature5 />
       <Feature6 />
       <Feature7 />
-      <TryNextmotion />
-      <Footer />
+      <TryNextmotion 
+        translationKey="marketingPage.tryNextmotion"
+        sectionClassName="py-8 sm:py-12"
+        buttonClassName="bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+      />
     </main>
   );
 }

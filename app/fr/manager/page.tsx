@@ -4,9 +4,7 @@ import SolutionsSection from "../../manager/components/SolutionsSection";
 import Feature2 from "../../manager/components/Feature2";
 import Feature1 from "../../manager/components/Feature1";
 
-import TryNextmotion from "../../manager/components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TryNextmotion from "../../components/shared/TryNextmotion";
 import Feature3 from "../../manager/components/Feature3";
 import Feature4 from "../../manager/components/Feature4";
 import Feature5 from "../../manager/components/Feature5";
@@ -27,7 +25,6 @@ export const metadata: Metadata = {
 export default function Manager() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -38,8 +35,7 @@ export default function Manager() {
       <Feature6 />
       <Feature7 />
       <Feature8 />
-      <TryNextmotion />
-      <Footer />
+      <TryNextmotion translationKey="managerPage.tryNextmotion" />
     </main>
   );
 }

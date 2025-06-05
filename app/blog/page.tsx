@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar";
 import Hero from "./components/Hero";
-import Footer from "@/components/Footer";
 import BlogPosts from "./components/BlogPosts";
 
 export default function BlogPage() {
@@ -27,57 +25,8 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
       <Hero />
       <BlogPosts />
-      <Footer
-        professional={{
-          title: t("professional.title"),
-          description: t("professional.description"),
-          button: t("professional.button"),
-        }}
-        platform={{
-          title: t("platform.title"),
-          links: {
-            home: t("platform.links.home"),
-            capture: t("platform.links.capture"),
-            revolution: t("platform.links.revolution"),
-            "3d": t("platform.links.3d"),
-            consult: t("platform.links.consult"),
-            agenda: t("platform.links.agenda"),
-            classes: t("platform.links.classes"),
-            robotics: t("platform.links.robotics"),
-          },
-        }}
-        company={{
-          title: t("company.title"),
-          links: {
-            about: t("company.links.about"),
-            contact: t("company.links.contact"),
-            contents: t("company.links.contents"),
-            cases: t("company.links.cases"),
-            blog: t("company.links.blog"),
-            events: t("company.links.events"),
-            podcast: t("company.links.podcast"),
-            releases: t("company.links.releases"),
-          },
-        }}
-        help={{
-          title: t("help.title"),
-          links: {
-            login: t("help.links.login"),
-            demo: t("help.links.demo"),
-            privacy: t("help.links.privacy"),
-            legal: t("help.links.legal"),
-          },
-        }}
-        newsletter={{
-          title: t("newsletter.title"),
-          highlight: t("newsletter.highlight"),
-          placeholder: t("newsletter.placeholder"),
-          button: t("newsletter.button"),
-        }}
-      />
     </main>
   );
 }

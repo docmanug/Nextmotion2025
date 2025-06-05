@@ -6,8 +6,6 @@ import TeacherStudentSection from "../../virtual-classes/components/TeacherStude
 import RevolutionSection from "../../virtual-classes/components/RevolutionSection";
 import MarketSection from "../../virtual-classes/components/MarketSection";
 import Market2Section from "../../virtual-classes/components/Market2Section";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import NextMotionJourney from "../../virtual-classes/components/NextMotionJourney";
 import ApprovalSection from "../../virtual-classes/components/ApprovalSection";
 import ImageSection from "../../virtual-classes/components/ImageSection";
@@ -24,7 +22,6 @@ export const metadata: Metadata = {
 export default function VirtualClassesPage() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <ImageSection />
       <StandardSection />
@@ -35,7 +32,6 @@ export default function VirtualClassesPage() {
       <Market2Section />
       <NextMotionJourney />
       <ApprovalSection />
-      <Footer />
     </main>
   );
 }

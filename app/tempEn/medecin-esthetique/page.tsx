@@ -4,8 +4,6 @@ import SolutionsSection from "./components/SolutionsSection";
 import Feature2 from "./components/Feature2";
 import Feature1 from "./components/Feature1";
 import TryNextmotion from "./components/TryNextmotion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Feature3 from "./components/Feature3";
 import Feature4 from "./components/Feature4";
 import Feature5 from "./components/Feature5";
@@ -25,7 +23,6 @@ export const metadata: Metadata = {
 export default function Medecin() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <SolutionsSection />
       <Feature1 />
@@ -37,7 +34,6 @@ export default function Medecin() {
       <Feature7 />
       <Feature8 />
       <TryNextmotion />
-      <Footer />
     </main>
   );
 }
