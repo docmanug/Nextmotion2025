@@ -7,6 +7,8 @@ import TeamMembers from "./components/TeamMembers";
 import Specialists from "./components/Specialists";
 import CallToAction from "./components/CallToAction";
 import { getMessages, useTranslations } from "@/utils/i18n";
+import { OrganizationSchema } from "../components/shared/OrganizationSchema";
+import { SoftwareApplicationSchema } from "../components/shared/SoftwareApplicationSchema";
 
 export default function AboutPage() {
   const [messages, setMessages] = useState(null);
@@ -23,6 +25,8 @@ export default function AboutPage() {
       <TeamMembers />
       <Specialists />
       <CallToAction />
+      <OrganizationSchema />
+      <SoftwareApplicationSchema />
     </main>
   );
 }

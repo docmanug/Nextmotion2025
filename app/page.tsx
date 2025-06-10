@@ -11,6 +11,8 @@ import ApprovalSection from "@/components/ApprovalSection";
 import CommunitySection from "@/components/CommunitySection";
 import ReviewsSection from "@/components/ReviewsSection";
 import CountryRedirect from "./components/CountryRedirect";
+import { OrganizationSchema } from "./components/shared/OrganizationSchema";
+import { SoftwareApplicationSchema } from "./components/shared/SoftwareApplicationSchema";
 
 export const metadata: Metadata = {
   title:
@@ -147,6 +149,8 @@ export default async function Home() {
           quality: t("approval.certifications.quality"),
         }}
       />
+      <OrganizationSchema />
+      <SoftwareApplicationSchema />
     </main>
   );
 }
