@@ -349,7 +349,7 @@ export default function Navbar() {
 									{t("navbar.resourcesMenu.releaseNotes")}
 								</Link>
 								<Link
-									href='https://api.nextmotion.net/open_api/docs/redoc/'
+									href='https://api.nextmotion.net/open_api/docs/redoc'
 									target='_blank'
 									rel='noopener noreferrer'
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
@@ -684,7 +684,7 @@ export default function Navbar() {
 												{t("navbar.resourcesMenu.releaseNotes")}
 											</Link>
 											<Link
-												href='https://api.nextmotion.net/open_api/docs/redoc/'
+												href='https://api.nextmotion.net/open_api/docs/redoc'
 												target='_blank'
 												rel='noopener noreferrer'
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
