@@ -58,6 +58,7 @@ export default function PricingCards() {
 				t("pricing.cards.3d.features.feature1"),
 				t("pricing.cards.3d.features.feature2"),
 				t("pricing.cards.3d.features.feature3"),
+				t("pricing.cards.3d.features.feature4"),
 			],
 		},
 		{

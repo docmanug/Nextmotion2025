@@ -85,7 +85,7 @@ export default function Feature8() {
 
             <div className="mt-10">
               <Link
-                href="https://api.nextmotion.net/open_api/docs/redoc/"
+                href="https://api.nextmotion.net/open_api/docs/redoc"
                 target="_blank"
                 rel="noopener noreferrer"
               >

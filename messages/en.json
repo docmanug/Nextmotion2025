@@ -771,9 +771,9 @@
 					"features": [
 						"Nextmotion Premium",
 						"Patient portal",
-						"Internal messaging & video conferencing",
-						"+5 users (10 in total)",
-						"2 hours of support/month"
+						"Internal messaging & video",
+						"10 users included",
+						"2h support/month"
 					],
 					"cta": "Contact us",
 					"bottomText": "Contact us for a personalized offer."
@@ -789,7 +789,8 @@
 					"features": [
 						"Nextmotion Capture",
 						"Nextmotion Consult digital",
-						"1 user included"
+						"1 user included",
+						"Access Nextmotion Academy"
 					],
 					"cta": "Start now",
 					"bottomText": "Chatbot and email support included."
@@ -806,7 +807,7 @@
 						"Nextmotion Starter Pack",
 						"Consult AI (1 user)",
 						"Accounting",
-						"+2 users (3 in total)",
+						"2 users included",
 						"Good reviews"
 					],
 					"cta": "Request a demo",
@@ -822,11 +823,11 @@
 					"note": "excluding taxes, 12-month commitment",
 					"features": [
 						"Nextmotion Essential",
+						"Nextmotion copilot AI",
+						"Access automatisations & API",
+						"5 users included",
 						"Nextmotion Agenda",
-						"+2 users (5 in total)",
-						"1 hour of support/month",
-						"Access to our APIs",
-						"Access to automations"
+						"1h support/month"
 					],
 					"cta": "Request a demo",
 					"bottomText": "Chatbot support, priority email and Whatsapp."
