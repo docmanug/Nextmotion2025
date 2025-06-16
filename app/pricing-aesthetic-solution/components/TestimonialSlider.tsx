@@ -7,37 +7,37 @@ const testimonials = [
 		author: "Tracy Cohen",
 		role: "CEO Clinique des Champs Elysées",
 		quote: "The best digitalisation tool for clinics",
-		avatar: "/about/about_anastasia.png",
+		avatar: "/testimonials/tracy-cohen.png",
 	},
 	{
 		author: "Dr. Nabila Azib",
 		role: "Plastic Surgeon, Rabat",
 		quote: "A must have for your marketing",
-		avatar: "/about/about_nabila.png",
+		avatar: "/testimonials/nabila-azib.png",
 	},
 	{
 		author: "Dr. Constantin Stan",
 		role: "Plastic surgeon from Bucharest",
 		quote: "NextMotion is a part of my workflow now. My patients love it!",
-		avatar: "/about/about_constantin.png",
+		avatar: "/testimonials/constantin-stan.png",
 	},
 	{
 		author: "Pr. Jean Paul Meningaud",
 		role: "Head of Plastic Surgery, Henri Mondor Hospital in France",
 		quote: "A wonderful tool that helps a lot to document my clinical cases",
-		avatar: "/about/about_jean_paul.png",
+		avatar: "/testimonials/rolf-bartsch.png",
 	},
 	{
 		author: "Dr. Rolf Bartsch",
 		role: "Plastic Surgeon from Vienna",
 		quote: "A must have for any plastic surgeon",
-		avatar: "/about/about_ali.png",
+		avatar: "/testimonials/ali-pirayesh.png",
 	},
 	{
 		author: "Dr. Ali Pirayesh",
 		role: "Plastic surgeon from Amsterdam",
 		quote: "The complete NextMotion solution has changed the way I work",
-		avatar: "/about/about_david.png",
+		avatar: "/testimonials/jesica-sosa.png",
 	},
 ];
 

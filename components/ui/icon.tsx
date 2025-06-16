@@ -10,7 +10,7 @@ interface IconProps {
 }
 
 const sizeClasses = {
-  sm: "w-8 h-8 sm:w-10 sm:h-10",
+  sm: "w-10 h-10 sm:w-12 sm:h-12",
   md: "w-[60px] h-[60px] sm:w-[70px] sm:h-[70px]",
   lg: "w-16 h-16 sm:w-20 sm:h-20",
 };
@@ -45,7 +45,7 @@ export function Icon({
         src={src}
         alt={alt}
         fill
-        className="object-contain"
+        className={className}
         priority={priority}
       />
     </div>
