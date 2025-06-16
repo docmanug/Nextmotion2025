@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Icon } from "./icon";
 import { motion } from "framer-motion";
+import { StarIcon } from "lucide-react";
 
 interface TestimonialCardProps {
   quote: string;
@@ -31,13 +32,7 @@ export function TestimonialCard({
     )}>
       <div className="flex items-center gap-1 mb-4">
         {[...Array(rating)].map((_, i) => (
-          <Icon
-            key={i}
-            src="/icons/star.svg"
-            alt="Star"
-            size="sm"
-            className="text-yellow-400"
-          />
+          <StarIcon key={i} className="text-yellow-400"/>
         ))}
       </div>
 

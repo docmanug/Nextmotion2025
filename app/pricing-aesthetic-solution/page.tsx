@@ -20,9 +20,9 @@ export default async function PricingAestheticSolutionPage() {
 			<SmallPricingCards />
 			<TestimonialSlider />
 			<FAQSection
-				title={t("faq.title")}
-				subtitle={t("faq.subtitle")}
-				faqs={messages?.faq?.questions || []}
+				title={t("pricing.faq.title")}
+				subtitle={t("pricing.faq.subtitle")}
+				faqs={t("pricing.faq.questions") || []}
 			/>
 			{/* <TryNextmotion /> */}
 		</main>

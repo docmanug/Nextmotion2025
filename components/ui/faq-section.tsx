@@ -5,6 +5,7 @@ import { Section, SectionHeader } from "./section";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Icon } from "./icon";
+import { ChevronRight } from "lucide-react";
 
 interface FAQ {
   question: string;
@@ -45,13 +46,10 @@ function FAQItem({
         onClick={onClick}
       >
         <span className="text-lg font-semibold text-gray-900">{question}</span>
-        <Icon
-          src="/icons/chevron-down.svg"
-          alt="Toggle"
-          size="sm"
+        <ChevronRight
           className={cn(
             "transform transition-transform duration-200",
-            isOpen ? "rotate-180" : ""
+            isOpen ? "rotate-90" : ""
           )}
         />
       </button>
