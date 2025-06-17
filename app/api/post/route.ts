@@ -9,6 +9,8 @@ export async function GET(request: Request) {
         ? {
             ...data[0],
             featuredImage: data[0]._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,
+            metaTitle: data[0].meta?.meta_title || data[0].title.rendered,
+            metaDescription: data[0].meta?.meta_description || data[0].excerpt.rendered.replace(/<[^>]*>/g, ''),
         }
         : null;
     return NextResponse.json(post);

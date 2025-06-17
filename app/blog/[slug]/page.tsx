@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { useParams, usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { BlogPost, Category } from "@/types/blog";
 import { EnhancedBlogPost } from "./components/BlogPost";
 
@@ -17,7 +15,6 @@ export default function BlogPostPage() {
 	const [post, setPost] = useState<BlogPost | null>(null);
 	const [posts, setPosts] = useState<BlogPost[]>([]);
 	const [categories, setCategories] = useState<Category[]>([]);
-
 
 	useEffect(() => {
 		const loadMessages = async () => {
