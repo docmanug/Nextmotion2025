@@ -4,6 +4,7 @@ import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
 import { processBoldText } from "@/utils/text";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 
 export default function Standard2Section() {
   const [messages, setMessages] = useState<any>(null);
@@ -50,7 +51,7 @@ export default function Standard2Section() {
           </div>
 
           <div className="relative order-2">
-            <video
+            <OptimizedVideo
               src="https://6086964.fs1.hubspotusercontent-na1.net/hubfs/6086964/3Dagingvideo.mp4"
               className="w-full h-auto rounded-lg"
               autoPlay

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -71,11 +71,11 @@ export default function Footer({
   useEffect(() => {
     const loadTranslations = async () => {
       try {
-        const module = await import(`../messages/${currentLocale}.json`);
-        setTranslations(module.default);
+        const messages = await import(`../messages/${currentLocale}.json`);
+        setTranslations(messages.default);
       } catch (error) {
-        const module = await import(`../messages/en.json`);
-        setTranslations(module.default);
+        const messages = await import(`../messages/en.json`);
+        setTranslations(messages.default);
       }
     };
 
@@ -198,8 +198,8 @@ export default function Footer({
           <div className="bg-[#051238] p-8 md:p-16">
             <div className="max-w-[1300px] mx-auto">
               <div className="max-w-[400px] mx-auto md:ml-auto">
-                <Image
-                  src="/logo.png"
+                <OptimizedImage
+                  src="/logo.webp"
                   alt="Nextmotion"
                   width={160}
                   height={24}

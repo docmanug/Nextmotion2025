@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ReactNode } from "react";
 import { Section } from "./section";
 
@@ -38,7 +38,7 @@ export function SectionWithImage({
 
         <div className={cn("relative mt-8 lg:mt-0", imageOrder)}>
           <div className="relative">
-            <Image
+            <OptimizedImage
               src={imageSrc}
               alt={imageAlt}
               width={800}

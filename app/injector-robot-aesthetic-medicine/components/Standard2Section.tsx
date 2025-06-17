@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -28,8 +28,8 @@ export default function Standard2Section() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           {/* Image Column - Always First */}
           <div className="relative h-[400px] sm:h-[600px] flex items-center justify-center">
-            <Image
-              src="/sixth/standard_2.png"
+            <OptimizedImage
+              src="/sixth/standard_2.webp"
               alt="LENA 3D Vision System"
               fill
               className="object-contain"

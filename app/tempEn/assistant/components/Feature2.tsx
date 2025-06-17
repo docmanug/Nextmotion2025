@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -29,8 +29,8 @@ export default function Feature2() {
           <div className="order-1 lg:order-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/assistant/icons/assistant_2_icon.png"
+                <OptimizedImage
+                  src="/assistant/icons/assistant_2_icon.webp"
                   alt={t("iconAlt")}
                   width={60}
                   height={60}
@@ -72,8 +72,8 @@ export default function Feature2() {
           <div className="order-2 lg:order-2">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/assistant/assistant_2.png"
+                <OptimizedImage
+                  src="/assistant/assistant_2.webp"
                   alt={t("imageAlt")}
                   width={800}
                   height={1000}

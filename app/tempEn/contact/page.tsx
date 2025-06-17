@@ -21,11 +21,11 @@ export default async function ContactPage() {
     <main>
       <Hero />
       <ContactForm />
-      <TestimonialSection
-        title={t("testimonials.title")}
-        subtitle={t("testimonials.description")}
-        testimonials={messages?.testimonials?.items || []}
-      />
+      {/* <TestimonialSection
+        title={t("contact.testimonials.title")}
+        subtitle={t("contact.testimonials.description")}
+        testimonials={t("contact.testimonials.items") || []}
+      /> */}
     </main>
   );
 }

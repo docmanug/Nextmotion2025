@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -43,8 +43,8 @@ export default function StandardSection() {
           </div>
 
           <div className="relative h-[300px] lg:h-[320px]">
-            <Image
-              src="/fifth/standard_1.png"
+            <OptimizedImage
+              src="/fifth/standard_1.webp"
               alt="Virtual Classes Standard"
               fill
               className="object-cover rounded-xl shadow-lg"

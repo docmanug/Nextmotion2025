@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 
@@ -25,19 +25,19 @@ export default function SolutionsSection() {
 
   const solutions = [
     {
-      icon: "/marketing/icons/sl_1.png",
+      icon: "/marketing/icons/sl_1.webp",
       title: translations[0]?.title || "NM Capture",
     },
     {
-      icon: "/marketing/icons/sl_2.png",
+      icon: "/marketing/icons/sl_2.webp",
       title: translations[1]?.title || "Marketing emails",
     },
     {
-      icon: "/marketing/icons/sl_3.png",
+      icon: "/marketing/icons/sl_3.webp",
       title: translations[2]?.title || "Automations",
     },
     {
-      icon: "/marketing/icons/sl_4.png",
+      icon: "/marketing/icons/sl_4.webp",
       title: translations[3]?.title || "Performances analysis",
     },
   ];
@@ -62,7 +62,7 @@ export default function SolutionsSection() {
                 className="flex flex-col items-center text-center"
               >
                 <div className="mb-4 w-16 h-16">
-                  <Image
+                  <OptimizedImage
                     src={solution.icon}
                     alt={solution.title}
                     width={70}

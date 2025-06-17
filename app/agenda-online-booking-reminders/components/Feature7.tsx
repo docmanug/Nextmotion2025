@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -11,8 +11,8 @@ export default function Feature7() {
         <div className="flex flex-col max-w-3xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <div className="bg-blue-100 rounded-full p-3">
-              <Image
-                src="/second/intuitive.png"
+              <OptimizedImage
+                src="/second/intuitive.webp"
                 alt="Treatment Records Icon"
                 width={60}
                 height={60}
@@ -32,12 +32,12 @@ export default function Feature7() {
           </p>
 
           <p className="text-[18px] leading-relaxed text-gray-600 mb-8">
-            Simply click on "Start the demo" below to get started !
+            {`Simply click on "Start the demo" below to get started !`}
           </p>
 
           <div className="w-full max-w-[800px] mx-auto mt-4">
-            <Image
-              src="/third/feature7.png"
+            <OptimizedImage
+              src="/third/feature7.webp"
               alt="Treatment Records Showcase"
               width={800}
               height={600}

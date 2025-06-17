@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,8 +12,8 @@ export default function ThreeDSection() {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/icons/3d.png"
+                <OptimizedImage
+                  src="/icons/3d.webp"
                   alt="3D Icon"
                   width={60}
                   height={60}
@@ -28,7 +28,7 @@ export default function ThreeDSection() {
             </p>
             
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Visualize detailed anatomical layers and project them in real-time on your patients' faces. Explain procedures like never before and build trust with interactive tools.
+              {`Visualize detailed anatomical layers and project them in real-time on your patients' faces. Explain procedures like never before and build trust with interactive tools.`}
             </p>
             
             <div className="space-y-8">
@@ -42,7 +42,7 @@ export default function ThreeDSection() {
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">Engage and Impress</h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Use augmented reality to project anatomical structures onto your patient's face and enhance understanding.
+                  {`Use augmented reality to project anatomical structures onto your patient's face and enhance understanding.`}
                 </p>
               </div>
               
@@ -68,8 +68,8 @@ export default function ThreeDSection() {
           
           <div className="relative">
             <div className="relative">
-              <Image
-                src="/capture-app-demo.png"
+              <OptimizedImage
+                src="/capture-app-demo.webp"
                 alt="Nextmotion 3D App Screenshot"
                 width={800}
                 height={1000}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -27,7 +27,7 @@ export default function SimpleSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/second/intuitive.svg"
                 alt="Simple Icon"
                 width={60}
@@ -49,8 +49,8 @@ export default function SimpleSection() {
 
           <div>
             <div className="relative w-full max-w-[300px] mx-auto">
-              <Image
-                src="/second/mobile.png"
+              <OptimizedImage
+                src="/second/mobile.webp"
                 alt={t("mobileImageAlt")}
                 width={300}
                 height={400}

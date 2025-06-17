@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -35,8 +35,8 @@ export default function NewOffer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
           {/* Background Image */}
-          <Image
-            src="/seventh/new_offer_bg.png"
+          <OptimizedImage
+            src="/seventh/new_offer_bg.webp"
             alt={t("bgAlt")}
             fill
             className="object-cover"
@@ -47,8 +47,8 @@ export default function NewOffer() {
           <div className="relative z-10 py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 text-center">
             {/* Logo */}
             <div className="mb-6 sm:mb-8">
-              <Image
-                src="/seventh/new_offer_logo.png"
+              <OptimizedImage
+                src="/seventh/new_offer_logo.webp"
                 alt={t("logoAlt")}
                 width={64}
                 height={64}

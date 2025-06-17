@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function Feature8() {
   return (
@@ -12,8 +11,8 @@ export default function Feature8() {
           <div className="order-1 lg:order-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature8_icon.png"
+                <OptimizedImage
+                  src="/third/icons/feature8_icon.webp"
                   alt="Integration Center Icon"
                   width={60}
                   height={60}
@@ -24,10 +23,10 @@ export default function Feature8() {
             </div>
             
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Nextmotion allows you to seamlessly connect your clinic to a wide ecosystem of tools via our marketplace. 
+              {`Nextmotion allows you to seamlessly connect your clinic to a wide ecosystem of tools via our marketplace. 
               Enjoy native integrations with solutions like Mailchimp, Brevo, HubSpot, and Stripe to automate your 
               communications, simplify payment processing, and boost your clinic's efficiency. With a single click, 
-              access these services to improve both performance and patient relationships.
+              access these services to improve both performance and patient relationships.`}
             </p>
             
             <div className="space-y-8">
@@ -58,7 +57,7 @@ export default function Feature8() {
               <div>
                 <h3 className="text-[20px] font-bold text-gray-900 mb-3">APIs for Custom Integrations</h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  Our APIs enable you to take integration even further with your internal systems. Whether you're 
+                  Our APIs enable you to take integration even further with your internal systems. Whether you are 
                   embedding the online booking page directly into your website or syncing your patient database with 
                   existing software, our APIs provide full flexibility to meet your specific needs.
                 </p>
@@ -69,8 +68,7 @@ export default function Feature8() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent
- hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
+                className="border-[2px] border-[#284fe6] text-black-600 bg-transparent hover:bg-blue-50 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto"
               >
                 Know more about our API
               </Button>
@@ -80,8 +78,8 @@ export default function Feature8() {
           <div className="order-2 lg:order-2">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/third/feature8.png"
+                <OptimizedImage
+                  src="/third/feature8.webp"
                   alt="Nextmotion Integration Center Screenshot"
                   width={800}
                   height={1000}

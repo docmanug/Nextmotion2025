@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useState } from "react";
 
 const reviews = [
@@ -72,8 +72,8 @@ export default function ReviewsSection() {
               <span className="text-gray-500 font-bold">21 reviews</span>
             </p>
             <div className="flex items-center gap-1">
-              <Image
-                src="/icons/gooogle-fill.png"
+              <OptimizedImage
+                src="/icons/gooogle-fill.webp"
                 alt="Google"
                 width={50}
                 height={50}
@@ -127,8 +127,8 @@ export default function ReviewsSection() {
                           </svg>
                         ))}
                     </div>
-                    <Image
-                      src="/icons/google.png"
+                    <OptimizedImage
+                      src="/icons/google.webp"
                       alt="Google"
                       width={18}
                       height={18}
@@ -169,8 +169,8 @@ export default function ReviewsSection() {
                         </svg>
                       ))}
                   </div>
-                  <Image
-                    src="/icons/google.png"
+                  <OptimizedImage
+                    src="/icons/google.webp"
                     alt="Google"
                     width={16}
                     height={16}

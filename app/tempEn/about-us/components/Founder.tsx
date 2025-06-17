@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Founder() {
   const [messages, setMessages] = useState<any>(null);
@@ -31,9 +32,11 @@ export default function Founder() {
         <div className="block lg:hidden">
           <div className="bg-white rounded-lg overflow-hidden shadow-sm max-w-sm mx-auto">
             <div className="relative w-full h-[360px]">
-              <img
-                src="/about/about_emmanuel.png"
+              <OptimizedImage
+                src="/about/about_emmanuel.webp"
                 alt="Dr Emmanuel Elard"
+                width={360}
+                height={360}
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -52,9 +55,11 @@ export default function Founder() {
                   rel="noopener noreferrer"
                   className="w-6 h-6"
                 >
-                  <img
-                    src="/about/icons/about_link.png"
+                  <OptimizedImage
+                    src="/about/icons/about_link.webp"
                     alt="LinkedIn"
+                    width={70}
+                    height={70}
                     className="w-full h-full object-contain"
                   />
                 </a>
@@ -68,9 +73,11 @@ export default function Founder() {
           <div className="bg-[#F3F8FD] rounded-2xl overflow-hidden shadow-lg max-h-[420px]">
             <div className="flex flex-row h-full">
               <div className="w-[35%] h-full">
-                <img
-                  src="/about/about_emmanuel.png"
+                <OptimizedImage
+                  src="/about/about_emmanuel.webp"
                   alt="Dr Emmanuel Elard"
+                  width={360}
+                  height={360}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -93,8 +100,8 @@ export default function Founder() {
                     rel="noopener noreferrer"
                     className="w-11 h-11"
                   >
-                    <img
-                      src="/about/icons/about_link.png"
+                    <OptimizedImage
+                      src="/about/icons/about_link.webp"
                       alt="LinkedIn"
                       className="w-full h-full object-contain"
                     />

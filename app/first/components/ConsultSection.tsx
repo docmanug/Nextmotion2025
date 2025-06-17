@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -11,8 +11,8 @@ export default function ConsultSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
           <div className="order-2 lg:order-1">
             <div className="relative">
-              <Image
-                src="/capture-app-demo.png"
+              <OptimizedImage
+                src="/capture-app-demo.webp"
                 alt="Nextmotion Consult App Screenshot"
                 width={800}
                 height={1000}
@@ -25,8 +25,8 @@ export default function ConsultSection() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/icons/consult.png"
+                <OptimizedImage
+                  src="/icons/consult.webp"
                   alt="Consult Icon"
                   width={60}
                   height={60}

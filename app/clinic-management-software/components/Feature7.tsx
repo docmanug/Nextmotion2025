@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -37,7 +37,7 @@ export default function Feature7() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col max-w-3xl mx-auto">
           <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <Image
+            <OptimizedImage
               src="/third/icons/feature7.svg"
               alt="Feature 7 Icon"
               width={60}
@@ -73,8 +73,8 @@ export default function Feature7() {
           </div>
 
           <div className="w-full max-w-[800px] mx-auto mt-4">
-            <Image
-              src="/third/feature7.png"
+            <OptimizedImage
+              src="/third/feature7.webp"
               alt="Treatment Records Showcase"
               width={800}
               height={600}

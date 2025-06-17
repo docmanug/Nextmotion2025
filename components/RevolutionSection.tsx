@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -50,7 +50,7 @@ export default function RevolutionSection({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="order-2 lg:order-1 flex items-center justify-center h-full">
           <div className="relative max-w-md mx-auto">
-            <Image
+            <OptimizedImage
               src="/capturegirl.webp"
               alt="Nextmotion Revolution App Screenshot"
               width={800}
@@ -63,7 +63,7 @@ export default function RevolutionSection({
 
         <div className="order-1 lg:order-2">
           <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <Image
+            <OptimizedImage
               src="/icons/icon_revolution.svg"
               alt="Revolution Icon"
               width={60}

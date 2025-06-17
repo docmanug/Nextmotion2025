@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -37,7 +38,7 @@ export default function Feature1() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/seventh/icons/feature1.svg"
                 alt="Feature 1 Icon"
                 width={60}
@@ -101,7 +102,7 @@ export default function Feature1() {
 
           <div className="relative flex items-center justify-center">
             <div className="relative w-full">
-              <video
+              <OptimizedVideo
                 src="https://f.hubspotusercontent10.net/hubfs/6086964/iPhone%20seul%20Capture.mp4"
                 autoPlay
                 loop

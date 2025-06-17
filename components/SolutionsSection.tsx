@@ -22,19 +22,19 @@ export default function SolutionsSection({
 }: SolutionsSectionProps) {
   const solutions = [
     {
-      icon: "clinical_notes.png",
+      icon: "/clinical_notes.webp",
       title: individuals,
     },
     {
-      icon: "medical.png",
+      icon: "/medical.webp",
       title: clinics,
     },
     {
-      icon: "medication.png",
+      icon: "/medication.webp",
       title: chains,
     },
     {
-      icon: "marketing.png",
+      icon: "/marketing.webp",
       title: marketing,
     },
   ];

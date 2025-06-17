@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ const DiscoverCard = ({
   return (
     <div className="relative rounded-3xl overflow-hidden bg-white h-[400px] w-full shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
       <div className="relative h-full w-full">
-        <Image
+        <OptimizedImage
           src={imageSrc}
           alt={title}
           fill
@@ -69,7 +69,7 @@ export default function DiscoverSection() {
           >
             <DiscoverCard
               title={t("cards.capture.title")}
-              imageSrc="/seventh/discovery_1.jpg"
+              imageSrc="/seventh/discovery_1.webp"
               isPhone={true}
             />
           </Link>
@@ -83,7 +83,7 @@ export default function DiscoverSection() {
           >
             <DiscoverCard
               title={t("cards.3d.title")}
-              imageSrc="/second/part2.jpg"
+              imageSrc="/second/part2.webp"
               isPhone={true}
             />
           </Link>

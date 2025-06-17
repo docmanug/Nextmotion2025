@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -25,22 +25,22 @@ export default function SolutionsSection() {
 
   const solutions = [
     {
-      icon: "/third/icons/contract.png",
+      icon: "/third/icons/contract.webp",
       title: t("items.paperless.title"),
       alt: t("items.paperless.alt"),
     },
     {
-      icon: "/third/icons/signature.png",
+      icon: "/third/icons/signature.webp",
       title: t("items.signature.title"),
       alt: t("items.signature.alt"),
     },
     {
-      icon: "/third/icons/leaderboard.png",
+      icon: "/third/icons/leaderboard.webp",
       title: t("items.business.title"),
       alt: t("items.business.alt"),
     },
     {
-      icon: "/third/icons/graph.png",
+      icon: "/third/icons/graph.webp",
       title: t("items.optimization.title"),
       alt: t("items.optimization.alt"),
     },
@@ -62,7 +62,7 @@ export default function SolutionsSection() {
           {solutions.map((solution, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="mb-4 w-16 h-16">
-                <Image
+                <OptimizedImage
                   src={solution.icon}
                   alt={solution.alt}
                   width={70}

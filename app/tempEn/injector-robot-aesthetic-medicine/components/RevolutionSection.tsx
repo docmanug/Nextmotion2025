@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function RevolutionSection() {
   return (
@@ -9,8 +9,8 @@ export default function RevolutionSection() {
       <div className="max-w-7xl mx-auto">
         <div className="relative h-[300px] rounded-2xl overflow-hidden">
           {/* Background Image */}
-          <Image
-            src="/fifth/rev_bg.png"
+          <OptimizedImage
+            src="/fifth/rev_bg.webp"
             alt="Revolution Background"
             fill
             className="object-cover"

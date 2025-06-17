@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -28,7 +28,7 @@ export default function Feature9() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
-              <video
+              <OptimizedVideo
                 src="/clinic/cas.mp4"
                 className="w-full h-auto rounded-lg"
                 autoPlay
@@ -41,9 +41,11 @@ export default function Feature9() {
 
           <div className="lg:max-w-[400px]">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <img
+              <OptimizedImage
                 src="/third/icons/feature9.svg"
                 alt="Feature 9 Icon"
+                width={70}
+                height={70}
                 className="w-[70px] h-[70px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">

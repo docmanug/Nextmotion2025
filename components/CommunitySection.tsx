@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Link as LucideLink } from "lucide-react";
-import Image from "next/image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
@@ -16,63 +16,63 @@ const testimonials = [
     name: "Dr. Diala Haykal",
     title: "Aesthetic doctor",
     location: "Paris",
-    videoThumbnail: "/covers/iframe1.png",
+    videoThumbnail: "/covers/iframe1.webp",
     videoUrl: "/videos/itw.mp4",
   },
   {
     name: "Dr. Sophie Loubeyres",
     title: "Dermatologist",
     location: "Pau",
-    videoThumbnail: "/covers/iframe1.png",
+    videoThumbnail: "/covers/iframe1.webp",
     videoUrl: "",
   },
   {
     name: "Dr. Joseph Marciano",
     title: "Aesthetic doctor",
     location: "Paris",
-    videoThumbnail: "/covers/iframe2.png",
+    videoThumbnail: "/covers/iframe2.webp",
     videoUrl: "/videos/joseph.mp4",
   },
   {
     name: "Dr. Nabila AZIB",
     title: "Plastic surgeon",
     location: "Morocco",
-    videoThumbnail: "/covers/iframe4.png",
+    videoThumbnail: "/covers/iframe4.webp",
     videoUrl: "/videos/nabila.mp4",
   },
   {
     name: "Dr. Miguel Stanley",
     title: "Founder of White Clinic",
     location: "Lisbon",
-    videoThumbnail: "/covers/iframe5.png",
+    videoThumbnail: "/covers/iframe5.webp",
     videoUrl: "/videos/miguel.mp4",
   },
   {
     name: "Dr. Per Heden",
     title: "Plastic surgeon",
     location: "Stockholm",
-    videoThumbnail: "/covers/iframe5.png",
+    videoThumbnail: "/covers/iframe5.webp",
     videoUrl: "/videos/perheden.mp4",
   },
   {
     name: "Dr. Nikola Milojevic",
     title: "Aesthetic doctor",
     location: "Croatia",
-    videoThumbnail: "/covers/iframe2.png",
+    videoThumbnail: "/covers/iframe2.webp",
     videoUrl: "/videos/nikola.mp4",
   },
   {
     name: "Dr. Jesica Sosa",
     title: "Aesthetic doctor",
     location: "Columbia",
-    videoThumbnail: "/covers/iframe3.png",
+    videoThumbnail: "/covers/iframe3.webp",
     videoUrl: "/videos/jessica.mp4",
   },
   {
     name: "Dr. Hermes Godoy",
     title: "Plastic surgeon",
     location: "Uruguay",
-    videoThumbnail: "/covers/iframe4.png",
+    videoThumbnail: "/covers/iframe4.webp",
     videoUrl: "/videos/hermes.mp4",
   },
 ];
@@ -159,7 +159,7 @@ export default function CommunitySection({
                 className="relative shrink-0 w-[250px] bg-white rounded-[10px] p-4"
               >
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
-                  <video
+                  <OptimizedVideo
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={testimonial.videoUrl}
                     className="object-cover w-full h-full"

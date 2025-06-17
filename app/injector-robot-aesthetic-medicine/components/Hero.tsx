@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -26,8 +26,8 @@ export default function Hero() {
   return (
     <section className="relative h-[500px] sm:h-[600px] bg-black overflow-hidden">
       {/* Background Image */}
-      <Image
-        src="/sixth/sixth_bg.png"
+      <OptimizedImage
+        src="/sixth/sixth_bg.webp"
         alt="Robotic Background"
         fill
         className="object-cover"

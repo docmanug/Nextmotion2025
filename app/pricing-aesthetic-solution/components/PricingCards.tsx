@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations, getMessages } from "@/utils/i18n";
@@ -40,7 +40,7 @@ export default function PricingCards() {
 		// 	price: t("pricing.cards.capture.price"),
 		// 	period: t("pricing.cards.capture.period"),
 		// 	note: t("pricing.cards.capture.note"),
-		// 	image: "/pricing/pricing_capture.png",
+		// 	image: "/pricing/pricing_capture.webp",
 		// 	features: [
 		// 		t("pricing.cards.capture.features.feature1"),
 		// 		t("pricing.cards.capture.features.feature2"),
@@ -53,7 +53,7 @@ export default function PricingCards() {
 			price: t("pricing.cards.3d.price"),
 			period: t("pricing.cards.3d.period"),
 			note: t("pricing.cards.3d.note"),
-			image: "/pricing/pricing_3d.png",
+			image: "/pricing/pricing_3d.webp",
 			features: [
 				t("pricing.cards.3d.features.feature1"),
 				t("pricing.cards.3d.features.feature2"),
@@ -65,7 +65,7 @@ export default function PricingCards() {
 			title: t("pricing.cards.revolution.title"),
 			description: t("pricing.cards.revolution.description"),
 			price: t("pricing.cards.revolution.price"),
-			image: "/pricing/pricing_revolution.png",
+			image: "/pricing/pricing_revolution.webp",
 			features: [
 				t("pricing.cards.revolution.features.feature1"),
 				t("pricing.cards.revolution.features.feature2"),
@@ -122,7 +122,7 @@ export default function PricingCards() {
 
 								<div className='flex-1 w-full md:w-auto'>
 									<div className='relative h-[200px] sm:h-[300px] w-full bg-[#284fe6] rounded-lg overflow-hidden'>
-										<Image
+										<OptimizedImage
 											src={card.image}
 											alt={`${card.title} Interface`}
 											fill

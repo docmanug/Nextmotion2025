@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { countries } from "../../lib/countries";
 import { FormEvent } from "react";
 
@@ -418,8 +418,8 @@ export default function ContactFormPage() {
 						<div className='hidden lg:block relative z-10'>
 							<div className='relative max-w-[420px] drop-shadow-2xl lg:ml-[120px]'>
 								<div className='absolute inset-0 rounded-2xl bg-gradient-to-br from-[#1650EF]/20 to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.12)]' />
-								<Image
-									src='/contact_form/contact_form_1.png'
+								<OptimizedImage
+									src='/contact_form/contact_form_1.webp'
 									alt='Contact Form'
 									width={420}
 									height={525}

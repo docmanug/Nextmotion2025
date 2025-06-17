@@ -3,7 +3,13 @@
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
-import { processBoldText } from "@/utils/text";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
+
+const processBoldText = (text: string) => {
+  return text.split('**').map((part, index) => 
+    index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+  );
+};
 
 export default function Standard3Section() {
   const [messages, setMessages] = useState<any>(null);
@@ -28,7 +34,7 @@ export default function Standard3Section() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
-            <video
+            <OptimizedVideo
               src="https://6086964.fs1.hubspotusercontent-na1.net/hubfs/6086964/3D%20trust.mp4"
               className="w-full h-auto rounded-lg"
               autoPlay

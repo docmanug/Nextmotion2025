@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function TeamMembers() {
   const [messages, setMessages] = useState<any>(null);
@@ -67,9 +68,11 @@ export default function TeamMembers() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >
               <div className="aspect-w-1 aspect-h-1 relative">
-                <img
-                  src={`/about/about_${member.firstName}.png`}
+                <OptimizedImage
+                  src={`/about/about_${member.firstName}.webp`}
                   alt={member.name}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -87,9 +90,11 @@ export default function TeamMembers() {
                     rel="noopener noreferrer"
                     className="w-8 h-8 inline-block"
                   >
-                    <img
-                      src="/about/icons/about_link.png"
+                    <OptimizedImage
+                      src="/about/icons/about_link.webp"
                       alt="LinkedIn"
+                      width={70}
+                      height={70}
                       className="w-full h-full object-contain"
                     />
                   </a>

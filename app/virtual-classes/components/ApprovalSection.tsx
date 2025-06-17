@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -50,8 +50,8 @@ export default function ApprovalSection() {
             </h3>
 
             <div className="relative h-[150px] sm:h-[200px] rounded-xl overflow-hidden mb-4">
-              <Image
-                src="/fifth/approaval_capture.png"
+              <OptimizedImage
+                src="/fifth/approaval_capture.webp"
                 alt="NextMotion Capture"
                 fill
                 className="object-cover"
@@ -72,8 +72,8 @@ export default function ApprovalSection() {
             </h3>
 
             <div className="relative h-[150px] sm:h-[200px] rounded-xl overflow-hidden mb-4">
-              <Image
-                src="/fifth/approaval_consult.png"
+              <OptimizedImage
+                src="/fifth/approaval_consult.webp"
                 alt="NextMotion Consult"
                 fill
                 className="object-cover"
@@ -94,8 +94,8 @@ export default function ApprovalSection() {
             </h3>
 
             <div className="relative h-[150px] sm:h-[200px] rounded-xl overflow-hidden mb-4">
-              <Image
-                src="/fifth/approaval_3d.png"
+              <OptimizedImage
+                src="/fifth/approaval_3d.webp"
                 alt="NextMotion 3D"
                 fill
                 className="object-cover"

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,8 +12,8 @@ export default function CaptureSection() {
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="bg-blue-100 rounded-full p-2 sm:p-3">
-                <Image
-                  src="/icons/mobile.png"
+                <OptimizedImage
+                  src="/icons/mobile.webp"
                   alt="Mobile Icon"
                   width={60}
                   height={60}
@@ -81,8 +81,8 @@ export default function CaptureSection() {
 
           <div className="relative mt-8 lg:mt-0">
             <div className="relative">
-              <Image
-                src="/capture-app-demo.png"
+              <OptimizedImage
+                src="/capture-app-demo.webp"
                 alt="Nextmotion Capture App Screenshot"
                 width={800}
                 height={1000}

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Hero() {
   return (
@@ -39,8 +39,8 @@ export default function Hero() {
       {/* Image Section */}
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-8 sm:py-16">
         <div className="flex justify-center">
-          <Image
-            src="/covers/iframe1.png"
+          <OptimizedImage
+            src="/covers/iframe1.webp"
             alt="Nextmotion Platform"
             width={1200}
             height={600}

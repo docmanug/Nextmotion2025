@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 
@@ -36,8 +36,8 @@ export default function ImageSection() {
         <div className="flex flex-col items-center">
           {/* Video/Image Container */}
           <div className="relative w-full max-w-4xl aspect-video mb-10 sm:mb-16">
-            <Image
-              src="/eighth/3d_img.png"
+            <OptimizedImage
+              src="/eighth/3d_img.webp"
               alt={translations.imageAlt}
               fill
               className="object-cover rounded-lg sm:rounded-2xl"

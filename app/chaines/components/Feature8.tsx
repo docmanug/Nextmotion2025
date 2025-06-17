@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -11,8 +11,8 @@ export default function Feature8() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
-              <Image
-                src="/third/feature9.png"
+              <OptimizedImage
+                src="/third/feature9.webp"
                 alt="Use Case Illustration"
                 width={600}
                 height={400}
@@ -25,8 +25,8 @@ export default function Feature8() {
           <div className="lg:max-w-[470px]">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature9_icon.png"
+                <OptimizedImage
+                  src="/third/icons/feature9_icon.webp"
                   alt="Use Case Icon"
                   width={40}
                   height={40}
@@ -40,15 +40,15 @@ export default function Feature8() {
               Méline Puech, directrice du CEL Gramont à Toulouse
             </p>
             <p className="text-[14px] leading-relaxed text-gray-600 pt-2">
-              Elle gère au quotidien une équipe de 27 personnes, composée de
+              {`Elle gère au quotidien une équipe de 27 personnes, composée de
               médecins, d'assistantes et de secrétaires qui reçoivent
-              plusieurs centaines de patients par jour
+              plusieurs centaines de patients par jour`}
             </p>
             <p className="text-[14px] leading-relaxed text-gray-600 pt-2">
-              "L'intégration complète de la gestion des patients, des
+              {`"L'intégration complète de la gestion des patients, des
               rendez-vous et de la comptabilité dans Nextmotion nous a permis de
               simplifier notre gestion quotidienne et d'améliorer nos
-              performances globales"
+              performances globales"`}
             </p>
             <div className="mt-10">
               <Button

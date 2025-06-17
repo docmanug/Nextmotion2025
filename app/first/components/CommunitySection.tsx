@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
@@ -9,42 +9,42 @@ const testimonials = [
     name: "Dr. Sophie Loubeyres",
     title: "Dermatologist",
     location: "Pau",
-    videoThumbnail: "/covers/iframe1.png",
+    videoThumbnail: "/covers/iframe1.webp",
     videoUrl: "#"
   },
   {
     name: "Dr. Joseph Marciano",
     title: "Aesthetic doctor",
     location: "Paris",
-    videoThumbnail: "/covers/iframe2.png",
+    videoThumbnail: "/covers/iframe2.webp",
     videoUrl: "#"
   },
   {
     name: "Meline Puech",
     title: "Clinic owner",
     location: "Toulouse",
-    videoThumbnail: "/covers/iframe3.png",
+    videoThumbnail: "/covers/iframe3.webp",
     videoUrl: "#"
   },
   {
     name: "Dr. Nabila AZIB",
     title: "Plastic surgeon",
     location: "Morocco",
-    videoThumbnail: "/covers/iframe4.png",
+    videoThumbnail: "/covers/iframe4.webp",
     videoUrl: "#"
   },
   {
     name: "Dr. Miguel Stanley",
     title: "Founder of White Clinic",
     location: "Lisbon",
-    videoThumbnail: "/covers/iframe5.png",
+    videoThumbnail: "/covers/iframe5.webp",
     videoUrl: "#"
   },
   {
     name: "Dr. Per Heden",
     title: "Plastic surgeon",
     location: "Stockholm",
-    videoThumbnail: "/covers/iframe5.png",
+    videoThumbnail: "/covers/iframe5.webp",
     videoUrl: "#"
   }
 ];
@@ -73,7 +73,7 @@ export default function CommunitySection() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="relative shrink-0 w-[250px] bg-white rounded-[10px] p-4">
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
-                  <Image
+                  <OptimizedImage
                     src={testimonial.videoThumbnail}
                     alt={testimonial.name}
                     fill

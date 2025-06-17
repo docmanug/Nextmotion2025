@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -28,9 +28,11 @@ export default function Feature5() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <img
+              <OptimizedImage
                 src="/seventh/icons/rev_5_icon.svg"
                 alt="Feature 5 Icon"
+                width={70}
+                height={70}
                 className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -82,7 +84,7 @@ export default function Feature5() {
           </div>
 
           <div className="relative">
-            <video
+            <OptimizedVideo
               src="/revolution/video_after.mp4"
               className="w-full h-auto rounded-lg"
               autoPlay

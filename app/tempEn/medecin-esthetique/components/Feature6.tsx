@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -27,8 +27,8 @@ export default function Feature6() {
           <div className="order-2 lg:order-1">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/medecin/medecin_6.png"
+                <OptimizedImage
+                  src="/medecin/medecin_6.webp"
                   alt="Photo Solution Interface"
                   width={800}
                   height={1000}
@@ -42,8 +42,8 @@ export default function Feature6() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/medecin/icons/medecin_6_icon.png"
+                <OptimizedImage
+                  src="/medecin/icons/medecin_6_icon.webp"
                   alt="Photo Solution Icon"
                   width={60}
                   height={60}

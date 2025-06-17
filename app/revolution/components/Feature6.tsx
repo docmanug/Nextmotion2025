@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 
 export default function Feature6() {
   const [messages, setMessages] = useState<any>(null);
@@ -38,7 +40,7 @@ export default function Feature6() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
-              <video
+              <OptimizedVideo
                 src={
                   isFrench
                     ? "/revolution/french_cas.mp4"
@@ -55,9 +57,11 @@ export default function Feature6() {
 
           <div className="lg:max-w-[500px]">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <img
+              <OptimizedImage
                 src="/seventh/icons/rev_6_icon.svg"
                 alt="Feature 6 Icon"
+                width={70}
+                height={70}
                 className="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">

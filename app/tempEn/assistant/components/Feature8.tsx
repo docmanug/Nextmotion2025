@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -31,8 +31,8 @@ export default function Feature8() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
-              <Image
-                src="/third/feature9.png"
+              <OptimizedImage
+                src="/third/feature9.webp"
                 alt={t("imageAlt")}
                 width={600}
                 height={400}
@@ -45,8 +45,8 @@ export default function Feature8() {
           <div className="lg:max-w-[470px]">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature9_icon.png"
+                <OptimizedImage
+                  src="/third/icons/feature9_icon.webp"
                   alt={t("iconAlt")}
                   width={40}
                   height={40}

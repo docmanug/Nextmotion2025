@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Hero() {
   const [messages, setMessages] = useState<any>(null);
@@ -31,9 +32,11 @@ export default function Hero() {
 
           <div className="lg:w-[45%] w-full">
             <div className="relative w-full rounded-2xl overflow-hidden max-w-[420px] mx-auto">
-              <img
-                src="/podcast/podcast_hero.png"
+              <OptimizedImage
+                src="/podcast/podcast_hero.webp"
                 alt="Podcast Discussion"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">

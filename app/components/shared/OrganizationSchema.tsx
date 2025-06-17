@@ -9,7 +9,7 @@ export const OrganizationSchema: React.FC = () => {
         "@type": "Organization",
         "name": "Next Motion",
         "url": "https://www.nextmotion.net/",
-        "logo": "https://www.nextmotion.net/logo.png",
+        "logo": "https://www.nextmotion.net/logo.webp",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "8 Av. Dorian, 75012 Paris, France",

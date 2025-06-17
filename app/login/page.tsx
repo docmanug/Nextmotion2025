@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { FormEvent } from "react";
 
@@ -106,8 +106,8 @@ export default function LoginPage() {
                 type="button"
                 className="w-full flex items-center justify-center gap-3 py-2.5 border border-[#E5E7EB] rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <Image
-                  src="/login_google.png"
+                <OptimizedImage
+                  src="/login_google.webp"
                   alt="Google"
                   width={20}
                   height={20}
@@ -131,8 +131,8 @@ export default function LoginPage() {
 
         {/* Right Side - Image */}
         <div className="hidden lg:block w-[55%] relative">
-          <Image
-            src="/login_1.png"
+          <OptimizedImage
+            src="/login_1.webp"
             alt="Login"
             fill
             className="object-cover"

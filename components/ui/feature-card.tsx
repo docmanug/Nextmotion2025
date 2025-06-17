@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ReactNode } from "react";
 
 interface FeatureCardProps {
@@ -27,7 +27,7 @@ export function FeatureCard({
     <div className={cn("flex flex-col items-center text-center", className)}>
       {icon && (
         <div className={cn("mb-3 sm:mb-4 w-12 sm:w-16 h-12 sm:h-16", iconClassName)}>
-          <Image
+          <OptimizedImage
             src={icon}
             alt={title}
             width={70}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { logos } from "@/public/logos";
 
 // Duplicate logos for seamless loop
@@ -40,7 +40,7 @@ export default function LogoSlider() {
                   className="flex-shrink-0 w-32 h-20 relative grayscale hover:grayscale-0 transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Image
+                  <OptimizedImage
                     src={logo.src}
                     alt={logo.alt}
                     fill

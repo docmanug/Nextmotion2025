@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -36,8 +36,8 @@ export default function SolutionsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           <div className="flex flex-col items-center text-center">
             <div className="mb-4 w-16 h-16">
-              <Image
-                src="/second/solutions/light.png"
+              <OptimizedImage
+                src="/second/solutions/light.webp"
                 alt={t("lighting")}
                 width={70}
                 height={70}
@@ -51,8 +51,8 @@ export default function SolutionsSection() {
 
           <div className="flex flex-col items-center text-center">
             <div className="mb-4 w-16 h-16">
-              <Image
-                src="/second/solutions/color.png"
+              <OptimizedImage
+                src="/second/solutions/color.webp"
                 alt={t("colors")}
                 width={70}
                 height={70}
@@ -66,8 +66,8 @@ export default function SolutionsSection() {
 
           <div className="flex flex-col items-center text-center">
             <div className="mb-4 w-16 h-16">
-              <Image
-                src="/second/solutions/position.png"
+              <OptimizedImage
+                src="/second/solutions/position.webp"
                 alt={t("positioning")}
                 width={70}
                 height={70}
@@ -81,8 +81,8 @@ export default function SolutionsSection() {
 
           <div className="flex flex-col items-center text-center">
             <div className="mb-4 w-16 h-16">
-              <Image
-                src="/second/solutions/picture.png"
+              <OptimizedImage
+                src="/second/solutions/picture.webp"
                 alt={t("pictures")}
                 width={70}
                 height={70}

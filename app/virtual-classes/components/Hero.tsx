@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
@@ -26,8 +26,8 @@ export default function Hero() {
 
   return (
     <div className="relative h-[500px] sm:h-[600px]">
-      <Image
-        src="/fifth/virtual_classes_bg.png"
+      <OptimizedImage
+        src="/fifth/virtual_classes_bg.webp"
         alt="Virtual Classes Background"
         fill
         className="object-cover object-center"

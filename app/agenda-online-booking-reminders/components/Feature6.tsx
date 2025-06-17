@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,8 +12,8 @@ export default function Feature6() {
           <div className="order-1 lg:order-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/third/icons/feature6_icon.png"
+                <OptimizedImage
+                  src="/third/icons/feature6_icon.webp"
                   alt="Practice Growth Icon"
                   width={60}
                   height={60}
@@ -26,9 +26,9 @@ export default function Feature6() {
             </div>
 
             <p className="text-[18px] leading-relaxed text-gray-600 mb-10">
-              Use Our Tools to Grow and Optimize Your Practice: enhance patient
+              {`Use Our Tools to Grow and Optimize Your Practice: enhance patient
               interactions and boost your marketing efficiency to drive growth
-              and improve your clinic's performance.
+              and improve your clinic's performance.`}
             </p>
 
             <div className="space-y-8">
@@ -102,8 +102,8 @@ export default function Feature6() {
           <div className="order-2 lg:order-2">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/third/feature6.png"
+                <OptimizedImage
+                  src="/third/feature6.webp"
                   alt="Nextmotion Practice Growth Screenshot"
                   width={800}
                   height={1000}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -76,8 +76,8 @@ export default function Hero() {
           {/* Right Image */}
           <div className="relative">
             <div className="relative w-full max-w-[300px] md:max-w-[400px] mx-auto mt-6 md:mt-12">
-              <Image
-                src="/capture-app-demo.png"
+              <OptimizedImage
+                src="/capture-app-demo.webp"
                 alt={t("imageAlt")}
                 width={400}
                 height={533}

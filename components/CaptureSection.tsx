@@ -33,7 +33,7 @@ export default function CaptureSection({
 }: CaptureSectionProps) {
   return (
     <SectionWithImage
-      imageSrc="/capture-app-demo.png"
+      imageSrc="/capture-app-demo.webp"
       imageAlt="Nextmotion Capture App Screenshot"
       background="gray"
       imagePriority

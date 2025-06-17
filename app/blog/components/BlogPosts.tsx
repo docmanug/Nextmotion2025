@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import BlogSidebar from "./BlogSidebar";
 
@@ -126,7 +126,7 @@ export default function BlogPosts() {
 								className='bg-[#EAF0F6] rounded-2xl h-fit'
 							>
 								<div className='relative aspect-[16/9]'>
-									<Image
+									<OptimizedImage
 										src={
 											post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
 											""

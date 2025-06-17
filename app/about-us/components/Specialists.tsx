@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Specialists() {
   const [messages, setMessages] = useState<any>(null);
@@ -76,18 +77,19 @@ export default function Specialists() {
           {specialists.map((specialist, index) => (
             <div
               key={specialist.firstName}
-              className={`bg-white md:bg-[#F3F8FD] rounded-lg md:rounded-2xl shadow-sm md:shadow-lg overflow-hidden ${
-                index === specialists.length - 1
+              className={`bg-white md:bg-[#F3F8FD] rounded-lg md:rounded-2xl shadow-sm md:shadow-lg overflow-hidden ${index === specialists.length - 1
                   ? "md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto"
                   : ""
-              }`}
+                }`}
             >
               {/* Mobile Layout */}
               <div className="block md:hidden">
                 <div className="relative w-full h-[400px]">
-                  <img
-                    src={`/about/about_${specialist.firstName}.png`}
+                  <OptimizedImage
+                    src={`/about/about_${specialist.firstName}.webp`}
                     alt={specialist.name}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -109,13 +111,14 @@ export default function Specialists() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img
-                        src={`/about/icons/${
-                          specialist.isInstagram
-                            ? "about_instagram.png"
-                            : "about_link.png"
-                        }`}
+                      <OptimizedImage
+                        src={`/about/icons/${specialist.isInstagram
+                            ? "about_instagram.webp"
+                            : "about_link.webp"
+                          }`}
                         alt={specialist.isInstagram ? "Instagram" : "LinkedIn"}
+                        width={70}
+                        height={70}
                         className="w-6 h-6 object-contain"
                       />
                     </a>
@@ -126,9 +129,11 @@ export default function Specialists() {
               {/* Desktop Layout */}
               <div className="hidden md:flex flex-row h-full">
                 <div className="w-[45%] relative">
-                  <img
-                    src={`/about/about_${specialist.firstName}.png`}
+                  <OptimizedImage
+                    src={`/about/about_${specialist.firstName}.webp`}
                     alt={specialist.name}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover absolute inset-0"
                   />
                 </div>
@@ -150,15 +155,16 @@ export default function Specialists() {
                         rel="noopener noreferrer"
                         className="w-8 h-8"
                       >
-                        <img
-                          src={`/about/icons/${
-                            specialist.isInstagram
-                              ? "about_instagram.png"
-                              : "about_link.png"
-                          }`}
+                        <OptimizedImage
+                          src={`/about/icons/${specialist.isInstagram
+                              ? "about_instagram.webp"
+                              : "about_link.webp"
+                            }`}
                           alt={
                             specialist.isInstagram ? "Instagram" : "LinkedIn"
                           }
+                          width={70}
+                          height={70}
                           className="w-full h-full object-contain"
                         />
                       </a>

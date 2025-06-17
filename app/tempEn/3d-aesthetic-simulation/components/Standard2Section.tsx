@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -51,8 +51,8 @@ export default function Standard2Section() {
           </div>
 
           <div className="relative order-2">
-            <Image
-              src="/eighth/3d_2.png"
+            <OptimizedImage
+              src="/eighth/3d_2.webp"
               alt={t("imageAlt")}
               width={600}
               height={600}

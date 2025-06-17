@@ -1,23 +1,23 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function SolutionsSection() {
   const solutions = [
     {
-      icon: "clinical_notes.png",
+      icon: "clinical_notes.webp",
       title: "Individuals",
     },
     {
-      icon: "medical.png",
+      icon: "medical.webp",
       title: "Clinics",
     },
     {
-      icon: "medication.png",
+      icon: "medication.webp",
       title: "Clinic chains",
     },
     {
-      icon: "marketing.png",
+      icon: "marketing.webp",
       title: "Marketing",
     },
   ];
@@ -40,7 +40,7 @@ export default function SolutionsSection() {
           {solutions.map((solution, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="mb-3 sm:mb-4 w-12 sm:w-16 h-12 sm:h-16">
-                <Image
+                <OptimizedImage
                   src={solution.icon}
                   alt={solution.title}
                   width={70}

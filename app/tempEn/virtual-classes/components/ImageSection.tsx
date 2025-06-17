@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 
 export default function ImageSection() {
@@ -10,8 +10,8 @@ export default function ImageSection() {
 
         {/* Video Section */}
         <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden">
-          <Image
-            src="/fifth/video_bg.png"
+          <OptimizedImage
+            src="/fifth/video_bg.webp"
             alt="Virtual Classes Overview"
             fill
             className="object-cover"

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -38,7 +38,7 @@ export default function CaptureSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/second/easeofuse.svg"
                 alt="Mobile Icon"
                 width={60}
@@ -102,7 +102,7 @@ export default function CaptureSection() {
 
           <div className="relative">
             <div className="relative">
-              <Image
+              <OptimizedImage
                 src="/easeofuse.webp"
                 alt={t("appScreenshotAlt")}
                 width={800}

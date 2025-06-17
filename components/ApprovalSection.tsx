@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 
 interface ApprovalSectionProps {
@@ -33,19 +33,19 @@ const defaultResources = [
   {
     type: "E-BOOK",
     title: "Learn more about Digital Consultation in Aesthetic Medicine",
-    image: "/ebook_digital.png",
+    image: "/ebook_digital.webp",
     redirect: "fr/ressources",
   },
   {
     type: "SOCIAL MEDIA KIT",
     title: "Increase awareness of your clinic on Social Media",
-    image: "/social_media.png",
+    image: "/social_media.webp",
     redirect: "https://pages.nextmotion.net/social-media-kit",
   },
   {
     type: "EVENTS FOR AESTHETIC SURGEONS",
     title: "Our events for the year 2025",
-    image: "/coffee.png",
+    image: "/coffee.webp",
     redirect: "https://pages.nextmotion.net/events-for-aesthetic-surgeons",
   },
 ];
@@ -87,7 +87,7 @@ export default function ApprovalSection({
               className="bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition-shadow cursor-pointer max-w-[380px] w-full mx-auto"
             >
               <div className="relative w-full aspect-[4/3] mb-6">
-                <Image
+                <OptimizedImage
                   src={resource.image}
                   alt={resource.type}
                   fill

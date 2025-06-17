@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -29,7 +29,7 @@ export default function Feature2() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/third/icons/feature2.svg"
                 alt="Feature 2 Icon"
                 width={60}
@@ -117,8 +117,8 @@ export default function Feature2() {
 
           <div className="relative flex items-center justify-center">
             <div className="relative">
-              <Image
-                src="/third/feature2.png"
+              <OptimizedImage
+                src="/third/feature2.webp"
                 alt="Nextmotion Capture App Screenshot"
                 width={800}
                 height={1000}

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -47,8 +47,8 @@ export default function Hero() {
             </Link>
           </div>
           <div className="relative w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] md:pr-10">
-            <Image
-              src="/about/about_logo.png"
+            <OptimizedImage
+              src="/about/about_logo.webp"
               alt="NextMotion Logo"
               fill
               className="object-contain"

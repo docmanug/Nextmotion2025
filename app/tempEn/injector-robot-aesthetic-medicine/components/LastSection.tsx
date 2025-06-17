@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -26,17 +26,17 @@ export default function LastSection() {
     {
       type: t("resources.useCases.type"),
       title: t("resources.useCases.title"),
-      image: "/ebook.png",
+      image: "/ebook.webp",
     },
     {
       type: t("resources.ebook.type"),
       title: t("resources.ebook.title"),
-      image: "/ebook.png",
+      image: "/ebook.webp",
     },
     {
       type: t("resources.events.type"),
       title: t("resources.events.title"),
-      image: "/ebook.png",
+      image: "/ebook.webp",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function LastSection() {
               className="bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition-shadow cursor-pointer max-w-[380px] w-full mx-auto"
             >
               <div className="relative w-full aspect-[4/3] mb-6">
-                <Image
+                <OptimizedImage
                   src={resource.image}
                   alt={resource.type}
                   fill

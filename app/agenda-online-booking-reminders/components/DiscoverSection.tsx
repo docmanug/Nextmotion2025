@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const DiscoverCard = ({ 
   title, 
@@ -15,7 +14,7 @@ const DiscoverCard = ({
   return (
     <div className="relative rounded-3xl overflow-hidden bg-white h-[400px] w-full shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
       <div className="relative h-full w-full">
-        <Image
+        <OptimizedImage
           src={imageSrc}
           alt={title}
           fill
@@ -47,13 +46,13 @@ export default function DiscoverSection() {
           <div className="w-full">
             <DiscoverCard
               title="Nextmotion Revolution"
-              imageSrc="/second/part1.jpg"
+              imageSrc="/second/part1.webp"
             />
           </div>
           <div className="w-full">
             <DiscoverCard
               title="Nextmotion 3D"
-              imageSrc="/second/part2.jpg"
+              imageSrc="/second/part2.webp"
               isPhone={true}
             />
           </div>

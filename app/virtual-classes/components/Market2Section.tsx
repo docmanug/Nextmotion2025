@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -45,8 +45,8 @@ export default function Market2Section() {
           {/* Right Side - Image */}
           <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
             <div className="relative w-full h-full max-w-[400px] sm:max-w-[500px] lg:max-w-[550px] mx-auto">
-              <Image
-                src="/fifth/market_2.png"
+              <OptimizedImage
+                src="/fifth/market_2.webp"
                 alt={t("imageAlt")}
                 fill
                 className="object-contain"

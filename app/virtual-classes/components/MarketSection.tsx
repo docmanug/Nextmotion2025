@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
@@ -53,8 +53,8 @@ export default function MarketSection() {
           {/* Right Side - Image */}
           <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
             <div className="relative w-full h-full max-w-[400px] sm:max-w-[500px] lg:max-w-[550px] mx-auto">
-              <Image
-                src="/training.png"
+              <OptimizedImage
+                src="/training.webp"
                 alt="Training"
                 fill
                 className="object-contain"

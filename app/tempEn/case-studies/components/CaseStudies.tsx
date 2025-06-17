@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getMessages, useTranslations } from "@/utils/i18n";
-
+import { OptimizedImage } from "@/components/ui/optimized-image";
 interface CaseStudy {
   id: string;
   name: string;
@@ -15,13 +15,13 @@ const caseStudies: CaseStudy[] = [
   {
     id: "nabila-azib",
     name: "Dr. Nabila AZIB",
-    image: "/case/case_1.png",
+    image: "/case/case_1.webp",
     isComingSoon: false,
   },
   {
     id: "diala-haykal",
     name: "Dr. Diala HAYKAL",
-    image: "/case/case_2.png",
+    image: "/case/case_2.webp",
     isComingSoon: true,
   },
 ];
@@ -54,9 +54,11 @@ export default function CaseStudies() {
             >
               <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-shadow duration-300 hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)]">
                 <div className="relative h-[280px] sm:h-[380px]">
-                  <img
+                  <OptimizedImage
                     src={study.image}
                     alt={`${study.name} ${t("caseStudy")}`}
+                    width={300}
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">

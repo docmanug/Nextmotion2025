@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 
 const CheckIcon = () => (
   <svg
@@ -90,7 +92,7 @@ const ProductCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <video
+        <OptimizedVideo
           src={videoSrc}
           className="w-full h-auto rounded-lg transition-transform duration-300 group-hover:scale-[1.02]"
           controls
@@ -99,7 +101,7 @@ const ProductCard = ({
         />
       </div>
       <div className="text-center mb-8">
-        <img src="/logo.png" alt="Next Motion" className="mx-auto mb-2 w-20" />
+        <OptimizedImage src="/logo.webp" alt="Next Motion" className="mx-auto mb-2 w-20" />
         <h2 className={`text-4xl font-bold ${textColor}`}>{title}</h2>
       </div>
       <div className="space-y-4 flex-grow">

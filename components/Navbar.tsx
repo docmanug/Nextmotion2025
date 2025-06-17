@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ChevronDown, Globe, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { usePathname, useRouter } from "next/navigation";
@@ -151,8 +151,8 @@ export default function Navbar() {
 							href={window.location.pathname.startsWith("/fr") ? "/fr" : "/"}
 							className='flex items-center'
 						>
-							<Image
-								src='/logo.png'
+							<OptimizedImage
+								src='/logo.webp'
 								alt='Nextmotion'
 								width={100}
 								height={22}

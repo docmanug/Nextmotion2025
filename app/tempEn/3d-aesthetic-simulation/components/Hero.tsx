@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -24,8 +24,8 @@ export default function Hero() {
 
   return (
     <div className="relative h-[500px] sm:h-[550px] md:h-[600px]">
-      <Image
-        src="/fifth/virtual_classes_bg.png"
+      <OptimizedImage
+        src="/fifth/virtual_classes_bg.webp"
         alt="Virtual Classes Background"
         fill
         className="object-cover object-center"

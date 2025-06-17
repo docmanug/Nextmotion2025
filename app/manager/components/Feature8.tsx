@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -32,7 +33,7 @@ export default function Feature8() {
           <div>
             <div className="relative w-full max-w-[600px] mx-auto">
               {isFrench ? (
-                <video
+                <OptimizedVideo
                   src="/manager/cas.mp4"
                   className="w-full h-auto rounded-lg"
                   autoPlay
@@ -41,8 +42,8 @@ export default function Feature8() {
                   playsInline
                 />
               ) : (
-                <Image
-                  src="/third/feature9.png"
+                <OptimizedImage
+                  src="/third/feature9.webp"
                   alt="Use Case Illustration"
                   width={600}
                   height={400}
@@ -55,9 +56,11 @@ export default function Feature8() {
 
           <div className="lg:max-w-[470px]">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <img
+              <OptimizedImage
                 src="/manager/icons/feature8.svg"
                 alt="Feature 8 Icon"
+                width={70}
+                height={70}
                 className="w-[70px] h-[70px] text-blue-600"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">

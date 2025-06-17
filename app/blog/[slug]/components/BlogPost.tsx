@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { BlogPost, Category } from "@/types/blog";
 import { ReadingProgress } from "./ReadingProgress";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
@@ -49,7 +49,7 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts,
               key={post.id}
             >
               <div className='relative aspect-[16/9]'>
-                <Image
+                <OptimizedImage
                   src={
                     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
                     ""
@@ -67,7 +67,7 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts,
                   }}
                 />
                 <div className='text-sm flex items-center gap-4'>
-                  <Image src="/blog/nextmotion.png" alt="Author" width={80} height={80} />
+                  <OptimizedImage src="/blog/nextmotion.webp" alt="Author" width={80} height={80} />
                   <p className="text-neutral-500">
                     Posted by <span className="text-neutral-900">{t("author")}</span> on {new Date(post.date).toLocaleString('en-US', {
                       month: 'short',

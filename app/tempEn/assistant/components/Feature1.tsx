@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -32,8 +32,8 @@ export default function Feature1() {
           <div className="order-2 lg:order-1">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/assistant/assistant_1.png"
+                <OptimizedImage
+                  src="/assistant/assistant_1.webp"
                   alt={t("imageAlt")}
                   width={800}
                   height={1000}
@@ -47,8 +47,8 @@ export default function Feature1() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/assistant/icons/assistant_1_icon.png"
+                <OptimizedImage
+                  src="/assistant/icons/assistant_1_icon.webp"
                   alt={t("iconAlt")}
                   width={60}
                   height={60}

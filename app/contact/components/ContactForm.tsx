@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const specialties = [
   "Aesthetic doctor",
@@ -208,9 +209,11 @@ export default function ContactForm() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
-                    <img
-                      src="/contact/contact_1.png"
+                    <OptimizedImage
+                      src="/contact/contact_1.webp"
                       alt={t("features.beforeAfter")}
+                      width={30}
+                      height={30}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -220,9 +223,11 @@ export default function ContactForm() {
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
-                    <img
-                      src="/contact/contact_2.png"
+                    <OptimizedImage
+                      src="/contact/contact_2.webp"
                       alt={t("features.clinicManagement")}
+                      width={30}
+                      height={30}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -232,9 +237,11 @@ export default function ContactForm() {
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
-                    <img
-                      src="/contact/contact_3.png"
+                    <OptimizedImage
+                      src="/contact/contact_3.webp"
                       alt={t("features.simulation")}
+                      width={30}
+                      height={30}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -244,9 +251,11 @@ export default function ContactForm() {
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
-                    <img
-                      src="/contact/contact_4.png"
+                    <OptimizedImage
+                      src="/contact/contact_4.webp"
                       alt={t("features.patientServices")}
+                      width={30}
+                      height={30}
                       className="w-full h-full object-contain"
                     />
                   </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -37,7 +37,7 @@ export default function Feature3() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/seventh/icons/rev_3_icon.svg"
                 alt="Feature 3 Icon"
                 width={60}
@@ -100,8 +100,8 @@ export default function Feature3() {
           </div>
 
           <div className="relative">
-            <Image
-              src="/seventh/rev_3.png"
+            <OptimizedImage
+              src="/seventh/rev_3.webp"
               alt={t("deviceAlt")}
               width={800}
               height={1000}

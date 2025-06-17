@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Specialists() {
   const [messages, setMessages] = useState<any>(null);
@@ -85,8 +86,8 @@ export default function Specialists() {
               {/* Mobile Layout */}
               <div className="block md:hidden">
                 <div className="relative w-full h-[400px]">
-                  <img
-                    src={`/about/about_${specialist.firstName}.png`}
+                  <OptimizedImage
+                    src={`/about/about_${specialist.firstName}.webp`}
                     alt={specialist.name}
                     className="w-full h-full object-cover object-top"
                   />
@@ -109,11 +110,11 @@ export default function Specialists() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img
+                      <OptimizedImage
                         src={`/about/icons/${
                           specialist.isInstagram
-                            ? "about_instagram.png"
-                            : "about_link.png"
+                            ? "about_instagram.webp"
+                            : "about_link.webp"
                         }`}
                         alt={specialist.isInstagram ? "Instagram" : "LinkedIn"}
                         className="w-6 h-6 object-contain"
@@ -126,8 +127,8 @@ export default function Specialists() {
               {/* Desktop Layout */}
               <div className="hidden md:flex flex-row h-full">
                 <div className="w-[45%] relative">
-                  <img
-                    src={`/about/about_${specialist.firstName}.png`}
+                  <OptimizedImage
+                    src={`/about/about_${specialist.firstName}.webp`}
                     alt={specialist.name}
                     className="w-full h-full object-cover absolute inset-0"
                   />
@@ -150,11 +151,11 @@ export default function Specialists() {
                         rel="noopener noreferrer"
                         className="w-8 h-8"
                       >
-                        <img
+                        <OptimizedImage
                           src={`/about/icons/${
                             specialist.isInstagram
-                              ? "about_instagram.png"
-                              : "about_link.png"
+                              ? "about_instagram.webp"
+                              : "about_link.webp"
                           }`}
                           alt={
                             specialist.isInstagram ? "Instagram" : "LinkedIn"

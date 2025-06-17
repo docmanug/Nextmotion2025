@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { OptimizedVideo } from "@/components/ui/optimized-video";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -24,7 +23,7 @@ export default function Hero() {
 
   return (
     <div className="relative h-[500px] sm:h-[550px] md:h-[600px]">
-      <video
+      <OptimizedVideo
         src="https://f.hubspotusercontent10.net/hubfs/6086964/Nextmotion_2020/Videos/Videoheaderhome%20and%203Dsd.mp4"
         autoPlay
         loop

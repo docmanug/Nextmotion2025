@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -27,8 +27,8 @@ export default function CapabilitiesSection() {
     <section className="relative max-h-[600px] sm:max-h-[400] overflow-hidden bg-[#181F3D]">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src="/sixth/capa_bg1.jpg"
+        <OptimizedImage
+          src="/sixth/capa_bg1.webp"
           alt="LENA Capabilities Background"
           width={1920}
           height={600}

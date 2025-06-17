@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Hero() {
   const [messages, setMessages] = useState<any>(null);
@@ -50,9 +51,11 @@ export default function Hero() {
           {/* Right Image */}
           <div className="relative flex justify-center">
             <div className="w-[480px] aspect-[4/2] rounded-2xl overflow-hidden">
-              <img
-                src="/contact/contact_hero.png"
+              <OptimizedImage
+                src="/contact/contact_hero.webp"
                 alt="NextMotion Team Contact"
+                width={480}
+                height={480}
                 className="w-full h-full object-cover"
               />
             </div>

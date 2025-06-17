@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import React from "react";
 
@@ -49,7 +49,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
         {popularPosts.map((post) => (
           <div key={post.id} className="flex gap-3 group bg-[#EAF0F6] rounded-2xl py-4 pr-4">
             <Link href={`/blog/${post.slug}`} className="flex gap-3">
-              <Image
+              <OptimizedImage
                 src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}
                 alt={post.title.rendered}
                 width={80}

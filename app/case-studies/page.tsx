@@ -23,11 +23,6 @@ export default async function CaseStudiesPage() {
     <main>
       <Hero />
       <CaseStudies />
-      <TestimonialSection
-        title={t("testimonials.title")}
-        subtitle={t("testimonials.description")}
-        testimonials={messages?.testimonials?.items || []}
-      />
       <MoreCaseStudies />
       <TryNextmotion />
     </main>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface Episode {
   id: number;
@@ -33,7 +34,7 @@ export default function Episodes() {
         "Transform Your Practice into a Thriving Business: Best Practices to Attract and Retain Patients in Medical Aesthetics 🚀",
       description:
         "In this episode, Lisa and Adam dive into practical tips for aesthetic doctors and surgeons on how to grow their practice and build patient loyalty. They discuss strategies for converting leads, attracting new clients, and creating a personalized patient experience. They also highlight the importance of staying at\nthe cutting edge of innovation and using tech tools like Nextmotion Capture to enhance treatment results and transparency.",
-      image: "/podcast/podcast_hero.png",
+      image: "/podcast/podcast_hero.webp",
       type: "featured",
       category: "Marketing",
     },
@@ -43,7 +44,7 @@ export default function Episodes() {
         "Digital Transformation in Aesthetic Medicine: A Deep Dive with NextMotion",
       description:
         "Welcome to the NextMotion podcast, where Sam and Lisa explore the world of digital transformation in aesthetic medicine. NextMotion is a comprehensive platform tailored specifically for aesthetic clinics, offering tools to manage patient records, schedule appointments, capture before-and-after photos, handle finances, and much more.",
-      image: "/podcast/podcast_hero.png",
+      image: "/podcast/podcast_hero.webp",
       type: "regular",
       category: "Operational",
     },
@@ -53,7 +54,7 @@ export default function Episodes() {
         "Growing Your Aesthetic Practice: Patient Acquisition vs. Retention",
       description:
         "In this episode, we dive into two essential strategies for aesthetic medical clinics: acquiring new patients and retaining existing ones. Sam and Lisa discuss the pros and cons of each approach, including the associated costs and the impact on clinic growth.",
-      image: "/podcast/podcast_hero.png",
+      image: "/podcast/podcast_hero.webp",
       type: "regular",
       category: "Sales enablement",
     },
@@ -63,7 +64,7 @@ export default function Episodes() {
         "Digital Photography in Aesthetics: Elevating Patient Documentation",
       description:
         "In this episode, Sam and Lisa delve into the impact of digital photography in medical aesthetics, emphasizing its role in documenting, analyzing, and presenting treatment outcomes. They discuss the advantages of digital photography, including superior image quality, instant visualization, and simplified storage.",
-      image: "/podcast/podcast_hero.png",
+      image: "/podcast/podcast_hero.webp",
       type: "regular",
       category: "Imaging",
     },
@@ -72,7 +73,7 @@ export default function Episodes() {
       title: "Building Patient Loyalty in Aesthetic Clinics: Top Strategies",
       description:
         "In this episode, Sam and Lisa dive into effective strategies for patient retention in aesthetic clinics. They explore three key approaches: enhancing the patient experience, implementing loyalty programs, and developing a targeted communication strategy.",
-      image: "/podcast/podcast_hero.png",
+      image: "/podcast/podcast_hero.webp",
       type: "regular",
       category: "Customer Success",
     },
@@ -181,9 +182,11 @@ export default function Episodes() {
                       </div>
                     </div>
                     <div className="flex-shrink-0 w-full lg:w-[256px]">
-                      <img
+                      <OptimizedImage
                         src={featuredEpisode.image}
                         alt={featuredEpisode.title}
+                        width={200}
+                        height={200}
                         className="w-full h-[200px] lg:h-[256px] object-cover rounded-lg"
                       />
                     </div>
@@ -265,9 +268,11 @@ export default function Episodes() {
                     >
                       <div className="flex flex-col h-full">
                         <div className="aspect-square">
-                          <img
+                          <OptimizedImage
                             src={episode.image}
                             alt={episode.title}
+                            width={400}
+                            height={400}
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -326,9 +331,11 @@ export default function Episodes() {
                             </div>
                           </div>
                           <div className="flex-shrink-0 w-full lg:w-[256px]">
-                            <img
+                            <OptimizedImage
                               src={episode.image}
                               alt={episode.title}
+                              width={200}
+                              height={200}
                               className="w-full h-[200px] lg:h-[256px] object-cover rounded-lg"
                             />
                           </div>

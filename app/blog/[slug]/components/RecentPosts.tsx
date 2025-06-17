@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { BlogPost } from '@/types/blog';
 import { formatDate } from '@/utils/formatDate';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+
 interface RecentPostsProps {
   posts: BlogPost[];
 }
@@ -34,7 +35,7 @@ export const RecentPosts: React.FC<RecentPostsProps> = ({ posts }) => {
           >
             <div className="flex gap-4" onClick={()=> router.push(`/blog/${post.slug}`)}>
               <div className="flex-shrink-0">
-                <Image
+                <OptimizedImage
                   src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}
                   alt={post.title.rendered}
                   width={96}

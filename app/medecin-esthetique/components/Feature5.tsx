@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
@@ -25,7 +25,7 @@ export default function Feature5() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-1 lg:order-1">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/medecin/icons/feature5.svg"
                 alt="Feature 5 Icon"
                 width={60}
@@ -83,8 +83,8 @@ export default function Feature5() {
           <div className="order-2 lg:order-2">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/medecin/medecin_5.png"
+                <OptimizedImage
+                  src="/medecin/medecin_5.webp"
                   alt="Performance Tracking Interface"
                   width={800}
                   height={1000}

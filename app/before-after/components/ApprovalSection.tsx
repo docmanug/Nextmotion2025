@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -8,17 +8,17 @@ const resources = [
   {
     type: "E-BOOK",
     title: "Learn more about Digital Consultation in Aesthetic Medicine",
-    image: "/ebook.png",
+    image: "/ebook.webp",
   },
   {
     type: "SOCIAL MEDIA KIT",
     title: "Increase awareness of your clinic on Social Media",
-    image: "/ebook.png",
+    image: "/ebook.webp",
   },
   {
     type: "EVENTS FOR AESTHETIC SURGEONS",
     title: "Our events for the year 2025",
-    image: "/ebook.png",
+    image: "/ebook.webp",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function ApprovalSection() {
               className="bg-white rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition-shadow cursor-pointer max-w-[380px] w-full mx-auto"
             >
               <div className="relative w-full aspect-[4/3] mb-6">
-                <Image
+                <OptimizedImage
                   src={resource.image}
                   alt={resource.type}
                   fill

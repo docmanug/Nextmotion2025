@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "@/utils/i18n";
 import { getMessages } from "@/utils/i18n";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Timeline() {
   const [messages, setMessages] = useState<any>(null);
@@ -23,37 +24,37 @@ export default function Timeline() {
   const timelineData = [
     {
       year: "2015",
-      icon: "/about/icons/about_1_icon.png",
+      icon: "/about/icons/about_1_icon.webp",
       description: t("items")[0].description,
     },
     {
       year: "2016",
-      icon: "/about/icons/about_2_icon.png",
+      icon: "/about/icons/about_2_icon.webp",
       description: t("items")[1].description,
     },
     {
       year: "2017",
-      icon: "/about/icons/about_3_icon.png",
+      icon: "/about/icons/about_3_icon.webp",
       description: t("items")[2].description,
     },
     {
       year: "2018",
-      icon: "/about/icons/about_4_icon.png",
+      icon: "/about/icons/about_4_icon.webp",
       description: t("items")[3].description,
     },
     {
       year: "2019",
-      icon: "/about/icons/about_5_icon.png",
+      icon: "/about/icons/about_5_icon.webp",
       description: t("items")[4].description,
     },
     {
       year: "2020",
-      icon: "/about/icons/about_6_icon.png",
+      icon: "/about/icons/about_6_icon.webp",
       description: t("items")[5].description,
     },
     {
       year: "2021",
-      icon: "/about/icons/about_7_icon.png",
+      icon: "/about/icons/about_7_icon.webp",
       description: t("items")[6].description,
     },
   ];
@@ -75,9 +76,11 @@ export default function Timeline() {
               {timelineData.slice(0, 4).map((item) => (
                 <div key={item.year} className={cardClasses}>
                   <div className="w-14 h-14 mb-2 flex items-center justify-center relative z-10 bg-white">
-                    <img
+                    <OptimizedImage
                       src={item.icon}
                       alt={`${item.year} icon`}
+                      width={70}
+                      height={70}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -98,9 +101,11 @@ export default function Timeline() {
               {timelineData.slice(4).map((item) => (
                 <div key={item.year} className={cardClasses}>
                   <div className="w-14 h-14 mb-2 flex items-center justify-center relative z-10 bg-white">
-                    <img
+                    <OptimizedImage
                       src={item.icon}
                       alt={`${item.year} icon`}
+                      width={70}
+                      height={70}
                       className="w-full h-full object-contain"
                     />
                   </div>

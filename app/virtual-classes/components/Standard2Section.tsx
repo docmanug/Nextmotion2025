@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
@@ -28,8 +28,8 @@ export default function Standard2Section() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative w-full h-[350px] lg:h-[450px] order-2 lg:order-1">
             <div className="relative w-full h-full max-w-[550px] mx-auto">
-              <Image
-                src="/fifth/standard_2.png"
+              <OptimizedImage
+                src="/fifth/standard_2.webp"
                 alt="Virtual Classes Hardware"
                 fill
                 className="object-contain object-center"

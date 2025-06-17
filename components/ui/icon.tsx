@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface IconProps {
   src: string;
@@ -27,7 +27,7 @@ export function Icon({
   if (isSvg) {
     return (
       <div className={cn("relative", sizeClasses[size], className)}>
-        <Image
+        <OptimizedImage
           src={src}
           alt={alt}
           width={70}
@@ -41,7 +41,7 @@ export function Icon({
 
   return (
     <div className={cn("relative", sizeClasses[size], className)}>
-      <Image
+      <OptimizedImage
         src={src}
         alt={alt}
         fill

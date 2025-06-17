@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface Release {
 	id: string;
@@ -21,7 +22,7 @@ const releases: Release[] = [
 	{
 		id: "oct-2024",
 		date: "1er Octobre 2024",
-		image: "/release/release_1.jpg",
+		image: "/release/release_1.webp",
 		content: [
 			{
 				title: "Parrainage",
@@ -96,8 +97,8 @@ export default function ReleaseContent() {
 							aideront à tirer le meilleur parti de nos services.
 						</p>
 						<p className='text-[#1650EF]'>
-							N'hésitez pas à cliquer sur les liens présents dans les
-							descriptifs afin de voir ces nouveautés en action!
+							{`N'hésitez pas à cliquer sur les liens présents dans les
+							descriptifs afin de voir ces nouveautés en action!`}
 						</p>
 					</div>
 
@@ -130,9 +131,11 @@ export default function ReleaseContent() {
 									</h2>
 
 									<div className='relative w-full aspect-[16/9] mb-8 sm:mb-12'>
-										<img
+										<OptimizedImage
 											src={release.image}
 											alt={`Release update illustration for ${release.date}`}
+											width={800}
+											height={800}
 											className='w-full h-full object-cover rounded-xl sm:rounded-2xl'
 										/>
 									</div>
@@ -140,7 +143,7 @@ export default function ReleaseContent() {
 									<ul className='list-disc space-y-3 sm:space-y-4 text-[#081F4D]/80 ml-4 sm:ml-5 text-sm sm:text-base'>
 										<li>
 											Ajout de la fonctionnalité{" "}
-											<span className='text-[#1650EF]'>"Parrainage"</span> :{" "}
+											<span className='text-[#1650EF]'>{`"Parrainage"`}</span> :{" "}
 											{release.content[0].description
 												.split('"informations"')
 												.map((part, i, arr) =>
@@ -150,7 +153,7 @@ export default function ReleaseContent() {
 														<React.Fragment key={i}>
 															{part}
 															<span className='text-[#1650EF]'>
-																"informations"
+																{`"informations"`}
 															</span>
 														</React.Fragment>
 													)
@@ -179,7 +182,7 @@ export default function ReleaseContent() {
 														<>
 															{part}
 															<span className='text-[#1650EF]'>
-																"parrainages"
+																{`"parrainages"`}
 															</span>
 														</>
 													)

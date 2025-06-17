@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,8 +12,8 @@ export default function Feature7() {
           <div className="order-1 lg:order-1">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/manager/icons/manager_7_icon.png"
+                <OptimizedImage
+                  src="/manager/icons/manager_7_icon.webp"
                   alt="Portail Patient Icon"
                   width={60}
                   height={60}
@@ -42,9 +42,9 @@ export default function Feature7() {
                   Personnalisation et Prise de Rendez-vous
                 </h3>
                 <p className="text-[18px] leading-relaxed text-gray-600">
-                  L'icône de l'application affiche le logo de votre clinique et
+                  {`L'icône de l'application affiche le logo de votre clinique et
                   intègre un portail de prise de rendez-vous en ligne avec la
-                  possibilité de modifier les rendez-vous.
+                  possibilité de modifier les rendez-vous.`}
                 </p>
               </div>
 
@@ -89,8 +89,8 @@ export default function Feature7() {
           <div className="order-2 lg:order-2">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/manager/manager_7.png"
+                <OptimizedImage
+                  src="/manager/manager_7.webp"
                   alt="Nextmotion Integration Center Screenshot"
                   width={800}
                   height={1000}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { useState, useEffect } from "react";
@@ -20,7 +20,7 @@ const DiscoverCard = ({
     <Link href={href} className="block">
       <div className="relative rounded-3xl overflow-hidden bg-white h-[300px] w-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.02]">
         <div className="relative h-full w-full">
-          <Image
+          <OptimizedImage
             src={imageSrc}
             alt={title}
             fill
@@ -66,7 +66,7 @@ export default function DiscoverSection() {
           <div className="w-full">
             <DiscoverCard
               title={t("cards.0.title")}
-              imageSrc="/seventh/discovery_1.jpg"
+              imageSrc="/seventh/discovery_1.webp"
               isPhone={true}
               href={
                 window.location.pathname.startsWith("/fr")
@@ -78,7 +78,7 @@ export default function DiscoverSection() {
           <div className="w-full">
             <DiscoverCard
               title={t("cards.1.title")}
-              imageSrc="/eighth/part1.jpg"
+              imageSrc="/eighth/part1.webp"
               href={
                 window.location.pathname.startsWith("/fr")
                   ? "/fr/logiciel-consultation-esthetique"

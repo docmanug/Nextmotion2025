@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
@@ -36,8 +36,8 @@ export default function Feature1() {
           <div className="order-2 lg:order-1">
             <div className="relative flex items-center justify-center">
               <div className="relative">
-                <Image
-                  src="/medecin/medecin_1.png"
+                <OptimizedImage
+                  src="/medecin/medecin_1.webp"
                   alt="Paperless Management Interface"
                   width={800}
                   height={1000}
@@ -50,7 +50,7 @@ export default function Feature1() {
 
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <Image
+              <OptimizedImage
                 src="/medecin/icons/feature1.svg"
                 alt="Feature 1 Icon"
                 width={60}

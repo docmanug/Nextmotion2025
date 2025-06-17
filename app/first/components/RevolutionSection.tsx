@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -11,8 +11,8 @@ export default function RevolutionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="order-2 lg:order-1">
             <div className="relative">
-              <Image
-                src="/capture-app-demo.png"
+              <OptimizedImage
+                src="/capture-app-demo.webp"
                 alt="Nextmotion Revolution App Screenshot"
                 width={800}
                 height={1000}
@@ -25,8 +25,8 @@ export default function RevolutionSection() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-blue-100 rounded-full p-3">
-                <Image
-                  src="/icons/icon_revolution.png"
+                <OptimizedImage
+                  src="/icons/icon_revolution.webp"
                   alt="Revolution Icon"
                   width={60}
                   height={60}
