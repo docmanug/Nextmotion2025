@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');
@@ -13,5 +11,7 @@ export async function GET(request: Request) {
             metaDescription: data[0].meta?.meta_description || data[0].excerpt.rendered.replace(/<[^>]*>/g, ''),
         }
         : null;
-    return NextResponse.json(post);
+    return new Response(JSON.stringify(post), {
+        headers: { 'Cache-Control': 's-maxage=60, stale-while-revalidate' }
+    });
 }

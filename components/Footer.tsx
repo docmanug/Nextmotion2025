@@ -399,14 +399,15 @@ export default function Footer({
                       </Link>
                     </li>
                     <li>
-                      <Link
+                      {/* Comment out the privacy link */}
+                      {/* <Link
                         href="https://www.nextmotion.net/hubfs/2021-04-08_Privacy%20Policy%20NEXT%20MOTION.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.help.links.privacy}
-                      </Link>
+                      </Link> */}
                     </li>
                     <li>
                       <Link
