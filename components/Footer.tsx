@@ -201,9 +201,9 @@ export default function Footer({
                 <OptimizedImage
                   src="/logo.webp"
                   alt="Nextmotion"
-                  width={160}
+                  width={220}
                   height={24}
-                  className="mb-6"
+                  className="mb-6 w-[220px] h-[24px]"
                 />
                 <h3 className="text-[#005fa6] text-[20px] md:text-[24px] font-bold mb-4">
                   {footerData.professional.title}

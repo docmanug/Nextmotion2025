@@ -120,7 +120,7 @@ export default function BlogPosts() {
 				<div className='grid grid-cols-1 lg:grid-cols-[1fr,380px] gap-8'>
 					{/* Main Posts - Left Side */}
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-						{paginatedPosts.map((post) => (
+						{paginatedPosts.map((post, index) => (
 							<article
 								key={post.id}
 								className='bg-[#EAF0F6] rounded-2xl h-fit'
@@ -133,7 +133,9 @@ export default function BlogPosts() {
 										}
 										alt={post.title.rendered}
 										fill
-										className='rounded-t-2xl object-cover'
+										priority={index < 2}
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+										className='rounded-t-2xl object-cover h-auto'
 									/>
 								</div>
 								<div className='space-y-4 px-4 py-6'>

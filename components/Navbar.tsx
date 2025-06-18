@@ -154,9 +154,9 @@ export default function Navbar() {
 							<OptimizedImage
 								src='/logo.webp'
 								alt='Nextmotion'
-								width={100}
+								width={200}
 								height={22}
-								className='h-[22px] w-auto'
+								className='h-[22px] w-[200px]'
 							/>
 						</Link>
 					</div>

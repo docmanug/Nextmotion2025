@@ -16,7 +16,7 @@ export function OptimizedImage({
   priority = false,
   quality = 75,
   ...props
-}: OptimizedImageProps) {
+}: OptimizedImageProps) { 
   return (
     <Image
       src={src}

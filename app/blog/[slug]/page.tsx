@@ -1,57 +1,55 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useTranslations, getMessages } from "@/utils/i18n";
-import { useParams, usePathname } from "next/navigation";
 import { BlogPost, Category } from "@/types/blog";
-import { EnhancedBlogPost } from "./components/BlogPost";
 import BlogPostingSchema from "./components/BlogPostingSchema";
+import { EnhancedBlogPost } from "./components/BlogPost";
+import { Metadata, ResolvingMetadata } from "next";
 
-export default function BlogPostPage() {
-	const [messages, setMessages] = useState<any>(null);
-	const pathname = usePathname();
-	const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
-	const params = useParams();
-	const slug = params?.slug as string;
-	const [post, setPost] = useState<BlogPost | null>(null);
-	const [posts, setPosts] = useState<BlogPost[]>([]);
-	const [categories, setCategories] = useState<Category[]>([]);
+async function getPost(slug: string): Promise<BlogPost> {
+	const res = await fetch(`https://www.nextmotion.net/api/post?slug=${slug}`, { cache: "no-store" });
+	return res.json();
+}
 
-	useEffect(() => {
-		const loadMessages = async () => {
-			const msgs = await getMessages(currentLocale);
-			setMessages(msgs);
-		};
-		loadMessages();
-	}, [currentLocale]);
+async function getPosts(): Promise<BlogPost[]> {
+	const res = await fetch(`https://www.nextmotion.net/api/posts`, { cache: "no-store" });
+	return res.json();
+}
 
-	useEffect(() => {
-		const fetchPostData = async () => {
-			const fetchedPost = await fetch(`/api/post?slug=${slug}`);
-			const fetchedPostData = await fetchedPost.json();
-			setPost(fetchedPostData);
-		};
+async function getCategories(): Promise<Category[]> {
+	const res = await fetch(`https://www.nextmotion.net/api/categories`, { cache: "no-store" });
+	return res.json();
+}
 
-		const fetchPostsData = async () => {
-			const fetchedPosts = await fetch(`/api/posts`);
-			const fetchedPostsData = await fetchedPosts.json();
-			setPosts(fetchedPostsData);
-		};
+type Props = {
+	params: Promise<{ slug: string }>
+	searchParams: { [key: string]: string | string[] | undefined }
+}
 
-		const fetchCategoriesData = async () => {
-			const fetchedCategories = await fetch(`/api/categories`);
-			const fetchedCategoriesData = await fetchedCategories.json();
-			setCategories(fetchedCategoriesData);
-		};
+export async function generateStaticParams() {
+	const posts = await getPosts();
+	return posts.map((post) => ({
+		slug: post.slug,
+	}));
+}
 
-		fetchPostData();
-		fetchPostsData();
-		fetchCategoriesData();
-	}, [slug]);
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	const resolvedParams = await params;
+	const post = await getPost(resolvedParams.slug);
+	
+	return {
+		title: post.title.rendered,
+		description: post.excerpt.rendered,
+	};
+}
 
-	const t = useTranslations(messages?.footer || {});
-
-	if (!messages) return null;
+export default async function BlogPostPage({ params }: Props) {
+	const resolvedParams = await params;
+	const post = await getPost(resolvedParams.slug);
+	const [posts, categories] = await Promise.all([
+		getPosts(),
+		getCategories(),
+	]);
 
 	return (
 		<main className='min-h-screen bg-white'>

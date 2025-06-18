@@ -54,7 +54,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
                 alt={post.title.rendered}
                 width={80}
                 height={60}
-                className="object-cover flex-shrink-0"
+                className="object-cover flex-shrink-0 w-auto"
               />
               <h3
                 className="text-sm group-hover:text-[#1650EF] transition-colors"
