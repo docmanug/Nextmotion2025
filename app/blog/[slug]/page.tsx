@@ -5,6 +5,7 @@ import { useTranslations, getMessages } from "@/utils/i18n";
 import { useParams, usePathname } from "next/navigation";
 import { BlogPost, Category } from "@/types/blog";
 import { EnhancedBlogPost } from "./components/BlogPost";
+import BlogPostingSchema from "./components/BlogPostingSchema";
 
 export default function BlogPostPage() {
 	const [messages, setMessages] = useState<any>(null);
@@ -54,7 +55,12 @@ export default function BlogPostPage() {
 
 	return (
 		<main className='min-h-screen bg-white'>
-			{post && <EnhancedBlogPost post={post} posts={posts} categories={categories} />}
+			{post && (
+				<>
+					<BlogPostingSchema post={post} />
+					<EnhancedBlogPost post={post} posts={posts} categories={categories} />
+				</>
+			)}
 		</main>
 	);
 }

@@ -23,6 +23,7 @@ export interface BlogPost {
         title: string;
     }[];
     date: string;
+    modified?: string;
     _embedded?: {
         "wp:featuredmedia"?: Array<{
             source_url: string;

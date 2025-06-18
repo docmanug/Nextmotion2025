@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "subset-fonts": "node scripts/subset-fonts.js",
+    "setup-font-tools": "node scripts/setup-font-tools.js",
+    "optimize": "npm run setup-font-tools && npm run subset-fonts"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.3.1",
     "@hookform/resolvers": "^3.9.0",
     "@next/swc-wasm-nodejs": "13.5.1",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -71,5 +76,9 @@
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
     "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^15.3.3",
+    "cross-env": "^7.0.3"
   }
 }
