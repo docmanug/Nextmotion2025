@@ -101,7 +101,7 @@ const ProductCard = ({
         />
       </div>
       <div className="text-center mb-8">
-        <OptimizedImage src="/logo.webp" alt="Next Motion" className="mx-auto mb-2 w-20 h-auto" />
+        <OptimizedImage src="/logo.webp" alt="Next Motion" width={80} height={80} className="mx-auto mb-2 w-20 h-auto" />
         <h2 className={`text-4xl font-bold ${textColor}`}>{title}</h2>
       </div>
       <div className="space-y-4 flex-grow">
