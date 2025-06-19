@@ -102,7 +102,7 @@ export const EnhancedBlogPost: React.FC<EnhancedBlogPostProps> = ({ post, posts,
             <p className="text-lg text-stone-500 py-12">
               Topics: <span className="text-zinc-800 font-bold">{t(`topics.${category}`)}</span>
             </p>
-            <form className="space-y-4">
+            <form className="space-y-4 pb-10">
               <div>
                 <label htmlFor="firstName" className="text-xs text-stone-500">{t("contact.firstName")}</label>
                 <Input type="text" id="firstName" name="firstName" className="focus-visible:ring-0 focus-visible:ring-offset-0" />
