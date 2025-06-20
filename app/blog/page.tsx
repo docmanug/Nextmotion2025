@@ -5,6 +5,7 @@ import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
 import Hero from "./components/Hero";
 import BlogPosts from "./components/BlogPosts";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function BlogPage() {
   const [messages, setMessages] = useState<any>(null);
@@ -21,7 +22,11 @@ export default function BlogPage() {
 
   const t = useTranslations(messages?.footer || {});
 
-  if (!messages) return null;
+  if (!messages) return (
+    <main className="min-h-screen bg-white flex items-center justify-center">
+      <Skeleton className="w-16 h-16" />
+    </main>
+  );
 
   return (
     <main className="min-h-screen bg-white">

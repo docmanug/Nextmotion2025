@@ -6,6 +6,8 @@ import HreflangTags from "./components/HreflangTags";
 import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import { LoadingSkeleton } from "@/components/ui/LoadingSkeleton";
 
 export const metadata: Metadata = {
   title:
@@ -163,7 +165,9 @@ export default async function RootLayout({
       </head>
       <body>
         <Navbar />
-        {children}
+        <Suspense fallback={<LoadingSkeleton />}>
+          {children}
+        </Suspense>
         <Footer />
       </body>
     </html>

@@ -1,21 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
 
+function isValidEmail(email: string) {
+	return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+}
+
 export async function POST(req: NextRequest) {
 	try {
 		const formData = await req.json();
+		// Basic input validation
+		if (!formData.email || !isValidEmail(formData.email)) {
+			return NextResponse.json({ success: false, error: 'Invalid or missing email' }, { status: 400 });
+		}
+		if (!formData.firstName || !formData.lastName) {
+			return NextResponse.json({ success: false, error: 'Missing name fields' }, { status: 400 });
+		}
+		// TODO: Add rate limiting to prevent spam
 		const mondayFormId = "73df764e54603807815f0f0c516bfa65";
 
 		// Create a URLSearchParams object for form data submission
 		const formParams = new URLSearchParams();
-		formParams.append("email", formData.email || "");
-		formParams.append("name[first]", formData.firstName || "");
-		formParams.append("name[last]", formData.lastName || "");
-		formParams.append("phone", formData.phone || "");
-		formParams.append("status1", formData.profession || "");
-		formParams.append("status8", formData.practitioners || "");
-		formParams.append("status2", formData.country || "");
-		formParams.append("status6", formData.interestedIn || "");
-		formParams.append("longText", formData.additionalInfo || "");
+		formParams.append("email", formData.email.trim());
+		formParams.append("name[first]", formData.firstName.trim());
+		formParams.append("name[last]", formData.lastName.trim());
+		formParams.append("phone", (formData.phone || '').trim());
+		formParams.append("status1", (formData.profession || '').trim());
+		formParams.append("status8", (formData.practitioners || '').trim());
+		formParams.append("status2", (formData.country || '').trim());
+		formParams.append("status6", (formData.interestedIn || '').trim());
+		formParams.append("longText", (formData.additionalInfo || '').trim());
 
 		console.log("Submitting to Monday.com with form data");
 
