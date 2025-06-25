@@ -11,6 +11,11 @@ interface FaqItem {
   answer: string;
 }
 
+interface FaqItemData {
+  question: string;
+  answer: string;
+}
+
 const FaqItem = ({
   question,
   answer,
@@ -48,7 +53,7 @@ const FaqItem = ({
 };
 
 export default function FaqSection() {
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<Record<string, any> | null>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -64,7 +69,7 @@ export default function FaqSection() {
 
   if (!messages) return null;
 
-  const faqs: FaqItem[] = t("items").map((item: any, index: number) => ({
+  const faqs: FaqItem[] = (t("items") as FaqItemData[]).map((item: FaqItemData, index: number) => ({
     question: item.question,
     answer: item.answer,
   }));

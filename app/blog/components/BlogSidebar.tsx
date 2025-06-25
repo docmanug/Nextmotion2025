@@ -3,11 +3,12 @@
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import React from "react";
+import type { Category, BlogPost } from "@/types";
 
 interface BlogSidebarProps {
   t: (key: string) => string;
-  categories: any[];
-  popularPosts: any[];
+  categories: Category[];
+  popularPosts: BlogPost[];
   selectedCategoryId?: string | null;
   handleCategoryClick?: (categoryId: string) => void;
   topicsKey?: string; // e.g. 'categories' or 'topics' for translation keys

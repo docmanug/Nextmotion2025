@@ -6,9 +6,10 @@ import Link from "next/link";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
+import type { FeatureSection } from './types';
 
-export default function Feature1() {
-  const [messages, setMessages] = useState<any>(null);
+function useAssistantFeature1Messages() {
+  const [messages, setMessages] = useState<Record<string, any> | null>(null);
   const [isFrench, setIsFrench] = useState(false);
 
   useEffect(() => {
@@ -21,9 +22,33 @@ export default function Feature1() {
     loadMessages();
   }, []);
 
+  return { messages, isFrench };
+}
+
+function SectionList({ sections }: { sections: FeatureSection[] }) {
+  return (
+    <div className="space-y-8">
+      {sections.map((section, idx) => (
+        <div key={idx}>
+          <h3 className="text-[20px] font-bold text-gray-900 mb-3">
+            {section.title}
+          </h3>
+          <p className="text-[18px] leading-relaxed text-gray-600">
+            {section.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function Feature1() {
+  const { messages, isFrench } = useAssistantFeature1Messages();
   const t = useTranslations(messages?.assistantPage?.feature1 || {});
 
   if (!messages) return null;
+
+  const sections = (messages?.assistantPage?.feature1?.sections as FeatureSection[]) || [];
 
   return (
     <section className="py-24 bg-white">
@@ -62,19 +87,7 @@ export default function Feature1() {
               {t("description")}
             </p>
 
-            <div className="space-y-8">
-              {Array.isArray(t("sections")) &&
-                t("sections").map((section: any, idx: number) => (
-                  <div key={idx}>
-                    <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                      {section.title}
-                    </h3>
-                    <p className="text-[18px] leading-relaxed text-gray-600">
-                      {section.description}
-                    </p>
-                  </div>
-                ))}
-            </div>
+            <SectionList sections={sections} />
 
             <div className="mt-8 sm:mt-10">
               <Link

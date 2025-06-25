@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
+import type { ApiResponse, ApiErrorResponse } from '@/types';
+import { z } from 'zod';
 
 // Ensure secrets are set in environment variables
 const clientEmail = process.env.GOOGLE_CLIENT_EMAIL || "your-client-email-here";
-const privateKey = (process.env.GOOGLE_PRIVATE_KEY || "your-private-key-here").replace(/\\n/g, "\n");
+const privateKey = (process.env.GOOGLE_PRIVATE_KEY || "your-private-key-here").replace(/\n/g, "\n");
 
 const jwtClient = new google.auth.JWT(
     clientEmail,
@@ -12,22 +14,27 @@ const jwtClient = new google.auth.JWT(
     ["https://www.googleapis.com/auth/indexing"],
 );
 
-function isValidUrl(url: string) {
-    try {
-        new URL(url);
-        return true;
-    } catch {
-        return false;
-    }
-}
+const urlSchema = z.object({ url: z.string().url('Invalid URL') });
 
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const url = body.url;
-        if (!url || !isValidUrl(url)) {
-            return NextResponse.json({ success: false, error: 'Invalid or missing url' }, { status: 400 });
+        const validation = urlSchema.safeParse(body);
+        if (!validation.success) {
+            const errorResponse: ApiErrorResponse = {
+                error: {
+                    code: 'INVALID_URL',
+                    message: 'Invalid or missing url',
+                    details: validation.error.flatten().fieldErrors
+                },
+                status: 400,
+                timestamp: new Date().toISOString(),
+                path: req.url,
+                method: 'POST',
+            };
+            return NextResponse.json(errorResponse, { status: 400 });
         }
+        const url = validation.data.url;
         await jwtClient.authorize();
         const accessToken = jwtClient.credentials.access_token;
         const response = await fetch("https://indexing.googleapis.com/v3/urlNotifications:publish", {
@@ -42,12 +49,39 @@ export async function POST(req: NextRequest) {
             }),
         });
         if (response.ok) {
-            return NextResponse.json({ success: true }, { status: 200 });
+            const successResponse: ApiResponse = {
+                success: true,
+                message: 'URL notification published successfully',
+            };
+            return NextResponse.json(successResponse, { status: 200 });
         } else {
             const errorData = await response.json().catch(() => ({}));
-            return NextResponse.json({ success: false, error: errorData }, { status: response.status });
+            const errorResponse: ApiErrorResponse = {
+                error: {
+                    code: 'GOOGLE_INDEXING_ERROR',
+                    message: 'Failed to publish URL notification',
+                    details: errorData
+                },
+                status: response.status,
+                timestamp: new Date().toISOString(),
+                path: req.url,
+                method: 'POST',
+            };
+            return NextResponse.json(errorResponse, { status: response.status });
         }
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error?.toString() }, { status: 500 });
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+        const errorResponse: ApiErrorResponse = {
+            error: {
+                code: 'INTERNAL_SERVER_ERROR',
+                message: errorMessage,
+                details: { timestamp: new Date().toISOString() }
+            },
+            status: 500,
+            timestamp: new Date().toISOString(),
+            path: req.url,
+            method: 'POST',
+        };
+        return NextResponse.json(errorResponse, { status: 500 });
     }
 } 

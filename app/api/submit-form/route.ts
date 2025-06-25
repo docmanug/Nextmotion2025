@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { ContactFormValidation, FormSubmissionResponse, ApiErrorResponse } from '@/types';
+import { contactFormSchema } from '@/types/forms';
+import { validateForm } from '@/types/validation';
 
 function isValidEmail(email: string) {
 	return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
@@ -6,13 +9,22 @@ function isValidEmail(email: string) {
 
 export async function POST(req: NextRequest) {
 	try {
-		const formData = await req.json();
-		// Basic input validation
-		if (!formData.email || !isValidEmail(formData.email)) {
-			return NextResponse.json({ success: false, error: 'Invalid or missing email' }, { status: 400 });
-		}
-		if (!formData.firstName || !formData.lastName) {
-			return NextResponse.json({ success: false, error: 'Missing name fields' }, { status: 400 });
+		const formData: ContactFormValidation = await req.json();
+		// Validate input using Zod schema
+		const validation = validateForm(contactFormSchema, formData);
+		if (!validation.isValid) {
+			const errorResponse: ApiErrorResponse = {
+				error: {
+					code: 'INVALID_FORM',
+					message: 'Invalid form data',
+					details: validation.errors
+				},
+				status: 400,
+				timestamp: new Date().toISOString(),
+				path: req.url,
+				method: 'POST',
+			};
+			return NextResponse.json(errorResponse, { status: 400 });
 		}
 		// TODO: Add rate limiting to prevent spam
 		const mondayFormId = "73df764e54603807815f0f0c516bfa65";
@@ -24,9 +36,9 @@ export async function POST(req: NextRequest) {
 		formParams.append("name[last]", formData.lastName.trim());
 		formParams.append("phone", (formData.phone || '').trim());
 		formParams.append("status1", (formData.profession || '').trim());
-		formParams.append("status8", (formData.practitioners || '').trim());
+		formParams.append("status8", (formData.practitioners || []).join(', '));
 		formParams.append("status2", (formData.country || '').trim());
-		formParams.append("status6", (formData.interestedIn || '').trim());
+		formParams.append("status6", (formData.interestedIn || []).join(', '));
 		formParams.append("longText", (formData.additionalInfo || '').trim());
 
 		console.log("Submitting to Monday.com with form data");
@@ -43,19 +55,25 @@ export async function POST(req: NextRequest) {
 			}
 		);
 
-		// Check if the response is OK (status in the range 200-299)
 		if (!response.ok) {
 			const errorText = await response.text();
-			console.error("Monday.com error response:", errorText);
-			throw new Error(
-				`Monday.com API error: ${response.status} - Try contacting us directly at contact@nextmotion.net`
-			);
+			const errorResponse: ApiErrorResponse = {
+				error: {
+					code: 'MONDAY_API_ERROR',
+					message: `Monday.com API error: ${response.status}`,
+					details: { errorText }
+				},
+				status: response.status,
+				timestamp: new Date().toISOString(),
+				path: req.url,
+				method: 'POST',
+			};
+			return NextResponse.json(errorResponse, { status: response.status });
 		}
 
 		// Handle the response carefully as it might not be JSON
 		const contentType = response.headers.get("content-type");
 		let data;
-
 		if (contentType && contentType.includes("application/json")) {
 			data = await response.json();
 		} else {
@@ -65,12 +83,25 @@ export async function POST(req: NextRequest) {
 			data = { message: "Form submitted successfully" };
 		}
 
-		return NextResponse.json({ success: true, data });
-	} catch (error: any) {
-		console.error("Form submission error:", error);
-		return NextResponse.json(
-			{ success: false, error: error.message },
-			{ status: 500 }
-		);
+		const successResponse: FormSubmissionResponse = {
+			success: true,
+			message: 'Form submitted successfully',
+			data
+		};
+		return NextResponse.json(successResponse);
+	} catch (error: unknown) {
+		const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+		const errorResponse: ApiErrorResponse = {
+			error: {
+				code: 'INTERNAL_SERVER_ERROR',
+				message: errorMessage,
+				details: { timestamp: new Date().toISOString() }
+			},
+			status: 500,
+			timestamp: new Date().toISOString(),
+			path: req.url,
+			method: 'POST',
+		};
+		return NextResponse.json(errorResponse, { status: 500 });
 	}
 }

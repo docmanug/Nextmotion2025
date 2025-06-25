@@ -14,6 +14,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
+import type { FormProps as BaseFormProps } from '@/types';
 
 const Form = FormProvider;
 

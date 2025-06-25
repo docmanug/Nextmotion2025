@@ -11,6 +11,9 @@ const alertVariants = cva(
         default: 'bg-background text-foreground',
         destructive:
           'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
+        success: 'border-green-500/50 text-green-700 bg-green-50 [&>svg]:text-green-600',
+        warning: 'border-yellow-500/50 text-yellow-700 bg-yellow-50 [&>svg]:text-yellow-600',
+        info: 'border-blue-500/50 text-blue-700 bg-blue-50 [&>svg]:text-blue-600',
       },
     },
     defaultVariants: {
@@ -19,17 +22,34 @@ const alertVariants = cva(
   }
 );
 
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
-  <div
-    ref={ref}
-    role="alert"
-    className={cn(alertVariants({ variant }), className)}
-    {...props}
-  />
-));
+interface AlertProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {
+  dismissible?: boolean;
+  onDismiss?: () => void;
+}
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
+  ({ className, variant, dismissible, onDismiss, children, ...props }, ref) => (
+    <div
+      ref={ref}
+      role="alert"
+      className={cn(alertVariants({ variant }), className)}
+      {...props}
+    >
+      {children}
+      {dismissible && (
+        <button
+          onClick={onDismiss}
+          className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+          aria-label="Dismiss alert"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      )}
+    </div>
+  )
+);
 Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<

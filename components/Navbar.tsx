@@ -7,11 +7,12 @@ import { ChevronDown, Globe, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations, getMessages } from "@/utils/i18n";
+import type { TranslationMessages } from "@/types";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-	const [messages, setMessages] = useState<any>(null);
+	const [messages, setMessages] = useState<TranslationMessages | null>(null);
 	const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 	const pathname = usePathname();
 	const currentLocale = pathname.startsWith("/fr") ? "fr" : "en";
@@ -21,7 +22,7 @@ export default function Navbar() {
 	useEffect(() => {
 		const loadMessages = async () => {
 			const msgs = await getMessages(currentLocale);
-			setMessages(msgs);
+			setMessages(msgs as TranslationMessages);
 		};
 		loadMessages();
 	}, [currentLocale]);

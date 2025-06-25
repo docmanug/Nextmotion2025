@@ -139,11 +139,11 @@ export default function ContactFormPage() {
 			} else {
 				throw new Error(result.error || "Form submission failed");
 			}
-		} catch (error: any) {
+		} catch (error: unknown) {
+			const errorMessage = error instanceof Error ? error.message : "An error occurred";
 			setSubmitStatus({
 				success: false,
-				message:
-					error.message || t("contactForm.submitError") || "An error occurred",
+				message: errorMessage || t("contactForm.submitError") || "An error occurred",
 			});
 			console.error("Form submission error:", error);
 		} finally {

@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import type { HeroProps as BaseHeroProps } from "@/types";
 
-interface HeroProps {
+interface HeroProps extends BaseHeroProps {
   title: string;
   subtitle: string;
   demoButton: string;
@@ -17,8 +18,10 @@ export default function Hero({
   subtitle,
   demoButton,
   watchButton,
+  className,
+  ...props
 }: HeroProps) {
-  const [contactFormLink, setContactFormLink] = useState("/contact_form");
+  const [contactFormLink, setContactFormLink] = useState<string>("/contact_form");
 
   useEffect(() => {
     setContactFormLink(
@@ -29,7 +32,10 @@ export default function Hero({
   }, []);
 
   return (
-    <div className="relative pt-[120px] sm:pt-[160px] lg:pt-[200px] px-4 sm:px-6 lg:px-8">
+    <div 
+      className={`relative pt-[120px] sm:pt-[160px] lg:pt-[200px] px-4 sm:px-6 lg:px-8 ${className || ''}`}
+      {...props}
+    >
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/30 via-white to-white -z-10" />
       <div className="max-w-[1300px] mx-auto px-4 sm:px-8 lg:px-14">
         <div className="flex flex-col items-start gap-6 sm:gap-8 pt-0 pb-8 sm:pb-16">

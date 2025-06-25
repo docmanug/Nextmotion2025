@@ -19,7 +19,7 @@ export default function TryNextmotion({
   sectionClassName = "py-12",
   buttonClassName = "bg-white text-[#1650EF] hover:bg-white/90 rounded-lg px-8 py-3 text-[16px] font-semibold h-auto",
 }: TryNextmotionProps) {
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<Record<string, any> | null>(null);
   const [link, setLink] = useState(contactFormLink);
 
   useEffect(() => {
@@ -40,11 +40,11 @@ export default function TryNextmotion({
   }, []);
 
   // Helper to get nested translation key
-  function getNested(obj: any, path: string) {
+  function getNested(obj: Record<string, any>, path: string) {
     return path.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
   }
 
-  const t = useTranslations(getNested(messages, translationKey) || {});
+  const t = useTranslations(getNested(messages || {}, translationKey) || {});
 
   if (!messages) return null;
 

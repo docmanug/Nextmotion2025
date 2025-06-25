@@ -1,10 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import type { ContactFormData } from "@/types";
 
 const specialties = [
   "Aesthetic doctor",
@@ -174,19 +176,134 @@ const interests = [
   "Agenda",
 ];
 
+interface ContactFormMessages {
+  title: string;
+  description: string;
+  features: {
+    beforeAfter: string;
+    clinicManagement: string;
+    simulation: string;
+    patientServices: string;
+  };
+  fields: {
+    firstName: {
+      label: string;
+      placeholder: string;
+    };
+    lastName: {
+      label: string;
+      placeholder: string;
+    };
+    email: {
+      label: string;
+      placeholder: string;
+    };
+    phone: {
+      label: string;
+      placeholder: string;
+    };
+    clientType: {
+      label: string;
+      placeholder: string;
+    };
+    specialty: {
+      label: string;
+      placeholder: string;
+    };
+    interest: {
+      label: string;
+      placeholder: string;
+    };
+    message: {
+      label: string;
+      placeholder: string;
+    };
+  };
+  submit: string;
+}
+
 export default function ContactForm() {
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<ContactFormMessages | null>(null);
+  const [formData, setFormData] = useState<Partial<ContactFormData>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const loadMessages = async () => {
       const locale = window.location.pathname.startsWith("/fr") ? "fr" : "en";
       const msgs = await getMessages(locale);
-      setMessages(msgs);
+      setMessages(msgs?.contact?.form || null);
     };
     loadMessages();
   }, []);
 
-  const t = useTranslations(messages?.contact?.form || {});
+  const t = useTranslations(messages || {});
+
+  const handleInputChange = (field: keyof ContactFormData, value: string | string[]) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.firstName?.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+
+    if (!formData.lastName?.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+
+    if (!formData.email?.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.practitioners || formData.practitioners.length === 0) {
+      newErrors.practitioners = "Please select at least one specialty";
+    }
+
+    if (!formData.country?.trim()) {
+      newErrors.country = "Country is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Handle success
+        alert('Form submitted successfully!');
+        setFormData({});
+      } else {
+        // Handle error
+        alert('Failed to submit form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
 
   if (!messages) return null;
 
@@ -269,18 +386,20 @@ export default function ContactForm() {
 
           {/* Right Form */}
           <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-[0_4px_20px_#3E7AB6AB]">
-            <form className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm mb-1.5">
                     {t("fields.firstName.label")}
                     <span className="text-red-500">*</span>
                   </label>
-                  <input
+                  <Input
                     type="text"
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    value={formData.firstName || ""}
+                    onChange={(e) => handleInputChange("firstName", e.target.value)}
                     placeholder={t("fields.firstName.placeholder")}
+                    error={errors.firstName}
                   />
                 </div>
                 <div>
@@ -288,11 +407,13 @@ export default function ContactForm() {
                     {t("fields.lastName.label")}
                     <span className="text-red-500">*</span>
                   </label>
-                  <input
+                  <Input
                     type="text"
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    value={formData.lastName || ""}
+                    onChange={(e) => handleInputChange("lastName", e.target.value)}
                     placeholder={t("fields.lastName.placeholder")}
+                    error={errors.lastName}
                   />
                 </div>
               </div>
@@ -302,11 +423,13 @@ export default function ContactForm() {
                   {t("fields.email.label")}
                   <span className="text-red-500">*</span>
                 </label>
-                <input
+                <Input
                   type="email"
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                  value={formData.email || ""}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder={t("fields.email.placeholder")}
+                  error={errors.email}
                 />
               </div>
 
@@ -315,17 +438,22 @@ export default function ContactForm() {
                   {t("fields.phone.label")}
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <select className="w-full sm:w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                  <select 
+                    className="w-full sm:w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    value={formData.countryCode || ""}
+                    onChange={(e) => handleInputChange("countryCode", e.target.value)}
+                  >
+                    <option value="">Select country</option>
                     {countryData.map((country) => (
                       <option key={country.code} value={country.code}>
                         {country.name} ({country.code})
                       </option>
                     ))}
                   </select>
-                  <input
+                  <Input
                     type="tel"
-                    required
-                    className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                    value={formData.phone || ""}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
                     placeholder={t("fields.phone.placeholder")}
                   />
                 </div>
@@ -335,7 +463,11 @@ export default function ContactForm() {
                 <label className="block text-sm mb-1.5">
                   {t("fields.clientType.label")}
                 </label>
-                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select 
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                  value={formData.profession || ""}
+                  onChange={(e) => handleInputChange("profession", e.target.value)}
+                >
                   <option value="">{t("fields.clientType.placeholder")}</option>
                   {clientTypes.map((type) => (
                     <option key={type} value={type}>
@@ -359,18 +491,33 @@ export default function ContactForm() {
                       <input
                         type="checkbox"
                         className="w-4 h-4 rounded border-gray-300 text-[#1650EF] focus:ring-[#1650EF]"
+                        checked={formData.practitioners?.includes(specialty) || false}
+                        onChange={(e) => {
+                          const currentSpecialties = formData.practitioners || [];
+                          const newSpecialties = e.target.checked
+                            ? [...currentSpecialties, specialty]
+                            : currentSpecialties.filter((s: string) => s !== specialty);
+                          handleInputChange("practitioners", newSpecialties);
+                        }}
                       />
                       <span className="ml-2 text-sm">{specialty}</span>
                     </label>
                   ))}
                 </div>
+                {errors.practitioners && (
+                  <p className="text-sm text-red-500 mt-1">{errors.practitioners}</p>
+                )}
               </div>
 
               <div>
                 <label className="block text-sm mb-1.5">
                   Country<span className="text-red-500">*</span>
                 </label>
-                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select 
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                  value={formData.country || ""}
+                  onChange={(e) => handleInputChange("country", e.target.value)}
+                >
                   <option value="">{t("fields.specialty.placeholder")}</option>
                   {countryData.map((country) => (
                     <option key={country.name} value={country.name}>
@@ -378,13 +525,20 @@ export default function ContactForm() {
                     </option>
                   ))}
                 </select>
+                {errors.country && (
+                  <p className="text-sm text-red-500 mt-1">{errors.country}</p>
+                )}
               </div>
 
               <div>
                 <label className="block text-sm mb-1.5">
                   {t("fields.interest.label")}
                 </label>
-                <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
+                <select 
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none"
+                  value={formData.interestedIn?.[0] || ""}
+                  onChange={(e) => handleInputChange("interestedIn", [e.target.value])}
+                >
                   <option value="">{t("fields.interest.placeholder")}</option>
                   {interests.map((interest) => (
                     <option key={interest} value={interest}>
@@ -401,10 +555,15 @@ export default function ContactForm() {
                 <textarea
                   className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none resize-none h-20 sm:h-24"
                   placeholder={t("fields.message.placeholder")}
+                  value={formData.additionalInfo || ""}
+                  onChange={(e) => handleInputChange("additionalInfo", e.target.value)}
                 />
               </div>
 
-              <Button className="w-full bg-[#1650EF] text-white hover:bg-[#1345D1] py-4 sm:py-6 h-auto text-sm sm:text-base font-semibold">
+              <Button 
+                type="submit"
+                className="w-full bg-[#1650EF] text-white hover:bg-[#1345D1] py-4 sm:py-6 h-auto text-sm sm:text-base font-semibold"
+              >
                 {t("submit")}
               </Button>
             </form>

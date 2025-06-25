@@ -7,7 +7,7 @@ import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
 
-export default function Feature3() {
+function useManagerFeature3Messages() {
   const [messages, setMessages] = useState<any>(null);
   const [contactFormLink, setContactFormLink] = useState("/contact_form");
 
@@ -28,9 +28,44 @@ export default function Feature3() {
     loadMessages();
   }, []);
 
-  const t = useTranslations(
-    messages?.manager?.features?.activityTracking || {}
+  return { messages, contactFormLink };
+}
+
+function SectionItem({ title, description }: { title: string; description: string }) {
+  return (
+    <div>
+      <h3 className="text-[20px] font-bold text-gray-900 mb-3">{title}</h3>
+      <p className="text-[18px] leading-relaxed text-gray-600">{description}</p>
+    </div>
   );
+}
+
+function SectionList({ t }: { t: (key: string) => string }) {
+  const sections = [
+    "newPatients",
+    "revenue",
+    "stock",
+    "appointmentSources",
+    "unpaid",
+    "revenueForecast",
+    "performance",
+  ];
+  return (
+    <div className="space-y-8">
+      {sections.map((key) => (
+        <SectionItem
+          key={key}
+          title={t(`sections.${key}.title`)}
+          description={t(`sections.${key}.description`)}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function Feature3() {
+  const { messages, contactFormLink } = useManagerFeature3Messages();
+  const t = useTranslations(messages?.manager?.features?.activityTracking || {});
 
   if (!messages) return null;
 
@@ -56,70 +91,7 @@ export default function Feature3() {
               {t("description")}
             </p>
 
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.newPatients.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.newPatients.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.revenue.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.revenue.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.stock.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.stock.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.appointmentSources.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.appointmentSources.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.unpaid.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.unpaid.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.revenueForecast.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.revenueForecast.description")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[20px] font-bold text-gray-900 mb-3">
-                  {t("sections.performance.title")}
-                </h3>
-                <p className="text-[18px] leading-relaxed text-gray-600">
-                  {t("sections.performance.description")}
-                </p>
-              </div>
-            </div>
+            <SectionList t={t} />
 
             <div className="mt-10">
               <Link

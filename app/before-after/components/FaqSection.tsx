@@ -10,6 +10,11 @@ interface FaqItem {
   answer: string;
 }
 
+interface FaqItemData {
+  question: string;
+  answer: string;
+}
+
 const FaqItem = ({
   question,
   answer,
@@ -48,7 +53,7 @@ const FaqItem = ({
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<Record<string, any> | null>(null);
   const t = useTranslations(messages);
 
   useEffect(() => {
@@ -76,7 +81,7 @@ export default function FaqSection() {
         </div>
 
         <div className="space-y-4">
-          {t("items").map((faq: any, index: number) => (
+          {(t("items") as FaqItemData[]).map((faq: FaqItemData, index: number) => (
             <FaqItem
               key={index}
               question={faq.question}

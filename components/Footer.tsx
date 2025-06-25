@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 import { Instagram, Facebook, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import type { TranslationMessages } from "@/types";
 
 interface FooterProps {
   professional?: {
@@ -66,7 +67,7 @@ export default function Footer({
 }: FooterProps) {
   const pathname = usePathname();
   const currentLocale = pathname?.startsWith("/fr") ? "fr" : "en";
-  const [translations, setTranslations] = useState<any>(null);
+  const [translations, setTranslations] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     const loadTranslations = async () => {
@@ -84,9 +85,9 @@ export default function Footer({
     }
   }, [professional, platform, company, help, newsletter, currentLocale]);
 
-  const t = (key: string) => {
+  const t = (key: string): string => {
     if (!translations) return key;
-    return key.split(".").reduce((obj, k) => obj?.[k], translations) || key;
+    return key.split(".").reduce((obj: any, k: string) => obj?.[k], translations) || key;
   };
 
   // If props are not provided and translations are not loaded yet, show a loading state

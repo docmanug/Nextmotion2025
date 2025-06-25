@@ -3,10 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations, getMessages } from "@/utils/i18n";
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Hero from "@/app/blog/components/Hero";
-import Footer from "@/components/Footer";
-import BlogPosts from "@/app/blog/components/BlogPosts";
+import { Hero, BlogPosts } from '@/app/blog/components';
 
 export default function BlogPage() {
   const [messages, setMessages] = useState<any>(null);
