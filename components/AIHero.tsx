@@ -32,7 +32,7 @@ export default function AIHero({
   }, []);
 
   return (
-    <div 
+    <div
       className={`relative pt-[120px] sm:pt-[160px] lg:pt-[200px] px-4 sm:px-6 lg:px-8 ${className || ''}`}
       {...props}
     >
@@ -68,16 +68,16 @@ export default function AIHero({
           </div>
         </div>
       </div>
-      {/* Hero Image */}
+      {/* Video Section */}
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-8 sm:py-16">
         <div className="flex justify-center">
           <div className="relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
-            <OptimizedImage
-              src="/ai-hero-image.webp"
-              alt="Nextmotion AI Platform"
-              fill
-              className="object-cover"
-              priority
+            <iframe
+              src="https://www.youtube.com/embed/5ppBRo2iFYg"
+              title="Nextmotion Platform Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
             />
           </div>
         </div>
