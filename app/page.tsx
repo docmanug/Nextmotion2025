@@ -1,24 +1,21 @@
 import { Metadata } from "next";
 import { getMessages, useTranslations } from "@/utils/i18n";
-import Hero from "@/components/Hero";
-import SolutionsSection from "@/components/SolutionsSection";
-import CaptureSection from "@/components/CaptureSection";
-import ConsultSection from "@/components/ConsultSection";
-import ThreeDSection from "@/components/ThreeDSection";
-import RevolutionSection from "@/components/RevolutionSection";
-import LogoSlider from "@/components/LogoSlider";
-import ApprovalSection from "@/components/ApprovalSection";
-import CommunitySection from "@/components/CommunitySection";
-import ReviewsSection from "@/components/ReviewsSection";
 import CountryRedirect from "./components/CountryRedirect";
-import { OrganizationSchema } from "./components/shared/OrganizationSchema";
-import { SoftwareApplicationSchema } from "./components/shared/SoftwareApplicationSchema";
+import SchemaManager from "./components/shared/SchemaManager";
+import AIHero from "@/components/AIHero";
+import ChallengesSection from "@/components/ChallengesSection";
+import AIModulesSection from "@/components/AIModulesSection";
+import TransitionSection from "@/components/TransitionSection";
+import ProductsSection from "@/components/ProductsSection";
+import ImpactSection from "@/components/ImpactSection";
+import FinalCTA from "@/components/FinalCTA";
+import LogoSlider from "@/components/LogoSlider";
 
 export const metadata: Metadata = {
   title:
-    "Management software for aesthetic clinics: simplify your appointments and cash management.",
+    "AI-powered management software for aesthetic clinics | Nextmotion",
   description:
-    "Optimize the management of your aesthetic clinic with our software dedicated to physicians, aesthetic surgeons, and managers. Simplify appointment scheduling, cash management, and much more.",
+    "Boost your aesthetic clinic's growth with Nextmotion's AI-powered software. Attract more patients, streamline operations, and automate administrative tasks.",
   alternates: {
     canonical: "https://www.nextmotion.net",
   },
@@ -28,129 +25,166 @@ export default async function Home() {
   const messages = await getMessages("en");
   const t = useTranslations(messages);
 
+  // Challenges data
+  const challenges = [
+    {
+      icon: "💰",
+      title: "Not enough revenue",
+      description: "Nextmotion helps you attract, convert, and retain patients with powerful AI and visual tools."
+    },
+    {
+      icon: "🔁",
+      title: "Complex patient journey",
+      description: "Digitize every step of the patient journey: photos, quotes, consents, documents, rebooking."
+    },
+    {
+      icon: "🗂",
+      title: "Tedious administrative work",
+      description: "Automate repetitive tasks and centralize all your data in one place."
+    }
+  ];
+
+  // AI Modules data
+  const aiModules = [
+    {
+      icon: "🧠",
+      title: "Create medical reports in 30s with Consult AI",
+      description: "Automatically generate structured medical reports from your voice during consultations.",
+      features: [
+        "Voice transcription during consultations",
+        "Automatic generation of structured medical reports",
+        "Customizable templates for different procedures",
+        "Time savings of up to 70% on documentation"
+      ],
+      testimonial: {
+        quote: "I save 2 hours every day on paperwork thanks to Consult AI.",
+        author: "Dr. Sophie Martin",
+        role: "Aesthetic Physician, Paris"
+      },
+      image: "/ai-consult.webp"
+    },
+    {
+      icon: "📞",
+      title: "An AI receptionist that works 24/7 for you",
+      description: "Let our AI handle appointment scheduling, answer common questions, and update your CRM - all with your own voice.",
+      features: [
+        "24/7 availability for patient inquiries",
+        "Automatic appointment scheduling and reminders",
+        "Seamless integration with your calendar",
+        "Natural voice interaction using your own voice"
+      ],
+      testimonial: {
+        quote: "My clinic now books appointments even when we're closed. It's like having an extra staff member.",
+        author: "Dr. Jean Dupont",
+        role: "Clinic Manager"
+      },
+      image: "/ai-receptionist.webp"
+    },
+    {
+      icon: "🤖",
+      title: "Control your CRM from ChatGPT",
+      description: "Manage your entire practice with simple voice or text commands through ChatGPT integration.",
+      features: [
+        "Voice and text commands for all CRM functions",
+        "Quick access to patient records and history",
+        "Generate reports and analytics on demand",
+        "Seamless integration with your existing workflow"
+      ],
+      testimonial: {
+        quote: "Being able to pull up patient information with a simple voice command has transformed my consultations.",
+        author: "Dr. Thomas Laurent",
+        role: "Plastic Surgeon"
+      },
+      image: "/ai-copilot.webp"
+    }
+  ];
+
+  // Products data
+  const products = [
+    {
+      icon: "📷",
+      title: "Nextmotion Capture",
+      description: "Standardized before/after photos that showcase your expertise and build patient trust. Automatic alignment, professional results, effortlessly.",
+      image: "/capture-app-demo.webp"
+    },
+    {
+      icon: "📁",
+      title: "Nextmotion Consult",
+      description: "The most aesthetic-focused digital medical record: smooth workflows, consents, invoices, API integrations, and a comprehensive medical CRM.",
+      image: "/consult.webp"
+    },
+    {
+      icon: "🧠",
+      title: "Nextmotion 3D",
+      description: "Project anatomical layers in augmented reality to better explain procedures and engage your patients in their treatment.",
+      image: "/3d_anatomy.webp"
+    },
+    {
+      icon: "🤖",
+      title: "Nextmotion Revolution",
+      description: "A robotic arm to capture perfectly standardized dynamic videos from all angles. A technology demonstration that impresses patients.",
+      image: "/capturegirl.webp"
+    }
+  ];
+
+  // Impact metrics
+  const metrics = [
+    {
+      value: "+30%",
+      label: "Time saved",
+      icon: "⏱️"
+    },
+    {
+      value: "+15%",
+      label: "Average revenue increase",
+      icon: "📈"
+    },
+    {
+      value: "+35pts",
+      label: "Patient satisfaction",
+      icon: "🌟"
+    }
+  ];
+
   return (
     <main>
       <CountryRedirect />
-      <Hero
-        title={t("hero.title")}
-        subtitle={t("hero.subtitle")}
-        demoButton={t("hero.demoButton")}
-        watchButton={t("hero.watchButton")}
+      <AIHero
+        title="The all-in-one AI solution to boost your aesthetic clinic's growth"
+        subtitle="Attract more patients, digitize the patient experience, automate your daily management"
+        demoButton="Schedule a personalized AI demo"
+        discoverButton="Discover AI features"
       />
-      <SolutionsSection
-        title={t("solutions.title")}
-        subtitle={t("solutions.subtitle")}
-        individuals={t("solutions.individuals")}
-        clinics={t("solutions.clinics")}
-        chains={t("solutions.chains")}
-        marketing={t("solutions.marketing")}
+      <ChallengesSection
+        title="The 3 critical challenges for clinics today"
+        challenges={challenges}
       />
-      <CaptureSection
-        title={t("capture.title")}
-        subtitle={t("capture.subtitle")}
-        description={t("capture.description")}
-        features={{
-          standardization: {
-            title: t("capture.features.standardization.title"),
-            description: t("capture.features.standardization.description"),
-          },
-          experience: {
-            title: t("capture.features.experience.title"),
-            description: t("capture.features.experience.description"),
-          },
-          automation: {
-            title: t("capture.features.automation.title"),
-            description: t("capture.features.automation.description"),
-          },
-        }}
-        learnMore={t("capture.learnMore")}
+      <AIModulesSection
+        title="Powerful AI modules to transform your practice"
+        subtitle="Nextmotion's AI assistant is at the core of a complete ecosystem designed for aesthetic clinics"
+        modules={aiModules}
       />
-      <ConsultSection
-        title={t("consult.title")}
-        subtitle={t("consult.subtitle")}
-        description={t("consult.description")}
-        features={{
-          management: {
-            title: t("consult.features.management.title"),
-            description: t("consult.features.management.description"),
-          },
-          agenda: {
-            title: t("consult.features.agenda.title"),
-            description: t("consult.features.agenda.description"),
-          },
-          workflow: {
-            title: t("consult.features.workflow.title"),
-            description: t("consult.features.workflow.description"),
-          },
-          api: {
-            title: t("consult.features.api.title"),
-            description: t("consult.features.api.description"),
-          },
-          cloud: {
-            title: t("consult.features.cloud.title"),
-            description: t("consult.features.cloud.description"),
-          },
-        }}
-        learnMore={t("consult.learnMore")}
+      <TransitionSection
+        title="Artificial intelligence is at the heart of Nextmotion. But our solution goes much further."
+        description="Nextmotion also integrates tools designed to cover all the business needs of a clinic: photo capture, patient records, robotics, 3D and more."
       />
-      <ThreeDSection
-        title={t("threeD.title")}
-        subtitle={t("threeD.subtitle")}
-        description={t("threeD.description")}
-        features={{
-          simulation: {
-            title: t("threeD.features.simulation.title"),
-            description: t("threeD.features.simulation.description"),
-          },
-          visualization: {
-            title: t("threeD.features.visualization.title"),
-            description: t("threeD.features.visualization.description"),
-          },
-          planning: {
-            title: t("threeD.features.planning.title"),
-            description: t("threeD.features.planning.description"),
-          },
-        }}
-        learnMore={t("threeD.learnMore")}
+      <ProductsSection
+        title="Our flagship tools"
+        products={products}
       />
-      <RevolutionSection
-        title={t("revolution.title")}
-        subtitle={t("revolution.subtitle")}
-        description={t("revolution.description")}
-        features={{
-          innovation: {
-            title: t("revolution.features.innovation.title"),
-            description: t("revolution.features.innovation.description"),
-          },
-          integration: {
-            title: t("revolution.features.integration.title"),
-            description: t("revolution.features.integration.description"),
-          },
-          results: {
-            title: t("revolution.features.results.title"),
-            description: t("revolution.features.results.description"),
-          },
-        }}
-        learnMore={t("revolution.learnMore")}
+      <ImpactSection
+        metrics={metrics}
       />
-      <LogoSlider title={t("logos.title")} subtitle={t("logos.subtitle")} />
-      <ReviewsSection />
-      <CommunitySection
-        title={t("community.title")}
-        subtitle={t("community.subtitle")}
+      <LogoSlider 
+        title="Trusted by leading aesthetic clinics worldwide" 
+        subtitle="Join thousands of practitioners who have transformed their practice with Nextmotion"
       />
-      <ApprovalSection
-        title={t("approval.title")}
-        subtitle={t("approval.subtitle")}
-        description={t("approval.description")}
-        certifications={{
-          medical: t("approval.certifications.medical"),
-          security: t("approval.certifications.security"),
-          quality: t("approval.certifications.quality"),
-        }}
+      <FinalCTA
+        title="Ready to transform your practice?"
+        description="Book a demo and receive a free 15-minute diagnostic of your organization."
+        buttonText="Schedule an AI demo"
       />
-      <OrganizationSchema />
-      <SoftwareApplicationSchema />
+      <SchemaManager schemas={['organization', 'softwareApplication']} />
     </main>
   );
 }

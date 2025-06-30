@@ -6,6 +6,7 @@ interface SectionProps {
   className?: string;
   containerClassName?: string;
   background?: "white" | "gray" | "blue";
+  id?: string;
 }
 
 export function Section({
@@ -13,6 +14,7 @@ export function Section({
   className,
   containerClassName,
   background = "white",
+  id,
 }: SectionProps) {
   const backgroundClasses = {
     white: "bg-white",
@@ -21,7 +23,10 @@ export function Section({
   };
 
   return (
-    <section className={cn("py-12 sm:py-16 lg:py-20", backgroundClasses[background], className)}>
+    <section 
+      id={id}
+      className={cn("py-12 sm:py-16 lg:py-20", backgroundClasses[background], className)}
+    >
       <div className={cn("max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", containerClassName)}>
         {children}
       </div>
@@ -56,4 +61,4 @@ export function SectionHeader({
       )}
     </div>
   );
-} 
+}

@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 import { getMessages } from "@/utils/i18n";
 
@@ -23,11 +22,8 @@ export default function TryNextmotion({
   const [link, setLink] = useState(contactFormLink);
 
   useEffect(() => {
-    setLink(
-      window.location.pathname.startsWith("/fr")
-        ? "/fr/formulaire_contact"
-        : contactFormLink
-    );
+    const isOnFrenchPage = window.location.pathname.startsWith("/fr");
+    setLink(isOnFrenchPage ? "/fr/formulaire_contact" : contactFormLink);
   }, [contactFormLink]);
 
   useEffect(() => {
@@ -44,7 +40,10 @@ export default function TryNextmotion({
     return path.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
   }
 
-  const t = useTranslations(getNested(messages || {}, translationKey) || {});
+  const t = (key: string) => {
+    const translationObj = getNested(messages || {}, translationKey) || {};
+    return translationObj[key] || key;
+  };
 
   if (!messages) return null;
 
@@ -65,4 +64,4 @@ export default function TryNextmotion({
       </div>
     </section>
   );
-} 
+}
