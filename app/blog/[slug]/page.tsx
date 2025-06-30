@@ -9,13 +9,31 @@ async function getPost(slug: string): Promise<BlogPost> {
 }
 
 async function getPosts(): Promise<BlogPost[]> {
-	const res = await fetch(`https://www.nextmotion.net/api/posts`, { cache: "no-store" });
-	return res.json();
+	try {
+		const res = await fetch(`https://www.nextmotion.net/api/posts`, { cache: "no-store" });
+		if (!res.ok) {
+			return [];
+		}
+		const posts = await res.json();
+		return Array.isArray(posts) ? posts : [];
+	} catch (error) {
+		console.error("Error fetching or parsing posts:", error);
+		return [];
+	}
 }
 
 async function getCategories(): Promise<Category[]> {
-	const res = await fetch(`https://www.nextmotion.net/api/categories`, { cache: "no-store" });
-	return res.json();
+	try {
+		const res = await fetch(`https://www.nextmotion.net/api/categories`, { cache: "no-store" });
+		if (!res.ok) {
+			return [];
+		}
+		const categories = await res.json();
+		return Array.isArray(categories) ? categories : [];
+	} catch (error) {
+		console.error("Error fetching or parsing categories:", error);
+		return [];
+	}
 }
 
 type Props = {
