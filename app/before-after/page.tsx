@@ -33,6 +33,7 @@ export default async function SecondLandingPage() {
 
   return (
     <main>
+      <Hero />
       <ImageSection />
       <SolutionsSection />
       <CaptureSection />

@@ -228,7 +228,7 @@ export default function PricingPlans() {
                             </ul>
 
                             <div className="mt-auto">
-                                <Link href={plan.selfServe ? "https://account.nextmotion.net/auth/register" : contactFormLink} className="block">
+                                <Link href={plan.selfServe ? "https://account.nextmotion.net/auth/register?app_platform=web&next=https://app.nextmotion.net" : contactFormLink} className="block">
                                     <Button
                                         className={`w-full py-2.5 rounded-lg ${plan.selfServe
                                                 ? "bg-green-600 hover:bg-green-700 text-white"
