@@ -1,98 +1,190 @@
 "use client";
 
-import { Section } from "@/components/ui/section";
+import { Section, SectionHeader } from "@/components/ui/section";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { cn } from "@/lib/utils";
-import { CheckCircle } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 interface AIModule {
-  icon: string;
   title: string;
   description: string;
   features: string[];
-  testimonial?: {
-    quote: string;
-    author: string;
-    role?: string;
-  };
-  image?: string;
+  icon: string;
+  image: string;
 }
 
 interface AIModulesSectionProps {
   title: string;
   subtitle: string;
-  modules: AIModule[];
   className?: string;
+  isFrenchlanguage?: boolean;
 }
 
 export default function AIModulesSection({
   title,
   subtitle,
-  modules,
   className,
+  isFrenchlanguage = false,
 }: AIModulesSectionProps) {
+  const [contactFormLink, setContactFormLink] = useState<string>("/contact_form");
+
+  useEffect(() => {
+    setContactFormLink(
+      window.location.pathname.startsWith("/fr")
+        ? "/fr/formulaire_contact"
+        : "/contact_form"
+    );
+  }, []);
+
+  const aiModulesEN: AIModule[] = [
+    {
+      title: "Consult AI",
+      description: "Automated transcription and report generation",
+      features: [
+        "Real-time consultation transcription",
+        "Automated medical report generation",
+        "Intelligent treatment recommendations",
+        "Time savings of up to 70% on documentation"
+      ],
+      icon: "/icons/consult-ai-icon.svg",
+      image: "/consult.webp"
+    },
+    {
+      title: "Secretary AI",
+      description: "24/7 voice agent for your clinic",
+      features: [
+        "Handles patient calls 24/7",
+        "Books and reschedules appointments",
+        "Answers common patient questions",
+        "Reduces missed appointments by 40%"
+      ],
+      icon: "/icons/secretary-ai-icon.svg",
+      image: "/capture-app-demo.webp"
+    },
+    {
+      title: "Copilot AI",
+      description: "Voice and text control via ChatGPT",
+      features: [
+        "Voice-controlled clinic management",
+        "Natural language interface for all functions",
+        "Intelligent workflow automation",
+        "Reduces administrative time by 35%"
+      ],
+      icon: "/icons/copilot-ai-icon.svg",
+      image: "/3d_anatomy.webp"
+    }
+  ];
+
+  const aiModulesFR: AIModule[] = [
+    {
+      title: "Consult AI",
+      description: "Transcription et génération automatisée de rapports",
+      features: [
+        "Transcription des consultations en temps réel",
+        "Génération automatisée de rapports médicaux",
+        "Recommandations intelligentes de traitement",
+        "Gain de temps jusqu'à 70% sur la documentation"
+      ],
+      icon: "/icons/consult-ai-icon.svg",
+      image: "/consult.webp"
+    },
+    {
+      title: "Secrétariat IA",
+      description: "Agent vocal 24/7 pour votre clinique",
+      features: [
+        "Gère les appels patients 24h/24, 7j/7",
+        "Réserve et reprogramme les rendez-vous",
+        "Répond aux questions courantes des patients",
+        "Réduit les rendez-vous manqués de 40%"
+      ],
+      icon: "/icons/secretary-ai-icon.svg",
+      image: "/capture-app-demo.webp"
+    },
+    {
+      title: "Copilot IA",
+      description: "Contrôle vocal et textuel via ChatGPT",
+      features: [
+        "Gestion de clinique par commande vocale",
+        "Interface en langage naturel pour toutes les fonctions",
+        "Automatisation intelligente des flux de travail",
+        "Réduit le temps administratif de 35%"
+      ],
+      icon: "/icons/copilot-ai-icon.svg",
+      image: "/3d_anatomy.webp"
+    }
+  ];
+
+  const aiModules = isFrenchlanguage ? aiModulesFR : aiModulesEN;
+  const learnMoreText = isFrenchlanguage ? "En savoir plus" : "Learn more";
+  const demoText = isFrenchlanguage ? "Demander une démo" : "Request a demo";
+
   return (
-    <Section id="ai-modules" className={cn("py-16 sm:py-24", className)}>
-      <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#081F4D] mb-4">{title}</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">{subtitle}</p>
-      </div>
-      
-      <div className="space-y-16">
-        {modules.map((module, index) => (
-          <div 
-            key={index} 
-            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}
-          >
-            <div className="flex-1 space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="text-3xl">{module.icon}</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{module.title}</h3>
+    <Section className={cn("py-16 bg-gray-50", className)}>
+      <SectionHeader title={title} subtitle={subtitle} />
+
+      <div className="mt-12 space-y-16">
+        {aiModules.map((module, index) => (
+          <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
+            <div className="w-full md:w-1/2">
+              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold">AI</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">{module.title}</h3>
+                </div>
+
+                <p className="text-lg text-gray-700 mb-6">{module.description}</p>
+
+                <ul className="space-y-3 mb-6">
+                  {module.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <svg className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-3">
+                  <Link href={contactFormLink}>
+                    <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 text-[16px] h-auto">
+                      {learnMoreText}
+                    </Button>
+                  </Link>
+                  <Link href={contactFormLink}>
+                    <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg px-6 py-3 text-[16px] font-semibold h-auto">
+                      {demoText}
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              
-              <p className="text-lg text-gray-600">{module.description}</p>
-              
-              <ul className="space-y-3">
-                {module.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              {module.testimonial && (
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 mt-6">
-                  <p className="text-gray-600 italic mb-2">&quot;{module.testimonial.quote}&quot;</p>
-                  <p className="text-sm font-medium">
-                    {module.testimonial.author}
-                    {module.testimonial.role && (
-                      <span className="text-gray-500"> — {module.testimonial.role}</span>
-                    )}
-                  </p>
-                </div>
-              )}
             </div>
-            
-            <div className="flex-1">
-              {module.image ? (
-                <div className="relative rounded-lg overflow-hidden shadow-lg">
-                  <OptimizedImage
-                    src={module.image}
-                    alt={module.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto"
-                  />
-                </div>
-              ) : (
-                <div className="bg-gray-100 rounded-lg h-[300px] sm:h-[400px] flex items-center justify-center">
-                  <span className="text-gray-400">Image placeholder</span>
-                </div>
-              )}
+
+            <div className="w-full md:w-1/2 h-[350px] md:h-[400px]">
+              <div className="relative rounded-xl overflow-hidden shadow-lg h-full">
+                <OptimizedImage
+                  src={module.image}
+                  alt={module.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent"></div>
+              </div>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-16 text-center">
+        <Link href={contactFormLink}>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 text-lg h-auto">
+            {isFrenchlanguage ? "Découvrir tous nos modules IA" : "Discover all our AI modules"}
+          </Button>
+        </Link>
       </div>
     </Section>
   );

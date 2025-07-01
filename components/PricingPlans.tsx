@@ -184,18 +184,6 @@ export default function PricingPlans() {
     return (
         <section className="py-20 bg-white">
             <div className="container max-w-7xl mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-[#081F4D] mb-6">
-                        {currentLocale === "fr"
-                            ? "Nos offres"
-                            : "Our offers"}
-                    </h2>
-                    <p className="text-xl text-[#081F4D] max-w-3xl mx-auto">
-                        {currentLocale === "fr"
-                            ? "des solutions flexibles, adaptées à votre activité esthétique."
-                            : "flexible solutions, adapted to your aesthetic activity."}
-                    </p>
-                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {plans.map((plan, index) => (
