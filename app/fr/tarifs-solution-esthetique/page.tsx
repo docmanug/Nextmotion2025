@@ -1,12 +1,9 @@
 // "use client";
 
 import Hero from "../../pricing-aesthetic-solution/components/Hero";
-import PricingCards from "../../pricing-aesthetic-solution/components/PricingCards";
-import SmallPricingCards from "../../pricing-aesthetic-solution/components/SmallPricingCards";
-import ComparisonPlans from "../../pricing-aesthetic-solution/components/ComparisonPlans";
-import TestimonialSlider from "../../pricing-aesthetic-solution/components/TestimonialSlider";
-import { FAQSection } from "@/components/ui/faq-section";
 import { getMessages, useTranslations } from "@/utils/i18n";
+import PricingPlans from "@/components/PricingPlans";
+import SchemaManager from "../../components/shared/SchemaManager";
 
 export default async function PricingAestheticSolutionPage() {
 	const messages = await getMessages("fr");
@@ -14,17 +11,9 @@ export default async function PricingAestheticSolutionPage() {
 
 	return (
 		<main className='bg-[#F8FAFF]'>
+			<SchemaManager schemas={['organization', 'softwareApplication']} />
 			<Hero />
-			<ComparisonPlans />
-			<PricingCards />
-			<SmallPricingCards />
-			<TestimonialSlider />
-			<FAQSection
-				title={t("pricing.faq.title")}
-				subtitle={t("pricing.faq.subtitle")}
-				faqs={t("pricing.faq.questions") || []}
-			/>
-			{/* <TryNextmotion /> */}
+			<PricingPlans />
 		</main>
 	);
 }
