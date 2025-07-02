@@ -5,7 +5,6 @@ import AIModulesSection from '@/components/AIModulesSection';
 import ApiAutomationSection from '@/components/ApiAutomationSection';
 import ImpactSection from '@/components/ImpactSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import TryNextmotion from '@/components/TryNextmotion';
 import LogoSlider from '@/components/LogoSlider';
 
 export const metadata: Metadata = {
@@ -54,10 +53,6 @@ export default function AIPage() {
             <TestimonialsSection
                 title="What Our Clients Say"
                 subtitle="Hear from physicians who have transformed their practices with Nextmotion AI"
-            />
-
-            <TryNextmotion
-                translationKey="aiPage.tryNextmotion"
             />
         </main>
     );
