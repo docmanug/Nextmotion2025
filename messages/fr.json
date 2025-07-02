@@ -1281,71 +1281,72 @@
 		}
 	},
 	"contactForm": {
-		"title": "Formulaire de contact",
+		"title": "Contactez-nous pour en savoir plus sur Nextmotion",
+		"tagline": "Dites-nous où vous voulez aller, on vous montre comment y arriver.",
+		"submitSuccess": "Merci pour votre message ! Nous vous répondrons rapidement.",
+		"submitError": "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer.",
+		"imageAlt": "Image du formulaire de contact",
 		"form": {
 			"firstName": {
 				"label": "Prénom",
-				"placeholder": "Prénom"
+				"placeholder": "Entrez votre prénom"
 			},
 			"lastName": {
 				"label": "Nom",
-				"placeholder": "Nom"
+				"placeholder": "Entrez votre nom"
 			},
 			"email": {
-				"label": "E-mail",
-				"placeholder": "E-mail"
+				"label": "Email",
+				"placeholder": "Entrez votre adresse email"
 			},
 			"phone": {
-				"label": "Téléphone mobile",
-				"placeholder": "Numéro de téléphone"
+				"label": "Numéro de téléphone",
+				"placeholder": "Entrez votre numéro de téléphone"
 			},
 			"profession": {
-				"label": "Quelle est votre profession ? ",
+				"label": "Vous êtes",
+				"newLabel": "Quelle est votre profession ?",
+				"placeholder": "Sélectionnez votre profession",
 				"options": {
-					"aestheticPhysician": "Médecin esthétique",
-					"aestheticSurgeon": "Chirurgien esthétique",
-					"clinicManager": "Gérant de clinique esthétique",
-					"assistant": "Assistant",
-					"secretary": "Secrétaire",
-					"marketingSpecialist": "Spécialiste marketing",
-					"industry": "Industrie",
+					"doctor": "Médecin",
+					"assistant": "Assistant(e)",
+					"manager": "Manager",
+					"multiSiteManager": "Gérant multi-sites",
 					"other": "Autre"
 				}
 			},
 			"practitioners": {
-				"label": "Combien de praticiens travaillent au sein de votre structure ?",
+				"label": "Nombre de praticiens dans votre établissement",
+				"newLabel": "Combien de praticiens travaillent dans votre structure ?",
+				"placeholder": "Sélectionnez une option",
 				"options": {
-					"privatePractice": "Cabinet individuel (Un seul praticien)",
-					"smallFacility": "Petite structure (moins de 3 praticiens)",
-					"mediumFacility": "Moyenne structure (4-10 praticien)",
-					"largeFacility": "Grande structure (plus de 10 praticiens)"
+					"privatePractice": "Cabinet privé (1 praticien)",
+					"smallFacility": "Petit établissement (2-5 praticiens)",
+					"mediumFacility": "Moyen établissement (6-10 praticiens)",
+					"largeFacility": "Grand établissement (10+ praticiens)"
 				}
 			},
 			"country": {
-				"label": "Sélectionnez votre pays",
+				"label": "Pays",
 				"placeholder": "Sélectionnez votre pays"
 			},
-			"interestedIn": {
-				"label": "Vous êtes intéressés par (plusieurs choix possibles)",
+			"objectives": {
+				"label": "Quel est votre objectif prioritaire ?",
 				"options": {
-					"photoApp": "Notre Application Photo",
-					"consultationSoftware": "Notre Logiciel de Consultation",
-					"onlineAgenda": "Notre Agenda en Ligne",
-					"3DAnatomyTool": "Notre Outil d'Anatomie 3D",
-					"nextmotionRevolutionMachine": "Notre Machine Nextmotion Revolution",
-					"mixedRealityHeadset": "Notre Casque de Réalité Mixte",
-					"injectionRobot": "Notre Robot d'Injection (LENA)"
+					"profitability": "Optimiser la rentabilité de mon activité",
+					"patients": "Attirer plus de patients",
+					"time": "Gagner du temps sur la gestion administrative",
+					"digitalize": "Digitaliser / automatiser ma pratique",
+					"ai": "Découvrir les apports de l'intelligence artificielle"
 				}
 			},
 			"additionalInfo": {
-				"label": "Informations complémentaires (meilleur moment pour vous contacter, etc..)",
+				"label": "Informations supplémentaires",
 				"placeholder": "Parlez-nous de vos besoins"
 			},
-			"submitButton": "Envoyer ma demande",
+			"submitButton": "Envoyer",
 			"submitting": "Envoi en cours..."
-		},
-		"submitSuccess": "Merci ! Votre formulaire a été soumis avec succès. Nous vous contacterons bientôt.",
-		"submitError": "Désolé, une erreur s'est produite lors de l'envoi de votre formulaire. Veuillez réessayer plus tard ou nous contacter directement à contact@nextmotion.net."
+		}
 	},
 	"threeDAestheticSimulation": {
 		"hero": {

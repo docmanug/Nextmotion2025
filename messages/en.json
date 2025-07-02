@@ -1238,7 +1238,11 @@
 		}
 	},
 	"contactForm": {
-		"title": "Contact",
+		"title": "Contact us to learn more about Nextmotion",
+		"tagline": "Tell us where you want to go, we'll show you how to get there.",
+		"submitSuccess": "Thank you for your message! We'll get back to you shortly.",
+		"submitError": "There was an error submitting your form. Please try again.",
+		"imageAlt": "Contact Form Image",
 		"form": {
 			"firstName": {
 				"label": "First Name",
@@ -1253,45 +1257,44 @@
 				"placeholder": "Enter your email address"
 			},
 			"phone": {
-				"label": "Mobile phone number",
-				"placeholder": "Phone number"
+				"label": "Phone Number",
+				"placeholder": "Enter your phone number"
 			},
 			"profession": {
-				"label": "What is your profession?",
+				"label": "You are",
+				"newLabel": "What is your profession?",
+				"placeholder": "Select your profession",
 				"options": {
-					"aestheticPhysician": "Aesthetic physician",
-					"aestheticSurgeon": "Aesthetic surgeon",
-					"clinicManager": "Aesthetic clinic manager",
+					"doctor": "Doctor",
 					"assistant": "Assistant",
-					"secretary": "Secretary",
-					"marketingSpecialist": "Marketing specialist",
-					"industry": "Industry",
+					"manager": "Manager",
+					"multiSiteManager": "Multi-site Manager",
 					"other": "Other"
 				}
 			},
 			"practitioners": {
-				"label": "How many practitioners work within your clinic?",
+				"label": "Number of practitioners in your facility",
+				"newLabel": "How many practitioners work in your facility?",
+				"placeholder": "Select an option",
 				"options": {
-					"privatePractice": "Private Practice (Single Practitioner)",
-					"smallFacility": "Small Facility (Fewer than 3 Practitioners)",
-					"mediumFacility": "Medium Facility (4-10 Practitioners)",
-					"largeFacility": "Large Facility (More than 10 Practitioners)"
+					"privatePractice": "Private Practice (1 practitioner)",
+					"smallFacility": "Small Facility (2-5 practitioners)",
+					"mediumFacility": "Medium Facility (6-10 practitioners)",
+					"largeFacility": "Large Facility (10+ practitioners)"
 				}
 			},
 			"country": {
 				"label": "Country",
 				"placeholder": "Select your country"
 			},
-			"interestedIn": {
-				"label": "I'm interested in",
+			"objectives": {
+				"label": "What is your primary goal?",
 				"options": {
-					"photoApp": "Our Photo App (NM Capture)",
-					"consultationSoftware": "Our Consultation Software (NM Consult)",
-					"onlineAgenda": "Our Online Agenda",
-					"3DAnatomyTool": "Our 3D Anatomy Tool (Nextmotion 3D)",
-					"nextmotionRevolutionMachine": "Our Nextmotion Revolution Machine",
-					"mixedRealityHeadset": "Our Mixed Reality Headset (Virtual Classes)",
-					"injectionRobot": "Our Injection Robot (LENA)"
+					"profitability": "Optimize the profitability of my practice",
+					"patients": "Attract more patients",
+					"time": "Save time on administrative management",
+					"digitalize": "Digitize / automate my practice",
+					"ai": "Discover the benefits of artificial intelligence"
 				}
 			},
 			"additionalInfo": {
@@ -1300,9 +1303,7 @@
 			},
 			"submitButton": "Submit",
 			"submitting": "Submitting..."
-		},
-		"submitSuccess": "Thank you! Your form has been submitted successfully. We will contact you soon.",
-		"submitError": "Sorry, there was an error submitting your form. Please try again later or contact us directly at contact@nextmotion.net."
+		}
 	},
 	"threeDAestheticSimulation": {
 		"hero": {
@@ -2270,10 +2271,18 @@
 			"title": "All-in-One Software to Simplify and Optimize Your Administrative Tasks",
 			"description": "Nextmotion is Specifically Designed for the Needs of Aesthetic Clinic Assistants and Secretaries : discover how our solution helps you save time, reduce administrative tasks, and improve your clinic's overall efficiency.",
 			"solutions": [
-				{ "title": "Paperless solution" },
-				{ "title": "Electronic Signature" },
-				{ "title": "Business Development" },
-				{ "title": "Process Optimization" }
+				{
+					"title": "Paperless solution"
+				},
+				{
+					"title": "Electronic Signature"
+				},
+				{
+					"title": "Business Development"
+				},
+				{
+					"title": "Process Optimization"
+				}
 			]
 		},
 		"feature1": {
