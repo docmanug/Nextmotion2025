@@ -247,9 +247,9 @@ export default function ContactFormPage() {
 											{t('contactForm.form.phone.label')}
 											<span className="text-red-500">*</span>
 										</label>
-										<div className="flex gap-2 flex-wrap sm:flex-nowrap">
+										<div className="flex gap-2 flex-wrap w-full sm:flex-nowrap">
 											<select
-												className="px-2 py-2 sm:py-2.5 w-full rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
+												className="px-2 py-2 sm:py-2.5 w-24 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
 												value={formData.countryCode}
 												onChange={handleCountryCodeChange}
 											>
