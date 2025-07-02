@@ -238,6 +238,16 @@ export default function Navbar() {
 								>
 									{t("navbar.solutionsMenu.robotics")}
 								</Link>
+								<Link
+									href={
+										currentLocale === "fr"
+											? "/fr/intelligence-artificielle"
+											: "/intelligence-artificielle"
+									}
+									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+								>
+									{t("navbar.solutionsMenu.ai")}
+								</Link>
 							</div>
 						</div>
 
@@ -532,6 +542,16 @@ export default function Navbar() {
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
 											>
 												{t("navbar.solutionsMenu.robotics")}
+											</Link>
+											<Link
+												href={
+													currentLocale === "fr"
+														? "/fr/intelligence-artificielle"
+														: "/intelligence-artificielle"
+												}
+												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+											>
+												{t("navbar.solutionsMenu.ai")}
 											</Link>
 										</div>
 									)}

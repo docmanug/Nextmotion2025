@@ -15,7 +15,8 @@
 			"consult": "NextMotion - Consult",
 			"agenda": "Nextmotion Agenda",
 			"virtualClasses": "Virutal Classes",
-			"robotics": "Robotics"
+			"robotics": "Robotics",
+			"ai": "Intelligence Artificielle"
 		},
 		"youAreMenu": {
 			"clinicManager": "Manager de clinique",
