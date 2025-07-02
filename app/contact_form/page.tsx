@@ -27,7 +27,7 @@ export default function ContactFormPage() {
 		phone: '',
 		countryCode: '+1', // Default country code
 		profession: '',
-		practitioners: '',
+		practitioners: [] as string[],
 		country: '',
 		primaryObjectives: [] as string[],
 		additionalInfo: '',
@@ -85,11 +85,10 @@ export default function ContactFormPage() {
 		'Autre': 'Autre',
 	};
 	const practitionersMap: Record<string, string> = {
-		'1': 'Petite structure (moins de 3 praticiens)',
-		'2-3': 'Structure moyenne (2 à 3 praticiens)',
-		'4-6': 'Structure intermédiaire (4 à 6 praticiens)',
-		'7-10': 'Grande structure (7 à 10 praticiens)',
-		'+10': 'Très grande structure (+10 praticiens)',
+		'Individual practice (One practitioner only)': 'Individual practice (One practitioner only)',
+		'Small structure (less than 3 practitioners)': 'Small structure (less than 3 practitioners)',
+		'Medium structure (4-10 practitioners)': 'Medium structure (4-10 practitioners)',
+		'Large structure (more than 10 practitioners)': 'Large structure (more than 10 practitioners)',
 	};
 	const objectivesMap: Record<string, string> = {
 		'optimize-profitability': 'Optimiser la rentabilité de mon activité',
@@ -114,7 +113,7 @@ export default function ContactFormPage() {
 
 		// Map values to API expected values
 		const mappedProfession = professionMap[formData.profession] || formData.profession;
-		const mappedPractitioners = formData.practitioners ? [practitionersMap[formData.practitioners] || formData.practitioners] : [];
+		const mappedPractitioners = (formData.practitioners as string[]).map((p) => practitionersMap[p] || p);
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 
 		// Prepare data for API
@@ -163,7 +162,7 @@ export default function ContactFormPage() {
 						phone: '',
 						countryCode: '+1',
 						profession: '',
-						practitioners: '',
+						practitioners: [],
 						country: '',
 						primaryObjectives: [],
 						additionalInfo: '',
@@ -320,19 +319,35 @@ export default function ContactFormPage() {
 									<label className="block text-sm text-[#081F4D] mb-1.5 sm:mb-2">
 										{t('contactForm.form.practitioners.newLabel') || "Combien de praticiens travaillent dans votre structure ?"}
 									</label>
-									<select
-										name="practitioners"
-										value={formData.practitioners}
-										onChange={handleInputChange}
-										className="w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm sm:text-base"
-									>
-										<option value="">{t('contactForm.form.practitioners.placeholder') || "Sélectionnez une option"}</option>
-										<option value="1">1</option>
-										<option value="2-3">2 to 3</option>
-										<option value="4-6">4 to 6</option>
-										<option value="7-10">7 to 10</option>
-										<option value="+10">+10</option>
-									</select>
+									<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+										{[
+											'Individual practice (One practitioner only)',
+											'Small structure (less than 3 practitioners)',
+											'Medium structure (4-10 practitioners)',
+											'Large structure (more than 10 practitioners)'
+										].map((option) => (
+											<label key={option} className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer transition-colors"
+												style={{ borderColor: formData.practitioners.includes(option) ? '#1650EF' : '#E5E7EB', background: formData.practitioners.includes(option) ? '#EEF4FF' : 'white' }}>
+												<input
+													type="checkbox"
+													name="practitioners"
+													value={option}
+													checked={formData.practitioners.includes(option)}
+													onChange={(e) => {
+														const { value, checked } = e.target;
+														setFormData((prev) => ({
+															...prev,
+															practitioners: checked
+																? [...(prev.practitioners as string[]), value]
+																: (prev.practitioners as string[]).filter((item) => item !== value),
+														}));
+													}}
+													className="w-4 h-4 rounded text-[#1650EF] border-[#E5E7EB] focus:ring-[#1650EF]"
+												/>
+												<span className="text-[#081F4D] text-sm">{option}</span>
+											</label>
+										))}
+									</div>
 								</div>
 
 								<div>
