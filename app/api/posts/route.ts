@@ -109,14 +109,7 @@ export async function GET(request: NextRequest) {
             hasPrev: page > 1
         };
 
-        const successResponse = {
-            success: true,
-            data,
-            pagination,
-            message: 'Posts fetched successfully'
-        };
-
-        return NextResponse.json(successResponse, {
+        return NextResponse.json(data, {
             status: 200,
             headers: { 
                 'Cache-Control': 's-maxage=60, stale-while-revalidate',
