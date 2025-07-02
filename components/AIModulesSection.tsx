@@ -61,7 +61,7 @@ export default function AIModulesSection({
         "Reduces missed appointments by 40%"
       ],
       icon: "/icons/secretary-ai-icon.svg",
-      image: "/capture-app-demo.webp"
+      image: "/secretary.webp"
     },
     {
       title: "Copilot AI",
@@ -73,7 +73,7 @@ export default function AIModulesSection({
         "Reduces administrative time by 35%"
       ],
       icon: "/icons/copilot-ai-icon.svg",
-      image: "/3d_anatomy.webp"
+      image: "/copilot.webp"
     }
   ];
 
@@ -100,7 +100,7 @@ export default function AIModulesSection({
         "Réduit les rendez-vous manqués de 40%"
       ],
       icon: "/icons/secretary-ai-icon.svg",
-      image: "/capture-app-demo.webp"
+      image: "/secretary.webp"
     },
     {
       title: "Copilot IA",
@@ -112,7 +112,7 @@ export default function AIModulesSection({
         "Réduit le temps administratif de 35%"
       ],
       icon: "/icons/copilot-ai-icon.svg",
-      image: "/3d_anatomy.webp"
+      image: "/copilot.webp"
     }
   ];
 
