@@ -76,6 +76,29 @@ export default function ContactFormPage() {
 		setFormData((prev) => ({ ...prev, countryCode: e.target.value }));
 	};
 
+	// Mapping objects for API expected values
+	const professionMap: Record<string, string> = {
+		'Médecin': 'Médecin',
+		'Assistant(e)': 'Secrétaire',
+		'Manager': 'Manager',
+		'Gérant multi-sites': 'Gérant multi-sites',
+		'Autre': 'Autre',
+	};
+	const practitionersMap: Record<string, string> = {
+		'1': 'Petite structure (moins de 3 praticiens)',
+		'2-3': 'Structure moyenne (2 à 3 praticiens)',
+		'4-6': 'Structure intermédiaire (4 à 6 praticiens)',
+		'7-10': 'Grande structure (7 à 10 praticiens)',
+		'+10': 'Très grande structure (+10 praticiens)',
+	};
+	const objectivesMap: Record<string, string> = {
+		'optimize-profitability': 'Optimiser la rentabilité de mon activité',
+		'attract-patients': 'Attirer plus de patients',
+		'save-time': 'Gagner du temps sur la gestion administrative',
+		'digitalize': 'Digitaliser / automatiser ma pratique',
+		'ai-discovery': 'Découvrir les apports de l\'intelligence artificielle',
+	};
+
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setIsSubmitting(true);
@@ -89,10 +112,10 @@ export default function ContactFormPage() {
 		const selectedCountry =
 			countries.find((c) => c.dial_code === formData.countryCode)?.name || '';
 
-		// Map practitioners selection to array format for API compatibility
-		const practitionersArray = formData.practitioners
-			? [formData.practitioners]
-			: [];
+		// Map values to API expected values
+		const mappedProfession = professionMap[formData.profession] || formData.profession;
+		const mappedPractitioners = formData.practitioners ? [practitionersMap[formData.practitioners] || formData.practitioners] : [];
+		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 
 		// Prepare data for API
 		const apiData = {
@@ -102,11 +125,11 @@ export default function ContactFormPage() {
 			email: formData.email,
 			phone_country: selectedCountry,
 			phone: formData.phone,
-			profession: formData.profession,
-			practitioners: practitionersArray,
+			profession: mappedProfession,
+			practitioners: mappedPractitioners,
 			country: formData.country,
-			interestedIn: formData.primaryObjectives,
-			primaryGoal: formData.primaryObjectives, // Map primaryObjectives to both interestedIn and primaryGoal
+			interestedIn: mappedObjectives,
+			primaryGoal: mappedObjectives,
 			additionalInfo: formData.additionalInfo,
 		};
 

@@ -76,6 +76,29 @@ export default function ContactFormPage() {
 		setFormData((prev) => ({ ...prev, countryCode: e.target.value }));
 	};
 
+	// Mapping objects for API expected values
+	const professionMap: Record<string, string> = {
+		'Médecin': 'Médecin',
+		'Assistant(e)': 'Secrétaire',
+		'Manager': 'Manager',
+		'Gérant multi-sites': 'Gérant multi-sites',
+		'Autre': 'Autre',
+	};
+	const practitionersMap: Record<string, string> = {
+		'1': 'Petite structure (moins de 3 praticiens)',
+		'2-3': 'Structure moyenne (2 à 3 praticiens)',
+		'4-6': 'Structure intermédiaire (4 à 6 praticiens)',
+		'7-10': 'Grande structure (7 à 10 praticiens)',
+		'+10': 'Très grande structure (+10 praticiens)',
+	};
+	const objectivesMap: Record<string, string> = {
+		'optimize-profitability': 'Optimiser la rentabilité de mon activité',
+		'attract-patients': 'Attirer plus de patients',
+		'save-time': 'Gagner du temps sur la gestion administrative',
+		'digitalize': 'Digitaliser / automatiser ma pratique',
+		'ai-discovery': 'Découvrir les apports de l\'intelligence artificielle',
+	};
+
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setIsSubmitting(true);
@@ -89,10 +112,10 @@ export default function ContactFormPage() {
 		const selectedCountry =
 			countries.find((c) => c.dial_code === formData.countryCode)?.name || '';
 
-		// Map practitioners selection to array format for API compatibility
-		const practitionersArray = formData.practitioners
-			? [formData.practitioners]
-			: [];
+		// Map values to API expected values
+		const mappedProfession = professionMap[formData.profession] || formData.profession;
+		const mappedPractitioners = formData.practitioners ? [practitionersMap[formData.practitioners] || formData.practitioners] : [];
+		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 
 		// Prepare data for API
 		const apiData = {
@@ -102,11 +125,11 @@ export default function ContactFormPage() {
 			email: formData.email,
 			phone_country: selectedCountry,
 			phone: formData.phone,
-			profession: formData.profession,
-			practitioners: practitionersArray,
+			profession: mappedProfession,
+			practitioners: mappedPractitioners,
 			country: formData.country,
-			interestedIn: formData.primaryObjectives,
-			primaryGoal: formData.primaryObjectives, // Map primaryObjectives to both interestedIn and primaryGoal
+			interestedIn: mappedObjectives,
+			primaryGoal: mappedObjectives,
 			additionalInfo: formData.additionalInfo,
 		};
 
@@ -247,9 +270,9 @@ export default function ContactFormPage() {
 											{t('contactForm.form.phone.label')}
 											<span className="text-red-500">*</span>
 										</label>
-										<div className="flex gap-2 flex-wrap sm:flex-nowrap">
+										<div className="flex gap-2 flex-wrap w-full sm:flex-nowrap">
 											<select
-												className="w-[120px] px-2 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
+												className="w-28 px-2 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
 												value={formData.countryCode}
 												onChange={handleCountryCodeChange}
 											>
@@ -265,7 +288,7 @@ export default function ContactFormPage() {
 												value={formData.phone}
 												onChange={handleInputChange}
 												required
-												className="flex-1 min-w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base"
+												className="flex-1 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base"
 												placeholder={t('contactForm.form.phone.placeholder')}
 											/>
 										</div>
