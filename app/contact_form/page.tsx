@@ -249,7 +249,7 @@ export default function ContactFormPage() {
 										</label>
 										<div className="flex gap-2 flex-wrap sm:flex-nowrap">
 											<select
-												className="w-[120px] px-2 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
+												className="px-2 py-2 sm:py-2.5 w-full rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm"
 												value={formData.countryCode}
 												onChange={handleCountryCodeChange}
 											>
@@ -265,7 +265,7 @@ export default function ContactFormPage() {
 												value={formData.phone}
 												onChange={handleInputChange}
 												required
-												className="flex-1 min-w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base"
+												className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 w-full rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] text-sm sm:text-base"
 												placeholder={t('contactForm.form.phone.placeholder')}
 											/>
 										</div>
@@ -305,9 +305,9 @@ export default function ContactFormPage() {
 									>
 										<option value="">{t('contactForm.form.practitioners.placeholder') || "Sélectionnez une option"}</option>
 										<option value="1">1</option>
-										<option value="2-3">2 à 3</option>
-										<option value="4-6">4 à 6</option>
-										<option value="7-10">7 à 10</option>
+										<option value="2-3">2 to 3</option>
+										<option value="4-6">4 to 6</option>
+										<option value="7-10">7 to 10</option>
 										<option value="+10">+10</option>
 									</select>
 								</div>
