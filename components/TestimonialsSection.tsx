@@ -34,7 +34,7 @@ export default function TestimonialsSection({
             author: "Dr. Diala Haykal",
             title: "Aesthetic doctor",
             location: "Paris",
-            image: "/testimonials/nabila-azib.webp"
+            image: "/testimonials/diala-haykal.webp"
         },
         {
             quote: "The Secretary AI feature has been a game-changer for our clinic. We've reduced missed appointments by 45% and our staff can focus on providing better care instead of answering routine calls.",
