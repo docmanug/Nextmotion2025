@@ -23,6 +23,7 @@ export default function AIPage() {
                 subtitle="Automatisez, structurez, et faites grandir votre activité grâce à 3 modules intelligents pensés pour les médecins esthétiques."
                 demoButton="📅 Planifier une démo IA gratuite"
                 watchButton="Voir la vidéo"
+                videoId="u9K8h1yLzNo"
             />
 
             <PainPointsSection

@@ -23,6 +23,7 @@ export default function AIPage() {
                 subtitle="Automate, structure, and grow your practice with 3 intelligent modules designed for aesthetic physicians."
                 demoButton="📅 Schedule a Free AI Demo"
                 watchButton="Watch Video"
+                videoId="u9K8h1yLzNo"
             />
 
             <PainPointsSection

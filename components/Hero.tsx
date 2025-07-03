@@ -11,6 +11,7 @@ interface HeroProps extends BaseHeroProps {
   subtitle: string;
   demoButton: string;
   watchButton: string;
+  videoId?: string;
 }
 
 export default function Hero({
@@ -19,6 +20,7 @@ export default function Hero({
   demoButton,
   watchButton,
   className,
+  videoId,
   ...props
 }: HeroProps) {
   const [contactFormLink, setContactFormLink] = useState<string>("/contact_form");
@@ -77,7 +79,7 @@ export default function Hero({
         <div className="flex justify-center">
           <div className="relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
             <iframe
-              src="https://www.youtube.com/embed/5ppBRo2iFYg"
+              src={`https://www.youtube.com/embed/${videoId}`}
               title="Nextmotion Platform Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

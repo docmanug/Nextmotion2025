@@ -34,6 +34,7 @@ export default async function Home() {
         subtitle="Attract more patients, simplify management, automate your practice."
         demoButton="Schedule an AI demo"
         watchButton="Watch video"
+        videoId="5ppBRo2iFYg"
       />
       <LogoSlider 
         title="Trusted by leading aesthetic clinics worldwide"

@@ -31,6 +31,7 @@ export default async function Home() {
         subtitle="Attirez plus de patients, simplifiez la gestion, automatisez votre pratique."
         demoButton="Planifier une démo IA"
         watchButton="Voir la vidéo"
+        videoId="5ppBRo2iFYg"
       />
       <LogoSlider 
         title="Utilisé par les meilleures cliniques esthétiques"
