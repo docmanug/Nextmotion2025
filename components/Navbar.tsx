@@ -143,6 +143,8 @@ export default function Navbar() {
 		}
 	};
 
+	const handleMobileNavClick = () => setIsOpen(false);
+
 	return (
 		<nav className='fixed top-0 w-full bg-white z-50 border-b border-gray-100 shadow-sm'>
 			<div className='max-w-7xl mx-auto px-6'>
@@ -177,6 +179,7 @@ export default function Navbar() {
 											: "/before-after"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.capture")}
 								</Link>
@@ -185,6 +188,7 @@ export default function Navbar() {
 										currentLocale === "fr" ? "/fr/revolution" : "/revolution"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.revolution")}
 								</Link>
@@ -195,6 +199,7 @@ export default function Navbar() {
 											: "/3d-aesthetic-simulation"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.3d")}
 								</Link>
@@ -205,6 +210,7 @@ export default function Navbar() {
 											: "/clinic-management-software"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.consult")}
 								</Link>
@@ -215,6 +221,7 @@ export default function Navbar() {
 											: "/agenda-online-booking-reminders"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.agenda")}
 								</Link>
@@ -225,6 +232,7 @@ export default function Navbar() {
 											: "/virtual-classes"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.virtualClasses")}
 								</Link>
@@ -235,6 +243,7 @@ export default function Navbar() {
 											: "/injector-robot-aesthetic-medicine"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.robotics")}
 								</Link>
@@ -245,6 +254,7 @@ export default function Navbar() {
 											: "/intelligence-artificielle"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.ai")}
 								</Link>
@@ -261,6 +271,7 @@ export default function Navbar() {
 								<Link
 									href={currentLocale === "fr" ? "/fr/manager" : "/manager"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.youAreMenu.clinicManager")}
 								</Link>
@@ -271,24 +282,28 @@ export default function Navbar() {
 											: "/medecin-esthetique"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.youAreMenu.aestheticPractitioner")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/assistant" : "/assistant"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.youAreMenu.assistant")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/chaines" : "/chaines"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.youAreMenu.clinicChainManager")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/marketing" : "/marketing"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.youAreMenu.marketingManager")}
 								</Link>
@@ -302,6 +317,7 @@ export default function Navbar() {
 									: "/pricing-aesthetic-solution"
 							}
 							className='text-[15px] text-gray-900 hover:text-[#0066FF]'
+							onClick={handleMobileNavClick}
 						>
 							{t("navbar.pricing")}
 						</Link>
@@ -316,12 +332,14 @@ export default function Navbar() {
 								<Link
 									href={currentLocale === "fr" ? "/fr/a-propos" : "/about-us"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.aboutUs")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/blog" : "/blog"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.blog")}
 								</Link>
@@ -330,18 +348,21 @@ export default function Navbar() {
 									target='_blank'
 									rel='noopener noreferrer'
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.academy")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/podcast" : "/podcast"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.podcast")}
 								</Link>
 								<Link
 									href={currentLocale === "fr" ? "/fr/contact" : "/contact"}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.contact")}
 								</Link>
@@ -350,12 +371,14 @@ export default function Navbar() {
 										currentLocale === "fr" ? "/fr/cas-clients" : "/case-studies"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.caseStudies")}
 								</Link>
 								<Link
 									href='/release-notes'
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.releaseNotes")}
 								</Link>
@@ -364,6 +387,7 @@ export default function Navbar() {
 									target='_blank'
 									rel='noopener noreferrer'
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.resourcesMenu.api")}
 								</Link>
@@ -373,6 +397,7 @@ export default function Navbar() {
 						<Link
 							href='https://app.nextmotion.net'
 							className='text-[15px] text-gray-900 hover:text-[#0066FF]'
+							onClick={handleMobileNavClick}
 						>
 							{t("navbar.login")}
 						</Link>
@@ -383,6 +408,7 @@ export default function Navbar() {
 									? "/fr/formulaire_contact"
 									: "/contact_form"
 							}
+							onClick={handleMobileNavClick}
 						>
 							<Button className='bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto'>
 								{t("navbar.contactUs")}
@@ -480,6 +506,7 @@ export default function Navbar() {
 														: "/before-after"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.capture")}
 											</Link>
@@ -490,6 +517,7 @@ export default function Navbar() {
 														: "/revolution"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.revolution")}
 											</Link>
@@ -500,6 +528,7 @@ export default function Navbar() {
 														: "/3d-aesthetic-simulation"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.3d")}
 											</Link>
@@ -510,6 +539,7 @@ export default function Navbar() {
 														: "/clinic-management-software"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.consult")}
 											</Link>
@@ -520,6 +550,7 @@ export default function Navbar() {
 														: "/agenda-online-booking-reminders"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.agenda")}
 											</Link>
@@ -530,6 +561,7 @@ export default function Navbar() {
 														: "/virtual-classes"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.virtualClasses")}
 											</Link>
@@ -540,6 +572,7 @@ export default function Navbar() {
 														: "/injector-robot-aesthetic-medicine"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.robotics")}
 											</Link>
@@ -550,6 +583,7 @@ export default function Navbar() {
 														: "/intelligence-artificielle"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.ai")}
 											</Link>
@@ -577,6 +611,7 @@ export default function Navbar() {
 													currentLocale === "fr" ? "/fr/manager" : "/manager"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.youAreMenu.clinicManager")}
 											</Link>
@@ -587,6 +622,7 @@ export default function Navbar() {
 														: "/medecin-esthetique"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.youAreMenu.aestheticPractitioner")}
 											</Link>
@@ -597,6 +633,7 @@ export default function Navbar() {
 														: "/assistant"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.youAreMenu.assistant")}
 											</Link>
@@ -605,6 +642,7 @@ export default function Navbar() {
 													currentLocale === "fr" ? "/fr/chaines" : "/chaines"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.youAreMenu.clinicChainManager")}
 											</Link>
@@ -615,6 +653,7 @@ export default function Navbar() {
 														: "/marketing"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.youAreMenu.marketingManager")}
 											</Link>
@@ -629,6 +668,7 @@ export default function Navbar() {
 											: "/pricing-aesthetic-solution"
 									}
 									className='px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.pricing")}
 								</Link>
@@ -653,6 +693,7 @@ export default function Navbar() {
 													currentLocale === "fr" ? "/fr/a-propos" : "/about-us"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.aboutUs")}
 											</Link>
@@ -661,6 +702,7 @@ export default function Navbar() {
 												target='_blank'
 												rel='noopener noreferrer'
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.blog")}
 											</Link>
@@ -669,6 +711,7 @@ export default function Navbar() {
 												target='_blank'
 												rel='noopener noreferrer'
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.academy")}
 											</Link>
@@ -677,6 +720,7 @@ export default function Navbar() {
 													currentLocale === "fr" ? "/fr/podcast" : "/podcast"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.podcast")}
 											</Link>
@@ -685,6 +729,7 @@ export default function Navbar() {
 													currentLocale === "fr" ? "/fr/contact" : "/contact"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.contact")}
 											</Link>
@@ -695,12 +740,14 @@ export default function Navbar() {
 														: "/case-studies"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.caseStudies")}
 											</Link>
 											<Link
 												href='/release-notes'
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.releaseNotes")}
 											</Link>
@@ -709,6 +756,7 @@ export default function Navbar() {
 												target='_blank'
 												rel='noopener noreferrer'
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
+												onClick={handleMobileNavClick}
 											>
 												{t("navbar.resourcesMenu.api")}
 											</Link>
@@ -719,6 +767,7 @@ export default function Navbar() {
 								<Link
 									href='https://app.nextmotion.net'
 									className='px-6 py-3 text-[15px] text-gray-900 hover:text-[#0066FF]'
+									onClick={handleMobileNavClick}
 								>
 									{t("navbar.login")}
 								</Link>
@@ -731,6 +780,7 @@ export default function Navbar() {
 												: "/contact_form"
 										}
 										className='w-full bg-[#0066FF] hover:bg-blue-700 text-white text-[15px] font-bold px-5 py-2.5 h-auto'
+										onClick={handleMobileNavClick}
 									>
 										{t("navbar.contactUs")}
 									</Link>
