@@ -79,7 +79,7 @@ export default function TestimonialsSection({
             author: "Dr. Diala Haykal",
             title: "Médecin esthétique",
             location: "Paris",
-            image: "/testimonials/nabila-azib.webp"
+            image: "/testimonials/diala-haykal.webp"
         },
         {
             quote: "La fonctionnalité Secrétariat IA a été un véritable changement pour notre clinique. Nous avons réduit les rendez-vous manqués de 45% et notre personnel peut se concentrer sur les soins plutôt que de répondre aux appels de routine.",
