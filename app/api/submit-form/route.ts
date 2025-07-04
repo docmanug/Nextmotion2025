@@ -34,7 +34,20 @@ export async function POST(req: NextRequest) {
 		formParams.append("email", formData.email.trim());
 		formParams.append("name[first]", formData.firstName.trim());
 		formParams.append("name[last]", formData.lastName.trim());
-		formParams.append("phone", (formData.phone || '').trim());
+
+		// Find the country short name (ISO 2-letter code) for the phone field
+		let countryShortName = '';
+		if (formData.countryCode) {
+			const countryObj = require('@/lib/countries').countries.find(
+				(c: any) => c.dial_code === formData.countryCode
+			);
+			countryShortName = countryObj ? countryObj.code : '';
+		}
+		const phoneValue = JSON.stringify({
+			phone: (formData.phone || '').trim(),
+			countryShortName: countryShortName
+		});
+		formParams.append("phone", phoneValue);
 		formParams.append("status1", (formData.profession || '').trim());
 		formParams.append("status8", (formData.practitioners || []).join(', '));
 		formParams.append("status2", (formData.country || '').trim());
