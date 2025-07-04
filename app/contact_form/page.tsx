@@ -118,11 +118,8 @@ export default function ContactFormPage() {
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn.map((obj) => objectivesMap[obj] || obj);
 
-		// Prepare phone data for Monday.com API
-		const phoneData = {
-			phone: formData.phone,
-			countryShortName: selectedCountry
-		};
+		// Prepare phone data as a string with country code
+		const phoneWithCountryCode = `${formData.countryCode}${formData.phone}`;
 
 		// Prepare data for API
 		const apiData = {
@@ -131,7 +128,7 @@ export default function ContactFormPage() {
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: phoneData,
+			phone: phoneWithCountryCode, // Send as string instead of object
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
