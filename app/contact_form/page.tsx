@@ -122,7 +122,6 @@ export default function ContactFormPage() {
 			phone: formData.phone,
 			countryShortName: selectedCountry
 		};
-		const phoneValueJson = JSON.stringify(phoneValue);
 
 		// Prepare data for API
 		const apiData = {
@@ -131,7 +130,7 @@ export default function ContactFormPage() {
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: phoneValueJson,
+			phone: phoneValue,
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
