@@ -86,10 +86,10 @@ export default function ContactFormPage() {
 		'Autre': 'Autre',
 	};
 	const practitionersMap: Record<string, string> = {
-		'Individual practice (One practitioner only)': 'Individual practice (One practitioner only)',
-		'Small structure (less than 3 practitioners)': 'Small structure (less than 3 practitioners)',
-		'Medium structure (4-10 practitioners)': 'Medium structure (4-10 practitioners)',
-		'Large structure (more than 10 practitioners)': 'Large structure (more than 10 practitioners)',
+		'Individual practice (One practitioner only)': 'Cabinet individuel (Un seul praticien)',
+		'Small structure (less than 3 practitioners)': 'Petite structure (moins de 3 praticiens)',
+		'Medium structure (4-10 practitioners)': 'Moyenne structure (4-10 praticien)',
+		'Large structure (more than 10 practitioners)': 'Grande structure (plus de 10 praticiens)',
 	};
 	const objectivesMap: Record<string, string> = {
 		'optimize-profitability': 'Optimiser la rentabilité de mon activité',
@@ -118,6 +118,12 @@ export default function ContactFormPage() {
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn.map((obj) => objectivesMap[obj] || obj);
 
+		const phoneValue = {
+			phone: formData.phone,
+			countryShortName: selectedCountry
+		};
+		const phoneValueJson = JSON.stringify(phoneValue);
+
 		// Prepare data for API
 		const apiData = {
 			lng: currentLocale,
@@ -125,7 +131,7 @@ export default function ContactFormPage() {
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: formData.phone,
+			phone: phoneValueJson,
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
