@@ -4,10 +4,6 @@ import { contactFormSchema } from '@/types/forms';
 import { validateForm } from '@/types/validation';
 import { countries } from '@/lib/countries';
 
-function isValidEmail(email: string) {
-	return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-}
-
 export async function POST(req: NextRequest) {
 	try {
 		const formData: ContactFormValidation = await req.json();
@@ -27,98 +23,69 @@ export async function POST(req: NextRequest) {
 			};
 			return NextResponse.json(errorResponse, { status: 400 });
 		}
-		// TODO: Add rate limiting to prevent spam
-		const mondayFormId = "73df764e54603807815f0f0c516bfa65";
 
-		// Create a URLSearchParams object for form data submission
-		const formParams = new URLSearchParams();
-		formParams.append("email", formData.email.trim());
-		formParams.append("name[first]", formData.firstName.trim());
-		formParams.append("name[last]", formData.lastName.trim());
-		formParams.append("phone", (formData.phone || '').trim());
-		formParams.append("status1", (formData.profession || '').trim());
-		formParams.append("status8", (formData.practitioners || []).join(', '));
-		formParams.append("status2", (formData.country || '').trim());
-		formParams.append("status6", (formData.interestedIn || []).join(', '));
-		formParams.append("longText", (formData.additionalInfo || '').trim());
-
-		// Find the country short name (ISO code) for the phone field
-		const countryShortName =
+		// Find the country name for phone_country
+		const phone_country =
 			countries.find(
 				(c) =>
 					c.dial_code === formData.countryCode ||
 					c.name === formData.country
-			)?.code || "";
+			)?.name ||
+			formData.country ||
+			"";
 
-		// Format the phone value for Monday.com
-		const phoneValue = JSON.stringify({
-			phone: (formData.phone || '').trim(),
-			countryShortName: countryShortName
-		});
+		const apiData = {
+			firstName: formData.firstName,
+			lastName: formData.lastName,
+			email: formData.email,
+			phone_country: phone_country,
+			phone: formData.phone,
+			profession: formData.profession,
+			practitioners: formData.practitioners,
+			country: formData.country,
+			interestedIn: formData.interestedIn,
+			additionalInfo: formData.additionalInfo,
+		};
 
-		formParams.append("phone", phoneValue);
-
-		console.log("Submitting to Monday.com with form data");
-
-		// Try form submission with application/x-www-form-urlencoded
 		const response = await fetch(
-			`https://forms.monday.com/forms/submit/${mondayFormId}`,
+			"https://nextmotion.pythonanywhere.com/nextmotion/website/website-form/v2",
 			{
 				method: "POST",
 				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
+					"Content-Type": "application/json",
+					Accept: "application/json",
 				},
-				body: formParams.toString(),
+				body: JSON.stringify(apiData),
 			}
 		);
 
-		if (!response.ok) {
-			const errorText = await response.text();
-			const errorResponse: ApiErrorResponse = {
-				error: {
-					code: 'MONDAY_API_ERROR',
-					message: `Monday.com API error: ${response.status}`,
-					details: { errorText }
-				},
-				status: response.status,
-				timestamp: new Date().toISOString(),
-				path: req.url,
-				method: 'POST',
-			};
-			return NextResponse.json(errorResponse, { status: response.status });
-		}
+		const result = await response.json();
 
-		// Handle the response carefully as it might not be JSON
-		const contentType = response.headers.get("content-type");
-		let data;
-		if (contentType && contentType.includes("application/json")) {
-			data = await response.json();
+		if (response.ok && result.status === "success") {
+			return NextResponse.json({
+				success: true,
+				message: "Form submitted successfully",
+				data: result,
+			});
 		} else {
-			// If not JSON, consider it a success if the status is OK
-			const responseText = await response.text();
-			console.log("Monday.com non-JSON response:", responseText);
-			data = { message: "Form submitted successfully" };
+			return NextResponse.json({
+				success: false,
+				message: result.errors || result.message || "An error occurred",
+				data: result,
+			}, { status: response.status });
 		}
-
-		const successResponse: FormSubmissionResponse = {
-			success: true,
-			message: 'Form submitted successfully',
-			data
-		};
-		return NextResponse.json(successResponse);
 	} catch (error: unknown) {
-		const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-		const errorResponse: ApiErrorResponse = {
+		const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+		return NextResponse.json({
 			error: {
-				code: 'INTERNAL_SERVER_ERROR',
+				code: "INTERNAL_SERVER_ERROR",
 				message: errorMessage,
-				details: { timestamp: new Date().toISOString() }
+				details: { timestamp: new Date().toISOString() },
 			},
 			status: 500,
 			timestamp: new Date().toISOString(),
 			path: req.url,
-			method: 'POST',
-		};
-		return NextResponse.json(errorResponse, { status: 500 });
+			method: "POST",
+		}, { status: 500 });
 	}
 }
