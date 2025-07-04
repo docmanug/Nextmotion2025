@@ -118,6 +118,13 @@ export default function ContactFormPage() {
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn.map((obj) => objectivesMap[obj] || obj);
 
+		const phoneValue = {
+			phone: formData.phone,
+			countryShortName: selectedCountry
+		};
+
+		const columnValue = JSON.stringify(phoneValue);
+
 		// Prepare data for API
 		const apiData = {
 			lng: currentLocale,
@@ -125,7 +132,7 @@ export default function ContactFormPage() {
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: formData.phone,
+			phone: columnValue,
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
@@ -389,8 +396,8 @@ export default function ContactFormPage() {
 											<div
 												key={option.value}
 												className={`flex items-center gap-2 p-3 border rounded-lg cursor-pointer transition-colors ${formData.primaryObjectives.includes(option.value)
-														? 'border-[#1650EF] bg-blue-50'
-														: 'border-gray-200 hover:border-gray-300'
+													? 'border-[#1650EF] bg-blue-50'
+													: 'border-gray-200 hover:border-gray-300'
 													}`}
 												onClick={() => {
 													const isSelected = formData.primaryObjectives.includes(option.value);
@@ -434,8 +441,8 @@ export default function ContactFormPage() {
 								{submitStatus.message && (
 									<div
 										className={`my-4 p-4 rounded-lg ${submitStatus.success
-												? 'bg-green-100 text-green-800'
-												: 'bg-red-100 text-red-800'
+											? 'bg-green-100 text-green-800'
+											: 'bg-red-100 text-red-800'
 											}`}
 									>
 										{submitStatus.message}

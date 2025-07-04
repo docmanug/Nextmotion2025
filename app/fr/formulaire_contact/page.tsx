@@ -118,13 +118,20 @@ export default function ContactFormPage() {
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn;
 
+		const phoneValue = {
+			phone: formData.phone,
+			countryShortName: selectedCountry
+		};
+
+		const columnValue = JSON.stringify(phoneValue);
+
 		const apiData = {
 			lng: currentLocale,
 			firstName: formData.firstName,
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: formData.phone,
+			phone: columnValue,
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
