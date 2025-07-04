@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type { ContactFormValidation, FormSubmissionResponse, ApiErrorResponse } from '@/types';
 import { contactFormSchema } from '@/types/forms';
 import { validateForm } from '@/types/validation';
+import { countries } from '@/lib/countries';
 
 function isValidEmail(email: string) {
 	return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
@@ -34,25 +35,28 @@ export async function POST(req: NextRequest) {
 		formParams.append("email", formData.email.trim());
 		formParams.append("name[first]", formData.firstName.trim());
 		formParams.append("name[last]", formData.lastName.trim());
-
-		// Find the country short name (ISO 2-letter code) for the phone field
-		let countryShortName = '';
-		if (formData.countryCode) {
-			const countryObj = require('@/lib/countries').countries.find(
-				(c: any) => c.dial_code === formData.countryCode
-			);
-			countryShortName = countryObj ? countryObj.code : '';
-		}
-		const phoneValue = JSON.stringify({
-			phone: (formData.phone || '').trim(),
-			countryShortName: countryShortName
-		});
-		formParams.append("phone", phoneValue);
+		formParams.append("phone", (formData.phone || '').trim());
 		formParams.append("status1", (formData.profession || '').trim());
 		formParams.append("status8", (formData.practitioners || []).join(', '));
 		formParams.append("status2", (formData.country || '').trim());
 		formParams.append("status6", (formData.interestedIn || []).join(', '));
 		formParams.append("longText", (formData.additionalInfo || '').trim());
+
+		// Find the country short name (ISO code) for the phone field
+		const countryShortName =
+			countries.find(
+				(c) =>
+					c.dial_code === formData.countryCode ||
+					c.name === formData.country
+			)?.code || "";
+
+		// Format the phone value for Monday.com
+		const phoneValue = JSON.stringify({
+			phone: (formData.phone || '').trim(),
+			countryShortName: countryShortName
+		});
+
+		formParams.append("phone", phoneValue);
 
 		console.log("Submitting to Monday.com with form data");
 
