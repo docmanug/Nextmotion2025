@@ -31,6 +31,7 @@ export default function ContactFormPage() {
 		country: '',
 		primaryObjectives: [] as string[],
 		additionalInfo: '',
+		interestedIn: [] as string[],
 	});
 
 	useEffect(() => {
@@ -115,6 +116,7 @@ export default function ContactFormPage() {
 		const mappedProfession = professionMap[formData.profession] || formData.profession;
 		const mappedPractitioners = (formData.practitioners as string[]).map((p) => practitionersMap[p] || p);
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
+		const mappedInterestedIn = formData.interestedIn.map((obj) => objectivesMap[obj] || obj);
 
 		// Prepare data for API
 		const apiData = {
@@ -127,7 +129,7 @@ export default function ContactFormPage() {
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
-			interestedIn: mappedObjectives,
+			interestedIn: mappedInterestedIn,
 			primaryGoal: mappedObjectives,
 			additionalInfo: formData.additionalInfo,
 		};
@@ -166,6 +168,7 @@ export default function ContactFormPage() {
 						country: '',
 						primaryObjectives: [],
 						additionalInfo: '',
+						interestedIn: [],
 					});
 					setIsSubmitting(false);
 					return;
