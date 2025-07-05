@@ -120,15 +120,16 @@ export default function ContactFormPage() {
 
 		const phoneWithCountryCode = `${formData.countryCode}${formData.phone}`;
 
-		// Prepare data for API - avoid phone field name to prevent object conversion
+		// Prepare data for API - include both phone and telephone fields
 		const apiData = {
 			lng: currentLocale,
 			firstName: formData.firstName,
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			telephone: phoneWithCountryCode, // Use different field name to avoid object conversion
-			phone_number: formData.phone, // Send just the number
+			phone: phoneWithCountryCode, // Required field for API validation
+			telephone: phoneWithCountryCode, // Alternative field name
+			phone_number: formData.phone, // Just the number without country code
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
