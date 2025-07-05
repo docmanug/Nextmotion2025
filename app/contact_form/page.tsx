@@ -120,16 +120,15 @@ export default function ContactFormPage() {
 
 		const phoneWithCountryCode = `${formData.countryCode}${formData.phone}`;
 
-		// Prepare data for API - include both phone and telephone fields
+		// Prepare data for API - try Monday.com phone format
 		const apiData = {
 			lng: currentLocale,
 			firstName: formData.firstName,
 			lastName: formData.lastName,
 			email: formData.email,
 			phone_country: selectedCountry,
-			phone: phoneWithCountryCode, // Required field for API validation
-			telephone: phoneWithCountryCode, // Alternative field name
-			phone_number: formData.phone, // Just the number without country code
+			phone: phoneWithCountryCode, // Send full phone number as string
+			phone_clean: formData.phone.replace(/\D/g, ''), // Send only digits
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
