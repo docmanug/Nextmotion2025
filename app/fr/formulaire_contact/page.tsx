@@ -99,26 +99,34 @@ export default function ContactFormPage() {
 		'ai-discovery': 'Découvrir les apports de l\'intelligence artificielle',
 	};
 
+	function formatE164(countryCode: string, phone: string) {
+		// Remove all non-digit characters from phone
+		const digits = phone.replace(/\D/g, '');
+		// Ensure countryCode starts with '+'
+		const code = countryCode.startsWith('+') ? countryCode : `+${countryCode}`;
+		return `${code}${digits}`;
+	}
+
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setIsSubmitting(true);
 		setSubmitStatus({});
-
+		
 		const maxRetries = 3;
 		let attempt = 0;
 		let lastError: any = null;
-
+		
 		// Find the country name based on the selected country code
 		const selectedCountry =
-			countries.find((c) => c.dial_code === formData.countryCode)?.name || '';
-
+		countries.find((c) => c.dial_code === formData.countryCode)?.name || '';
+		
 		// Map values to API expected values
 		const mappedProfession = professionMap[formData.profession] || formData.profession;
 		const mappedPractitioners = (formData.practitioners as string[]).map((p) => practitionersMap[p] || p);
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn;
-
-		const phoneWithCountryCode = `${formData.countryCode}${formData.phone}`;
+		
+		const phoneWithCountryCode = formatE164(formData.countryCode, formData.phone);
 
 		// Prepare data for API - try Monday.com phone format
 		const apiData = {
@@ -128,7 +136,6 @@ export default function ContactFormPage() {
 			email: formData.email,
 			phone_country: selectedCountry,
 			phone: phoneWithCountryCode, // Send full phone number as string
-			phone_clean: formData.phone.replace(/\D/g, ''), // Send only digits
 			profession: mappedProfession,
 			practitioners: mappedPractitioners,
 			country: formData.country,
