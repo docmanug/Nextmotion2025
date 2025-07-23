@@ -45,7 +45,6 @@ export default async function Home() {
       <AIModulesSection 
         title="Propulsé par l'IA avancée"
         subtitle="Nos modules d'IA transforment les opérations de votre clinique"
-        isFrenchlanguage={true}
       />
       <ProductsSection 
         title="Plateforme complète pour cliniques esthétiques"

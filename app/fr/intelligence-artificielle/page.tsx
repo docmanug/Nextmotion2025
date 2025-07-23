@@ -40,7 +40,6 @@ export default function AIPage() {
             <AIModulesSection
                 title="Trois modules IA pour transformer votre pratique"
                 subtitle="Nos solutions d'IA sont conçues spécifiquement pour les cliniques esthétiques, répondant à vos flux de travail et défis uniques"
-                isFrenchlanguage={true}
             />
 
             <ApiAutomationSection
