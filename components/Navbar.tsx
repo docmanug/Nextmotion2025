@@ -604,7 +604,7 @@ export default function Navbar() {
 														? "/fr/anakyse-peau-ia"
 														: "/ai-skin-analysis"
 												}
-												className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
 												onClick={handleMobileNavClick}
 											>
 												{t("navbar.solutionsMenu.skin")}
@@ -811,6 +811,7 @@ export default function Navbar() {
 									<div
 										className='flex items-center gap-2 border border-black rounded-md px-3 py-1.5 relative cursor-pointer'
 										onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+										ref={langDropdownRef}
 									>
 										<Globe className='w-5 h-5 text-black' />
 										<span className='w-full bg-transparent text-black text-sm pr-6'>
