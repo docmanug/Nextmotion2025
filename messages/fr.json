@@ -9,14 +9,15 @@
 		"login": "Connexion",
 		"contactUs": "Obtenir demo",
 		"solutionsMenu": {
-			"capture": "NextMopngtion - Capture",
-			"revolution": "Nextmotion Revolution",
-			"3d": "Nextmotion - 3D",
-			"consult": "NextMotion - Consult",
-			"agenda": "Nextmotion Agenda",
+			"capture": "NM Capture",
+			"revolution": "NM Revolution",
+			"3d": "NM 3D",
+			"consult": "NM Consult",
+			"agenda": "NM Agenda",
 			"virtualClasses": "Virutal Classes",
 			"robotics": "Robotics",
-			"ai": "Intelligence Artificielle"
+			"ai": "Intelligence Artificielle",
+			"skin": "Analyse IA de la peau"
 		},
 		"youAreMenu": {
 			"clinicManager": "Manager de clinique",
@@ -2754,5 +2755,129 @@
 			"description": "Inscrivez-vous pour une démonstration gratuite et découvrez comment Nextmotion peut transformer la gestion de votre clinique esthétique. Maximisez votre efficacité et attirez plus de patients dès aujourd'hui. Demandez une démonstration gratuite dès maintenant.",
 			"button": "Réservez votre démo"
 		}
-	}
+	},
+	"aiSkinAnalysis": {
+    "hero": {
+      "title": "Analysez la peau de vos patients grâce à l'intelligence artificielle",
+      "subtitle": "En quelques secondes, identifiez rides, taches, rougeurs et signes de déshydratation à partir d'une simple photo. Génération automatique de rapport PDF, visualisation superposée et suivi de l'évolution cutanée.",
+      "demoButton": "Demander une démo",
+      "discoverButton": "Voir en action"
+    },
+    "benefits": {
+      "title": "Une technologie IA conçue pour booster votre pratique",
+      "items": [
+        {
+          "icon": "🧠",
+          "title": "Appui visuel immédiat",
+          "description": "Montrez à vos patients ce que leurs yeux ne perçoivent pas encore. Une image vaut mieux qu'un long discours."
+        },
+        {
+          "icon": "📊",
+          "title": "Suivi objectif des soins",
+          "description": "Comparez les évolutions cutanées dans le temps grâce à des scores chiffrés sur chaque problématique."
+        },
+        {
+          "icon": "📱",
+          "title": "Aucun matériel supplémentaire",
+          "description": "Utilisez simplement votre smartphone avec NM Capture. Aucun appareil onéreux requis."
+        },
+        {
+          "icon": "🔗",
+          "title": "Intégration totale",
+          "description": "Fonctionnalité directement accessible dans votre interface Nextmotion, sans aucune friction."
+        }
+      ]
+    },
+    "demo": {
+      "title": "Une analyse IA en action",
+      "description": "Voyez comment une simple photo devient un outil puissant de diagnostic, de conseil et de fidélisation patient. L'analyse est instantanée, visuelle et exploitable immédiatement.",
+      "videoButton": "Voir la démonstration en vidéo"
+    },
+    "detection": {
+      "title": "Ce que voit l'IA… et que vos patients comprennent instantanément",
+      "description": "Chaque paramètre est scoré automatiquement. Vous pouvez comparer deux analyses pour suivre précisément l'évolution cutanée d'un patient.",
+      "items": [
+        {
+          "icon": "💧",
+          "title": "Hydratation",
+          "description": "Analyse du glow et de la texture pour détecter une peau sèche ou déshydratée."
+        },
+        {
+          "icon": "👵",
+          "title": "Rides",
+          "description": "Repérage automatique des sillons et des ridules sur les zones clés du visage."
+        },
+        {
+          "icon": "🌑",
+          "title": "Taches pigmentaires",
+          "description": "Cartographie des taches solaires, mélasmas ou irrégularités pigmentaires."
+        },
+        {
+          "icon": "🌡️",
+          "title": "Rougeurs et couperose",
+          "description": "Évaluation des rougeurs diffuses ou localisées pour orienter vos recommandations."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Et si vous pouviez faire mieux que VISIA, sans machine à 20 000 € ?",
+      "subtitle": "Le dispositif IA de Nextmotion vous offre une alternative moderne, mobile et tout-en-un aux systèmes traditionnels d'analyse de peau.",
+      "cta": "Comparer en démo"
+    },
+    "testimonial": {
+      "quote": "Grâce à l'analyse IA, je peux illustrer mes diagnostics en quelques secondes. C'est un game-changer dans mes consultations.",
+      "author": "Dr Lefevre",
+      "role": "médecin esthétique à Paris",
+      "badge": "+150 centres utilisent déjà la technologie IA de Nextmotion"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "question": "L'IA est-elle fiable ?",
+          "answer": "Oui, elle a été entraînée sur plus de 70 000 cas cliniques réels. Son algorithme évolue en continu."
+        },
+        {
+          "question": "Est-ce RGPD compliant ?",
+          "answer": "100 %. Toutes les données sont hébergées en Europe selon les normes en vigueur."
+        },
+        {
+          "question": "Faut-il un appareil spécifique ?",
+          "answer": "Non. Une photo prise avec NM Capture suffit. Aucun matériel à acheter."
+        },
+        {
+          "question": "Est-ce compatible avec mon activité ?",
+          "answer": "Oui, la technologie est conçue pour la médecine esthétique quotidienne."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Disponible à partir du forfait Essential",
+      "items": [
+        {
+          "plan": "Essential",
+          "description": "20 analyses par mois incluses"
+        },
+        {
+          "plan": "Premium",
+          "description": "100 analyses par mois incluses"
+        }
+      ],
+      "additional": "Vous pouvez acheter des scans supplémentaires à 1 € / scan",
+      "cta": "Voir les formules"
+    },
+    "form": {
+      "title": "Prêt à révéler ce que l'IA voit dans la peau de vos patients ?",
+      "subtitle": "Cette fonctionnalité est incluse dans les formules Essential et Premium de Nextmotion.",
+      "button": "Je veux une démo",
+      "fields": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Email",
+        "center": "Centre",
+        "specialty": "Spécialité",
+        "message": "Message (optionnel)"
+      }
+    }
+  }
 }

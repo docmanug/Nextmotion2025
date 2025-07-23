@@ -94,6 +94,8 @@ export default function Navbar() {
 				router.push("/chaines");
 			} else if (pathname === "/fr/marketing") {
 				router.push("/marketing");
+			} else if (pathname === "/fr/anakyse-peau-ia") {
+				router.push("/ai-skin-analysis")
 			} else if (pathname === "/fr") {
 				router.push("/");
 			} else {
@@ -135,6 +137,8 @@ export default function Navbar() {
 				router.push("/fr/chaines");
 			} else if (pathname === "/marketing") {
 				router.push("/fr/marketing");
+			} else if (pathname === "/ai-skin-analysis") {
+				router.push("/fr/anakyse-peau-ia")
 			} else if (pathname === "/") {
 				router.push("/fr");
 			} else {
@@ -257,6 +261,17 @@ export default function Navbar() {
 									onClick={handleMobileNavClick}
 								>
 									{t("navbar.solutionsMenu.ai")}
+								</Link>
+								<Link
+									href={
+										currentLocale === "fr"
+											? "/fr/anakyse-peau-ia"
+											: "/ai-skin-analysis"
+									}
+									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+									onClick={handleMobileNavClick}
+								>
+									{t("navbar.solutionsMenu.skin")}
 								</Link>
 							</div>
 						</div>
@@ -426,17 +441,15 @@ export default function Navbar() {
 									{currentLocale === "en" ? "English" : "Français"}
 								</span>
 								<ChevronDown
-									className={`w-4 h-4 text-black absolute right-2 transition-transform ${
-										isLangDropdownOpen ? "rotate-180" : ""
-									}`}
+									className={`w-4 h-4 text-black absolute right-2 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""
+										}`}
 								/>
 
 								{isLangDropdownOpen && (
 									<div className='absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50'>
 										<div
-											className={`px-3 py-2 hover:bg-gray-100 ${
-												currentLocale === "en" ? "bg-gray-50" : ""
-											}`}
+											className={`px-3 py-2 hover:bg-gray-100 ${currentLocale === "en" ? "bg-gray-50" : ""
+												}`}
 											onClick={(e) => {
 												e.stopPropagation();
 												handleLanguageChange("en");
@@ -445,9 +458,8 @@ export default function Navbar() {
 											English
 										</div>
 										<div
-											className={`px-3 py-2 hover:bg-gray-100 ${
-												currentLocale === "fr" ? "bg-gray-50" : ""
-											}`}
+											className={`px-3 py-2 hover:bg-gray-100 ${currentLocale === "fr" ? "bg-gray-50" : ""
+												}`}
 											onClick={(e) => {
 												e.stopPropagation();
 												handleLanguageChange("fr");
@@ -492,9 +504,8 @@ export default function Navbar() {
 									>
 										<span>{t("navbar.solutions")}</span>
 										<ChevronDown
-											className={`h-3.5 w-3.5 transition-transform duration-200 ${
-												activeDropdown === "solution" ? "rotate-180" : ""
-											}`}
+											className={`h-3.5 w-3.5 transition-transform duration-200 ${activeDropdown === "solution" ? "rotate-180" : ""
+												}`}
 										/>
 									</button>
 									{activeDropdown === "solution" && (
@@ -587,6 +598,17 @@ export default function Navbar() {
 											>
 												{t("navbar.solutionsMenu.ai")}
 											</Link>
+											<Link
+												href={
+													currentLocale === "fr"
+														? "/fr/anakyse-peau-ia"
+														: "/ai-skin-analysis"
+												}
+												className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
+												onClick={handleMobileNavClick}
+											>
+												{t("navbar.solutionsMenu.skin")}
+											</Link>
 										</div>
 									)}
 								</div>
@@ -599,9 +621,8 @@ export default function Navbar() {
 									>
 										<span>{t("navbar.youAre")}</span>
 										<ChevronDown
-											className={`h-3.5 w-3.5 transition-transform duration-200 ${
-												activeDropdown === "youare" ? "rotate-180" : ""
-											}`}
+											className={`h-3.5 w-3.5 transition-transform duration-200 ${activeDropdown === "youare" ? "rotate-180" : ""
+												}`}
 										/>
 									</button>
 									{activeDropdown === "youare" && (
@@ -681,9 +702,8 @@ export default function Navbar() {
 									>
 										<span>{t("navbar.resources")}</span>
 										<ChevronDown
-											className={`h-3.5 w-3.5 transition-transform duration-200 ${
-												activeDropdown === "resources" ? "rotate-180" : ""
-											}`}
+											className={`h-3.5 w-3.5 transition-transform duration-200 ${activeDropdown === "resources" ? "rotate-180" : ""
+												}`}
 										/>
 									</button>
 									{activeDropdown === "resources" && (
@@ -797,17 +817,15 @@ export default function Navbar() {
 											{currentLocale === "en" ? "English" : "Français"}
 										</span>
 										<ChevronDown
-											className={`w-4 h-4 text-black absolute right-2 transition-transform ${
-												isLangDropdownOpen ? "rotate-180" : ""
-											}`}
+											className={`w-4 h-4 text-black absolute right-2 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""
+												}`}
 										/>
 
 										{isLangDropdownOpen && (
 											<div className='absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-50'>
 												<div
-													className={`px-3 py-2 hover:bg-gray-100 ${
-														currentLocale === "en" ? "bg-gray-50" : ""
-													}`}
+													className={`px-3 py-2 hover:bg-gray-100 ${currentLocale === "en" ? "bg-gray-50" : ""
+														}`}
 													onClick={(e) => {
 														e.stopPropagation();
 														handleLanguageChange("en");
@@ -816,9 +834,8 @@ export default function Navbar() {
 													English
 												</div>
 												<div
-													className={`px-3 py-2 hover:bg-gray-100 ${
-														currentLocale === "fr" ? "bg-gray-50" : ""
-													}`}
+													className={`px-3 py-2 hover:bg-gray-100 ${currentLocale === "fr" ? "bg-gray-50" : ""
+														}`}
 													onClick={(e) => {
 														e.stopPropagation();
 														handleLanguageChange("fr");

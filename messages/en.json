@@ -9,14 +9,15 @@
 		"login": "Login",
 		"contactUs": "Contact us",
 		"solutionsMenu": {
-			"capture": "NextMotion - Capture",
-			"revolution": "Nextmotion Revolution",
-			"3d": "Nextmotion - 3D",
-			"consult": "NextMotion - Consult",
-			"agenda": "Nextmotion Agenda",
+			"capture": "NM Capture",
+			"revolution": "NM Revolution",
+			"3d": "NM 3D",
+			"consult": "NM Consult",
+			"agenda": "NM Agenda",
 			"virtualClasses": "Virtual Classes",
 			"robotics": "Robotics",
-			"ai": "Artificial Intelligence"
+			"ai": "Artificial Intelligence",
+			"skin": "AI Skin Analysis"
 		},
 		"youAreMenu": {
 			"clinicManager": "Clinic Manager",
@@ -2711,5 +2712,129 @@
 			"description": "Sign Up for a Free Demo : discover how Nextmotion can transform the management of your aesthetic clinic. Maximize your efficiency and attract more patients today. Request a free demo now.",
 			"button": "Book your demo"
 		}
-	}
+	},
+	"aiSkinAnalysis": {
+    "hero": {
+      "title": "Analyze your patients' skin using artificial intelligence",
+      "subtitle": "In seconds, identify wrinkles, spots, redness and signs of dehydration from a simple photo. Automatic PDF report generation, overlay visualization and skin evolution tracking.",
+      "demoButton": "Request a demo",
+      "discoverButton": "See in action"
+    },
+    "benefits": {
+      "title": "AI technology designed to boost your practice",
+      "items": [
+        {
+          "icon": "🧠",
+          "title": "Immediate visual support",
+          "description": "Show your patients what their eyes don't perceive yet. A picture is worth a thousand words."
+        },
+        {
+          "icon": "📊",
+          "title": "Objective care tracking",
+          "description": "Compare skin evolution over time with numerical scores on each issue."
+        },
+        {
+          "icon": "📱",
+          "title": "No additional equipment",
+          "description": "Simply use your smartphone with NM Capture. No expensive device required."
+        },
+        {
+          "icon": "🔗",
+          "title": "Total integration",
+          "description": "Feature directly accessible in your Nextmotion interface, without any friction."
+        }
+      ]
+    },
+    "demo": {
+      "title": "AI analysis in action",
+      "description": "See how a simple photo becomes a powerful tool for diagnosis, advice and patient retention. The analysis is instant, visual and immediately actionable.",
+      "videoButton": "Watch the video demonstration"
+    },
+    "detection": {
+      "title": "What AI sees... and what your patients understand instantly",
+      "description": "Each parameter is automatically scored. You can compare two analyses to precisely track a patient's skin evolution.",
+      "items": [
+        {
+          "icon": "💧",
+          "title": "Hydration",
+          "description": "Glow and texture analysis to detect dry or dehydrated skin."
+        },
+        {
+          "icon": "👵",
+          "title": "Wrinkles",
+          "description": "Automatic detection of furrows and fine lines on key facial areas."
+        },
+        {
+          "icon": "🌑",
+          "title": "Pigmentation spots",
+          "description": "Mapping of sun spots, melasma or pigmentation irregularities."
+        },
+        {
+          "icon": "🌡️",
+          "title": "Redness and rosacea",
+          "description": "Assessment of diffuse or localized redness to guide your recommendations."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "What if you could do better than VISIA, without a $20,000 machine?",
+      "subtitle": "Nextmotion's AI device offers you a modern, mobile and all-in-one alternative to traditional skin analysis systems.",
+      "cta": "Compare in demo"
+    },
+    "testimonial": {
+      "quote": "Thanks to AI analysis, I can illustrate my diagnoses in seconds. It's a game-changer in my consultations.",
+      "author": "Dr Simon Lamquin",
+      "role": "aesthetic physician in Cagnes sur mer",
+      "badge": "+150 centers already use Nextmotion's AI technology"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Is the AI reliable?",
+          "answer": "Yes, it has been trained on more than 70,000 real clinical cases. Its algorithm evolves continuously."
+        },
+        {
+          "question": "Is it GDPR compliant?",
+          "answer": "100%. All data is hosted in Europe according to current standards."
+        },
+        {
+          "question": "Do I need a specific device?",
+          "answer": "No. A photo taken with NM Capture is sufficient. No equipment to buy."
+        },
+        {
+          "question": "Is it compatible with my practice?",
+          "answer": "Yes, the technology is designed for daily aesthetic medicine practice."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Available from the Essential plan",
+      "items": [
+        {
+          "plan": "Essential",
+          "description": "20 analyses per month included"
+        },
+        {
+          "plan": "Premium",
+          "description": "100 analyses per month included"
+        }
+      ],
+      "additional": "You can purchase additional scans at $1 / scan",
+      "cta": "View plans"
+    },
+    "form": {
+      "title": "Ready to reveal what AI sees in your patients' skin?",
+      "subtitle": "This feature is included in Nextmotion's Essential and Premium plans.",
+      "button": "I want a demo",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "center": "Center",
+        "specialty": "Specialty",
+        "message": "Message (optional)"
+      }
+    }
+  }
 }
