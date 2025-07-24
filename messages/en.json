@@ -1874,13 +1874,13 @@
 	},
 	"manager": {
 		"hero": {
-			"title": "Optimisez la Gestion de Votre Clinique Esthétique avec Nextmotion",
+			"title": "Optimize the Management of Your Beauty Clinic with Nextmotion",
 			"description": "An all-in-one solution to attract more patients, track your clinic's activity, and improve your team's performance.",
 			"demoButton": "Request a demo",
 			"videoButton": "Play Video"
 		},
 		"solutions": {
-			"title": "Une seule plateforme qui centralise tous vos outils",
+			"title": "A single platform that centralizes all your tools",
 			"description": "Nextmotion is designed to meet the specific needs of aesthetic clinic managers. Discover how our solution can transform your clinic management by providing all the necessary tools in a single intuitive platform.",
 			"items": {
 				"process": "Process",
