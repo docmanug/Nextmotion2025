@@ -94,7 +94,7 @@ export default function Navbar() {
 				router.push("/chaines");
 			} else if (pathname === "/fr/marketing") {
 				router.push("/marketing");
-			} else if (pathname === "/fr/anakyse-peau-ia") {
+			} else if (pathname === "/fr/analyse-peau-ia") {
 				router.push("/ai-skin-analysis")
 			} else if (pathname === "/fr") {
 				router.push("/");
@@ -138,7 +138,7 @@ export default function Navbar() {
 			} else if (pathname === "/marketing") {
 				router.push("/fr/marketing");
 			} else if (pathname === "/ai-skin-analysis") {
-				router.push("/fr/anakyse-peau-ia")
+				router.push("/fr/analyse-peau-ia")
 			} else if (pathname === "/") {
 				router.push("/fr");
 			} else {
@@ -265,7 +265,7 @@ export default function Navbar() {
 								<Link
 									href={
 										currentLocale === "fr"
-											? "/fr/anakyse-peau-ia"
+											? "/fr/analyse-peau-ia"
 											: "/ai-skin-analysis"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
@@ -601,7 +601,7 @@ export default function Navbar() {
 											<Link
 												href={
 													currentLocale === "fr"
-														? "/fr/anakyse-peau-ia"
+														? "/fr/analyse-peau-ia"
 														: "/ai-skin-analysis"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
