@@ -79,10 +79,10 @@ export default function ContactFormPage() {
 
 	// Mapping objects for API expected values
 	const professionMap: Record<string, string> = {
-		'Médecin': 'Médecin',
+		'Médecin': 'Docteur',
 		'Assistant(e)': 'Secrétaire',
-		'Manager': 'Manager',
-		'Gérant multi-sites': 'Gérant multi-sites',
+		'Manager': 'Gestionnaire',
+		'Gérant multi-sites': 'Gérant multisites',
 		'Autre': 'Autre',
 	};
 	const practitionersMap: Record<string, string> = {
