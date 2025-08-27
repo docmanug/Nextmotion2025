@@ -26,7 +26,6 @@ export default function ContactFormPage() {
 		email: '',
 		phone: '',
 		countryCode: '+1', // Default country code
-		profession: '',
 		practitioners: [] as string[],
 		country: '',
 		primaryObjectives: [] as string[],
@@ -78,13 +77,6 @@ export default function ContactFormPage() {
 	};
 
 	// Mapping objects for API expected values
-	const professionMap: Record<string, string> = {
-		'Médecin': 'Docteur',
-		'Assistant(e)': 'Secrétaire',
-		'Manager': 'Gestionnaire',
-		'Gérant multi-sites': 'Gérant multisites',
-		'Autre': 'Autre',
-	};
 	const practitionersMap: Record<string, string> = {
 		'Individual practice (One practitioner only)': 'Cabinet individuel (Un seul praticien)',
 		'Small structure (less than 3 practitioners)': 'Petite structure (moins de 3 praticiens)',
@@ -121,7 +113,6 @@ export default function ContactFormPage() {
 			countries.find((c) => c.dial_code === formData.countryCode)?.name || '';
 
 		// Map values to API expected values
-		const mappedProfession = professionMap[formData.profession] || formData.profession;
 		const mappedPractitioners = (formData.practitioners as string[]).map((p) => practitionersMap[p] || p);
 		const mappedObjectives = formData.primaryObjectives.map((obj) => objectivesMap[obj] || obj);
 		const mappedInterestedIn = formData.interestedIn.map((obj) => objectivesMap[obj] || obj);
@@ -136,7 +127,7 @@ export default function ContactFormPage() {
 			email: formData.email,
 			phone_country: selectedCountry,
 			phone: phoneWithCountryCode, // Send full phone number as string
-			profession: mappedProfession,
+			profession: 'Autre',
 			practitioners: mappedPractitioners,
 			country: formData.country,
 			interestedIn: mappedInterestedIn,
@@ -173,7 +164,6 @@ export default function ContactFormPage() {
 						email: '',
 						phone: '',
 						countryCode: '+1',
-						profession: '',
 						practitioners: [],
 						country: '',
 						primaryObjectives: [],
@@ -305,27 +295,6 @@ export default function ContactFormPage() {
 											/>
 										</div>
 									</div>
-								</div>
-
-								<div>
-									<label className="block text-sm text-[#081F4D] mb-1.5 sm:mb-2">
-										{t('contactForm.form.profession.newLabel') || "Quelle est votre profession ?"}
-										<span className="text-red-500">*</span>
-									</label>
-									<select
-										name="profession"
-										value={formData.profession}
-										onChange={handleInputChange}
-										required
-										className="w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#E5E7EB] focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none text-[#081F4D] bg-white text-sm sm:text-base"
-									>
-										<option value="">{t('contactForm.form.profession.placeholder')}</option>
-										<option value="Médecin">{t('contactForm.form.profession.options.doctor') || "Médecin"}</option>
-										<option value="Assistant(e)">{t('contactForm.form.profession.options.assistant') || "Assistant(e)"}</option>
-										<option value="Manager">{t('contactForm.form.profession.options.manager') || "Manager"}</option>
-										<option value="Gérant multi-sites">{t('contactForm.form.profession.options.multiSiteManager') || "Gérant multi-sites"}</option>
-										<option value="Autre">{t('contactForm.form.profession.options.other') || "Autre"}</option>
-									</select>
 								</div>
 
 								<div>
