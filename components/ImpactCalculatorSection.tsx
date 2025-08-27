@@ -33,6 +33,7 @@ export default function ImpactCalculatorSection({
     const [additionalConsultations, setAdditionalConsultations] = useState<number>(0);
     const [additionalRevenue, setAdditionalRevenue] = useState<number>(0);
     const [conversionIncrease, setConversionIncrease] = useState<number>(0);
+    const [selectedMicroCopyIndex, setSelectedMicroCopyIndex] = useState<number>(0);
 
     // Calculate results whenever inputs change
     useEffect(() => {
@@ -114,6 +115,11 @@ export default function ImpactCalculatorSection({
             "You lose an average of 1.5 hours per day on tasks that Nextmotion automates.",
             "Did you know that before/after visuals increase conversions by 67% on average?"
         ];
+
+    // Set random micro copy index on mount to avoid hydration mismatch
+    useEffect(() => {
+        setSelectedMicroCopyIndex(Math.floor(Math.random() * microCopy.length));
+    }, [microCopy.length]);
 
     return (
         <Section className={cn("py-16 bg-gray-50", className)}>
@@ -277,7 +283,7 @@ export default function ImpactCalculatorSection({
 
                             <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
                                 <p className="text-blue-800 text-sm italic">
-                                    {microCopy[Math.floor(Math.random() * microCopy.length)]}
+                                    {microCopy[selectedMicroCopyIndex]}
                                 </p>
                             </div>
                         </div>
