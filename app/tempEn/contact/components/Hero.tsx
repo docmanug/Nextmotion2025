@@ -56,7 +56,8 @@ export default function Hero() {
                 alt="NextMotion Team Contact"
                 width={480}
                 height={480}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover"
+                priority
               />
             </div>
           </div>

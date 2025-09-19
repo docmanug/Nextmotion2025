@@ -61,6 +61,7 @@ export default function LogoSlider() {
                     alt={logo.alt}
                     fill
                     className="object-contain"
+                    sizes="(min-width: 1024px) 8rem, 33vw"
                   />
                 </motion.div>
               ))}

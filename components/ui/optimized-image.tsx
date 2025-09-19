@@ -17,6 +17,11 @@ export function OptimizedImage({
   quality = 75,
   ...props
 }: OptimizedImageProps) { 
+  // Provide better default `sizes` only when using `fill`, otherwise respect CSS width/height
+  const imageProps: any = { ...props };
+  if (imageProps.fill && !imageProps.sizes) {
+    imageProps.sizes = "(min-width: 1024px) 50vw, 100vw";
+  }
   return (
     <Image
       src={src}
@@ -27,7 +32,7 @@ export function OptimizedImage({
       className={cn("transition-opacity duration-300", className)}
       quality={quality}
       priority={priority}
-      {...props}
+      {...imageProps}
     />
   );
 } 

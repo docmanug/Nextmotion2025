@@ -444,8 +444,8 @@ export default function ContactForm() {
                     onChange={(e) => handleInputChange("countryCode", e.target.value)}
                   >
                     <option value="">Select country</option>
-                    {countryData.map((country) => (
-                      <option key={country.code} value={country.code}>
+                    {countryData.map((country, idx) => (
+                      <option key={`${country.code}-${idx}`} value={country.code}>
                         {country.name} ({country.code})
                       </option>
                     ))}
@@ -519,8 +519,8 @@ export default function ContactForm() {
                   onChange={(e) => handleInputChange("country", e.target.value)}
                 >
                   <option value="">{t("fields.specialty.placeholder")}</option>
-                  {countryData.map((country) => (
-                    <option key={country.name} value={country.name}>
+                  {countryData.map((country, idx) => (
+                    <option key={`${country.name}-${idx}`} value={country.name}>
                       {country.name}
                     </option>
                   ))}

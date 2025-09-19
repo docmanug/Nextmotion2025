@@ -25,6 +25,7 @@ const DiscoverCard = ({
           alt={alt}
           fill
           className={`object-cover ${isPhone ? "object-contain px-12" : ""}`}
+          sizes="(min-width: 1024px) 600px, 100vw"
         />
         <div className="absolute bottom-8 left-8">
           <h3 className="text-[#081F4D] text-[28px] font-bold">{title}</h3>

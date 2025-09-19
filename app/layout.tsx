@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import { LoadingSkeleton } from "@/components/ui/LoadingSkeleton";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -187,7 +186,8 @@ export default async function RootLayout({
       <head>
         <HreflangTags />
         <noscript>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             height="1"
             width="1"
             style={{ display: "none" }}
@@ -195,8 +195,6 @@ export default async function RootLayout({
             src="https://www.facebook.com/tr?id=24288009300898224&ev=PageView&noscript=1"
           />
         </noscript>
-      </head>
-      <body>
         <noscript>
           <iframe
             title="Google Tag Manager"
@@ -206,6 +204,8 @@ export default async function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+      </head>
+      <body>
         <Navbar />
         <Suspense fallback={<LoadingSkeleton />}>{children}</Suspense>
         <Footer />

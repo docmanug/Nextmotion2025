@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.nextmotion.net/fr/starter</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://www.nextmotion.net/fr/a-propos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

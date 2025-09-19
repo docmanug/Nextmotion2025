@@ -316,8 +316,8 @@ export default function ContactForm() {
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2">
                   <select className="w-full sm:w-[180px] px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
-                    {countryData.map((country) => (
-                      <option key={country.code} value={country.code}>
+                  {countryData.map((country, idx) => (
+                    <option key={`${country.code}-${idx}`} value={country.code}>
                         {country.name} ({country.code})
                       </option>
                     ))}
@@ -337,8 +337,8 @@ export default function ContactForm() {
                 </label>
                 <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">{t("fields.clientType.placeholder")}</option>
-                  {clientTypes.map((type) => (
-                    <option key={type} value={type}>
+                  {clientTypes.map((type, idx) => (
+                    <option key={`${type}-${idx}`} value={type}>
                       {type}
                     </option>
                   ))}
@@ -351,9 +351,9 @@ export default function ContactForm() {
                   <span className="text-red-500">*</span>
                 </label>
                 <div className="max-h-48 sm:max-h-none overflow-y-auto border border-gray-300 rounded-lg divide-y divide-gray-200">
-                  {specialties.map((specialty) => (
+                  {specialties.map((specialty, idx) => (
                     <label
-                      key={specialty}
+                      key={`${specialty}-${idx}`}
                       className="flex items-center px-3 sm:px-4 py-2 hover:bg-gray-50 cursor-pointer"
                     >
                       <input
@@ -372,8 +372,8 @@ export default function ContactForm() {
                 </label>
                 <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">{t("fields.specialty.placeholder")}</option>
-                  {countryData.map((country) => (
-                    <option key={country.name} value={country.name}>
+                  {countryData.map((country, idx) => (
+                    <option key={`${country.name}-${idx}`} value={country.name}>
                       {country.name}
                     </option>
                   ))}
@@ -386,8 +386,8 @@ export default function ContactForm() {
                 </label>
                 <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-gray-300 focus:border-[#1650EF] focus:ring-1 focus:ring-[#1650EF] outline-none">
                   <option value="">{t("fields.interest.placeholder")}</option>
-                  {interests.map((interest) => (
-                    <option key={interest} value={interest}>
+                  {interests.map((interest, idx) => (
+                    <option key={`${interest}-${idx}`} value={interest}>
                       {interest}
                     </option>
                   ))}
