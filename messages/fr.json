@@ -55,6 +55,7 @@
 				"phone": "Téléphone*",
 				"clinicName": "Nom de la clinique*",
 				"submit": "Créer mon compte Starter",
+				"submitting": "Création en cours...",
 				"setupTime": "Configuration en moins de 5 minutes"
 			}
 		},
