@@ -1,11 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { getMessages, useTranslations } from "@/utils/i18n";
 
 const HeroSection = () => {
   const [messages, setMessages] = useState<any>(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    clinicName: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     const load = async () => {
@@ -19,6 +30,33 @@ const HeroSection = () => {
   const t = useTranslations(messages?.starter?.hero || {});
 
   if (!messages) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const url = new URL("https://account.nextmotion.net/auth/register");
+      url.searchParams.set("next", "https://app.nextmotion.net");
+      url.searchParams.set("first_name", formData.firstName);
+      url.searchParams.set("last_name", formData.lastName);
+      url.searchParams.set("clinic_name", formData.clinicName);
+      url.searchParams.set("email", formData.email);
+      url.searchParams.set("phone_number", formData.phoneNumber);
+
+      window.location.href = url.toString();
+    } catch (error) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <section className="relative bg-gradient-to-br from-blue-600 to-blue-700 text-white py-24 px-4">
@@ -40,51 +78,86 @@ const HeroSection = () => {
 
           {/* Right Form */}
           <div className="bg-white rounded-2xl p-8 text-gray-900 shadow-2xl">
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder={t("form.firstName")}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <input
-                  type="text"
-                  placeholder={t("form.lastName")}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
+            {submitStatus === "success" ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                  {t("success.title")}
+                </h3>
+                <p className="text-gray-600">{t("success.message")}</p>
               </div>
-              <div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder={t("form.firstName")}
+                    required
+                    className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder={t("form.lastName")}
+                    required
+                    className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder={t("form.email")}
+                  required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <div>
                 <input
                   type="tel"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
                   placeholder={t("form.phone")}
+                  required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <div>
                 <input
                   type="text"
+                  name="clinicName"
+                  value={formData.clinicName}
+                  onChange={handleChange}
                   placeholder={t("form.clinicName")}
+                  required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-              >
-                {t("form.submit")}
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <p className="text-sm text-gray-500 text-center">
-                {t("form.setupTime")}
-              </p>
-            </form>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {isSubmitting ? t("form.submitting") : t("form.submit")}
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  {t("form.setupTime")}
+                </p>
+
+                {submitStatus === "error" && (
+                  <p className="text-red-600 text-center">
+                    {t("error.message")}
+                  </p>
+                )}
+              </form>
+            )}
           </div>
         </div>
       </div>
