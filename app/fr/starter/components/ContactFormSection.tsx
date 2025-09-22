@@ -36,29 +36,17 @@ const ContactFormSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const url = new URL("https://account.nextmotion.net/auth/register");
+      url.searchParams.set("next", "https://app.nextmotion.net");
+      url.searchParams.set("first_name", formData.firstName);
+      url.searchParams.set("last_name", formData.lastName);
+      url.searchParams.set("clinic_name", formData.clinicName);
+      url.searchParams.set("email", formData.email);
+      url.searchParams.set("phone_number", formData.phoneNumber);
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          clinicName: "",
-        });
-      } else {
-        setSubmitStatus("error");
-      }
+      window.location.href = url.toString();
     } catch (error) {
       setSubmitStatus("error");
-    } finally {
       setIsSubmitting(false);
     }
   };
