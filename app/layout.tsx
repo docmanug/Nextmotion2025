@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { getMessages } from "@/utils/i18n";
 import HreflangTags from "./components/HreflangTags";
 import Script from "next/script";
+import CookieConsent from "@/components/CookieConsent";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
@@ -160,20 +161,6 @@ export default async function RootLayout({
           gtag('config', 'G-W48ZXFFPW1');
         `}
       </Script>
-      <Script id="facebook-pixel" strategy="afterInteractive">
-        {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '24288009300898224');
-          fbq('track', 'PageView');
-        `}
-      </Script>
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -185,16 +172,9 @@ export default async function RootLayout({
       </Script>
       <head>
         <HreflangTags />
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt="Facebook Pixel"
-            src="https://www.facebook.com/tr?id=24288009300898224&ev=PageView&noscript=1"
-          />
-        </noscript>
+        {/* Cookie consent manages loading of Meta Pixel based on user choice */}
+      </head>
+      <body>
         <noscript>
           <iframe
             title="Google Tag Manager"
@@ -204,8 +184,7 @@ export default async function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-      </head>
-      <body>
+        <CookieConsent />
         <Navbar />
         <Suspense fallback={<LoadingSkeleton />}>{children}</Suspense>
         <Footer />
