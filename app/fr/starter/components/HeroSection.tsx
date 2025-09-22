@@ -79,7 +79,7 @@ const HeroSection = () => {
 
           {/* Right Form */}
           <div className="bg-white rounded-2xl p-8 text-gray-900 shadow-2xl">
-          {submitStatus === "success" ? (
+            {submitStatus === "success" ? (
               <div className="text-center py-8">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Check className="w-8 h-8 text-green-600" />
@@ -90,28 +90,27 @@ const HeroSection = () => {
                 <p className="text-gray-600">{t("success.message")}</p>
               </div>
             ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder={t("form.firstName")}
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder={t("form.lastName")}
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-              <div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder={t("form.firstName")}
+                    required
+                    className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder={t("form.lastName")}
+                    required
+                    className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
                 <input
                   type="email"
                   name="email"
@@ -121,8 +120,6 @@ const HeroSection = () => {
                   required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <div>
                 <input
                   type="tel"
                   name="phoneNumber"
@@ -132,8 +129,6 @@ const HeroSection = () => {
                   required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <div>
                 <input
                   type="text"
                   name="clinicName"
@@ -143,24 +138,26 @@ const HeroSection = () => {
                   required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-              >
-                {isSubmitting ? t("form.submitting") : t("form.submit")}
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <p className="text-sm text-gray-500 text-center">
-                {t("form.setupTime")}
-              </p>
-              {submitStatus === "error" && (
-                <p className="text-red-600 text-center">
-                  {t("error.message")}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {isSubmitting ? t("form.submitting") : t("form.submit")}
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  {t("form.setupTime")}
                 </p>
-              )}
-            </form>
+
+                {submitStatus === "error" && (
+                  <p className="text-red-600 text-center">
+                    {t("error.message")}
+                  </p>
+                )}
+              </form>
             )}
           </div>
         </div>
