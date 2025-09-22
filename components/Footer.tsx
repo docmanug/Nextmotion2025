@@ -67,7 +67,9 @@ export default function Footer({
 }: FooterProps) {
   const pathname = usePathname();
   const currentLocale = pathname?.startsWith("/fr") ? "fr" : "en";
-  const [translations, setTranslations] = useState<Record<string, any> | null>(null);
+  const [translations, setTranslations] = useState<Record<string, any> | null>(
+    null
+  );
 
   useEffect(() => {
     const loadTranslations = async () => {
@@ -87,7 +89,10 @@ export default function Footer({
 
   const t = (key: string): string => {
     if (!translations) return key;
-    return key.split(".").reduce((obj: any, k: string) => obj?.[k], translations) || key;
+    return (
+      key.split(".").reduce((obj: any, k: string) => obj?.[k], translations) ||
+      key
+    );
   };
 
   // If props are not provided and translations are not loaded yet, show a loading state
@@ -401,14 +406,14 @@ export default function Footer({
                     </li>
                     <li>
                       {/* Comment out the privacy link */}
-                      {/* <Link
-                        href="https://www.nextmotion.net/hubfs/2021-04-08_Privacy%20Policy%20NEXT%20MOTION.pdf"
+                      <Link
+                        href="https://drive.google.com/file/d/1_v0eIKvtJ2LbBMSsxeLxdjHrUp8F443O/view"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"
                       >
                         {footerData.help.links.privacy}
-                      </Link> */}
+                      </Link>
                     </li>
                     <li>
                       <Link
