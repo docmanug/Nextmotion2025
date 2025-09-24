@@ -405,9 +405,8 @@ export default function Footer({
                       </Link>
                     </li>
                     <li>
-                      {/* Comment out the privacy link */}
                       <Link
-                        href="https://drive.google.com/file/d/1_v0eIKvtJ2LbBMSsxeLxdjHrUp8F443O/view"
+                        href="/privacy-policy"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#4A5578] hover:text-[#0045FF] transition-colors text-[14px]"

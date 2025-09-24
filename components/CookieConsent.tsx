@@ -99,7 +99,7 @@ export default function CookieConsent() {
       >
         Reject All
       </button>
-      <a href="https://drive.google.com/file/d/1_v0eIKvtJ2LbBMSsxeLxdjHrUp8F443O/view" target="_blank" style={{ marginLeft: "10px", color: "#4CAF50", textDecoration: "underline" }}>
+      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ marginLeft: "10px", color: "#4CAF50", textDecoration: "underline" }}>
         Privacy Policy
       </a>
     </div>
