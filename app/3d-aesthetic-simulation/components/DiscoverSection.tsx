@@ -81,8 +81,8 @@ export default function DiscoverSection() {
               imageSrc="/eighth/part1.webp"
               href={
                 window.location.pathname.startsWith("/fr")
-                  ? "/fr/logiciel-consultation-esthetique"
-                  : "/clinic-management-software"
+                  ? "/fr/consulter"
+                  : "/consult"
               }
             />
           </div>

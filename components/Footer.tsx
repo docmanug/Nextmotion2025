@@ -165,8 +165,8 @@ export default function Footer({
       : "/3d-aesthetic-simulation";
   const consultLink =
     currentLocale === "fr"
-      ? "/fr/logiciel-consultation-esthetique"
-      : "/clinic-management-software";
+      ? "/fr/consulter"
+      : "/consult";
   const agendaLink =
     currentLocale === "fr"
       ? "/fr/agenda-patient-en-ligne-rdv"

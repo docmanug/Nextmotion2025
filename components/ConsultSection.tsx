@@ -80,8 +80,8 @@ export default function ConsultSection({
         <div className="mt-8 sm:mt-10">
           <LearnMoreButton
             text={learnMore}
-            defaultPath="/clinic-management-software"
-            frenchPath="/fr/logiciel-consultation-esthetique"
+            defaultPath="/consult"
+            frenchPath="/fr/consulter"
           />
         </div>
       </div>

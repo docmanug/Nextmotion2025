@@ -99,7 +99,7 @@ export default function Feature6() {
             </div>
 
             <div className="mt-10">
-              <Link href="/clinic-management-software">
+              <Link href="/consult">
                 <Button
                   variant="outline"
                   size="lg"

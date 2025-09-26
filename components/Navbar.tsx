@@ -76,8 +76,8 @@ export default function Navbar() {
 				router.push("/contact_form");
 			} else if (pathname === "/fr/3d-simulation-esthetique") {
 				router.push("/3d-aesthetic-simulation");
-			} else if (pathname === "/fr/logiciel-consultation-esthetique") {
-				router.push("/clinic-management-software");
+			} else if (pathname === "/fr/consulter") {
+				router.push("/consult");
 			} else if (pathname === "/fr/agenda-patient-en-ligne-rdv") {
 				router.push("/agenda-online-booking-reminders");
 			} else if (pathname === "/fr/virtual-classes") {
@@ -119,8 +119,8 @@ export default function Navbar() {
 				router.push("/fr/formulaire_contact");
 			} else if (pathname === "/3d-aesthetic-simulation") {
 				router.push("/fr/3d-simulation-esthetique");
-			} else if (pathname === "/clinic-management-software") {
-				router.push("/fr/logiciel-consultation-esthetique");
+			} else if (pathname === "/consult") {
+				router.push("/fr/consulter");
 			} else if (pathname === "/agenda-online-booking-reminders") {
 				router.push("/fr/agenda-patient-en-ligne-rdv");
 			} else if (pathname === "/virtual-classes") {
@@ -210,8 +210,8 @@ export default function Navbar() {
 								<Link
 									href={
 										currentLocale === "fr"
-											? "/fr/logiciel-consultation-esthetique"
-											: "/clinic-management-software"
+											? "/fr/consulter"
+											: "/consult"
 									}
 									className='block px-6 py-3 text-[15px] text-white hover:bg-[#F3F8FD] hover:text-[#1650EF]'
 									onClick={handleMobileNavClick}
@@ -546,8 +546,8 @@ export default function Navbar() {
 											<Link
 												href={
 													currentLocale === "fr"
-														? "/fr/logiciel-consultation-esthetique"
-														: "/clinic-management-software"
+														? "/fr/consulter"
+														: "/consult"
 												}
 												className='block px-6 py-2 text-[14px] text-gray-900 hover:text-[#0066FF]'
 												onClick={handleMobileNavClick}

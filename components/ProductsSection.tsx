@@ -30,7 +30,7 @@ export default function ProductsSection({
 }: ProductsSectionProps) {
   const [links, setLinks] = useState({
     capture: "/before-after",
-    consult: "/clinic-management-software",
+    consult: "/consult",
     revolution: "/revolution",
     threeD: "/3d-aesthetic-simulation"
   });
@@ -39,7 +39,7 @@ export default function ProductsSection({
     if (window.location.pathname.startsWith("/fr")) {
       setLinks({
         capture: "/fr/photos-avant-apres",
-        consult: "/fr/logiciel-consultation-esthetique",
+        consult: "/fr/consulter",
         revolution: "/fr/revolution",
         threeD: "/fr/3d-simulation-esthetique"
       });

@@ -23,7 +23,7 @@ Optimize the management of your aesthetic clinic with our software dedicated to 
 
 
 - [Know more about Nextmotion Capture](https://nextmotion.net/before-after): Learn about the Nextmotion Capture tool, which allows for professional before-and-after photo documentation.
-- [Know more about Nextmotion Consult](https://nextmotion.net/clinic-management-software): Explore the Nextmotion Consult feature, designed to enhance patient consultations and communication.
+- [Know more about Nextmotion Consult](https://nextmotion.net/consult): Explore the Nextmotion Consult feature, designed to enhance patient consultations and communication.
 - [Learn more about Nextmotion 3D](https://nextmotion.net/3d-aesthetic-simulation): Discover the 3D capabilities of Nextmotion, which can help in visualizing treatment outcomes.
 
 
